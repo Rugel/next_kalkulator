@@ -157,12 +157,6 @@
     padding: 2px;
   }
   
-  .icon[alt='wind'],
-  [alt='pressure'],
-  [alt='clouds'] {
-    margin-left: 1em;
-  }
-  
   #list li {
     padding: 1em;
     border: 1px solid;
