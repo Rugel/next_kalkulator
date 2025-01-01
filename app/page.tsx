@@ -7,7 +7,6 @@ import Footer from './modules/footer';
 import Desc from './modules/descryption';
 import Counter from './modules/counter';
 import Swal from 'sweetalert2';
-import geo from '../public/icons/geo-alt.svg'
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -236,7 +235,7 @@ class MainCom extends React.Component {
           <label>
             <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br />
             <input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em" }} onChange={this.handleChangeCity} />
-            <img src="/icons/geo-alt.svg" onClick={this.handleClickLocal} alt='gps' style={{ width: "3em", height: "2.8em", marginLeft: "2em", position: "relative", top: "1em", backgroundColor:'white' }} />
+            <img src="/icons/geo-alt.svg" onClick={this.handleClickLocal} alt='gps' style={{ width: "2.9em", height: "2.7em", marginLeft: "2em", position: "relative", top: "1em", backgroundColor:'white', borderRadius:'5px', cursor:'pointer' }} />
           </label><br /><br />
           Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>:<br />
           <img className='icon' src="/icons/clouds.svg" alt="clouds" /> zachmurzenie:  <span className='span'>{this.state.clouds} %</span><br />
