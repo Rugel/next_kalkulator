@@ -71,10 +71,9 @@ class Weather extends React.Component {
             <div>
                 <footer>
                     <div>
-                        <label>
                             <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br /><input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em", letterSpacing:'1px' }} onChange={this.handleChangeCity}></input>
 
-                            <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor:'white', cursor:'pointer' }} /></label>
+                            <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor:'white', cursor:'pointer' }} />
                         <br /><br />
                         Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>
                         <br />
