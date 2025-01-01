@@ -1,7 +1,7 @@
 import React from "react";
 
 const Desc = () => { return( <section className='desc'><div>
-<strong>Przedstawiony tutaj Kalkulator służy do wyliczenia kwoty wynagrodzenia netto, czyli „na rękę'' dla pracownika, który jest zatrudniony w oparciu o umowę o pracę.
+<strong>Przedstawiony tutaj Kalkulator służy do wyliczenia kwoty wynagrodzenia netto, czyli &quot;na rękę&quot; dla pracownika, który jest zatrudniony w oparciu o umowę o pracę.
 </strong><p>
   To, co odróżnia go od innych kalkulatorów to możliwość uwzględnienia m.in. takich informacji jak: stawka godzinowa, liczba przepracowanych godzin czy liczba dni spędzonych na urlopie.
 </p><p>
@@ -18,7 +18,7 @@ const Desc = () => { return( <section className='desc'><div>
   — poz.8 i 9 służy do obliczenia średniego wynagrodzenia do celów naliczenia kwot za urlop lub „zwolnienie lekarskie” - jeśli nie korzystałeś z powyższych, możesz nic nie wpisywać <br />
   — w poz.10 wpisujemy sumę kwot brutto ewentualnych dodatków typu premia, mieszkaniówka — jeśli takowych nie ma — pole pozostaje puste.
 </p><p>
-  Pozatym należy zwrócić uwagę na właściwe zaznaczenie we "wstępnych opcjach" pól związanych z tematem braku uczestnictwa w Pracowniczych Planach Kapitałowych, wieku podatnika, pracą poza miejscowością zamieszkania oraz przekroczenia drugiego progu podatkowego.
+  Pozatym należy zwrócić uwagę na właściwe zaznaczenie we &quot;wstępnych opcjach&quot; pól związanych z tematem braku uczestnictwa w Pracowniczych Planach Kapitałowych, wieku podatnika, pracą poza miejscowością zamieszkania oraz przekroczenia drugiego progu podatkowego.
 </p>
 <p>
   Od 1 stycznia 2023 roku obowiązuje nowy wzór <strong>PIT-2</strong>. Formularz ten składa się raz w roku, w celu upoważnienia płatnika (np. pracodawcy, zleceniodawcy) do zmniejszania zaliczki na podatek dochodowy o kwotę zmniejszającą podatek. Najważniejsze zmiany w nowym PIT-2 to:</p>

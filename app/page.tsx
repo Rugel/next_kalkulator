@@ -6,6 +6,8 @@ import Input from './modules/input';
 import Footer from './modules/footer';
 import Desc from './modules/descryption';
 import Counter from './modules/counter';
+import Swal from 'sweetalert2';
+import geo from '../public/icons/geo-alt.svg'
 
 const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
@@ -68,27 +70,27 @@ class MainCom extends React.Component {
     }
   }
 
-  handleChangeGodziny = (e: { target: { value: number; }; }) => { if (e.target.value >= 0 && e.target.value <= 744) { this.setState({ hours: e.target.value }) } else { this.setState({ hours: 168 }) }/* if (e.target.value < 0 || e.target.value > 744) { swal("Liczba musi się mieścić w przedziale 0 - 744") }*/ }
+  handleChangeGodziny = (e: { target: { value: number; }; }) => { if (e.target.value >= 0 && e.target.value <= 744) { this.setState({ hours: e.target.value }) } else { this.setState({ hours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({ text: "Liczba musi się mieścić w przedziale 0 - 744", icon: "warning" }) } }
 
-  handleChangeStawka = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ rate: e.target.value }) }/* else { this.setState({ rate: 0 }); swal('Liczba nie może być ujemna') }*/ }
+  handleChangeStawka = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ rate: e.target.value }) } else { this.setState({ rate: 0 }); Swal.fire({ text: 'Liczba nie może być ujemna', icon: 'warning' }) } }
 
-  handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) }/* if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { swal('Liczba musi się mieścić w przedziale 19 - 23') }*/ }
+  handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) } if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
 
-  handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) }/* if (e.target.value < 0 || e.target.value > 288) { swal('Liczba musi się mieścić w przedziale 0 - 288') }*/ }
+  handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 288', icon:'warning'}) } }
 
-  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) }/* if (e.target.value < 0 || e.target.value > this.state.workdays) { swal('Liczba nie może być większa od liczby dni roboczych') }*/ }
+  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > this.state.workdays) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
 
-  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) }/* if (e.target.value < 0 || e.target.value > this.state.workdays) { swal('Liczba nie może być większa od liczby dni roboczych') }*/ }
+  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if (e.target.value < 0 || e.target.value > this.state.workdays) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
 
-  handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) }/* if (e.target.value < 0 || e.target.value > 12) { swal('Liczba musi się mieścić w przedziale 0 - 12') }*/ }
+  handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) } if (e.target.value < 0 || e.target.value > 12) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 12', icon:'warning'}) } }
 
-  handleChangeSrGodz = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 744) { this.setState({ avaragehours: e.target.value }) } else { this.setState({ avaragehours: 168 }) }/* if (e.target.value < 0 || e.target.value > 744) { swal('Liczba musi się mieścić w przedziale 0 - 744') }*/ }
+  handleChangeSrGodz = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 744) { this.setState({ avaragehours: e.target.value }) } else { this.setState({ avaragehours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 744', icon:'warning'}) } }
 
-  handleChangeSrWyp = (e: { target: { value: number; }; }) => { if (e.target.value > 0) { this.setState({ avaragemoney: e.target.value }) } else { this.setState({ avaragemoney: 7005.76 }) }/* if (e.target.value < 0) { swal('Kwota nie może być ujemna') }*/ }
+  handleChangeSrWyp = (e: { target: { value: number; }; }) => { if (e.target.value > 0) { this.setState({ avaragemoney: e.target.value }) } else { this.setState({ avaragemoney: 7005.76 }) } if (e.target.value < 0) { Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'}) } }
 
-  handleChangeAdd = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ add: e.target.value }) } else if (e.target.value < 0) { this.setState({ add: 0 });/* swal('Kwota nie może być ujemna')*/ } }
+  handleChangeAdd = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ add: e.target.value }) } else if (e.target.value < 0) { this.setState({ add: 0 }); Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'}) } }
 
-  handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 });/* swal('Kwota nie może być ujemna')*/ } }
+  handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'})} }
 
   handleChangeConfirm = () => { this.setState({ isConfirmed: !this.state.isConfirmed }) }
 
@@ -234,15 +236,15 @@ class MainCom extends React.Component {
           <label>
             <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br />
             <input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em" }} onChange={this.handleChangeCity} />
-            <img src="/icons/gps.png" onClick={this.handleClickLocal} style={{ width: "2.7em", height: "3.0em", marginLeft: "1.5em", position: "relative", top: "1em" }} />
-          </label><br />
+            <img src="/icons/geo-alt.svg" onClick={this.handleClickLocal} alt='gps' style={{ width: "3em", height: "2.8em", marginLeft: "2em", position: "relative", top: "1em", backgroundColor:'white' }} />
+          </label><br /><br />
           Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>:<br />
-          <img className='icon' src="/icons/temperature.svg" alt="temperature" /> temp.: <span className='span'>{this.state.temp} &#176;C</span><br />
-          <img className='icon' src="/icons/wind.svg" alt="wind" /> wiatr: <span className='span'>{this.state.wiatr} m/s</span><br />
-          <img className='icon' src="/icons/summer.svg" alt="summer" /> stan: <span className='span'>{this.state.stan}</span><br />
-          <img className='icon' src="/icons/pressure.svg" alt="pressure" />  ciśnienie: <span className='span'>{this.state.cisnienie} hPa</span><br />
-          <img className='icon' src="/icons/vision.svg" alt="visibillity" /> widoczność: <span className='span'>{this.state.visibility} m</span><br />
           <img className='icon' src="/icons/clouds.svg" alt="clouds" /> zachmurzenie:  <span className='span'>{this.state.clouds} %</span><br />
+          <img className='icon' src="/icons/temperature.svg" alt="temperature" /> temp.: <span className='span'>{this.state.temp} &#176;C</span>
+          <img className='icon' src="/icons/wind.svg" alt="wind" /> wiatr: <span className='span'>{this.state.wiatr} m/s</span><br />
+          <img className='icon' src="/icons/pressure.svg" alt="pressure" />  ciśnienie: <span className='span'>{this.state.cisnienie} hPa</span>
+          <img className='icon' src="/icons/vision.svg" alt="visibillity" /> widoczność: <span className='span'>{this.state.visibility} m</span><br />
+          <img className='icon' src="/icons/summer.svg" alt="summer" /> stan: <span className='span'>{this.state.stan}</span><br /><br />
           <Footer />
         </div>
       </footer>
