@@ -1,4 +1,5 @@
 'use client';
+
 import React from 'react';
 import Input from '../modules/input';
 import Counter from '../modules/counter';
@@ -69,7 +70,7 @@ class BnN extends React.Component {
         <header><Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br /><div className='box'>
-              <nav aria-label="breadcrumb">
+              <nav>
                 <ul className='menu'>
                   <li><Link href="/">wyliczenie z godzin pracy</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>przelicznik BRUTTO/NETTO</span></li>

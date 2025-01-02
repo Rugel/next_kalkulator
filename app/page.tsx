@@ -1,6 +1,4 @@
 'use client';
-
-
 import React from 'react';
 import Input from './modules/input';
 import Footer from './modules/footer';
@@ -35,21 +33,21 @@ class MainCom extends React.Component {
 
   handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) } if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
 
-  handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 288', icon:'warning'}) } }
+  handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 288', icon: 'warning' }) } }
 
-  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
+  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({ text: 'Liczba nie może być większa od liczby dni roboczych', icon: 'warning' }) } }
 
-  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if ( e.target.value < 0 || e.target.value > 23) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
+  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({ text: 'Liczba nie może być większa od liczby dni roboczych', icon: 'warning' }) } }
 
-  handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) } if (e.target.value < 0 || e.target.value > 12) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 12', icon:'warning'}) } }
+  handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) } if (e.target.value < 0 || e.target.value > 12) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 12', icon: 'warning' }) } }
 
-  handleChangeSrGodz = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 744) { this.setState({ avaragehours: e.target.value }) } else { this.setState({ avaragehours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 744', icon:'warning'}) } }
+  handleChangeSrGodz = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 744) { this.setState({ avaragehours: e.target.value }) } else { this.setState({ avaragehours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 744', icon: 'warning' }) } }
 
-  handleChangeSrWyp = (e: { target: { value: number; }; }) => { if (e.target.value > 0) { this.setState({ avaragemoney: e.target.value }) } else { this.setState({ avaragemoney: 7005.76 }) } if (e.target.value < 0) { Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'}) } }
+  handleChangeSrWyp = (e: { target: { value: number; }; }) => { if (e.target.value > 0) { this.setState({ avaragemoney: e.target.value }) } else { this.setState({ avaragemoney: 7005.76 }) } if (e.target.value < 0) { Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
 
-  handleChangeAdd = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ add: e.target.value }) } else if (e.target.value < 0) { this.setState({ add: 0 }); Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'}) } }
+  handleChangeAdd = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ add: e.target.value }) } else if (e.target.value < 0) { this.setState({ add: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
 
-  handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({text:'Kwota nie może być ujemna', icon:'warning'})} }
+  handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
 
   handleChangeConfirm = () => { this.setState({ isConfirmed: !this.state.isConfirmed }) }
 
@@ -58,18 +56,6 @@ class MainCom extends React.Component {
   handleChangeConfirmU26 = () => { this.setState({ isConfirmedU26: !this.state.isConfirmedU26 }) }
 
   handleChangeConfirmWorkplace = () => { this.setState({ isConfirmeWorkplace: !this.state.isConfirmeWorkplace }) }
-  handleChangeCity = (e: { target: { value: string | any[]; }; }) => { if (e.target.value.length > 0) { this.setState({ city: e.target.value, active: false }) } else { this.setState({ city: "Warszawa", active: true }) } }
-
-  handleClickLocal = (e: any) => {
-    let showPosition = function (this: any, position: { coords: { latitude: any; longitude: any; }; }) {
-      this.setState({ lat: position.coords.latitude, lon: position.coords.longitude, active: true });
-      //document.getElementById('town').value = null;
-    }
-    showPosition = showPosition.bind(this);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(showPosition);
-    }
-  }
 
   render() {
     const { hours, rate, workdays, satsun, hollydays, illnessworkdays, illnessweekenddays, avaragehours, avaragemoney, add } = this.state;
@@ -107,10 +93,12 @@ class MainCom extends React.Component {
 
     //wyliczenie zaliczki na podatek dochodowy
     if (pod_zal < 0) { pod_zal = 0 };
+    let kw_zm = 3600;
     let zal_pod;
+    if (brutto - 85528 < 30000 && brutto - 85528 > 0) { kw_zm = Math.round((brutto - 85528) * 0.12) };
     if (this.state.isConfirmed) { zal_pod = Math.round(pod_zal * 0.32) - 300 }
     else { zal_pod = Math.round(pod_zal * 0.12) - 300 };
-    if (zal_pod < 0 || (this.state.isConfirmedU26 && brutto <= 85528 && !this.state.isConfirmed)) { zal_pod = 0 };
+    if (zal_pod < 0 || (this.state.isConfirmedU26 && brutto <= 85528)) { zal_pod = 0 } else if (this.state.isConfirmedU26 && brutto > 85528 && brutto <= 205528) { zal_pod = Math.round((brutto - 85528) * 0.12) - kw_zm } else if (this.state.isConfirmedU26 && brutto > 205528) { zal_pod = Math.round(10800 + (brutto - 205528) * 0.32) };
     const pod_ppk = Math.round((ppk_bru - brutto) * 100) / 100;
     let netto: any = Math.round((brutto - zus - zdr - zal_pod - ppk) * 100) / 100;
     netto = netto.toString();
@@ -138,8 +126,8 @@ class MainCom extends React.Component {
       </header>
       <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
         <div className='box'>
-          <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />brak uczestnictwa w PPK</label><br /><br />
-          <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />wiek poniżej 26 lat</label><br /><br />
+          <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
+          <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
           <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
           <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
         </div>
