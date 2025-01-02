@@ -1,3 +1,4 @@
+'use client';
 import React from "react";
 import Footer from '../modules/footer';
 import Image from "next/image";

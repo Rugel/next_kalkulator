@@ -7,7 +7,8 @@ import Footer from './modules/footer';
 import Desc from './modules/descryption';
 import Counter from './modules/counter';
 import Swal from 'sweetalert2';
-import Weather from './modules/weather'
+import Weather from './modules/weather';
+import Link from 'next/link';
 
 class MainCom extends React.Component {
   state = {
@@ -36,9 +37,9 @@ class MainCom extends React.Component {
 
   handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 288', icon:'warning'}) } }
 
-  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > this.state.workdays) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
+  handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
 
-  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if (e.target.value < 0 || e.target.value > this.state.workdays) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
+  handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if ( e.target.value < 0 || e.target.value > 23) { Swal.fire({text:'Liczba nie może być większa od liczby dni roboczych', icon:'warning'}) } }
 
   handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) } if (e.target.value < 0 || e.target.value > 12) { Swal.fire({text:'Liczba musi się mieścić w przedziale 0 - 12', icon:'warning'}) } }
 
@@ -126,7 +127,7 @@ class MainCom extends React.Component {
           <div className='box'>
             <ul className='menu'>
               <li><span style={{ boxShadow: '0 5px' }}>wyliczenie z godzin pracy</span></li>
-              <li>przelicznik BRUTTO/NETTO</li>
+              <li><Link href="/brutto_netto">przelicznik BRUTTO/NETTO</Link></li>
               <li>kalkulator stawki godz.</li>
               <li>karta godzin pracy</li>
             </ul>
