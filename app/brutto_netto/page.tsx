@@ -115,7 +115,7 @@ class BnN extends React.Component {
             </div></article>
           <article>
             <div className='desc'>
-              <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we "wstępnych opcjach" oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
+              <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
               <ol className='desc'>
                 <li>
