@@ -15,7 +15,7 @@ body {
 
 #tytul {
   text-align: center;
-  background-color: #99ff99;
+  background-color: #bae1ba;
   padding: 7em 1em .5em 1em;
 
 }
@@ -50,12 +50,11 @@ h1 {
   margin-top: 0;
   position: fixed;
   font-size: 1.3em;
-  background-color: #94FD37;
   padding: 10px;
   box-shadow: 0px 0px 15px;
   text-shadow: 3px 3px 5px grey;
   font-weight: 700;
-  background-image: linear-gradient(to right, #222, #54AD00, #94FD37, #90FF50, #AAFFAA, #90FF50, #94FD37, #54AD00, #222);
+  background-image: linear-gradient(to right, #638650, #729750, #d9fbbc, #eaf7e3, #d7e2d2, #eaf7e3, #d9fbbc, #729750, #638650);
   z-index: 99;
 }
 
