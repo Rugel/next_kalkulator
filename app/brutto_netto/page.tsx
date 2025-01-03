@@ -64,7 +64,7 @@ class BnN extends React.Component {
     netto = netto.replace('.', ',');
 
     const Netto = () => netto;
-    const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
+    const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
     return (
       <div>
         <header><Wynik />
@@ -117,49 +117,44 @@ class BnN extends React.Component {
             <div className='desc'>
               <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
-              <ol className='desc'>
-                <li>
+              <div className='desc'>
+                <p>
                   <strong>
-                    Ustalenie wynagrodzenia brutto
+                    1. Ustalenie wynagrodzenia brutto
                   </strong>
                   . Wynagrodzenie brutto to kwota, którą pracownik otrzymuje od pracodawcy przed odliczeniem podatków i składek na ubezpieczenia społeczne. Jest to kwota, która widnieje w umowie o pracę.
-                </li>
-                <br />
-                <li>
+                </p>
+                <p>
                   <strong>
-                    Odliczenie składek na ubezpieczenie społeczne
+                    2. Odliczenie składek na ubezpieczenie społeczne
                   </strong>
                   . Składki na ubezpieczenia społeczne to kwoty, które są automatycznie potrącane z wynagrodzenia brutto. W Polsce składki te obejmują ubezpieczenie emerytalne (9,76%), rentowe (1,5%) i chorobowe (2,45%). Te procenty są obliczane od Twojego wynagrodzenia brutto - razem jest to 13,71%.
-                </li>
-                <br />
-                <li>
+                </p>
+                <p>
                   <strong>
-                    Obliczenie składki na ubezpieczenie zdrowotne
+                    3. Obliczenie składki na ubezpieczenie zdrowotne
                   </strong>
                   . Kwota pozostała po odjęciu składek społecznych staje się podstawą do obliczenie składki zdrowotnej, której wymiar wynosi 9% - narazie jej nie odliczamy od podstawy.
-                </li>
-                <br />
-                <li>
+                </p>
+                <p>
                   <strong>
-                    Ustalenie dochodu pracownika
+                    4. Ustalenie dochodu pracownika
                   </strong>
                   . Od wcześniej obliczonej podstawy odejmujemy tzw. koszty uzyskania dochodu, które w zależności od miejsca wykonywania pracy obecnie wynoszą 250 zł lub 300 zł. Po dokonaniu tego odliczenia otrzymujemy <strong>dochód.</strong>
-                </li>
-                <br />
-                <li>
+                </p>
+                <p>
                   <strong>
-                    Obliczenie zaliczki na podatek dochodowy
+                    5. Obliczenie zaliczki na podatek dochodowy
                   </strong>
                   . Wspomnianą zaliczkę obliczamy według obowiązującej skali podatkowj. Obecnie dla pierwszego progu podatkowego jest to 12 % dochodu minus kwota zmniejszająca podatek wynikająca z powszechnej ulgi czyli 300 zł. Tak obliczoną kwotę pracodawca przekazuje do urzędu skarbowego.
-                </li>
-                <br />
-                <li>
+                </p>
+                <p>
                   <strong>
-                    Obliczenie wynagrodzenia netto
+                    6. Obliczenie wynagrodzenia netto
                   </strong>
                   . Ostatni krok sprowadza się do dokonania odejmowania - od kwoty otrzymanej w kroku nr. 2 czyli po odliczeniu od kwoty brutto składek na ubezpieczenie społeczne, odejmujemy składkę zdrowotną obliczoną w kroku nr. 3, a następnie zaliczkę na podatek dochodowy obliczoną w kroku nr. 5. Tak otrzymana kwota jest <strong>kwotą netto.</strong>
-                </li>
-              </ol>
+                </p>
+              </div>
             </div>
           </article>
         </section>

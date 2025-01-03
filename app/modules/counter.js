@@ -19,8 +19,8 @@ function Counter() {
 
         <fieldset className='counts'>
             <legend className="legend">użytkownicy</legend>
-            <p>dzisiaj: <span style={{color:"#FD5B35"}}>{visitCounts.dailyCount}</span><br/>
-            ogółem: <span style={{color:"#FD5B35"}}>{visitCounts.totalCount}</span></p>
+            <p>dzisiaj: <span style={{color:"red"}}>{visitCounts.dailyCount}</span><br/>
+            ogółem: <span style={{color:"red"}}>{visitCounts.totalCount}</span></p>
         </fieldset>
     );
 }

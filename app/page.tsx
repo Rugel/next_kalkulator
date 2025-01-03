@@ -106,7 +106,7 @@ class MainCom extends React.Component {
     netto = netto.replace('.', ',');
     const Netto = () => netto;
 
-    const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
+    const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
 
     return <div>
       <header><Wynik />
