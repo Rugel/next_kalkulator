@@ -15,7 +15,7 @@ body {
 
 #tytul {
   text-align: center;
-  background-color: #bae1ba;
+  background-color: #E5FAEF;
   padding: 7em 1em .5em 1em;
 
 }
@@ -54,7 +54,7 @@ h1 {
   box-shadow: 0px 0px 15px;
   text-shadow: 3px 3px 5px grey;
   font-weight: 700;
-  background-image: linear-gradient(to right, #638650, #729750, #d9fbbc, #eaf7e3, #d7e2d2, #eaf7e3, #d9fbbc, #729750, #638650);
+  background-color: #9ff5ca;
   z-index: 99;
 }
 
