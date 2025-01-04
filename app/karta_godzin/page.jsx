@@ -99,10 +99,8 @@ class KartaGodz extends React.Component {
     const Input = () => <div id='input'><label><input type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} /><br /><em>wybierz żądany miesiąc</em></label></div>;
     const Month = () => <div id='month'><b>{monthStr} {year}</b></div>;
 
-    const Print = () => {useEffect(() => {if (typeof window !== "undefined") { }
-      }, []);
-      return <div id='print'><label><button onClick={print}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>;
-    }
+    const Print = () => {useEffect(() => {if (typeof window !== "undefined") { }}, []);
+    return <div id='print'><label><button /*onClick={print}*/>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>}
 
     //const Print = () => { if (typeof window !== "undefined") {return <div id='print'><label><button onClick={window.print}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div> } else { null } };
 
