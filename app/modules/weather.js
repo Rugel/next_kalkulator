@@ -32,8 +32,7 @@ class Weather extends React.Component {
 
     componentDidMount() {
         const url = 'https://api.openweathermap.org/data/2.5/weather';
-        fetch
-            (`${url}?q=${this.state.city}&units=metric&lang=pl&appid=${apiKey}`)
+        fetch(`${url}?q=${this.state.city}&units=metric&lang=pl&appid=${apiKey}`)
             .then(response => response.json())
             .then(dane => this.setState({ temp: dane.main.temp, wiatr: dane.wind.speed, stan: dane.weather[0].description, cisnienie: dane.main.pressure, visibility: dane.visibility, clouds: dane.clouds.all, time: new Date(dane.dt * 1000).toLocaleTimeString() })
             )
@@ -72,9 +71,9 @@ class Weather extends React.Component {
             <div>
                 <footer>
                     <div>
-                            <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br /><input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em", letterSpacing:'1px' }} onChange={this.handleChangeCity}></input>
+                        <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br /><input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em", letterSpacing: '1px' }} onChange={this.handleChangeCity}></input>
 
-                            <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor:'white', cursor:'pointer' }} />
+                        <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor: 'white', cursor: 'pointer' }} />
                         <br /><br />
                         Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>
                         <br />

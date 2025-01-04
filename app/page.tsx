@@ -116,7 +116,7 @@ class MainCom extends React.Component {
             <ul className='menu'>
               <li><span style={{ boxShadow: '0 5px' }}>wyliczenie z godzin pracy</span></li>
               <li><Link href="/brutto_netto">przelicznik BRUTTO/NETTO</Link></li>
-              <li>kalkulator stawki godz.</li>
+              <li><Link href="/kalkulator_stawki">kalkulator stawki godz.</Link></li>
               <li>karta godzin pracy</li>
             </ul>
             <Counter />
