@@ -63,6 +63,7 @@ class StaGodz extends React.Component {
                                     <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
                                     <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
                                 </ul>
+                                <Counter />
                             </nav>
                         </div>
                     </div>

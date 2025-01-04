@@ -178,9 +178,7 @@ class MainCom extends React.Component {
             <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
           </div></article></section>
       <Desc />
-      <footer>
-        <Weather />
-      </footer>
+      <Weather />
     </div>
   }
 }
