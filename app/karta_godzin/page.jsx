@@ -3,6 +3,8 @@ import React from 'react';
 import Counter from '../modules/counter';
 import Weather from '../modules/weather';
 import Link from 'next/link';
+import Image from 'next/image';
+import { posix } from 'path';
 
 class KartaGodz extends React.Component {
 
@@ -15,7 +17,7 @@ class KartaGodz extends React.Component {
   LogoHandlleChange = (e) => { const file = e.target.files[0]; this.setState({ logo: file }) };
 
   render() {
-    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<img id='logo' src={url} alt='logo' />) } else { return null } };
+    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<Image id='logo' width='150' height='180' src={url} alt='logo' />) } else { return null } };
     const Logo = () => <div id='logInp'><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
     const Title = () => <div id='title'><h1>Karta Godzin Pracy</h1></div>;
     const text = this.state.inputVal;
@@ -95,7 +97,7 @@ class KartaGodz extends React.Component {
     };
     const Input = () => <div id='input'><label><input type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} /><br /><em>wybierz żądany miesiąc</em></label></div>;
     const Month = () => <div id='month'><b>{monthStr} {year}</b></div>;
-    const Print = () => <div id='print'><label><button onClick={window.print}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach "zapisz jako PDF"</em></label></div>;
+    const Print = () => <div id='print'><label><button onClick={window.print}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>;
     const Enploy = () => <div id='enploy'><em>pracownik:</em><hr className='hr' /><br /><em>stanowisko:</em><hr className='hr' /><br /></div>
     const Rows = () => table.map((e) => e);
     const Table = () => <table id='table'>
@@ -153,7 +155,7 @@ class KartaGodz extends React.Component {
             <ul>
               <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
               <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
-              <li>użyć przycisku „Drukuj” i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie „PDF”, by np. przesłać go za pomocą e-mail</li>
+              <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
             </ul>
             <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
           </div>
