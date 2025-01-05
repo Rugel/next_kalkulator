@@ -217,11 +217,6 @@ ul li {
   font-size: large;
 }
 
-li a {
-  text-decoration: none;
-  color: black;
-}
-
 .noMatch {
   margin-top: 30vh;
   font-size: large;
@@ -334,10 +329,6 @@ th {
 #link {
   text-align: left;
   margin-top: 15px;
-}
-
-a {
-  text-decoration: none;
 }
 
 hr {

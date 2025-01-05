@@ -13,16 +13,16 @@ const Cookies_info = () => <div> <div className="cookies">
     <p><b>3. Personalizacji treści</b> – dostosowywania wyświetlanych treści i reklam do preferencji użytkownika.</p>
     <p><b>4. Analizy i statystyk</b> – zbierania anonimowych danych statystycznych, które pomagają nam lepiej zrozumieć potrzeby użytkowników i dostosowywać stronę do ich oczekiwań.</p>
     <br />
-    <h3>Rodzaje plików cookies, które wykorzystujemy</h3><br />
+    <h3>Rodzaje plików cookies, które wykorzystujemy</h3>
     <p><b>1. Pliki cookies niezbędne</b> – są niezbędne do prawidłowego działania naszej strony internetowej. Bez nich niektóre funkcjonalności mogą być niedostępne.</p>
     <p><b>2. Pliki cookies analityczne</b> – umożliwiają zbieranie danych na temat sposobu, w jaki użytkownicy korzystają z naszej strony, co pozwala nam na optymalizację treści i funkcjonalności.</p>
     <p><b>3. Pliki cookies funkcjonalne</b> – pozwalają zapamiętywać wybory użytkownika, takie jak preferencje językowe czy ustawienia personalizacyjne.</p>
     <p><b>4. Pliki cookies reklamowe i marketingowe</b> – wykorzystywane do dostarczania spersonalizowanych reklam i treści zgodnych z zainteresowaniami użytkownika.</p>
     <br />
     <h3>Zarządzanie plikami cookies</h3>
-    <p>Każdy użytkownik ma możliwość zarządzania ustawieniami plików cookies:</p>
-    <p>1. Zmiana ustawień przeglądarki – Większość przeglądarek internetowych pozwala na kontrolowanie plików cookies, w tym ich blokowanie lub usuwanie. W ustawieniach przeglądarki można wybrać opcję odrzucania wszystkich plików cookies lub tylko tych pochodzących od zewnętrznych dostawców.</p>
-    <p>2.  Wycofanie zgody – W dowolnym momencie możesz wycofać zgodę na wykorzystywanie plików cookies, usuwając je z przeglądarki i zmieniając ustawienia.</p><br />
+    <h4>Każdy użytkownik ma możliwość zarządzania ustawieniami plików cookies:</h4>
+    <p><b>1. Zmiana ustawień przeglądarki</b> – Większość przeglądarek internetowych pozwala na kontrolowanie plików cookies, w tym ich blokowanie lub usuwanie. W ustawieniach przeglądarki można wybrać opcję odrzucania wszystkich plików cookies lub tylko tych pochodzących od zewnętrznych dostawców.</p>
+    <p><b>2.  Wycofanie zgody</b> – W dowolnym momencie możesz wycofać zgodę na wykorzystywanie plików cookies, usuwając je z przeglądarki i zmieniając ustawienia.</p><br />
     <h3>Jak zmienić ustawienia przeglądarki?</h3>
     <p>
         Aby zmienić ustawienia dotyczące plików cookies, zapoznaj się z instrukcjami dostarczonymi przez producenta przeglądarki, której używasz:<br /><br />

@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const Desc = () => { return( <section className='desc'><div>
 <strong>Przedstawiony tutaj Kalkulator służy do wyliczenia kwoty wynagrodzenia netto, czyli &quot;na rękę&quot; dla pracownika, który jest zatrudniony w oparciu o umowę o pracę.
@@ -24,7 +25,7 @@ const Desc = () => { return( <section className='desc'><div>
   Od 1 stycznia 2023 roku obowiązuje nowy wzór <strong>PIT-2</strong>. Formularz ten składa się raz w roku, w celu upoważnienia płatnika (np. pracodawcy, zleceniodawcy) do zmniejszania zaliczki na podatek dochodowy o kwotę zmniejszającą podatek. Najważniejsze zmiany w nowym PIT-2 to:</p>
   <p>- możliwość dzielenia kwoty zmniejszającej podatek między maksymalnie 3 płatników - do tej pory kwota zmniejszająca podatek mogła być stosowana tylko przez jednego płatnika. Nowy PIT-2 pozwala na podzielenie kwoty zmniejszającej podatek między trzech płatników, w tym między pracodawcę, zleceniodawcę i ZUS</p>
   <p>- zawiera wszystkie wnioski i oświadczenia wpływające na ustalenie zaliczki na podatek dochodowy - do tej pory na formularzu PIT-2 składało się tylko oświadczenie o stosowaniu kwoty zmniejszającej podatek wynikającej z kwoty wolnej od podatku.</p>
-  <p>Nowy PIT-2 można złożyć w dowolnym momencie roku, jednak najlepiej zrobić to zaraz po podjęciu pracy.<br /><a href="https://www.gov.pl/attachment/7d32c2f6-e428-4824-80fc-bd2f6c07bb0f">PIT-2(9)</a> - link do pobrania formularza PIT-2
+  <p>Nowy PIT-2 można złożyć w dowolnym momencie roku, jednak najlepiej zrobić to zaraz po podjęciu pracy.<br /><Link href="https://www.gov.pl/attachment/7d32c2f6-e428-4824-80fc-bd2f6c07bb0f">PIT-2(9)</Link> - link do pobrania formularza PIT-2
 </p><p>
   Kalkulator uwzględnia najnowsze przepisy podatkowe i regulacje dotyczące wynagrodzeń. Jeśli potrzebujesz dokładniejszych informacji, zawsze warto skonsultować się z ekspertem finansowym lub działem kadr.
 </p><p>
