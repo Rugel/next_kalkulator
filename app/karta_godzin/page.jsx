@@ -5,6 +5,7 @@ import Weather from '../modules/weather';
 import Link from 'next/link';
 import Image from 'next/image';
 import Print from '../modules/print';
+import Cookie from '../modules/cookies';
 
 class KartaGodz extends React.Component {
 
@@ -17,7 +18,7 @@ class KartaGodz extends React.Component {
   LogoHandlleChange = (e) => { const file = e.target.files[0]; this.setState({ logo: file }) };
 
   render() {
-    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<Image id='logo' width='150' height='180' layout="intrinsic" src={url} alt='logo' />) } else { return null } };
+    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<Image id='logo' width={100} height={150} layout='intrinsic' src={url} alt='logo' />) } else { return null } };
     const Logo = () => <div id='logInp'><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
     const Title = () => <div id='title'><h1>Karta Godzin Pracy</h1></div>;
     const text = this.state.inputVal;
@@ -160,6 +161,7 @@ class KartaGodz extends React.Component {
           </div>
           <Weather />
         </article>
+        <Cookie />
       </div>
     );
   }

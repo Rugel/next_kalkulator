@@ -391,6 +391,17 @@ hr {
   border: none;
 }
 
+.cookies {
+  left: 0;
+  right: 0;
+  margin: auto;
+  max-width: 800px;
+  width: 80%;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  text-align: left;
+}
+
 @media only screen and (min-width:1220px) {
   table {
     width: 800px;
@@ -422,7 +433,8 @@ hr {
   #logInp,
   #link,
   article,
-  header {
+  header,
+  .cookies {
     display: none;
   }
 

@@ -7,6 +7,7 @@ import Counter from './modules/counter';
 import Swal from 'sweetalert2';
 import Weather from './modules/weather';
 import Link from 'next/link';
+import Cookie from './modules/cookies';
 
 class MainCom extends React.Component {
   state = {
@@ -179,6 +180,7 @@ class MainCom extends React.Component {
           </div></article></section>
       <Desc />
       <Weather />
+      <Cookie />
     </div>
   }
 }

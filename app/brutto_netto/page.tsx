@@ -6,6 +6,7 @@ import Counter from '../modules/counter';
 import Weather from '../modules/weather';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
+import Cookie from '../modules/cookies';
 
 class BnN extends React.Component {
   state = {
@@ -159,6 +160,7 @@ class BnN extends React.Component {
           </article>
         </section>
         <Weather />
+        <Cookie />
       </div>
     )
   }
