@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Input from '../modules/input';
-import Counter from '../modules/counter';
+//import Counter from '../modules/counter';
 import Weather from '../modules/weather';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
@@ -78,7 +78,7 @@ class BnN extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><Link href={'/karta_godzin'}>karta godzin pracy</Link></li>
                 </ul>
-                <Counter />
+                {/*<Counter />*/}
               </nav>
             </div>
           </div>
