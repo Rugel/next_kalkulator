@@ -26,10 +26,10 @@ const Cookies_info = () => <div> <div className="cookies">
     <h3>Jak zmienić ustawienia przeglądarki?</h3>
     <p>
         Aby zmienić ustawienia dotyczące plików cookies, zapoznaj się z instrukcjami dostarczonymi przez producenta przeglądarki, której używasz:<br /><br />
-        Google Chrome: <a href="https://supliort.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=pl">Instrukcja</a><br />
-        Mozilla Firefox: <a href="https://supliort.mozilla.org/pl/kb/ciasteczka">Instrukcja</a><br />
-        Microsoft Edge: <a href="https://supliort.microsoft.com/pl-pl/microsoft-edge/usuwanie-plik%C3%B3w-cookie-w-przegl%C4%85darce-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09">Instrukcja</a><br />
-        Safari: <a href="https://supliort.aplile.com/pl-pl/guide/safari/sfri11471/mac">Instrukcja</a><br />
+        Google Chrome: <a href="https://support.google.com/chrome/answer/95647?co=GENIE.Platform%3DDesktop&hl=pl">Instrukcja</a><br />
+        Mozilla Firefox: <a href="https://support.mozilla.org/pl/kb/ciasteczka">Instrukcja</a><br />
+        Microsoft Edge: <a href="https://support.microsoft.com/pl-pl/microsoft-edge/usuwanie-plik%C3%B3w-cookie-w-przegl%C4%85darce-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09">Instrukcja</a><br />
+        Safari: <a href="https://support.apple.com/pl-pl/guide/safari/sfri11471/mac">Instrukcja</a><br />
     </p><br />
     <h3>Czy pliki cookies przechowują dane osobowe?</h3>
     <p>Pliki cookies, które wykorzystujemy, nie przechowują danych osobowych użytkowników, takich jak imię, nazwisko czy adres e-mail. W niektórych przypadkach dane mogą być zbierane anonimowo w celu analizy statystycznej.
