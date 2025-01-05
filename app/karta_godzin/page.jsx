@@ -17,7 +17,7 @@ class KartaGodz extends React.Component {
   LogoHandlleChange = (e) => { const file = e.target.files[0]; this.setState({ logo: file }) };
 
   render() {
-    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<Image id='logo' width='150' height='180' src={url} alt='logo' />) } else { return null } };
+    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<Image id='logo' width='150' height='180' layout="intrinsic" src={url} alt='logo' />) } else { return null } };
     const Logo = () => <div id='logInp'><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
     const Title = () => <div id='title'><h1>Karta Godzin Pracy</h1></div>;
     const text = this.state.inputVal;
@@ -97,12 +97,6 @@ class KartaGodz extends React.Component {
     };
     const Input = () => <div id='input'><label><input type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} /><br /><em>wybierz żądany miesiąc</em></label></div>;
     const Month = () => <div id='month'><b>{monthStr} {year}</b></div>;
-
-    //const Print = () => {useEffect(() => {if (typeof window !== "undefined") { }}, []);
-    //return <div id='print'><label><button /*onClick={print}*/>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>}
-
-    //const Print = () => { if (typeof window !== "undefined") {return <div id='print'><label><button onClick={window.print}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div> } else { null } };
-
     const Enploy = () => <div id='enploy'><em>pracownik:</em><hr className='hr' /><br /><em>stanowisko:</em><hr className='hr' /><br /></div>
     const Rows = () => table.map((e) => e);
     const Table = () => <table id='table'>
