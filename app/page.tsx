@@ -1,9 +1,8 @@
 'use client';
 import React from 'react';
 import Input from './modules/input';
-import Footer from './modules/footer';
 import Desc from './modules/descryption';
-import Counter from './modules/counter';
+//import Counter from './modules/counter';
 import Swal from 'sweetalert2';
 import Weather from './modules/weather';
 import Link from 'next/link';
@@ -120,7 +119,7 @@ class MainCom extends React.Component {
               <li><Link href="/kalkulator_stawki">kalkulator stawki godz.</Link></li>
               <li><Link href="/karta_godzin">karta godzin pracy</Link></li>
             </ul>
-            <Counter />
+            {/*<Counter />*/}
           </div>
         </div>
         </nav>

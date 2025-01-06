@@ -1,60 +1,60 @@
-// Inicjalizacja połączenia z Redis
-import Redis from "ioredis";
+import { createClient } from 'redis';
 
-const redis = new Redis({
-  url: 'https://coherent-cub-48245.upstash.io',
-  token: 'Abx1AAIjcDE4OTg3OGNkYzdiNzQ0YTEyOTc0NTU2YTkyMmVjNjcwMHAxMA',
-})
+// Inicjalizacja klienta Redis z Upstash
+const redis = createClient({
+  url: process.env.REDIS_URL, // URL z Upstash Redis (dostaniesz go po utworzeniu bazy)
+  password: process.env.REDIS_PASSWORD, // Hasło Redis (także dostępne w panelu Upstash)
+});
 
-await redis.set('foo', 'bar');
+redis.connect();
 
-export async function GET(req) {
-  const currentDate = new Date().toISOString().split('T')[0]; // Dzisiejsza data w formacie YYYY-MM-DD
+export default async function handler(req, res) {
+  // Ustaw nagłówki CORS i cache
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, max-age=0');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
 
-  // Klucz Redis dla dziennego i całkowitego licznika
-  const dailyCountKey = `dailyCount:${currentDate}`;
-  const totalCountKey = 'totalCount';
+  // Obsługuje zapytania GET
+  if (req.method === 'GET') {
+    const currentDate = new Date().toISOString().split('T')[0]; // dzisiejsza data w formacie YYYY-MM-DD
+    const cookie = req.cookies['hasVisitedToday'];
 
-  try {
-    // Sprawdź, czy użytkownik odwiedził już stronę
-    const cookie = req.headers.get('cookie') || '';
-    const hasVisitedToday = cookie.includes('hasVisitedToday=true');
+    // Sprawdź, czy użytkownik już odwiedził stronę dzisiaj
+    let storedDate = await redis.get('storedDate');
+    let dailyCount = parseInt(await redis.get('dailyCount')) || 0;
+    let totalCount = parseInt(await redis.get('totalCount')) || 0;
 
-    let dailyCount = await redis.get(dailyCountKey) || 0;
-    let totalCount = await redis.get(totalCountKey) || 0;
+    if (!cookie) {
+      if (storedDate === currentDate) {
+        // Zwiększ dzienny licznik
+        dailyCount++;
+      } else {
+        // Zresetuj dzienny licznik
+        storedDate = currentDate;
+        dailyCount = 1;
+      }
 
-    if (!hasVisitedToday) {
-      // Jeśli użytkownik nie odwiedził strony dzisiaj, zaktualizuj liczniki
-      dailyCount = parseInt(dailyCount, 10) + 1;
-      totalCount = parseInt(totalCount, 10) + 1;
+      // Zwiększ ogólny licznik
+      totalCount++;
 
-      // Zapisz nową wartość w Redis
-      await redis.set(dailyCountKey, dailyCount);
-      await redis.set(totalCountKey, totalCount);
+      // Zapisz nowe wartości w Redis
+      await redis.set('storedDate', storedDate);
+      await redis.set('dailyCount', dailyCount);
+      await redis.set('totalCount', totalCount);
 
-      // Ustaw cookie w odpowiedzi
-      return new Response(
-        JSON.stringify({ dailyCount, totalCount }),
-        {
-          status: 200,
-          headers: {
-            'Set-Cookie': `hasVisitedToday=true; Path=/; HttpOnly; Max-Age=${24 * 60 * 60}`,
-            'Content-Type': 'application/json',
-          },
-        }
-      );
+      // Ustaw cookie
+      res.setHeader('Set-Cookie', 'hasVisitedToday=true; Max-Age=86400; Path=/; HttpOnly');
     }
 
-    // Zwróć aktualne wartości liczników
-    return new Response(
-      JSON.stringify({ dailyCount, totalCount }),
-      { status: 200, headers: { 'Content-Type': 'application/json' } }
-    );
-  } catch (error) {
-    console.error('Error:', error);
-    return new Response(
-      JSON.stringify({ error: 'Internal Server Error' }),
-      { status: 500, headers: { 'Content-Type': 'application/json' } }
-    );
+    // Zwróć aktualne liczby
+    return res.status(200).json({
+      dailyCount,
+      totalCount,
+    });
+  } else {
+    return res.status(405).json({ error: 'Method not allowed' });
   }
 }
