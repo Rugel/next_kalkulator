@@ -1,5 +1,5 @@
 // Inicjalizacja połączenia z Redis
-import { Redis } from '@upstash/redis';
+import Redis from "ioredis";
 
 const redis = new Redis({
   url: 'https://coherent-cub-48245.upstash.io',
