@@ -392,6 +392,9 @@ hr {
   margin-bottom: 2em;
   text-align: left;
 }
+a:visited{
+  color: blue;
+}
 
 @media only screen and (min-width:1220px) {
   table {
