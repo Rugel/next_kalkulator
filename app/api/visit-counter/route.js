@@ -1,12 +1,14 @@
 import Redis from 'ioredis';
 
 // Inicjalizacja połączenia z Redis
+import { Redis } from '@upstash/redis'
+
 const redis = new Redis({
-  url: process.env.UPSTASH_REDIS_REST_URL,
-  token: process.env.UPSTASH_REDIS_REST_TOKEN,
-  port: 6379, // Port dla Redis
-  tls: {},
-});
+  url: 'https://coherent-cub-48245.upstash.io',
+  token: 'Abx1AAIjcDE4OTg3OGNkYzdiNzQ0YTEyOTc0NTU2YTkyMmVjNjcwMHAxMA',
+})
+
+await redis.set('foo', 'bar');
 
 export async function GET(req) {
   const currentDate = new Date().toISOString().split('T')[0]; // Dzisiejsza data w formacie YYYY-MM-DD
