@@ -7,7 +7,7 @@ function Counter() {
 
     useEffect(() => {
         // Pobierz liczbę odwiedzin z serwera PHP
-        fetch('https://stawka-godzinowa.pl/count.php')
+        fetch('http://localhost:3000/api/visit-counter')
             .then(response => response.json())  // Oczekujemy odpowiedzi w formacie JSON
             .then(data => {
                 setVisitCounts(data);  // Ustawiamy stan komponentu na otrzymane wartości

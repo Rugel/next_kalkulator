@@ -2,7 +2,7 @@
 import React from 'react';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
-//import Counter from '../modules/counter';
+import Counter from '../modules/counter';
 import Weather from '../modules/weather';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
@@ -64,7 +64,7 @@ class StaGodz extends React.Component {
                                     <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
                                     <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
                                 </ul>
-                                {/*<Counter />*/}
+                                <Counter />
                             </nav>
                         </div>
                     </div>

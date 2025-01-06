@@ -300,8 +300,10 @@ th {
 
 #logo {
   position: absolute;
-  right: 15px;
+  right: 7%;
   margin-top: 15px;
+  width: 100px;
+height: 180px;
 }
 
 .holyday {
