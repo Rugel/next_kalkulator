@@ -7,7 +7,7 @@ function Counter() {
 
     useEffect(() => {
         // Pobierz liczbę odwiedzin z serwera PHP
-        fetch('http://localhost:3000/api/visit-counter')
+        fetch('https://sharp-porpoise-41500.upstash.io')
             .then(response => response.json())  // Oczekujemy odpowiedzi w formacie JSON
             .then(data => {
                 setVisitCounts(data);  // Ustawiamy stan komponentu na otrzymane wartości
