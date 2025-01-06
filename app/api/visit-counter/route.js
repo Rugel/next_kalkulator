@@ -2,8 +2,8 @@ import Redis from 'ioredis';
 
 // Inicjalizacja połączenia z Redis
 const redis = new Redis({
-  host: UPSTASH_REDIS_REST_URL,
-  password: UPSTASH_REDIS_REST_TOKEN,
+  host: process.env.UPSTASH_REDIS_REST_URL,
+  password: process.env.UPSTASH_REDIS_REST_TOKEN,
   port: 6379, // Port dla Redis
   tls: {},
 });
