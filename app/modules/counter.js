@@ -1,28 +1,31 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 function Counter() {
-    const [visitCounts, setVisitCounts] = useState({ dailyVisits: 0, totalVisits: 0, cookie: 'not set', cookieSet: 'false' });
+  const [visits, setVisits] = useState(null);
 
-    useEffect(() => {
-        // Pobierz liczbę odwiedzin z serwera PHP
-        fetch('/api/visit-counter')
-            .then(response => response.json())  // Oczekujemy odpowiedzi w formacie JSON
-            .then(data => {
-                setVisitCounts(data);  // Ustawiamy stan komponentu na otrzymane wartości
-            })
-            .catch(error => console.error('Error fetching visit counts:', error));  // Obsługa błędów
-    }, []);
+  useEffect(() => {
+    async function fetchVisits() {
+      try {
+        const response = await fetch("/api/visits");
+        const data = await response.json();
+        setVisits(data.visits);
+      } catch (error) {
+        console.error("Error fetching visit count:", error);
+      }
+    }
 
-    return (
+    fetchVisits();
+  }, []);
 
-        <fieldset className='counts'>
-            <legend className="legend">użytkownicy</legend>
-            <p>dzisiaj: <span style={{color:"red"}}>{visitCounts.dailyVisits}</span><br/>
-            ogółem: <span style={{color:"red"}}>{visitCounts.totalVisits}</span></p>
-        </fieldset>
-    );
+  return (
+    <div>
+      <h1>Witaj na stronie!</h1>
+      <p>Liczba odwiedzin: {visits !== null ? visits : "Ładowanie..."}</p>
+    </div>
+  );
 }
+
 
 export default Counter;
