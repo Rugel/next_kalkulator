@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import Counter from '../modules/counter';
+//import Counter from '../modules/counter';
 import Weather from '../modules/weather';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -134,7 +134,7 @@ class KartaGodz extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
-                <Counter />
+               {/* <Counter />*/}
               </nav>
             </div>
           </div>
