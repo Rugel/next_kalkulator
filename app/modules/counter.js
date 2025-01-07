@@ -3,11 +3,11 @@
 import React, { useEffect, useState } from 'react';
 
 function Counter() {
-    const [visitCounts, setVisitCounts] = useState({ dailyCount: 0, totalCount: 0, cookie: 'not set', cookieSet: 'false' });
+    const [visitCounts, setVisitCounts] = useState({ dailyVisits: 0, totalVisits: 0, cookie: 'not set', cookieSet: 'false' });
 
     useEffect(() => {
         // Pobierz liczbę odwiedzin z serwera PHP
-        fetch('https://coherent-cub-48245.upstash.io')
+        fetch('/api/visit-counter')
             .then(response => response.json())  // Oczekujemy odpowiedzi w formacie JSON
             .then(data => {
                 setVisitCounts(data);  // Ustawiamy stan komponentu na otrzymane wartości
@@ -19,8 +19,8 @@ function Counter() {
 
         <fieldset className='counts'>
             <legend className="legend">użytkownicy</legend>
-            <p>dzisiaj: <span style={{color:"red"}}>{visitCounts.dailyCount}</span><br/>
-            ogółem: <span style={{color:"red"}}>{visitCounts.totalCount}</span></p>
+            <p>dzisiaj: <span style={{color:"red"}}>{visitCounts.dailyVisits}</span><br/>
+            ogółem: <span style={{color:"red"}}>{visitCounts.totalVisits}</span></p>
         </fieldset>
     );
 }
