@@ -83,7 +83,7 @@ export async function GET(request) {
 }
 
 // Obsługa żądań POST (jeśli potrzebujesz)
- async function POST(request) {
+ export async function POST(request) {
   try {
     await connectRedis();
     const body = await request.json();
