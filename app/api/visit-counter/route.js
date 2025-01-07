@@ -1,7 +1,7 @@
 import { createClient } from "redis";
 import { serialize } from "cookie";
 
-export const client = createClient({
+ const client = createClient({
   url: process.env.REDIS_URL,
 });
 
@@ -9,7 +9,7 @@ client.on("error", (err) => {
   console.error("Redis error:", err);
 });
 
-export async function connectRedis() {
+ async function connectRedis() {
   if (!client.isOpen) {
     await client.connect();
   }
