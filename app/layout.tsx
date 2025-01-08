@@ -9,7 +9,21 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Stawka godzinowa? - ten Kalkulator obliczy Twoje wynagrodzenie!",
   description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia corobowego, urlopu oraz dodatków",
-  keywords: "kalkulator, wynagodzenie, stawka godzinowa"
+  keywords: "kalkulator, wynagodzenie, stawka godzinowa",
+  openGraph: {
+    title: "Stawka godzinowa? - ten Kalkulator obliczy Twoje wynagrodzenie!",
+    description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia corobowego, urlopu oraz dodatków",
+    url: 'https://stawka-godzinowa.pl',
+    type: 'website',
+    images: [
+      {
+        url: '/utils/image.png',
+        width: 1200,
+        height: 630,
+        alt: 'kalkulator',
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
