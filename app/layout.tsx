@@ -53,10 +53,23 @@ export default function RootLayout({
             `,
           }}
         />
-      <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
+        <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Kalkulator Wynagrodzeń",
+              url: "https://stawka-godzinowa.pl",
+              logo: "https://stawka-godzinowa.pl/logo.png",
+            }),
+          }}
+        />
+
       </head>
       <body>
-       <AnalyticsListener />
+        <AnalyticsListener />
         {children}
       </body>
     </html>
