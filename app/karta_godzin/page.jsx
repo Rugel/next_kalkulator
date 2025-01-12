@@ -6,6 +6,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Print from '../modules/print';
 import Cookie from '../modules/cookies';
+import Head from 'next/head';
 
 class KartaGodz extends React.Component {
 
@@ -122,6 +123,9 @@ class KartaGodz extends React.Component {
 
     return (
       <div className="content">
+        <Head>
+          <link rel="canonical" href="https://stawka-godzinowa.pl/karta_godzin" />
+        </Head>
         <header>
           <Wynik />
           <div id="tytul">
@@ -134,7 +138,7 @@ class KartaGodz extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
-               {/* <Counter />*/}
+                {/* <Counter />*/}
               </nav>
             </div>
           </div>

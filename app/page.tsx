@@ -18,7 +18,7 @@ class MainCom extends React.Component {
     illnessworkdays: 0,
     illnessweekenddays: 0,
     avaragehours: 168,
-    avaragemoney: 7444.39,
+    avaragemoney: 8408.17,
     add: 0,
     BaN: 0,
     isConfirmed: false,

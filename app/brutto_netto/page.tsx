@@ -7,6 +7,7 @@ import Weather from '../modules/weather';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
+import Head from 'next/head';
 
 class BnN extends React.Component {
   state = {
@@ -68,6 +69,9 @@ class BnN extends React.Component {
     const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
     return (
       <div>
+        <Head>
+        <link rel="canonical" href="https://stawka-godzinowa.pl/brutto_netto" />
+        </Head>
         <header><Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br /><div className='box'>
