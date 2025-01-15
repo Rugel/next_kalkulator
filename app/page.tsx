@@ -2,7 +2,6 @@
 import React from 'react';
 import Input from './modules/input';
 import Desc from './modules/descryption';
-//import Counter from './modules/counter';
 import Swal from 'sweetalert2';
 import Weather from './modules/weather';
 import Link from 'next/link';
@@ -109,82 +108,84 @@ class MainCom extends React.Component {
 
     const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
 
-    return <div>
-      <Head>
+    return (
+      <>
+        <Head>
           <link rel="canonical" href="https://stawka-godzinowa.pl" />
         </Head>
-      <header><Wynik />
-        <nav><div id="tytul">
-          <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-          <div className='box'>
-            <ul className='menu'>
-              <li><span style={{ boxShadow: '0 5px' }}>wyliczenie z godzin pracy</span></li>
-              <li><Link href="/brutto_netto">przelicznik BRUTTO/NETTO</Link></li>
-              <li><Link href="/kalkulator_stawki">kalkulator stawki godz.</Link></li>
-              <li><Link href="/karta_godzin">karta godzin pracy</Link></li>
-            </ul>
-            {/*<Counter />*/}
+        <main><header><Wynik />
+          <nav><div id="tytul">
+            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
+            <div className='box'>
+              <ul className='menu'>
+                <li><span style={{ boxShadow: '0 5px' }}>wyliczenie z godzin pracy</span></li>
+                <li><Link href="/brutto_netto">przelicznik BRUTTO/NETTO</Link></li>
+                <li><Link href="/kalkulator_stawki">kalkulator stawki godz.</Link></li>
+                <li><Link href="/karta_godzin">karta godzin pracy</Link></li>
+              </ul>
+            </div>
           </div>
-        </div>
-        </nav>
-      </header>
-      <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
-        <div className='box'>
-          <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
-          <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
-          <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
-          <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
-        </div>
-      </fieldset>
+          </nav>
+        </header>
+          <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
+            <div className='box'>
+              <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
+              <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
+              <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
+              <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
+            </div>
+          </fieldset>
 
-      <section><ol id="list">
+          <section><ol id="list">
 
-        <li><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></li>
+            <li><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></li>
 
-        <li><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} /></li>
+            <li><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} /></li>
 
-        <li><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} /></li>
+            <li><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} /></li>
 
-        <li><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} /></li>
+            <li><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} /></li>
 
-        <li><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} /></li>
+            <li><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} /></li>
 
-        <li><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} /></li>
+            <li><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} /></li>
 
-        <li><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} /></li>
+            <li><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} /></li>
 
-        <li><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} /></li>
+            <li><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} /></li>
 
-        <li><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} /></li>
+            <li><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} /></li>
 
-        <li><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} /></li>
-      </ol>
+            <li><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} /></li>
+          </ol>
 
 
-        <article>
-          <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
-            <table>
-              <thead>
-                <tr>
-                  <th scope="col">Nazwa</th>
-                  <th scope="col">Wartość</th>
-                  <th scope="col">Waluta</th>
-                </tr>
-              </thead>
-              <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
-                <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
-                <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
-                <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
-                <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
-              </tbody>
-            </table>
-            <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
-          </div></article></section>
-      <Desc />
-      <Weather />
-      <Cookie />
-    </div>
+            <article>
+              <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Wartość</th>
+                      <th scope="col">Waluta</th>
+                    </tr>
+                  </thead>
+                  <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
+                    <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
+                    <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
+                    <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                  </tbody>
+                </table>
+                <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
+              </div></article></section>
+          <Desc />
+          <Weather />
+          <Cookie />
+        </main>
+      </>
+    )
   }
 }
 export default MainCom;

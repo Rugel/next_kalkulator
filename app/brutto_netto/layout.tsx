@@ -12,7 +12,7 @@ export default function BaN({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
-    return ( 
-             <div>{children}</div>
+    return (
+        <div>{children}</div>
     );
 }

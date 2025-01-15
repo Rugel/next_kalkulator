@@ -1,9 +1,3 @@
-///** @type {import('next').NextConfig} */
-// nextConfig = {
-//    output: 'export',
-//};
-
-//export default nextConfig;
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export', // Statyczne eksportowanie aplikacji
