@@ -4,8 +4,8 @@ import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 
 export const metadata = {
-  title: "Kalkulator Wynagrodzeń dla pracownika rozliczanego za pomocą stawki godzinowej",
-  description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia corobowego, urlopu oraz dodatków",
+  title: "Kalkulator wynagrodzeń dla pracownika ze stawką godzinową",
+  description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
   openGraph: {
     title: "Stawka godzinowa? - ten Kalkulator obliczy Twoje wynagrodzenie!",
     description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia corobowego, urlopu oraz dodatków",
