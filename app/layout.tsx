@@ -1,9 +1,12 @@
-import type { Metadata } from "next";
 import "./globals.css";
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 
 export const metadata = {
+  metadataBase: new URL('https://stawka-godzinowa.pl'),
+  alternates: {
+    canonical: '/',
+  },
   title: "Kalkulator wynagrodzeń dla pracownika ze stawką godzinową",
   description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstwie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
   openGraph: {
@@ -52,7 +55,7 @@ export default function RootLayout({
           }}
         />
         <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
-       {/* <link rel="canonical" href="https://stawka-godzinowa.pl/" />*/}
+        {/* <link rel="canonical" href="https://stawka-godzinowa.pl/" />*/}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

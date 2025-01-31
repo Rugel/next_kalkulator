@@ -6,7 +6,6 @@ import Swal from 'sweetalert2';
 import Weather from './modules/weather';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
-import Head from 'next/head';
 
 class MainCom extends React.Component {
   state = {
@@ -110,9 +109,6 @@ class MainCom extends React.Component {
 
     return (
       <>
-        <Head>
-          <link rel="canonical" href="https://stawka-godzinowa.pl" />
-        </Head>
         <main><header><Wynik />
           <nav><div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
