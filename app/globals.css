@@ -394,7 +394,8 @@ hr {
   margin-bottom: 2em;
   text-align: left;
 }
-a:visited{
+
+a:visited {
   color: blue;
 }
 
@@ -421,7 +422,7 @@ a:visited{
 
   @page {
     size: auto;
-    margin: 1cm;
+    margin: 30px;
   }
 
   #print,
@@ -444,12 +445,11 @@ a:visited{
     height: 4dvh;
   }
 
-  .content {
-    page-break-inside: avoid;
-  }
-
   * {
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+    page-break-inside: avoid !important;
+    page-break-after: avoid !important;
+    page-break-before: avoid !important;
   }
 }
