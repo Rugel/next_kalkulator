@@ -53,65 +53,67 @@ class StaGodz extends React.Component {
         const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Rate /></span> zł / godz</p>) }
 
         return (
-            <div>
+            <>
                 <Head>
                     <link rel="canonical" href="https://stawka-godzinowa.pl/kalkulator_stawki" />
                 </Head>
-                <header><Wynik />
-                    <div id="tytul">
-                        <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-                        <div className='box'>
-                            <nav aria-label="breadcrumb">
-                                <ul className='menu'>
-                                    <li><Link href='/' >wyliczenie z godzin pracy</Link></li>
-                                    <li><Link href='/brutto_netto'>przelicznik BRUTTO/NETTO</Link></li>
-                                    <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
-                                    <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
-                                </ul>
-                                {/*<Counter />*/}
-                            </nav>
+                <div>
+                    <header><Wynik />
+                        <div id="tytul">
+                            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
+                            <div className='box'>
+                                <nav aria-label="breadcrumb">
+                                    <ul className='menu'>
+                                        <li><Link href='/' >wyliczenie z godzin pracy</Link></li>
+                                        <li><Link href='/brutto_netto'>przelicznik BRUTTO/NETTO</Link></li>
+                                        <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
+                                        <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
+                                    </ul>
+                                    {/*<Counter />*/}
+                                </nav>
+                            </div>
                         </div>
-                    </div>
-                </header>
-                <section>
-                    <ol id="list">
-                        <li><Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} /></li>
-                        <li><Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} /></li>
-                    </ol>
-                    <article>
-                        <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
-                            <table>
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nazwa</th>
-                                        <th scope="col">Wartość</th>
-                                        <th scope="col">Waluta</th>
-                                    </tr>
-                                </thead>
-                                <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
-                                    <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
-                                    <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
-                                    <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
-                                    <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                                    <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
-                                </tbody>
-                            </table>
-                            <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
-                        </div></article>
-                    <article>
-                        <div className='desc'>
-                            <p>
-                                Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br /> Wystarczy podzielić miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8. Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
-                            </p>
-                            <p>
-                                Warto zauważyć, że powyższy schemat uwzględnia tylko podstawowe składniki wynagrodzenia, takie jak podstawa, dodatki i premie. W przypadku, gdy wynagrodzenie brutto zawiera dodatkowe składniki, takie jak np. diety, należy je dodać do miesięcznego wynagrodzenia brutto przed przeliczeniem na stawkę godzinową brutto.
-                            </p>
-                        </div>
-                    </article>
-                </section>
-                <Weather />
-                <Cookie />
-            </div>
+                    </header>
+                    <section>
+                        <ol id="list">
+                            <li><Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} /></li>
+                            <li><Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} /></li>
+                        </ol>
+                        <article>
+                            <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Nazwa</th>
+                                            <th scope="col">Wartość</th>
+                                            <th scope="col">Waluta</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
+                                        <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
+                                        <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
+                                        <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
+                                        <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
+                                        <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                                    </tbody>
+                                </table>
+                                <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
+                            </div></article>
+                        <article>
+                            <div className='desc'>
+                                <p>
+                                    Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br /> Wystarczy podzielić miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8. Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
+                                </p>
+                                <p>
+                                    Warto zauważyć, że powyższy schemat uwzględnia tylko podstawowe składniki wynagrodzenia, takie jak podstawa, dodatki i premie. W przypadku, gdy wynagrodzenie brutto zawiera dodatkowe składniki, takie jak np. diety, należy je dodać do miesięcznego wynagrodzenia brutto przed przeliczeniem na stawkę godzinową brutto.
+                                </p>
+                            </div>
+                        </article>
+                    </section>
+                    <Weather />
+                    <Cookie />
+                </div>
+            </>
         )
     }
 }

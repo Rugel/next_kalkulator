@@ -122,51 +122,53 @@ class KartaGodz extends React.Component {
     const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
 
     return (
-      <div className="content">
+      <>
         <Head>
           <link rel="canonical" href="https://stawka-godzinowa.pl/karta_godzin" />
         </Head>
-        <header>
-          <Wynik />
-          <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <div className='box'>
-              <nav aria-label="breadcrumb">
-                <ul className='menu'>
-                  <li><Link href={'/'} >wyliczenie z godzin pracy</Link></li>
-                  <li><Link href={'/brutto_netto'}>przelicznik BRUTTO/NETTO</Link></li>
-                  <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
-                  <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
-                </ul>
-                {/* <Counter />*/}
-              </nav>
+        <div className="content">
+          <header>
+            <Wynik />
+            <div id="tytul">
+              <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
+              <div className='box'>
+                <nav aria-label="breadcrumb">
+                  <ul className='menu'>
+                    <li><Link href={'/'} >wyliczenie z godzin pracy</Link></li>
+                    <li><Link href={'/brutto_netto'}>przelicznik BRUTTO/NETTO</Link></li>
+                    <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
+                    <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
+                  </ul>
+                  {/* <Counter />*/}
+                </nav>
+              </div>
             </div>
-          </div>
-        </header>
-        <RenderImage />
-        <Input />
-        <Logo />
-        <Print />
-        <Title />
-        <Month />
-        <Enploy />
-        <Table />
-        <Podpis />
-        <article>
-          <div className='desc'>
-            <p>
-              Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
-            <ul>
-              <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
-              <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
-              <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
-            </ul>
-            <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
-          </div>
-          <Weather />
-        </article>
-        <Cookie />
-      </div>
+          </header>
+          <RenderImage />
+          <Input />
+          <Logo />
+          <Print />
+          <Title />
+          <Month />
+          <Enploy />
+          <Table />
+          <Podpis />
+          <article>
+            <div className='desc'>
+              <p>
+                Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
+              <ul>
+                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
+                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
+                <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
+              </ul>
+              <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
+            </div>
+            <Weather />
+          </article>
+          <Cookie />
+        </div>
+      </>
     );
   }
 }
