@@ -20,7 +20,7 @@ class KartaGodz extends React.Component {
   render() {
     const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div id='logo'><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
     const Logo = () => <div id='logInp'><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
-    const Title = () => <div id='title'><h1>Karta Godzin Pracy</h1></div>;
+    const Title = () => <div id='title'><h2>Karta Godzin Pracy</h2></div>;
     const text = this.state.inputVal;
     let month = text.slice(5, 7) * 1;
     let year = text.slice(0, 4) * 1;
