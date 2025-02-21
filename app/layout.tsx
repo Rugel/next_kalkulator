@@ -78,11 +78,6 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
                 "logo": "https://stawka-godzinowa.pl/logo.png",
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.5", 
-                "reviewCount": "120"
               }
             }),
           }}
