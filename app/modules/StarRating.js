@@ -4,10 +4,13 @@ import { useState, useEffect } from 'react';
 import styles from './StarRating.module.css';
 
 export default function StarRating({ itemId }) {
-  const [rating, setRating] = useState(0);
-  const [average, setAverage] = useState('0.0');
-  const [votes, setVotes] = useState(0);
-  const [hasVoted, setHasVoted] = useState(false);
+  const [rating, setRating] = useState(0); // Ocena przy hoverze przed głosowaniem
+  const [average, setAverage] = useState('0.0'); // Średnia z API
+  const [votes, setVotes] = useState(0); // Liczba głosów
+  const [hasVoted, setHasVoted] = useState(() => {
+    // Sprawdzamy przy załadowaniu, czy użytkownik już zagłosował
+    return localStorage.getItem(`voted:${itemId}`) === 'true';
+  });
 
   useEffect(() => {
     if (itemId) {
@@ -28,7 +31,10 @@ export default function StarRating({ itemId }) {
   };
 
   const handleRating = async (value) => {
-    if (hasVoted || !itemId) return;
+    // Sprawdzamy, czy użytkownik już zagłosował
+    if (hasVoted || !itemId || localStorage.getItem(`voted:${itemId}`) === 'true') {
+      return;
+    }
 
     try {
       const res = await fetch(`/api/rating/${itemId}`, {
@@ -38,15 +44,29 @@ export default function StarRating({ itemId }) {
       });
 
       if (res.ok) {
-        await fetchRating(); // Ponowne pobranie danych po POST
+        await fetchRating(); // Pobieramy zaktualizowane dane
         setHasVoted(true);
         setRating(value);
+        // Zapisujemy w localStorage, że użytkownik zagłosował
+        localStorage.setItem(`voted:${itemId}`, 'true');
       } else {
         throw new Error('Failed to submit rating');
       }
     } catch (error) {
       console.error('Error submitting rating:', error);
     }
+  };
+
+  // Funkcja określająca klasę dla gwiazdki
+  const getStarClass = (star) => {
+    const currentValue = hasVoted ? parseFloat(average) : rating;
+    if (currentValue >= star) {
+      return `${styles.star} ${styles.filled}`; // Pełna gwiazdka
+    }
+    if (currentValue >= star - 0.5 && currentValue < star) {
+      return `${styles.star} ${styles.halfFilled}`; // Połowa gwiazdki
+    }
+    return styles.star; // Pusta gwiazdka
   };
 
   if (!itemId) {
@@ -56,12 +76,10 @@ export default function StarRating({ itemId }) {
   return (
     <div className={styles.ratingContainer}>
       <div className={styles.stars}>
-        <span>oceń aplikację: </span>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
             key={star}
-            className={`${styles.star} ${(hasVoted ? parseFloat(average) : rating) >= star ? styles.filled : ''
-              }`}
+            className={getStarClass(star)}
             onClick={() => handleRating(star)}
             onMouseEnter={() => !hasVoted && setRating(star)}
             onMouseLeave={() => !hasVoted && setRating(0)}
@@ -69,9 +87,11 @@ export default function StarRating({ itemId }) {
             ★
           </span>
         ))}
-        <span className={styles.stats}>
-          <b> <span style={{color:'green'}}>{average}</span></b> ({votes} głosów)
-        </span>
+      </div>
+      <div className={styles.stats}>
+        {average} ({votes} głosów)
+        {!hasVoted && <span>🟢</span>}
+        {hasVoted && <span>🚫</span>}
       </div>
     </div>
   );
