@@ -6,6 +6,8 @@ import Swal from 'sweetalert2';
 import Weather from '../modules/weather';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
+import StarRating from '../modules/StarRating';
+
 
 class StaGodz extends React.Component {
     state = {
@@ -64,6 +66,7 @@ class StaGodz extends React.Component {
                                     <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
                                     <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
                                 </ul>
+                                <StarRating itemId={123}/>
                                 {/*<Counter />*/}
                             </nav>
                         </div>

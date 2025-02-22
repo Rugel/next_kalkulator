@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    output: 'export', // Statyczne eksportowanie aplikacji
+    //output: 'export', // Statyczne eksportowanie aplikacji
     reactStrictMode: true, // Włącza tryb ścisły Reacta dla łatwiejszego debugowania
     webpack: (config, { isServer }) => {
       if (!isServer) {

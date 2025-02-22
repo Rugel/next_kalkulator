@@ -6,6 +6,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import Print from '../modules/print';
 import Cookie from '../modules/cookies';
+import StarRating from '../modules/StarRating';
+
 
 class KartaGodz extends React.Component {
 
@@ -134,6 +136,7 @@ class KartaGodz extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
+                <StarRating itemId={123}/>
                 {/* <Counter />*/}
               </nav>
             </div>

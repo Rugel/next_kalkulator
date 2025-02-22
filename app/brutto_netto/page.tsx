@@ -7,6 +7,8 @@ import Weather from '../modules/weather';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
+import StarRating from '../modules/StarRating';
+
 
 class BnN extends React.Component {
   state = {
@@ -78,6 +80,7 @@ class BnN extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><Link href={'/karta_godzin'}>karta godzin pracy</Link></li>
                 </ul>
+                <StarRating itemId={123}/>
                 {/*<Counter />*/}
               </nav>
             </div>

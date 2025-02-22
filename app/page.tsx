@@ -111,7 +111,7 @@ class MainCom extends React.Component {
     return (
       <>
         <main><header><Wynik />
-          <nav><div id="tytul"><StarRating itemId={undefined} />
+          <nav><div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
             <div className='box'>
               <ul className='menu'>
@@ -120,6 +120,7 @@ class MainCom extends React.Component {
                 <li><Link href="/kalkulator_stawki">kalkulator stawki godz.</Link></li>
                 <li><Link href="/karta_godzin">karta godzin pracy</Link></li>
               </ul>
+              <StarRating itemId='123' />
             </div>
           </div>
           </nav>
@@ -132,7 +133,7 @@ class MainCom extends React.Component {
               <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
             </div>
           </fieldset>
-
+        
           <section><ol id="list">
 
             <li><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></li>
