@@ -1,0 +1,29 @@
+.ratingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .stars {
+    cursor: pointer;
+  }
+  
+  .star {
+    font-size: 2rem;
+    color: #ddd;
+    transition: color 0.2s;
+  }
+  
+  .star.filled {
+    color: #ffd700;
+  }
+  
+  .star:hover {
+    color: #ffd700;
+  }
+  
+  .stats {
+    font-size: 0.9rem;
+    color: #666;
+  }

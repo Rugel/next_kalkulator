@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import Weather from './modules/weather';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
+import StarRating from './modules/StarRating';
 
 class MainCom extends React.Component {
   state = {
@@ -110,7 +111,7 @@ class MainCom extends React.Component {
     return (
       <>
         <main><header><Wynik />
-          <nav><div id="tytul">
+          <nav><div id="tytul"><StarRating itemId={undefined} />
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
             <div className='box'>
               <ul className='menu'>

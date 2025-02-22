@@ -10,6 +10,7 @@
     "export": "next export"
   },
   "dependencies": {
+    "@upstash/redis": "^1.34.4",
     "cookie": "^1.0.2",
     "next": "^14.2.6",
     "react": "^18.3.1",
