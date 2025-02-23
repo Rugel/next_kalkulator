@@ -23,6 +23,13 @@ body {
 h1 {
   font-size: 30px;
 }
+a, span{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+}
 
 .input {
   text-align: center;
