@@ -16,7 +16,7 @@ body {
 #tytul {
   text-align: center;
   background-color: #99ff99;
-  padding: 7em 1em .5em 1em;
+  padding: 7em 1em .3em 1em;
 
 }
 
@@ -81,7 +81,6 @@ footer {
 
 .box {
   text-align: left;
-  padding-bottom: 1em;
 }
 
 #box,

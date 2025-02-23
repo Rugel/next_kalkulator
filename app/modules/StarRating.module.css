@@ -16,7 +16,7 @@
 }
 
 .star {
-  font-size: 2.5rem;
+  font-size: 2rem;
   color: whitesmoke;
   transition: color 0.2s;
   -webkit-user-select: none;
@@ -36,6 +36,7 @@
 .stats {
   font-size: 0.9rem;
   color: black;
+  text-align: center;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
