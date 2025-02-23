@@ -81,7 +81,7 @@ export default function StarRating({ itemId }) {
 
   return (
     <div className={styles.ratingContainer}>
-      <div className={styles.stars}>ocena: 
+      <div className={styles.stars}>
         {[1, 2, 3, 4, 5].map((star) => (
           <span
             key={star}
@@ -93,7 +93,7 @@ export default function StarRating({ itemId }) {
             ★
           </span>
         ))}
-        <span className={styles.stats}> <span style={{color:'green'}}><b>{average}</b></span> ({votes} głosów){!hasVoted && <span> 🟢</span>}{hasVoted && <span> 🚫</span>}</span>
+        <p className={styles.stats}> <span style={{color:'blue'}}><b>{average}</b></span> ({votes} głosów){!hasVoted && <span> 🟢</span>}{hasVoted && <span> 🚫</span>}</p>
       </div>
     </div>
   );
