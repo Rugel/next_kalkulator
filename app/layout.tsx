@@ -16,7 +16,7 @@ export const metadata = {
     siteName: "Kalkulator Wynagrodzeń",
     images: [
       {
-        url: "https://stawka-godzinowa.pl/image.png",
+        url: "https://stawka-godzinowa.pl/image.webp",
         width: 1200,
         height: 630,
         alt: "Kalkulator Wynagrodzeń",
@@ -66,7 +66,7 @@ export default function RootLayout({
               "name": "Kalkulator Wynagrodzeń",
               "description": "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
               "url": "https://stawka-godzinowa.pl",
-              "image": "https://stawka-godzinowa.pl/image.png",
+              "image": "https://stawka-godzinowa.pl/image.webp",
               "applicationCategory": "Finance",
               "operatingSystem": "Web",
               "offers": {
@@ -77,8 +77,13 @@ export default function RootLayout({
               "publisher": {
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
-                "logo": "https://stawka-godzinowa.pl/logo.png",
-              }
+                "logo": "https://stawka-godzinowa.pl/logo.webp",
+              },
+              "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.4", // Średnia ocena (np. od 1 do 5)
+        "reviewCount": "7"
+      }
             }),
           }}
         />
