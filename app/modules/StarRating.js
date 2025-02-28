@@ -22,7 +22,7 @@ export default function StarRating({ itemId }) {
     if (itemId) {
       fetchRating();
     }
-  }, [itemId, fetchRating]);
+  }, [itemId]);
 
   const fetchRating = async () => {
     try {
