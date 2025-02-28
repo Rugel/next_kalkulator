@@ -57,7 +57,7 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
         {/* Dane strukturalne dla SoftwareApplication */}
-        <script
+        <Script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
@@ -80,12 +80,19 @@ export default function RootLayout({
                 "logo": "https://stawka-godzinowa.pl/logo.webp",
               },
               "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.4", // Średnia ocena (np. od 1 do 5)
-        "reviewCount": "7"
-      }
+                "@type": "AggregateRating",
+                "ratingValue": "4.4", // Średnia ocena (np. od 1 do 5)
+                "reviewCount": "7"
+              }
             }),
           }}
+        />
+        {/* Skrypt AdSense */}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
+          strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
+          crossOrigin="anonymous"
         />
       </head>
       <body>

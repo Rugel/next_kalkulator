@@ -7,6 +7,7 @@ import Weather from './modules/weather';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
 import StarRating from './modules/StarRating';
+import AdSense from './modules/AdSense';
 
 class MainCom extends React.Component {
   state = {
@@ -125,6 +126,11 @@ class MainCom extends React.Component {
           </div>
           </nav>
         </header>
+        <AdSense
+        adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+        adSlot="3856131321" // ID jednostki reklamowej
+        style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+      />
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
             <div className='box'>
               <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
@@ -133,7 +139,7 @@ class MainCom extends React.Component {
               <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
             </div>
           </fieldset>
-        
+
           <section><ol id="list">
 
             <li><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></li>
