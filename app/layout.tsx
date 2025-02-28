@@ -57,7 +57,7 @@ export default function RootLayout({
         />
         <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
         {/* Dane strukturalne dla SoftwareApplication */}
-        <Script
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
