@@ -10,7 +10,7 @@ import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
 
 
-class BnN extends React.Component {
+class BruttoNetto extends React.Component {
   state = {
     BaN: 0,
     isConfirmed: false,
@@ -168,4 +168,4 @@ class BnN extends React.Component {
     )
   }
 }
-export default BnN;
+export default BruttoNetto;

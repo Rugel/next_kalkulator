@@ -1,38 +1,32 @@
 import type { Metadata } from "next";
-
+import type { ReactNode } from "react";
 
 export const metadata: Metadata = {
-    metadataBase: new URL('https://stawka-godzinowa.pl'),
+    metadataBase: new URL("https://stawka-godzinowa.pl"),
     alternates: {
-        canonical: '/brutto_netto',
+        canonical: "/brutto_netto",
     },
-    title: "Przelicznik wynagrodzenia brutto na netto",
-    description: "Kalkulator przeliczy wynagrodzenie brutto na netto - wystarczy zaznaczyć właściwe opcje i podać kwotę brutto.",
-    keywords: "kalkulator, wynagodzenie, brutto, netto",
+    title: "Przelicznik Wynagrodzenia Brutto na Netto",
+    description: "Oblicz szybko swoje wynagrodzenie netto z brutto! Wybierz opcje, podaj kwotę brutto i sprawdź wynik w naszym kalkulatorze.",
+    keywords: "kalkulator wynagrodzenia, brutto netto, przelicznik płac, wynagrodzenie netto, obliczenia płacowe, kalkulator płac 2025",
     openGraph: {
-        title: "Przelicznik wynagrodzenia brutto na netto",
-        description: "Kalkulator przeliczy wynagrodzenie brutto na netto - wystarczy zaznaczyć właściwe opcje i podać kwotę brutto.",
+        title: "Przelicznik Wynagrodzenia Brutto na Netto",
+        description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą prostego kalkulatora online – szybkie i dokładne wyniki!",
         url: "https://stawka-godzinowa.pl/brutto_netto",
-        siteName: "Przelicznik brutto na netto",
+        siteName: "Stawka Godzinowa",
         images: [
             {
-                url: "https://stawka-godzinowa.pl/brutto_na_netto.webp",
+                url: "https://stawka-godzinowa.pl/brutto_netto.webp",
                 width: 1200,
                 height: 630,
-                alt: "Brutto na netto"
-            }
+                alt: "Przelicznik wynagrodzenia brutto na netto",
+            },
         ],
         locale: "pl_PL",
         type: "website",
     },
 };
 
-export default function BaN({
-    children,
-}: Readonly<{
-    children: React.ReactNode;
-}>) {
-    return (
-        <div>{children}</div>
-    );
+export default function BruttoNettoLayout({ children }: { children: ReactNode }) {
+    return <main>{children}</main>;
 }
