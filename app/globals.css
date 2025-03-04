@@ -438,7 +438,8 @@ a:visited {
   #link,
   article,
   header,
-  .cookies {
+  .cookies,
+  .footer {
     display: none;
   }
 

@@ -3,7 +3,6 @@ import React from 'react';
 import Input from './modules/input';
 import Desc from './modules/descryption';
 import Swal from 'sweetalert2';
-import Weather from './modules/weather';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
 import StarRating from './modules/StarRating';
@@ -185,7 +184,6 @@ class MainCom extends React.Component {
                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
               </div></article></section>
           <Desc />
-          <Weather />
           <Cookie />
         </main>
       </>

@@ -2,8 +2,6 @@
 
 import React from 'react';
 import Input from '../modules/input';
-//import Counter from '../modules/counter';
-import Weather from '../modules/weather';
 import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
@@ -80,7 +78,7 @@ class BruttoNetto extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><Link href={'/karta_godzin'}>karta godzin pracy</Link></li>
                 </ul>
-                <StarRating itemId={123}/>
+                <StarRating itemId={123} />
                 {/*<Counter />*/}
               </nav>
             </div>
@@ -162,7 +160,6 @@ class BruttoNetto extends React.Component {
             </div>
           </article>
         </section>
-        <Weather />
         <Cookie />
       </div>
     )

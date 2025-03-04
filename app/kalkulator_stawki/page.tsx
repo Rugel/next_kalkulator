@@ -2,8 +2,6 @@
 import React from 'react';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
-//import Counter from '../modules/counter';
-import Weather from '../modules/weather';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
@@ -108,7 +106,6 @@ class StaGodz extends React.Component {
                         </div>
                     </article>
                 </section>
-                <Weather />
                 <Cookie />
             </div>
         )

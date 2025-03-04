@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../modules/footer";
 
-const Cookies_info = () => <div> <div className="cookies">
+const Cookies_info = () => <div className="cookies">
     <h1>Informacja o plikach cookies</h1><br />
     <h3>Czym są pliki cookies?</h3>
     <p>Pliki cookies (tzw. „ciasteczka”) to niewielkie pliki tekstowe zapisywane i przechowywane na urządzeniu końcowym użytkownika (np. komputerze, smartfonie czy tablecie) podczas przeglądania stron internetowych. Pliki te są powszechnie stosowane w celu poprawy funkcjonalności stron internetowych, dostarczania spersonalizowanych treści oraz analizowania ruchu na stronie.</p><br />
@@ -40,7 +40,5 @@ const Cookies_info = () => <div> <div className="cookies">
     <h3>Zmiany w polityce cookies</h3>
     <p>Zastrzegamy sobie prawo do wprowadzania zmian w niniejszej polityce plików cookies w dowolnym momencie. Wszelkie zmiany będą publikowane na tej stronie.
     </p>
-</div>
-    <Footer /><br />
 </div>
 export default Cookies_info;

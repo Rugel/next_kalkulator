@@ -1,7 +1,5 @@
 'use client';
 import React from 'react';
-//import Counter from '../modules/counter';
-import Weather from '../modules/weather';
 import Link from 'next/link';
 import Image from 'next/image';
 import Print from '../modules/print';
@@ -136,7 +134,7 @@ class KartaGodz extends React.Component {
                   <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
-                <StarRating itemId={123}/>
+                <StarRating itemId={123} />
                 {/* <Counter />*/}
               </nav>
             </div>
@@ -162,7 +160,6 @@ class KartaGodz extends React.Component {
             </ul>
             <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
           </div>
-          <Weather />
         </article>
         <Cookie />
       </div>

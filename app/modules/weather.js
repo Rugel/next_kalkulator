@@ -68,25 +68,21 @@ class Weather extends React.Component {
 
     render() {
         return (
-            <div>
-                <footer>
-                    <div>
-                        <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br /><input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em", letterSpacing: '1px' }} onChange={this.handleChangeCity}></input>
+            <footer className="footer">
+                <span style={{ fontSize: "18px", color: "#ffffff" }}>Pogoda w Twoim mieście: </span><br /><input id='town' className="input" type="text" placeholder={this.state.cityOk} autoComplete="off" style={{ width: "8em", height: "2.3em", letterSpacing: '1px' }} onChange={this.handleChangeCity}></input>
 
-                        <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor: 'white', cursor: 'pointer' }} />
-                        <br /><br />
-                        Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>
-                        <br />
-                        <Image className='icon' src={summer} alt="summer" /> stan: <span className='span'>{this.state.stan}</span><br />
-                        <Image className='icon' src={temp} alt="temperature" /> temp.: <span className='span'>{this.state.temp} &#176;C</span>
-                        <Image className='icon' src={wind} alt="wind" /> wiatr: <span className='span'>{this.state.wiatr} m/s</span><br />
-                        <Image className='icon' src={pressure} alt="pressure" />  ciśnienie: <span className='span'>{this.state.cisnienie} hPa</span>
-                        <Image className='icon' src={vision} alt="visibillity" /> widoczność: <span className='span'>{this.state.visibility} m</span><br />
-                        <Image className='icon' src={clouds} alt="clouds" /> zachmurzenie:  <span className='span'>{this.state.clouds} %</span><br /><br />
-                        <Footer />
-                    </div>
-                </footer>
-            </div>
+                <Image src={geo} onClick={this.handleClickLocal} alt="GPS" style={{ width: "2.7em", height: "2.8em", borderRadius: "15%", outline: "none", marginLeft: "1em", position: "relative", top: "1em", backgroundColor: 'white', cursor: 'pointer' }} />
+                <br /><br />
+                Aktualna pogoda dla miasta <span className='span'>{this.state.cityOk} - {this.state.country}</span> <span className='span' style={{ fontWeight: "300" }}>({this.state.time})</span>
+                <br />
+                <Image className='icon' src={summer} alt="summer" /> stan: <span className='span'>{this.state.stan}</span><br />
+                <Image className='icon' src={temp} alt="temperature" /> temp.: <span className='span'>{this.state.temp} &#176;C</span>
+                <Image className='icon' src={wind} alt="wind" /> wiatr: <span className='span'>{this.state.wiatr} m/s</span><br />
+                <Image className='icon' src={pressure} alt="pressure" />  ciśnienie: <span className='span'>{this.state.cisnienie} hPa</span>
+                <Image className='icon' src={vision} alt="visibillity" /> widoczność: <span className='span'>{this.state.visibility} m</span><br />
+                <Image className='icon' src={clouds} alt="clouds" /> zachmurzenie:  <span className='span'>{this.state.clouds} %</span><br /><br />
+                <Footer />
+            </footer>
         )
     }
 

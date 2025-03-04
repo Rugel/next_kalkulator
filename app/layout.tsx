@@ -1,6 +1,7 @@
 import "./globals.css";
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
+import Weather from "./modules/weather";
 
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -81,8 +82,8 @@ export default function RootLayout({
               },
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "4.4", // Średnia ocena (np. od 1 do 5)
-                "reviewCount": "7"
+                "ratingValue": "4.6", // Średnia ocena (np. od 1 do 5)
+                "reviewCount": "9"
               }
             }),
           }}
@@ -98,6 +99,7 @@ export default function RootLayout({
       <body>
         <AnalyticsListener />
         {children}
+        <Weather />
       </body>
     </html>
   );
