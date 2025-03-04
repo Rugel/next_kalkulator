@@ -10,6 +10,7 @@
 }
 
 .stars {
+  text-align: center;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
@@ -26,8 +27,8 @@
   cursor: pointer;
   position: relative;
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: fit-content;
+  height: fit-content;
   background: linear-gradient(to right, goldenrod var(--fill), white var(--fill));
   background-clip: text;
   -webkit-background-clip: text;
