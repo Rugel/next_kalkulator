@@ -23,6 +23,15 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  background: linear-gradient(to right, gold var(--fill), #ddd var(--fill));
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .star.filled {

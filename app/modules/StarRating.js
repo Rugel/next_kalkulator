@@ -63,16 +63,15 @@ export default function StarRating({ itemId }) {
     }
   };
 
-  // Funkcja określająca klasę dla gwiazdki
-  const getStarClass = (star) => {
-    const currentValue = hasVoted ? parseFloat(average) : rating;
+  const getStarFill = (star, currentValue) => {
     if (currentValue >= star) {
-      return `${styles.star} ${styles.filled}`;
+      return '100%'; // Pełna gwiazdka
+    } else if (currentValue >= star - 1) {
+      const decimalPart = currentValue - (star - 1);
+      return `${decimalPart * 100}%`; // Częściowe wypełnienie
+    } else {
+      return '0%'; // Pusta gwiazdka
     }
-    if (currentValue >= star - 0.5 && currentValue < star) {
-      return `${styles.star} ${styles.halfFilled}`;
-    }
-    return styles.star;
   };
 
   if (!itemId) {
@@ -82,18 +81,29 @@ export default function StarRating({ itemId }) {
   return (
     <div className={styles.ratingContainer}>
       <div className={styles.stars}>
-        {[1, 2, 3, 4, 5].map((star) => (
-          <span
-            key={star}
-            className={getStarClass(star)}
-            onClick={() => handleRating(star)}
-            onMouseEnter={() => !hasVoted && setRating(star)}
-            onMouseLeave={() => !hasVoted && setRating(0)}
-          >
-            ★
-          </span>
-        ))}
-        <p className={styles.stats}> <span style={{color:'blue'}}><b>{average}</b></span> ({votes} głosów){!hasVoted && <span> 🟢</span>}{hasVoted && <span> 🚫</span>}</p>
+        {[1, 2, 3, 4, 5].map((star) => {
+          const fillPercentage = getStarFill(star, hasVoted ? parseFloat(average) : rating);
+          return (
+            <span
+              key={star}
+              className={styles.star}
+              style={{ '--fill': fillPercentage }}
+              onClick={() => handleRating(star)}
+              onMouseEnter={() => !hasVoted && setRating(star)}
+              onMouseLeave={() => !hasVoted && setRating(0)}
+            >
+              ★
+            </span>
+          );
+        })}
+        <p className={styles.stats}>
+          <span style={{ color: 'blue' }}>
+            <b>{average}</b>
+          </span>{' '}
+          ({votes} głosów)
+          {!hasVoted && <span> 🟢</span>}
+          {hasVoted && <span> 🚫</span>}
+        </p>
       </div>
     </div>
   );
