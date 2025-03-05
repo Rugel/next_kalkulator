@@ -89,14 +89,12 @@ export default function RootLayout({
           }}
         />
         {/* Skrypt AdSense */}
-        {/*<script
+        <Script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
-          //strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
+          strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
           crossOrigin="anonymous"
-        />*/}
-        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
-     crossOrigin="anonymous"></script>
+        />
       </head>
       <body>
         <AnalyticsListener />
