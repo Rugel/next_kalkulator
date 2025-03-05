@@ -411,7 +411,7 @@ a:visited {
 }
 
 .ipr-container{
-  display: none;
+  display: none !important;
 }
 
 @media only screen and (min-width:1220px) {
