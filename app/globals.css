@@ -5,12 +5,16 @@
 }
 
 body {
-  margin: auto;
-  left: 0;
-  right: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   text-align: center;
   background-image: url(images/pattern.webp);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main{
+  flex: 1;
 }
 
 #tytul {
@@ -85,8 +89,6 @@ footer {
   font-size: 0.8em;
   line-height: 1.7em;
   background-color: #444;
-  position: relative;
-  bottom: 0;
 }
 
 .box {
@@ -129,9 +131,10 @@ footer {
 }
 
 #constInp {
-  padding: 2em;
+  padding: 1.5em;
   font-weight: 600;
-  max-width: 60em;
+  max-width: 85vw;
+  width: fit-content;
   border: solid 1px;
   border-radius: .35em;
   margin: auto;
@@ -191,9 +194,8 @@ legend {
 
 fieldset {
   max-width: 90%;
-  width: max-content;
-  padding-left: 1em;
-  padding-right: 2em;
+  width: fit-content;
+  padding: 1.5em;
   border-radius: .5em;
   margin-bottom: 1em;
   margin: auto;

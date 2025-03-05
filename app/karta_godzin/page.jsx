@@ -140,27 +140,29 @@ class KartaGodz extends React.Component {
             </div>
           </div>
         </header>
-        <RenderImage />
-        <Input />
-        <Logo />
-        <Print />
-        <Title />
-        <Month />
-        <Enploy />
-        <Table />
-        <Podpis />
-        <article>
-          <div className='desc'>
-            <p>
-              Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
-            <ul>
-              <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
-              <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
-              <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
-            </ul>
-            <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
-          </div>
-        </article>
+        <main>
+          <RenderImage />
+          <Input />
+          <Logo />
+          <Print />
+          <Title />
+          <Month />
+          <Enploy />
+          <Table />
+          <Podpis />
+          <article>
+            <div className='desc'>
+              <p>
+                Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
+              <ul>
+                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
+                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
+                <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
+              </ul>
+              <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
+            </div>
+          </article>
+        </main>
         <Cookie />
       </div>
     );

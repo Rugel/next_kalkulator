@@ -1,5 +1,4 @@
 import React from "react";
-import Footer from "../modules/footer";
 
 const Cookies_info = () => <div className="cookies">
     <h1>Informacja o plikach cookies</h1><br />

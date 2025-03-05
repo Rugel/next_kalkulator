@@ -85,36 +85,40 @@ class BruttoNetto extends React.Component {
           </div>
 
         </header>
-        <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
-          <div className='box'>
-            <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
-            <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
-            <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
-            <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
-          </div>
-        </fieldset>
-        <section>
-          <div id='constInp'><u><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} /></u></div>
-          <article>
-            <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">Nazwa</th>
-                    <th scope="col">Wartość</th>
-                    <th scope="col">Waluta</th>
-                  </tr>
-                </thead>
-                <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
-                  <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
-                  <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
-                  <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
-                  <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                  <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
-                </tbody>
-              </table>
-              <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
-            </div></article>
+        <main>
+          <section>
+            <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
+              <div className='box'>
+                <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
+                <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
+                <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
+                <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
+              </div>
+            </fieldset>
+          </section>
+          <section>
+            <div id='constInp'><u><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} /></u></div>
+            <article>
+              <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
+                <table>
+                  <thead>
+                    <tr>
+                      <th scope="col">Nazwa</th>
+                      <th scope="col">Wartość</th>
+                      <th scope="col">Waluta</th>
+                    </tr>
+                  </thead>
+                  <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
+                    <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
+                    <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
+                    <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                  </tbody>
+                </table>
+                <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
+              </div></article>
+          </section>
           <article>
             <div className='desc'>
               <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
@@ -159,7 +163,7 @@ class BruttoNetto extends React.Component {
               </div>
             </div>
           </article>
-        </section>
+        </main>
         <Cookie />
       </div>
     )
