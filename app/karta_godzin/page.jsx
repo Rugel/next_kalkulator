@@ -142,10 +142,10 @@ class KartaGodz extends React.Component {
           </div>
         </header>
         <AdSense
-            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-            adSlot="3856131321" // ID jednostki reklamowej
-            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />
+          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+          adSlot="3856131321" // ID jednostki reklamowej
+          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+        />
         <main>
           <RenderImage />
           <Input />
@@ -169,6 +169,11 @@ class KartaGodz extends React.Component {
             </div>
           </article>
         </main>
+        <AdSense
+          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+          adSlot="7166660680" // ID jednostki reklamowej
+          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+        />
         <Cookie />
       </div>
     );

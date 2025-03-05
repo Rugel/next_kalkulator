@@ -71,7 +71,7 @@ class BruttoNetto extends React.Component {
       <div>
         <header><Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br/>
+            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
             <div className='box'>
               <nav>
                 <ul className='menu'>
@@ -87,10 +87,10 @@ class BruttoNetto extends React.Component {
           </div>
         </header>
         <AdSense
-            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-            adSlot="3856131321" // ID jednostki reklamowej
-            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />
+          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+          adSlot="3856131321" // ID jednostki reklamowej
+          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+        />
         <main>
           <section>
             <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
@@ -170,6 +170,11 @@ class BruttoNetto extends React.Component {
             </div>
           </article>
         </main>
+        <AdSense
+          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+          adSlot="7166660680" // ID jednostki reklamowej
+          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+        />
         <Cookie />
       </div>
     )

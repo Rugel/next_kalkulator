@@ -161,8 +161,6 @@ class MainCom extends React.Component {
 
             <li><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} /></li>
           </ol>
-
-
             <article>
               <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                 <table>
@@ -184,6 +182,11 @@ class MainCom extends React.Component {
                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
               </div></article></section>
           <Desc />
+          <AdSense
+            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+            adSlot="7166660680" // ID jednostki reklamowej
+            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+          />
           <Cookie />
         </main>
       </>
