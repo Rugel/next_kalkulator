@@ -444,7 +444,7 @@ a:visited {
   header,
   .cookies,
   .footer,
-  ins, .adsense, .ads, [class*="ad-"], [id*="ad-"], [class*="ns-"], [class*="ipr-"] {
+  ins, .adsense, .ads, .ipr-container [class*="ad-"], [id*="ad-"], [class*="ns-"] {
     display: none !important;
   }
 
