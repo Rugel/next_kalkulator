@@ -125,11 +125,11 @@ class MainCom extends React.Component {
           </div>
           </nav>
         </header>
-        {/*<AdSense
-        adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-        adSlot="3856131321" // ID jednostki reklamowej
-        style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-      />*/}
+          <AdSense
+            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+            adSlot="3856131321" // ID jednostki reklamowej
+            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+          />
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
             <div className='box'>
               <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
