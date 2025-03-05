@@ -6,6 +6,7 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
+import AdSense from '../modules/AdSense';
 
 
 class BruttoNetto extends React.Component {
@@ -70,7 +71,8 @@ class BruttoNetto extends React.Component {
       <div>
         <header><Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br /><div className='box'>
+            <u><h1>Kalkulator Wynagrodzeń</h1></u><br/>
+            <div className='box'>
               <nav>
                 <ul className='menu'>
                   <li><Link href="/">wyliczenie z godzin pracy</Link></li>
@@ -83,8 +85,12 @@ class BruttoNetto extends React.Component {
               </nav>
             </div>
           </div>
-
         </header>
+        <AdSense
+            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+            adSlot="3856131321" // ID jednostki reklamowej
+            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+          />
         <main>
           <section>
             <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>

@@ -5,6 +5,7 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
+import AdSense from '../modules/AdSense';
 
 
 class StaGodz extends React.Component {
@@ -70,6 +71,11 @@ class StaGodz extends React.Component {
                         </div>
                     </div>
                 </header>
+                <AdSense
+            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+            adSlot="3856131321" // ID jednostki reklamowej
+            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+          />
                 <main>
                     <section>
                         <ol id="list">
