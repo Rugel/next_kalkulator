@@ -85,6 +85,8 @@ footer {
   font-size: 0.8em;
   line-height: 1.7em;
   background-color: #444;
+  position: relative;
+  bottom: 0;
 }
 
 .box {
