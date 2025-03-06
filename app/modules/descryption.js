@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import AdSense from "./AdSense";
+import AdSenseInArticle from "./AdSenseInArticle";
 
 const Desc = () => {
   return (<section className='desc'><div>
@@ -10,13 +10,7 @@ const Desc = () => {
     </p><p>
       Aby Kalkulator prawidłowo obliczył kwotę wynagrodzenia, musi otrzymać prawidłowe dane, które użytkownik wpisze do pól edycyjnych.
     </p>
-      <AdSense
-        adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-        adSlot="5751543216" // ID jednostki reklamowej
-        style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-        adLayout="in-article"
-        adFormat="fluid"
-      />
+      <AdSenseInArticle />
       <p><u><i><b>Jak poprawnie wprowadzić dane?</b></i></u><br />
       — w poz.1 należy wpisać łączną liczbę przepracowanych godzin w danym miesiącu,<br />
       — w poz.2 należy wpisać obecną stawkę godzinową brutto ustaloną dla obliczania wynagrodzenia,<br />
