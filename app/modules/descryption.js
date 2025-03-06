@@ -9,7 +9,7 @@ const Desc = () => {
       To, co odróżnia go od innych kalkulatorów to możliwość uwzględnienia m.in. takich informacji jak: stawka godzinowa, liczba przepracowanych godzin czy liczba dni spędzonych na urlopie.
     </p><p>
       Aby Kalkulator prawidłowo obliczył kwotę wynagrodzenia, musi otrzymać prawidłowe dane, które użytkownik wpisze do pól edycyjnych.
-    </p><p>
+    </p>
       <AdSense
         adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
         adSlot="5751543216" // ID jednostki reklamowej
@@ -17,7 +17,7 @@ const Desc = () => {
         adLayout="in-article"
         adFormat="fluid"
       />
-      <u><i><b>Jak poprawnie wprowadzić dane?</b></i></u><br />
+      <p><u><i><b>Jak poprawnie wprowadzić dane?</b></i></u><br />
       — w poz.1 należy wpisać łączną liczbę przepracowanych godzin w danym miesiącu,<br />
       — w poz.2 należy wpisać obecną stawkę godzinową brutto ustaloną dla obliczania wynagrodzenia,<br />
       — w poz.3 podajemy liczbę dni roboczych w danym miesiącu — bez względu na to ile dni pracownik był w pracy (liczba dni minus liczba sobót minus liczba niedziel minus liczba świąt) — domyślnie ustawiona na 21,<br />

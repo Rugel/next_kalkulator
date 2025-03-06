@@ -37,6 +37,8 @@ a, span{
 }
 
 .input {
+  /*background-image: url(images/pattern.webp);*/
+  background-color: white;
   text-align: center;
   width: 8em;
   height: 1.8em;
@@ -131,15 +133,15 @@ footer {
 }
 
 #constInp {
-  padding: 1.5em;
-  font-weight: 600;
-  max-width: 85vw;
-  width: fit-content;
-  border: solid 1px;
-  border-radius: .35em;
+  background-color: #eaeaea;
+  padding: 1em;
+  border: 1px solid;
   margin: auto;
-  margin-top: 3em;
-  margin-bottom: 2em;
+  margin-top: 2em;
+  border-radius: .5em;
+  flex-grow: 1;
+  border-radius: .35em;
+  width: fit-content;
 }
 
 .icon {
@@ -155,7 +157,8 @@ footer {
   margin-left: 2em;
 }
 
-#list li {
+#list li, #bnn {
+  background-color: #eaeaea;
   padding: 1em;
   border: 1px solid;
   margin: 1em;
@@ -217,7 +220,7 @@ fieldset {
 
 ul li {
   padding: 10px;
-  background-color: white;
+  background-color: whitesmoke;
   margin: 10px;
   font-weight: 300;
   min-width: 17em;

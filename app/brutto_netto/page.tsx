@@ -103,7 +103,7 @@ class BruttoNetto extends React.Component {
             </fieldset>
           </section>
           <section>
-            <div id='constInp'><u><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} /></u></div>
+            <div id='constInp'><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} /></div>
             <article>
               <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                 <table>
