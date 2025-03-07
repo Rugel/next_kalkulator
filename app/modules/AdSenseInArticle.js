@@ -1,6 +1,6 @@
 import Script from 'next/script';
 
-const AdSenseInArticle = () => {
+const AdSenseInArticle = ({adSlot}) => {
   return (
     <>
       <Script
@@ -14,7 +14,7 @@ const AdSenseInArticle = () => {
         data-ad-format="fluid"
         data-ad-layout="in-article"
         data-ad-client="ca-pub-8789064360135564"
-        data-ad-slot="5751543216"
+        data-ad-slot={adSlot}
       />
       <Script id="adsense-init" strategy="afterInteractive">
         {`(adsbygoogle = window.adsbygoogle || []).push({});`}

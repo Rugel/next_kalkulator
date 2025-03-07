@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
 import StarRating from './modules/StarRating';
-//import AdSense from './modules/AdSense';
+import AdSense from './modules/AdSense';
 
 class MainCom extends React.Component {
   state = {
@@ -110,7 +110,7 @@ class MainCom extends React.Component {
 
     return (
       <>
-        <main><header><Wynik />
+        <header><Wynik />
           <nav><div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
             <div className='box'>
@@ -125,11 +125,12 @@ class MainCom extends React.Component {
           </div>
           </nav>
         </header>
-          {/*<AdSense
-            adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-            adSlot="3856131321" // ID jednostki reklamowej
-            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />*/}
+        <AdSense
+          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+          adSlot="8251150836" // ID jednostki reklamowej
+          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
+        />
+        <main>
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
             <div className='box'>
               <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
@@ -182,11 +183,11 @@ class MainCom extends React.Component {
                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
               </div></article></section>
           <Desc />
-          {/*<AdSense
+          <AdSense
             adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-            adSlot="7166660680" // ID jednostki reklamowej
+            adSlot="4009249960" // ID jednostki reklamowej
             style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />*/}
+          />
           <Cookie />
         </main>
       </>
