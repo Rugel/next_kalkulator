@@ -5,8 +5,8 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
-import AdSense from '../modules/AdSense';
-import AdSenseInArticle from '../modules/AdSenseInArticle';
+//import AdSense from '../modules/AdSense';
+//import AdSenseInArticle from '../modules/AdSenseInArticle';
 
 
 class StaGodz extends React.Component {
@@ -72,11 +72,11 @@ class StaGodz extends React.Component {
                         </div>
                     </div>
                 </header>
-                <AdSense
+                {/*<AdSense
             adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
             adSlot="3856131321" // ID jednostki reklamowej
             style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />
+          />*/}
                 <main>
                     <section>
                         <ol id="list">
@@ -109,7 +109,7 @@ class StaGodz extends React.Component {
                                 <p>
                                     Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br /> Wystarczy podzielić miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8. Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
                                 </p>
-                                <AdSenseInArticle />
+                                {/*<AdSenseInArticle />*/}
                                 <p>
                                     Warto zauważyć, że powyższy schemat uwzględnia tylko podstawowe składniki wynagrodzenia, takie jak podstawa, dodatki i premie. W przypadku, gdy wynagrodzenie brutto zawiera dodatkowe składniki, takie jak np. diety, należy je dodać do miesięcznego wynagrodzenia brutto przed przeliczeniem na stawkę godzinową brutto.
                                 </p>
@@ -117,11 +117,11 @@ class StaGodz extends React.Component {
                         </article>
                     </section>
                 </main>
-                <AdSense
+                {/*<AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                     adSlot="7166660680" // ID jednostki reklamowej
                     style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-                />
+                />*/}
                 <Cookie />
             </div>
         )

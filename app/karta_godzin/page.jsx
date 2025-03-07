@@ -5,8 +5,8 @@ import Image from 'next/image';
 import Print from '../modules/print';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
-import AdSense from '../modules/AdSense';
-import AdSenseInArticle from '../modules/AdSenseInArticle';
+//import AdSense from '../modules/AdSense';
+//import AdSenseInArticle from '../modules/AdSenseInArticle';
 
 
 class KartaGodz extends React.Component {
@@ -142,11 +142,11 @@ class KartaGodz extends React.Component {
             </div>
           </div>
         </header>
-        <AdSense
+        {/*<AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="3856131321" // ID jednostki reklamowej
           style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-        />
+        />*/}
         <main>
           <RenderImage />
           <Input />
@@ -161,7 +161,7 @@ class KartaGodz extends React.Component {
             <div className='desc'>
               <p>
                 Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
-              <AdSenseInArticle />
+              {/*<AdSenseInArticle />*/}
               <ul>
                 <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
                 <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
@@ -171,11 +171,11 @@ class KartaGodz extends React.Component {
             </div>
           </article>
         </main>
-        <AdSense
+        {/*<AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="7166660680" // ID jednostki reklamowej
           style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-        />
+        />*/}
         <Cookie />
       </div>
     );

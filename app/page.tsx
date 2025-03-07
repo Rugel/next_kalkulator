@@ -6,7 +6,7 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from './modules/cookies';
 import StarRating from './modules/StarRating';
-import AdSense from './modules/AdSense';
+//import AdSense from './modules/AdSense';
 
 class MainCom extends React.Component {
   state = {
@@ -125,11 +125,11 @@ class MainCom extends React.Component {
           </div>
           </nav>
         </header>
-          <AdSense
+          {/*<AdSense
             adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
             adSlot="3856131321" // ID jednostki reklamowej
             style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />
+          />*/}
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
             <div className='box'>
               <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
@@ -182,11 +182,11 @@ class MainCom extends React.Component {
                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
               </div></article></section>
           <Desc />
-          <AdSense
+          {/*<AdSense
             adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
             adSlot="7166660680" // ID jednostki reklamowej
             style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-          />
+          />*/}
           <Cookie />
         </main>
       </>
