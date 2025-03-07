@@ -6,8 +6,8 @@ import Swal from 'sweetalert2';
 import Link from 'next/link';
 import Cookie from '../modules/cookies';
 import StarRating from '../modules/StarRating';
-//import AdSense from '../modules/AdSense';
-//import AdSenseInArticle from '../modules/AdSenseInArticle';
+import AdSense from '../modules/AdSense';
+import AdSenseInArticle from '../modules/AdSenseInArticle';
 
 
 class BruttoNetto extends React.Component {
@@ -87,11 +87,11 @@ class BruttoNetto extends React.Component {
             </div>
           </div>
         </header>
-        {/*<AdSense
+        <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="3856131321" // ID jednostki reklamowej
+          adSlot="3545619061" // ID jednostki reklamowej
           style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-        />*/}
+        />
         <main>
           <section>
             <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
@@ -130,7 +130,7 @@ class BruttoNetto extends React.Component {
             <div className='desc'>
               <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
-              {/*<AdSenseInArticle />*/}
+              <AdSenseInArticle adSlot={5569743645}/>
               <div className='desc'>
                 <p>
                   <strong>
@@ -172,11 +172,11 @@ class BruttoNetto extends React.Component {
             </div>
           </article>
         </main>
-        {/*<AdSense
+        <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="7166660680" // ID jednostki reklamowej
+          adSlot="7987991607" // ID jednostki reklamowej
           style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
-        />*/}
+        />
         <Cookie />
       </div>
     )
