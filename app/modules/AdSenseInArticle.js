@@ -5,7 +5,7 @@ const AdSenseInArticle = ({adSlot}) => {
     <>
       <Script
         async
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX"
+        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
         strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
       />
       <ins
