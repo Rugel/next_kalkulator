@@ -97,15 +97,7 @@ footer {
 
 .box {
   text-align: left;
-  margin-bottom: 30px;
-}
-
-#ppk,
-#u26,
-#workplace {
-  margin-right: 1em;
-  height: 2em;
-  width: 2em;
+  margin-bottom: 20px;
 }
 
 .span {
@@ -201,7 +193,7 @@ legend {
 fieldset {
   max-width: 90%;
   width: fit-content;
-  padding: 1.5em;
+  padding: 1em;
   border-radius: .5em;
   margin-bottom: 1em;
   margin: auto;
