@@ -4,10 +4,9 @@
     display: inline-block;
     width: 30px;
     height: 17px;
+    margin-right: 14px;
     -webkit-tap-highlight-color: transparent;
     /* Usuwa niebieskie podświetlenie na mobile */
-    margin-top: 30px;
-    margin-right: 18px;
 }
 
 /* Ukrywamy domyślny checkbox */
@@ -43,7 +42,7 @@
     height: 13px;
     width: 13px;
     left: 2px;
-    bottom: 2px;
+    bottom: 1.8px;
     background: linear-gradient(to bottom, #ffffff, #e6e6e6);
     border-radius: 50%;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2),
