@@ -7,6 +7,7 @@ import Link from 'next/link';
 import Cookie from './modules/cookies';
 import StarRating from './modules/StarRating';
 import AdSense from './modules/AdSense';
+import CheckBox from './modules/CheckBox';
 
 class MainCom extends React.Component {
   state = {
@@ -133,10 +134,10 @@ class MainCom extends React.Component {
         <main>
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
             <div className='box'>
-              <label><input type='checkbox' id="ppk" onChange={this.handleChangeConfirmPpk} checked={this.state.isConfirmedPpk} />nie uczestniczę w PPK</label><br /><br />
-              <label><input type='checkbox' id="u26" onChange={this.handleChangeConfirmU26} checked={this.state.isConfirmedU26} />korzystam przynajmniej z jednej z wymienionych ulg:<br /> - dla młodych do 26 roku życia<br /> - dla rodzin 4+<br /> - na powrót<br /> - dla pracujących seniorów</label><br /><br />
-              <label><input type='checkbox' id="workplace" onChange={this.handleChangeConfirmWorkplace} checked={this.state.isConfirmeWorkplace} />zakład pracy znajduje się poza miejscowością zamieszkania</label><br /><br />
-              <label><input type='checkbox' id="box" onChange={this.handleChangeConfirm} checked={this.state.isConfirmed} />zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej</label>
+              <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} />
+              <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} />
+              <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} />
+              <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
             </div>
           </fieldset>
 
