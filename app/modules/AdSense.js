@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-const AdSense = ({ adClient, adSlot, style }) => {
+const AdSense = ({ adClient, adSlot }) => {
   useEffect(() => {
     if (typeof window !== "undefined") {
       try {
@@ -17,7 +17,7 @@ const AdSense = ({ adClient, adSlot, style }) => {
     <div>
       <ins
         className="adsbygoogle"
-        style={style || { display: "block" }}
+        style={{ display: 'block', textAlign: 'center' }}
         data-ad-client={adClient} // np. ca-pub-XXXXXXXXXXXXXXXX
         data-ad-slot={adSlot} // ID jednostki reklamowej
         data-ad-format="auto"
