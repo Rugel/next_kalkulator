@@ -83,7 +83,6 @@ class BruttoNetto extends React.Component {
                   <li><Link href={'/karta_godzin'}>karta godzin pracy</Link></li>
                 </ul>
                 <StarRating itemId={123} />
-                {/*<Counter />*/}
               </nav>
             </div>
           </div>
@@ -91,7 +90,6 @@ class BruttoNetto extends React.Component {
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="3545619061" // ID jednostki reklamowej
-          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
         />
         <main>
           <section>
@@ -176,7 +174,6 @@ class BruttoNetto extends React.Component {
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="7987991607" // ID jednostki reklamowej
-          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
         />
         <Cookie />
       </div>

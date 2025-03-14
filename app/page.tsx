@@ -129,7 +129,6 @@ class MainCom extends React.Component {
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="8251150836" // ID jednostki reklamowej
-          style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
         />
         <main>
           <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
@@ -187,7 +186,6 @@ class MainCom extends React.Component {
           <AdSense
             adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
             adSlot="4009249960" // ID jednostki reklamowej
-            style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
           />
           <Cookie />
         </main>

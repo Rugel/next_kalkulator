@@ -75,7 +75,6 @@ class StaGodz extends React.Component {
                 <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                     adSlot="4100717483" // ID jednostki reklamowej
-                    style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
                 />
                 <main>
                     <section>
@@ -120,7 +119,6 @@ class StaGodz extends React.Component {
                 <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                     adSlot="6368891825" // ID jednostki reklamowej
-                    style={{ display: "block", width: "100%", height: "auto" }} // Opcjonalny styl
                 />
                 <Cookie />
             </div>

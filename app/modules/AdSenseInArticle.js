@@ -16,8 +16,8 @@ const AdSenseInArticle = ({adSlot}) => {
         data-ad-client="ca-pub-8789064360135564"
         data-ad-slot={adSlot}
       />
-      <Script id="adsense-init" strategy="afterInteractive">
-        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      <Script id={`adsense-init-${adSlot}`} strategy="afterInteractive">
+      {`(adsbygoogle = window.adsbygoogle || []).push({});`}
       </Script>
     </>
   );
