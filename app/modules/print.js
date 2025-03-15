@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import styles from './print.module.css';
 
 const Print = () => {
     const [isClient, setIsClient] = useState(false);
@@ -16,7 +17,7 @@ const Print = () => {
 
     if (!isClient) return null;
     return (
-        <div id='print'><label><button onClick={handlePrint}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>
+        <div id='print'><label><button className={styles.button} onClick={handlePrint}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>
     );
 };
 export default Print;

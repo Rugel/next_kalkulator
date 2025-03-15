@@ -8,11 +8,15 @@ import StarRating from '../modules/StarRating';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 
+const data = new Date();
+let rok = data.getFullYear();
+let mies = data.getMonth() + 1;
+mies < 10 ? mies = `0${mies}` : mies;
 
 class KartaGodz extends React.Component {
 
   state = {
-    inputVal: ``,
+    inputVal: `${rok}-${mies}`,
     logo: ''
   }
 
@@ -27,17 +31,13 @@ class KartaGodz extends React.Component {
     let month = text.slice(5, 7) * 1;
     let year = text.slice(0, 4) * 1;
     if (year < 1) { year = null };
-    const data = new Date();
-    let rok = data.getFullYear();
     const m = month + ((year - rok) * 12);
     rok = year;
     let miesiac = (data.setMonth(m - 1));
     data.setDate(1);
     miesiac = data.getMonth();
     let nummie = miesiac + 1;
-    if (nummie < 10) {
-      nummie = '0' + nummie;
-    }
+    nummie < 10 ? nummie = `0${mies}` : nummie;
     const day = data.getDay();
     const sobota = 7 - day;
     const niedziela = 1 - day;
