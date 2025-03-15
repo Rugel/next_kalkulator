@@ -43,6 +43,7 @@ class KartaGodz extends React.Component {
     const niedziela = 1 - day;
     let monthPre = month < 10 && month > 0 ? `0${month}` : month;
     let monthStr = month;
+
     switch (monthStr) {
       case 1: monthStr = "styczeń";
         break;
@@ -119,7 +120,6 @@ class KartaGodz extends React.Component {
       </tbody>
     </table>
     const Podpis = () => <div id='sign'><hr id='sign_hr' /><em>podpis przełożonego</em></div>;
-    if (document) { document.title = `${monthStr} ${rok} - karta godz. 📋` };
     const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
 
     return (
@@ -137,7 +137,6 @@ class KartaGodz extends React.Component {
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
                 <StarRating itemId={123} />
-                {/* <Counter />*/}
               </nav>
             </div>
           </div>
