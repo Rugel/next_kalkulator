@@ -412,10 +412,6 @@ a:visited {
   display: none !important;
 }
 
-div[style*="color-scheme: initial !important; forced-color-adjust: initial !important; mask: initial !important;"] {
-  display: none !important;
-}
-
 @media only screen and (min-width:1220px) {
   table {
     width: 800px;
