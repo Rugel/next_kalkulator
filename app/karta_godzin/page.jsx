@@ -119,7 +119,7 @@ class KartaGodz extends React.Component {
       </tbody>
     </table>
     const Podpis = () => <div id='sign'><hr id='sign_hr' /><em>podpis przełożonego</em></div>;
-    if (this.state.inputVal) { document.title = `${monthStr} ${rok} - karta godz. 📋` };
+    if (document) { document.title = `${monthStr} ${rok} - karta godz. 📋` };
     const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
 
     return (
