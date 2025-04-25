@@ -5,7 +5,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/karta_godzin',
     },
-    title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",
+    title: "Karta ewidencji czasu pracy 🗎 - drukuj PDF dla dowolnego miesiąca",
     description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
     keywords: "karta, ewidencja, czas, praca",
     openGraph: {

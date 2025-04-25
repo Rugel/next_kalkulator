@@ -8,8 +8,9 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator wynagrodzeń dla pracownika ze stawką godzinową",
+  title: "Kalkulator Wynagrodzeń 💵 dla Pracownika ze Stawką Godzinową",
   description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+  keywords: "kalkulator wynagrodzeń, stawka godzinowa, pensja, wypłata, brutto, netto, przelicznik ",
   openGraph: {
     title: "Stawka godzinowa? - ten Kalkulator obliczy Twoje wynagrodzenie!",
     description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
@@ -82,8 +83,8 @@ export default function RootLayout({
               },
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "4.6", // Średnia ocena (np. od 1 do 5)
-                "reviewCount": "9"
+                "ratingValue": "4.5",
+                "reviewCount": "16"
               }
             }),
           }}

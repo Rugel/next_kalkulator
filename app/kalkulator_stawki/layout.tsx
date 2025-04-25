@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     alternates: {
         canonical: '/kalkulator_stawki',
     },
-    title: "Kalkulator stawki godzinowej",
+    title: "Kalkulator stawki godzinowej 🖩 - proste i szybkie wyliczenie",
     description: "Wyliczenie stawki godzinowej netto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
     keywords: "kalkulator, wynagodzenie, stawka godzinowa",
     openGraph: {
