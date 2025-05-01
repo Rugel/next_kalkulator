@@ -76,10 +76,10 @@ class BruttoNetto extends React.Component {
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
             <div className='box'>
               <nav>
-                <ul className='menu'>
-                  <li><Link href="/">wyliczenie z godzin pracy</Link></li>
+                <ul className='menu'><li>
+                  <Link href={'/'}>kalkulator stawki godz.</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>przelicznik BRUTTO/NETTO</span></li>
-                  <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
+                  <li><Link href="/godziny">wyliczenie z godzin pracy</Link></li>
                   <li><Link href={'/karta_godzin'}>karta godzin pracy</Link></li>
                 </ul>
                 <StarRating itemId={123} />

@@ -131,9 +131,9 @@ class KartaGodz extends React.Component {
             <div className='box'>
               <nav aria-label="breadcrumb">
                 <ul className='menu'>
-                  <li><Link href={'/'} >wyliczenie z godzin pracy</Link></li>
+                  <li><Link href={'/'}>kalkulator stawki godz.</Link></li>
                   <li><Link href={'/brutto_netto'}>przelicznik BRUTTO/NETTO</Link></li>
-                  <li><Link href={'/kalkulator_stawki'}>kalkulator stawki godz.</Link></li>
+                  <li><Link href={'/godziny'} >wyliczenie z godzin pracy</Link></li>
                   <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
                 </ul>
                 <StarRating itemId={123} />

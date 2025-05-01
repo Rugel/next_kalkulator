@@ -8,12 +8,12 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator Wynagrodzeń 💵 dla Pracownika ze Stawką Godzinową",
-  description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+  title: "Kalkulator stawki godzinowej - proste i szybkie wyliczenie",
+  description: "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
   keywords: "kalkulator wynagrodzeń, stawka godzinowa, pensja, wypłata, brutto, netto, przelicznik ",
   openGraph: {
-    title: "Stawka godzinowa? - ten Kalkulator obliczy Twoje wynagrodzenie!",
-    description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+    title: "Kalkulator stawki godzinowej - proste i szybkie wyliczenie",
+    description: "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
     url: "https://stawka-godzinowa.pl",
     siteName: "Kalkulator Wynagrodzeń",
     images: [
@@ -21,7 +21,7 @@ export const metadata = {
         url: "https://stawka-godzinowa.pl/image.webp",
         width: 1200,
         height: 630,
-        alt: "Kalkulator Wynagrodzeń",
+        alt: "Kalkulator Stawki Godzinowej",
       },
     ],
     locale: "pl_PL",
@@ -65,8 +65,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Kalkulator Wynagrodzeń",
-              "description": "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+              "name": "Kalkulator Stawki Godzinowej",
+              "description": "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
               "url": "https://stawka-godzinowa.pl",
               "image": "https://stawka-godzinowa.pl/image.webp",
               "applicationCategory": "Finance",
