@@ -8,11 +8,11 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator stawki godzinowej - proste i szybkie wyliczenie",
+  title: "Stawka godzinowa? => ten Kalkulator obliczy Twoje wynagrodzenie!",
   description: "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
   keywords: "kalkulator wynagrodzeń, stawka godzinowa, pensja, wypłata, brutto, netto, przelicznik ",
   openGraph: {
-    title: "Kalkulator stawki godzinowej - proste i szybkie wyliczenie",
+    title: "Stawka godzinowa? => ten Kalkulator obliczy Twoje wynagrodzenie!",
     description: "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
     url: "https://stawka-godzinowa.pl",
     siteName: "Kalkulator Wynagrodzeń",
