@@ -81,6 +81,7 @@ export default function StarRating({ itemId }) {
   return (
     <div className={styles.ratingContainer}>
       <div className={styles.stars}>
+        <h5>Oceń aplikację:</h5>
         {[1, 2, 3, 4, 5].map((star) => {
           const fillPercentage = getStarFill(star, hasVoted ? parseFloat(average) : rating);
           return (
