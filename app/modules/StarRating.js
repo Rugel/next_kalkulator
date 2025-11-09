@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import styles from './StarRating.module.css';
 
 export default function StarRating({ itemId }) {
@@ -18,13 +18,8 @@ export default function StarRating({ itemId }) {
   }, [itemId]);
 
   // Pobieranie danych z API
-  useEffect(() => {
-    if (itemId) {
-      fetchRating();
-    }
-  }, [itemId]);
 
-  const fetchRating = async () => {
+  const fetchRating = useCallback( async () => {
     try {
       const res = await fetch(`/api/rating/${itemId}`);
       if (!res.ok) throw new Error('Failed to fetch rating');
@@ -34,7 +29,13 @@ export default function StarRating({ itemId }) {
     } catch (error) {
       console.error('Error fetching rating:', error);
     }
-  };
+  }, [itemId]);
+
+  useEffect(() => {
+    if (itemId) {
+      fetchRating();
+    }
+  }, [itemId, fetchRating]);
 
   const handleRating = async (value) => {
     if (hasVoted || !itemId || (typeof window !== 'undefined' && localStorage.getItem(`voted:${itemId}`) === 'true')) {
