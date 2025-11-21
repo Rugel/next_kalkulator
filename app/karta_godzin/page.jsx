@@ -1,12 +1,11 @@
 'use client';
 import React from 'react';
-import Link from 'next/link';
 import Image from 'next/image';
 import Print from '../modules/print';
 import Cookie from '../modules/cookies';
-import StarRating from '../modules/StarRating';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
+import Menu from '../modules/Menu';
 
 const data = new Date();
 let rok = data.getFullYear();
@@ -128,17 +127,7 @@ class KartaGodz extends React.Component {
           <Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <div className='box'>
-              <nav aria-label="breadcrumb">
-                <ul className='menu'>
-                  <li><Link href={'/'}>kalkulator stawki godz.</Link></li>
-                  <li><Link href={'/brutto_netto'}>przelicznik BRUTTO/NETTO</Link></li>
-                  <li><Link href={'/godziny'} >wyliczenie z godzin pracy</Link></li>
-                  <li><span style={{ boxShadow: '0 5px' }}>karta godzin pracy</span></li>
-                </ul>
-                <StarRating itemId={123} />
-              </nav>
-            </div>
+            <Menu currentPage="karta_godzin" />
           </div>
         </header>
         <AdSense

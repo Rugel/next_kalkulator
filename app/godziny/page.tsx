@@ -3,11 +3,10 @@ import React from 'react';
 import Input from '../modules/input';
 import Desc from '../modules/descryption';
 import Swal from 'sweetalert2';
-import Link from 'next/link';
 import Cookie from '../modules/cookies';
-import StarRating from '../modules/StarRating';
 import AdSense from '../modules/AdSense';
 import CheckBox from '../modules/CheckBox';
+import Menu from '../modules/Menu';
 
 class MainCom extends React.Component {
   state = {
@@ -114,15 +113,7 @@ class MainCom extends React.Component {
         <header><Wynik />
           <nav><div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <div className='box'>
-              <ul className='menu'>
-                <li><Link href="/">kalkulator stawki godz.</Link></li>
-                <li><Link href="/brutto_netto">przelicznik BRUTTO/NETTO</Link></li>
-                <li><span style={{ boxShadow: '0 5px' }}>wyliczenie z godzin pracy</span></li>
-                <li><Link href="/karta_godzin">karta godzin pracy</Link></li>
-              </ul>
-              <StarRating itemId='123' />
-            </div>
+            <Menu currentPage="godziny" />
           </div>
           </nav>
         </header>

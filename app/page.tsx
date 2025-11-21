@@ -2,11 +2,10 @@
 import React from 'react';
 import Input from './modules/input';
 import Swal from 'sweetalert2';
-import Link from 'next/link';
 import Cookie from './modules/cookies';
-import StarRating from './modules/StarRating';
 import AdSense from './modules/AdSense';
 import AdSenseInArticle from './modules/AdSenseInArticle';
+import Menu from './modules/Menu';
 
 
 class StaGodz extends React.Component {
@@ -58,18 +57,7 @@ class StaGodz extends React.Component {
                 <header><Wynik />
                     <div id="tytul">
                         <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-                        <div className='box'>
-                            <nav aria-label="breadcrumb">
-                                <ul className='menu'>
-                                    <li><span style={{ boxShadow: '0 5px' }}>kalkulator stawki godz.</span></li>
-                                    <li><Link href='/brutto_netto'>przelicznik BRUTTO/NETTO</Link></li>
-                                    <li><Link href='/godziny' >wyliczenie z godzin pracy</Link></li>
-                                    <li><Link href='/karta_godzin'>karta godzin pracy</Link></li>
-                                </ul>
-                                <StarRating itemId={123} />
-                                {/*<Counter />*/}
-                            </nav>
-                        </div>
+                        <Menu currentPage="stawka" />
                     </div>
                 </header>
                 <AdSense
