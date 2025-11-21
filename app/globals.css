@@ -203,28 +203,6 @@ fieldset {
   font-weight: bolder;
 }
 
-.menu {
-  display: flex;
-  flex-wrap: wrap;
-  flex-shrink: 20px;
-  align-content: space-between;
-  justify-content: space-evenly;
-  list-style-type: none;
-}
-
-ul li {
-  padding: 10px;
-  background-color: whitesmoke;
-  margin: 10px;
-  font-weight: 300;
-  min-width: 17em;
-  border-radius: .35em;
-  text-align: center;
-  text-transform: uppercase;
-  border: 1px solid;
-  font-size: large;
-}
-
 .noMatch {
   margin-top: 30vh;
   font-size: large;
