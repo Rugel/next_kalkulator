@@ -66,10 +66,14 @@ class StaGodz extends React.Component {
                 />
                 <main>
                     <section>
-                        <ol id="list">
-                            <li><Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} /></li>
-                            <li><Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} /></li>
-                        </ol>
+                        <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
+                            <div className="form-group">
+                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} />
+                            </div>
+                            <div className="form-group">
+                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} />
+                            </div>
+                        </form>
                         <section>
                             <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                                 <table>

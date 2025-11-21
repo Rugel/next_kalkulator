@@ -1,4 +1,5 @@
 import "./globals.css";
+import "./govpl-forms.css";
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 import Weather from "./modules/weather";

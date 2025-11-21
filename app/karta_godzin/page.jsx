@@ -98,7 +98,14 @@ class KartaGodz extends React.Component {
       else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className='saturday'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
       else { table.push(<tr key={i} className='normal'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
     };
-    const Input = () => <div id='input'><label><input type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} /><br /><em>wybierz żądany miesiąc</em></label></div>;
+    const Input = () => <div id='input'>
+      <div className="input-wrapper">
+        <label htmlFor="month-input" className="input-label">
+          <em>wybierz żądany miesiąc</em>
+        </label>
+        <input id="month-input" type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} className="input" />
+      </div>
+    </div>;
     const Month = () => <div id='month'><b>{monthStr} {year}</b></div>;
     const Enploy = () => <div id='enploy'><em>pracownik:</em><hr className='hr' /><br /><em>stanowisko:</em><hr className='hr' /><br /></div>
     const Rows = () => table.map((e) => e);

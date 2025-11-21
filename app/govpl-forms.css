@@ -1,0 +1,141 @@
+/* ========================================
+   GOV.PL FORM STYLES - POLISH GOVERNMENT STANDARD
+   Minimalistyczne style formularzy wzorowane na gov.pl
+   ======================================== */
+
+/* Form Container */
+#calculator-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    padding: 2rem 1rem;
+    width: 100%;
+    max-width: 960px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+}
+
+/* Form Group - Wrapper dla każdego pola */
+.form-group {
+    margin-bottom: 1.875rem;
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Input Wrapper */
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+/* Label - GOV.PL Typography Standard */
+.input-label {
+    display: block;
+    font-size: 1.1875rem;
+    font-weight: 700;
+    line-height: 1.25;
+    color: #0B0C0C;
+    margin-bottom: 0.3125rem;
+    text-align: left;
+    font-family: "nta", Arial, sans-serif;
+}
+
+/* Input Field - GOV.PL Standard */
+.input-wrapper .input {
+    /* Reset starych stylów */
+    width: 100%;
+    text-align: left;
+    letter-spacing: normal;
+    border-radius: 0;
+    margin-top: 0;
+
+    /* GOV.PL Sizing */
+    padding: 0.3125rem 0.625rem;
+    min-height: 2.5rem;
+
+    /* GOV.PL Typography */
+    font-size: 1.1875rem;
+    font-family: "nta", Arial, sans-serif;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #0B0C0C;
+
+    /* GOV.PL Border & Background */
+    background-color: #FFFFFF;
+    border: 2px solid #0B0C0C;
+
+    /* Appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Interaction */
+    outline: none;
+    box-sizing: border-box;
+    box-shadow: none;
+
+    /* Transition */
+    transition: border-color 0.15s ease-in-out, outline 0.15s ease-in-out;
+}
+
+/* GOV.PL Input Hover State */
+.input-wrapper .input:hover {
+    border-color: #0B0C0C;
+}
+
+/* GOV.PL Input Focus State - ŻÓŁTY OUTLINE (charakterystyczny dla GOV.PL) */
+.input-wrapper .input:focus {
+    outline: 3px solid #FFDD00;
+    outline-offset: 0;
+    border-color: #0B0C0C;
+    box-shadow: inset 0 0 0 2px #0B0C0C;
+}
+
+/* GOV.PL Input Placeholder */
+.input-wrapper .input::placeholder {
+    color: #6F777B;
+    opacity: 1;
+}
+
+/* GOV.PL Input Error State (opcjonalnie) */
+.input-wrapper .input.error {
+    border-color: #D4351C;
+}
+
+.input-wrapper .input.error:focus {
+    outline-color: #D4351C;
+    border-color: #D4351C;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    #calculator-form {
+        padding: 1.5rem 0.75rem;
+    }
+
+    .form-group {
+        margin-bottom: 1.5rem;
+    }
+
+    .input-label {
+        font-size: 1rem;
+    }
+
+    .input-wrapper .input {
+        font-size: 1rem;
+        padding: 0.25rem 0.5rem;
+    }
+}
+
+/* Accessibility - High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .input-wrapper .input {
+        border-width: 3px;
+    }
+
+    .input-wrapper .input:focus {
+        outline-width: 4px;
+    }
+}

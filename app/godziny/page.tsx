@@ -131,28 +131,19 @@ class MainCom extends React.Component {
             </div>
           </fieldset>
 
-          <section><ol id="list">
-
-            <li><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></li>
-
-            <li><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} /></li>
-
-            <li><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} /></li>
-
-            <li><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} /></li>
-
-            <li><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} /></li>
-
-            <li><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} /></li>
-
-            <li><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} /></li>
-
-            <li><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} /></li>
-
-            <li><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} /></li>
-
-            <li><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} /></li>
-          </ol>
+          <section>
+            <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
+              <div className="form-group"><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} /></div>
+              <div className="form-group"><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} /></div>
+              <div className="form-group"><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} /></div>
+              <div className="form-group"><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} /></div>
+              <div className="form-group"><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} /></div>
+              <div className="form-group"><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} /></div>
+              <div className="form-group"><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} /></div>
+              <div className="form-group"><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} /></div>
+              <div className="form-group"><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} /></div>
+              <div className="form-group"><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} /></div>
+            </form>
             <article>
               <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                 <table>
