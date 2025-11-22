@@ -93,7 +93,7 @@ class BruttoNetto extends React.Component {
           </section>
           <section>
             <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group"><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} /></div>
+              <div className="form-group"><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} number={1} /></div>
             </form>
             <article>
               <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
