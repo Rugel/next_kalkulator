@@ -68,10 +68,10 @@ class StaGodz extends React.Component {
                     <section>
                         <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
                             <div className="form-group">
-                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} />
+                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
                             </div>
                             <div className="form-group">
-                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} />
+                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} number={2} />
                             </div>
                         </form>
                         <section>

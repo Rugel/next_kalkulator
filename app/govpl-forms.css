@@ -36,10 +36,17 @@
     font-size: 1.1875rem;
     font-weight: 700;
     line-height: 1.25;
-    color: #0B0C0C;
+    color: #1a5230;
     margin-bottom: 0.3125rem;
     text-align: left;
     font-family: "nta", Arial, sans-serif;
+}
+
+/* Input Number - Bold number prefix */
+.input-number {
+    font-weight: bold;
+    color: #0B0C0C;
+    margin-right: 0.25rem;
 }
 
 /* Input Field - GOV.PL Standard */
@@ -58,9 +65,11 @@
     /* GOV.PL Typography */
     font-size: 1.1875rem;
     font-family: "nta", Arial, sans-serif;
-    font-weight: 400;
+    font-weight: 700;
+    /* Bold for better visibility of the blue color */
     line-height: 1.25;
-    color: #0B0C0C;
+    color: #0077FF;
+    /* App Blue */
 
     /* GOV.PL Border & Background */
     background-color: #FFFFFF;
@@ -85,9 +94,10 @@
     border-color: #0B0C0C;
 }
 
-/* GOV.PL Input Focus State - ŻÓŁTY OUTLINE (charakterystyczny dla GOV.PL) */
+/* GOV.PL Input Focus State - ZIELONY OUTLINE (App Theme) */
 .input-wrapper .input:focus {
-    outline: 3px solid #FFDD00;
+    outline: 3px solid #94FD37;
+    /* App Green */
     outline-offset: 0;
     border-color: #0B0C0C;
     box-shadow: inset 0 0 0 2px #0B0C0C;

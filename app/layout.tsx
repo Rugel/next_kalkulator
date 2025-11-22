@@ -4,6 +4,7 @@ import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 import Weather from "./modules/weather";
 import StarRating from "./modules/StarRating";
+import Footer from "./modules/footer";
 
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -102,8 +103,13 @@ export default function RootLayout({
       <body>
         <AnalyticsListener />
         {children}
-        <StarRating itemId={123} />
-        <Weather />
+        <div className="widgets-container">
+          <StarRating itemId={123} />
+          <Weather />
+        </div>
+        <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
+          <Footer />
+        </footer>
       </body>
     </html>
   );

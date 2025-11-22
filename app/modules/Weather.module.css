@@ -1,0 +1,115 @@
+.weatherContainer {
+    padding: 1.5rem;
+    background-color: #fff;
+    color: #333;
+    font-size: 0.9rem;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    /* Match StarRating width */
+    margin: 2rem auto;
+    /* Match StarRating margin */
+    border: 1px solid #e0e0e0;
+    /* Match StarRating border */
+    /* border-radius: 0; */
+}
+
+.header {
+    font-size: 1.1rem;
+    /* Match StarRating header */
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.inputGroup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.cityInput {
+    width: 12em;
+    height: 2.5em;
+    padding: 0.5em;
+    text-align: center;
+    font-weight: bold;
+    color: #0077FF;
+    /* App Blue */
+    background-color: white;
+    border: 2px solid #0B0C0C;
+    outline: none;
+    border-radius: 0;
+    /* Boxy */
+    transition: outline 0.15s ease-in-out;
+}
+
+.cityInput:focus {
+    outline: 3px solid #94FD37;
+    /* App Green */
+    outline-offset: 0;
+}
+
+.geoIcon {
+    cursor: pointer;
+    background-color: white;
+    padding: 5px;
+    border-radius: 0;
+    /* Boxy */
+    transition: transform 0.2s;
+}
+
+.geoIcon:hover {
+    transform: scale(1.1);
+}
+
+.weatherTable {
+    margin: 0 auto;
+    border-collapse: collapse;
+    background-color: #fff;
+    color: #333;
+    width: 100%;
+    border-bottom: 2px solid #bbb;
+}
+
+.weatherTable td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+    text-align: left;
+}
+
+.weatherTable tr:last-child td {
+    border-bottom: none;
+}
+
+.iconCell {
+    width: 40px;
+    text-align: center !important;
+    padding-right: 10px;
+}
+
+.label {
+    font-weight: normal;
+    color: #666;
+}
+
+.value {
+    font-weight: bold;
+    color: #0077FF;
+    /* App Blue */
+}
+
+.weatherIcon {
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+@media print {
+    .weatherContainer {
+        display: none !important;
+    }
+}
