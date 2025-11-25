@@ -133,9 +133,9 @@ class KartaGodz extends React.Component {
         <header>
           <Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <Menu currentPage="karta_godzin" />
+            <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
+          <Menu currentPage="karta_godzin" />
         </header>
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense

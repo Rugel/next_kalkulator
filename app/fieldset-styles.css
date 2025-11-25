@@ -1,0 +1,115 @@
+/* =================================================
+   MODERN FIELDSET STYLING
+   Nowoczesna stylizacja dla elementów fieldset
+   ================================================= */
+
+/* Fieldset - Modern Card Design with Gradient Border */
+fieldset {
+    max-width: 700px;
+    width: 90%;
+    padding: 0;
+    margin: 2rem auto;
+    background: white;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Border Effect for Fieldset */
+fieldset::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+/* Legend - Modern Header with Gradient Background */
+legend {
+    padding: 1.5rem 2rem;
+    margin: 0;
+    width: 100%;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-radius: 17px 17px 0 0;
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    text-align: center;
+}
+
+legend strong {
+    font-weight: 700;
+}
+
+legend u {
+    text-decoration: none;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    padding-bottom: 2px;
+}
+
+/* Box content inside fieldset */
+.box {
+    padding: 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design for Fieldsets */
+@media (max-width: 768px) {
+    fieldset {
+        width: 95%;
+        margin: 1.5rem auto;
+        border-radius: 16px;
+    }
+
+    fieldset::before {
+        border-radius: 16px;
+    }
+
+    legend {
+        padding: 1.25rem 1.5rem;
+        font-size: 1rem;
+        border-radius: 13px 13px 0 0;
+    }
+
+    .box {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    fieldset {
+        width: 98%;
+        margin: 1rem auto;
+        border-radius: 12px;
+    }
+
+    fieldset::before {
+        border-radius: 12px;
+    }
+
+    legend {
+        padding: 1rem;
+        font-size: 0.9rem;
+        border-radius: 9px 9px 0 0;
+    }
+
+    .box {
+        padding: 1rem;
+    }
+}

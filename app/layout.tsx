@@ -1,5 +1,7 @@
 import "./globals.css";
 import "./govpl-forms.css";
+import "./fieldset-styles.css";
+import "./list-styles.css";
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 import Weather from "./modules/weather";

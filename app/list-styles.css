@@ -1,0 +1,206 @@
+/* =================================================
+   MODERN LIST/TABLE STYLING
+   Nowoczesna stylizacja dla div.list i tabel
+   ================================================= */
+
+/* List Container - Modern Card Design */
+.list {
+    padding: 2.5rem;
+    margin: 2rem auto;
+    max-width: 750px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.25);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Border Effect for List */
+.list::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 20px;
+    padding: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* List Header */
+.list>p:first-child {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 3px solid #667eea;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    position: relative;
+    z-index: 1;
+}
+
+.list>p:first-child u {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+/* Modern Table Styling */
+.list>table {
+    width: 100%;
+    margin: 0;
+    border-collapse: separate;
+    border-spacing: 0;
+    position: relative;
+    z-index: 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+/* Table Header */
+.list>table thead {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.list>table thead th {
+    padding: 1rem 1.25rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    text-align: left;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Table Body */
+.list>table tbody tr {
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+.list>table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+.list>table tbody tr:hover {
+    background-color: #f0f2ff;
+    transform: translateX(4px);
+}
+
+.list>table tbody td {
+    padding: 1rem 1.25rem;
+    border: none;
+    border-bottom: 1px solid #e9ecef;
+    font-size: 0.95rem;
+    color: #495057;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+.list>table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Count/Value Column Styling */
+.list>table .count {
+    text-align: right;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Currency Column */
+.list>table tbody td:last-child {
+    text-align: center;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+/* Small Text/Footnotes */
+.list .small {
+    font-size: 0.85rem;
+    line-height: 1.5;
+    color: #6c757d;
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #dee2e6;
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive Design for List */
+@media (max-width: 768px) {
+    .list {
+        padding: 1.75rem;
+        margin: 1.5rem auto;
+        border-radius: 16px;
+    }
+
+    .list::before {
+        border-radius: 16px;
+    }
+
+    .list>p:first-child {
+        font-size: 1.1rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .list>table thead th,
+    .list>table tbody td {
+        padding: 0.875rem 1rem;
+        font-size: 0.9rem;
+    }
+
+    .list>table .count {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .list {
+        padding: 1.25rem;
+        margin: 1rem;
+        border-radius: 12px;
+    }
+
+    .list::before {
+        border-radius: 12px;
+    }
+
+    .list>p:first-child {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .list>table thead th,
+    .list>table tbody td {
+        padding: 0.75rem 0.75rem;
+        font-size: 0.85rem;
+    }
+
+    .list>table .count {
+        font-size: 0.95rem;
+    }
+
+    .list .small {
+        font-size: 0.8rem;
+    }
+
+    /* Stack table on very small screens if needed */
+    .list>table tbody td:first-child {
+        font-weight: 600;
+    }
+}

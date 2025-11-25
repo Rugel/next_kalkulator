@@ -72,9 +72,9 @@ class BruttoNetto extends React.Component {
       <div>
         <header><Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <Menu currentPage="brutto_netto" />
+            <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
+          <Menu currentPage="brutto_netto" />
         </header>
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense

@@ -111,11 +111,10 @@ class MainCom extends React.Component {
     return (
       <>
         <header><Wynik />
-          <nav><div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-            <Menu currentPage="godziny" />
+          <div id="tytul">
+            <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
-          </nav>
+          <Menu currentPage="godziny" />
         </header>
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense

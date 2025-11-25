@@ -56,9 +56,9 @@ class StaGodz extends React.Component {
             <div>
                 <header><Wynik />
                     <div id="tytul">
-                        <u><h1>Kalkulator Wynagrodzeń</h1></u><br />
-                        <Menu currentPage="stawka" />
+                        <u><h1>Kalkulator Wynagrodzeń</h1></u>
                     </div>
+                    <Menu currentPage="stawka" />
                 </header>
                 <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
