@@ -18,13 +18,25 @@ export const useSpinner = () => {
 };
 
 // Separate component for navigation listening that uses useSearchParams
-function NavigationListener({ onNavigate }: { onNavigate: () => void }) {
+function NavigationListener({ onNavigationStart, onNavigationEnd }: { onNavigationStart: () => void; onNavigationEnd: () => void }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
+    const prevPathnameRef = React.useRef(pathname);
 
     useEffect(() => {
-        onNavigate();
-    }, [pathname, searchParams, onNavigate]);
+        // Show spinner when pathname changes
+        if (prevPathnameRef.current !== pathname) {
+            onNavigationStart();
+            prevPathnameRef.current = pathname;
+        }
+
+        // Hide spinner after navigation completes
+        const timer = setTimeout(() => {
+            onNavigationEnd();
+        }, 100);
+
+        return () => clearTimeout(timer);
+    }, [pathname, searchParams, onNavigationStart, onNavigationEnd]);
 
     return null;
 }
@@ -32,7 +44,11 @@ function NavigationListener({ onNavigate }: { onNavigate: () => void }) {
 export const GlobalSpinner = ({ children }: { children: ReactNode }) => {
     const [isLoading, setIsLoading] = useState(false);
 
-    const handleNavigate = () => {
+    const handleNavigationStart = () => {
+        setIsLoading(true);
+    };
+
+    const handleNavigationEnd = () => {
         setIsLoading(false);
     };
 
@@ -43,7 +59,10 @@ export const GlobalSpinner = ({ children }: { children: ReactNode }) => {
     return (
         <SpinnerContext.Provider value={{ showSpinner }}>
             <Suspense fallback={null}>
-                <NavigationListener onNavigate={handleNavigate} />
+                <NavigationListener
+                    onNavigationStart={handleNavigationStart}
+                    onNavigationEnd={handleNavigationEnd}
+                />
             </Suspense>
             {children}
             {isLoading && (
