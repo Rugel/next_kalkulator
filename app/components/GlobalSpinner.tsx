@@ -1,5 +1,5 @@
 'use client';
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, useState, useEffect, ReactNode, Suspense } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
 import styles from '../modules/Spinner.module.css';
 
@@ -17,14 +17,24 @@ export const useSpinner = () => {
     return context;
 };
 
-export const GlobalSpinner = ({ children }: { children: ReactNode }) => {
-    const [isLoading, setIsLoading] = useState(false);
+// Separate component for navigation listening that uses useSearchParams
+function NavigationListener({ onNavigate }: { onNavigate: () => void }) {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
     useEffect(() => {
+        onNavigate();
+    }, [pathname, searchParams, onNavigate]);
+
+    return null;
+}
+
+export const GlobalSpinner = ({ children }: { children: ReactNode }) => {
+    const [isLoading, setIsLoading] = useState(false);
+
+    const handleNavigate = () => {
         setIsLoading(false);
-    }, [pathname, searchParams]);
+    };
 
     const showSpinner = () => {
         setIsLoading(true);
@@ -32,6 +42,9 @@ export const GlobalSpinner = ({ children }: { children: ReactNode }) => {
 
     return (
         <SpinnerContext.Provider value={{ showSpinner }}>
+            <Suspense fallback={null}>
+                <NavigationListener onNavigate={handleNavigate} />
+            </Suspense>
             {children}
             {isLoading && (
                 <div className={styles.overlay}>
