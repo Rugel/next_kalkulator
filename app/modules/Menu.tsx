@@ -12,9 +12,9 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
   const { showSpinner } = useSpinner();
 
   const menuItems = [
-    { id: 'stawka', label: 'Kalkulator stawki godz.', href: '/' },
+    { id: 'godziny', label: 'Wyliczenie z godzin pracy', href: '/' },
     { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO', href: '/brutto_netto' },
-    { id: 'godziny', label: 'Wyliczenie z godzin pracy', href: '/godziny' },
+    { id: 'stawka', label: 'Kalkulator stawki godz.', href: '/kalkulator_stawki' },
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
   ];
 

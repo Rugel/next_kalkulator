@@ -33,7 +33,7 @@ function NavigationListener({ onNavigationStart, onNavigationEnd }: { onNavigati
         // Hide spinner after navigation completes
         const timer = setTimeout(() => {
             onNavigationEnd();
-        }, 100);
+        }, 500);
 
         return () => clearTimeout(timer);
     }, [pathname, searchParams, onNavigationStart, onNavigationEnd]);

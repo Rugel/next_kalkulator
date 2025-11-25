@@ -1,37 +1,90 @@
 'use client';
 import React from 'react';
 import Input from './modules/input';
+import Desc from './modules/descryption';
 import Swal from 'sweetalert2';
 import Cookie from './modules/cookies';
 import AdSense from './modules/AdSense';
-import AdSenseInArticle from './modules/AdSenseInArticle';
+import CheckBox from './modules/CheckBox';
 import Menu from './modules/Menu';
 
-
-class StaGodz extends React.Component {
+class MainCom extends React.Component {
     state = {
-        brutto: 0,
+        hours: 0,
+        rate: 0,
         workdays: 21,
+        satsun: 0,
+        hollydays: 0,
+        illnessworkdays: 0,
+        illnessweekenddays: 0,
+        avaragehours: 168,
+        avaragemoney: 8408.17,
+        add: 0,
+        BaN: 0,
+        isConfirmed: false,
+        isConfirmedPpk: false,
+        isConfirmedU26: false,
+        isConfirmeWorkplace: false,
     }
 
-    handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
+    handleChangeGodziny = (e: { target: { value: number; }; }) => { if (e.target.value >= 0 && e.target.value <= 744) { this.setState({ hours: e.target.value }) } else { this.setState({ hours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({ text: "Liczba musi się mieścić w przedziale 0 - 744", icon: "warning" }) } }
 
+    handleChangeStawka = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ rate: e.target.value }) } else { this.setState({ rate: 0 }); Swal.fire({ text: 'Liczba nie może być ujemna', icon: 'warning' }) } }
 
     handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) } if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
 
+    handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 288', icon: 'warning' }) } }
+
+    handleChangeUrlop = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ hollydays: e.target.value }) } else { this.setState({ hollydays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({ text: 'Liczba nie może być większa od liczby dni roboczych', icon: 'warning' }) } }
+
+    handleChangeCh1 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= this.state.workdays) { this.setState({ illnessworkdays: e.target.value }) } else { this.setState({ illnessworkdays: 0 }) } if (e.target.value < 0 || e.target.value > 23) { Swal.fire({ text: 'Liczba nie może być większa od liczby dni roboczych', icon: 'warning' }) } }
+
+    handleChangeCh2 = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 12) { this.setState({ illnessweekenddays: e.target.value }) } else { this.setState({ illnessweekenddays: 0 }) } if (e.target.value < 0 || e.target.value > 12) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 12', icon: 'warning' }) } }
+
+    handleChangeSrGodz = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 744) { this.setState({ avaragehours: e.target.value }) } else { this.setState({ avaragehours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 744', icon: 'warning' }) } }
+
+    handleChangeSrWyp = (e: { target: { value: number; }; }) => { if (e.target.value > 0) { this.setState({ avaragemoney: e.target.value }) } else { this.setState({ avaragemoney: 7005.76 }) } if (e.target.value < 0) { Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
+
+    handleChangeAdd = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ add: e.target.value }) } else if (e.target.value < 0) { this.setState({ add: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
+
+    handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
+
+    handleChangeConfirm = () => { this.setState({ isConfirmed: !this.state.isConfirmed }) }
+
+    handleChangeConfirmPpk = () => { this.setState({ isConfirmedPpk: !this.state.isConfirmedPpk }) }
+
+    handleChangeConfirmU26 = () => { this.setState({ isConfirmedU26: !this.state.isConfirmedU26 }) }
+
+    handleChangeConfirmWorkplace = () => { this.setState({ isConfirmeWorkplace: !this.state.isConfirmeWorkplace }) }
+
     render() {
-        const { workdays, brutto } = this.state;
+        const { hours, rate, workdays, satsun, hollydays, illnessworkdays, illnessweekenddays, avaragehours, avaragemoney, add } = this.state;
+
+        let workd = workdays - hollydays - illnessworkdays;
+        let nadgodz = hours - workd * 8;
+        if (nadgodz < 0) { nadgodz = 0 };
+
+        //wyliczenie kwoty brutto z godzin
+        const count = () => { return (hours * rate + nadgodz * rate * 0.5 + satsun * rate * 0.5 + hollydays * 8 * avaragemoney / avaragehours + illnessworkdays * avaragemoney / 30 * 0.8 + illnessweekenddays * avaragemoney / 30 * 0.8 + add * 1) };
+        let brutto = Math.round(count() * 100) / 100;
+
+        //warunek dla przelicznika Brutto na Netto
+        if (this.state.BaN) { brutto = this.state.BaN };
 
         //wyliczenie składek
         let ppk;
         let ppk_bru;
-        ppk = Math.round(brutto * 0.02 * 100) / 100;
-        ppk_bru = Math.round(brutto * 1.015 * 100) / 100;
+        if (this.state.isConfirmedPpk) { ppk = 0; ppk_bru = brutto } else {
+            ppk = Math.round(brutto * 0.02 * 100) / 100;
+            ppk_bru = Math.round(brutto * 1.015 * 100) / 100;
+        }
+        if (brutto < 0) { brutto = 0 };
+
         let zus;
         zus = Math.round(brutto * 0.1371 * 100) / 100;
         let kos_doch = 250;
         if (brutto < 250) { kos_doch = brutto }
-        kos_doch = 300
+        if (this.state.isConfirmeWorkplace) { kos_doch = 300 }
         const pod_zdr = brutto - zus;
         let zdr = Math.round(pod_zdr * 0.09 * 100) / 100;
 
@@ -40,41 +93,57 @@ class StaGodz extends React.Component {
 
         //wyliczenie zaliczki na podatek dochodowy
         if (pod_zal < 0) { pod_zal = 0 };
+        let kw_zm = 3600;
         let zal_pod;
-        zal_pod = Math.round(pod_zal * 0.32) - 300
-        if (zal_pod < 0 && brutto <= 85528) { zal_pod = 0 };
+        if (brutto - 85528 < 30000 && brutto - 85528 > 0) { kw_zm = Math.round((brutto - 85528) * 0.12) };
+        if (this.state.isConfirmed) { zal_pod = Math.round(pod_zal * 0.32) - 300 }
+        else { zal_pod = Math.round(pod_zal * 0.12) - 300 };
+        if (zal_pod < 0 || (this.state.isConfirmedU26 && brutto <= 85528)) { zal_pod = 0 } else if (this.state.isConfirmedU26 && brutto > 85528 && brutto <= 205528) { zal_pod = Math.round((brutto - 85528) * 0.12) - kw_zm } else if (this.state.isConfirmedU26 && brutto > 205528) { zal_pod = Math.round(10800 + (brutto - 205528) * 0.32) };
         const pod_ppk = Math.round((ppk_bru - brutto) * 100) / 100;
-        let rate: any = Math.round((brutto / workdays / 8) * 100) / 100;
-        rate = rate.toString();
-        rate = rate.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
-        rate = rate.replace('.', ',');
-        const Rate = () => rate;
+        let netto: any = Math.round((brutto - zus - zdr - zal_pod - ppk) * 100) / 100;
+        netto = netto.toString();
+        netto = netto.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
+        netto = netto.replace('.', ',');
+        const Netto = () => netto;
 
-        const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Rate /></span> zł / godz</p>) }
+        const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
 
         return (
-            <div>
+            <>
                 <header><Wynik />
                     <div id="tytul">
                         <u><h1>Kalkulator Wynagrodzeń</h1></u>
                     </div>
-                    <Menu currentPage="stawka" />
+                    <Menu currentPage="godziny" />
                 </header>
                 <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-                    adSlot="4100717483" // ID jednostki reklamowej
+                    adSlot="8251150836" // ID jednostki reklamowej
                 />
                 <main>
+                    <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
+                        <div className='box'>
+                            <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
+                            <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} /><br /><br />
+                            <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
+                            <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
+                        </div>
+                    </fieldset>
+
                     <section>
                         <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
-                            <div className="form-group">
-                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
-                            </div>
-                            <div className="form-group">
-                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} number={2} />
-                            </div>
+                            <div className="form-group"><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
+                            <div className="form-group"><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
+                            <div className="form-group"><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} /></div>
+                            <div className="form-group"><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} number={4} /></div>
+                            <div className="form-group"><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} number={5} /></div>
+                            <div className="form-group"><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} number={6} /></div>
+                            <div className="form-group"><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} number={7} /></div>
+                            <div className="form-group"><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} number={8} /></div>
+                            <div className="form-group"><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} number={9} /></div>
+                            <div className="form-group"><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
                         </form>
-                        <section>
+                        <article>
                             <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                                 <table>
                                     <thead>
@@ -93,28 +162,16 @@ class StaGodz extends React.Component {
                                     </tbody>
                                 </table>
                                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
-                            </div>
-                        </section>
-                        <article>
-                            <div className='desc'>
-                                <p>
-                                    Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br /> Wystarczy podzielić miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8. Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
-                                </p>
-                                <AdSenseInArticle adSlot={8969900782} />
-                                <p>
-                                    Warto zauważyć, że powyższy schemat uwzględnia tylko podstawowe składniki wynagrodzenia, takie jak podstawa, dodatki i premie. W przypadku, gdy wynagrodzenie brutto zawiera dodatkowe składniki, takie jak np. diety, należy je dodać do miesięcznego wynagrodzenia brutto przed przeliczeniem na stawkę godzinową brutto.
-                                </p>
-                            </div>
-                        </article>
-                    </section>
+                            </div></article></section>
+                    <Desc />
+                    <AdSense
+                        adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+                        adSlot="4009249960" // ID jednostki reklamowej
+                    />
+                    <Cookie />
                 </main>
-                <AdSense
-                    adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-                    adSlot="6368891825" // ID jednostki reklamowej
-                />
-                <Cookie />
-            </div>
+            </>
         )
     }
 }
-export default StaGodz;
+export default MainCom;
