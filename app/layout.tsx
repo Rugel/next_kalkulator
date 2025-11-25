@@ -7,6 +7,7 @@ import AnalyticsListener from './modules/analytics-listener';
 import Weather from "./modules/weather";
 import StarRating from "./modules/StarRating";
 import Footer from "./modules/footer";
+import { GlobalSpinner } from "./components/GlobalSpinner";
 
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -103,15 +104,17 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <AnalyticsListener />
-        {children}
-        <div className="widgets-container">
-          <StarRating itemId={123} />
-          <Weather />
-        </div>
-        <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
-          <Footer />
-        </footer>
+        <GlobalSpinner>
+          <AnalyticsListener />
+          {children}
+          <div className="widgets-container">
+            <StarRating itemId={123} />
+            <Weather />
+          </div>
+          <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
+            <Footer />
+          </footer>
+        </GlobalSpinner>
       </body>
     </html>
   );
