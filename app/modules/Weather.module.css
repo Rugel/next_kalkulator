@@ -71,18 +71,17 @@
     background-color: #fff;
     color: #333;
     width: 100%;
-    border-bottom: 2px solid #bbb;
 }
 
 .weatherTable td {
     padding: 0.5rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #bbb;
     vertical-align: middle;
     text-align: left;
 }
 
 .weatherTable tr:last-child td {
-    border-bottom: none;
+    border-bottom: 1px solid;
 }
 
 .iconCell {

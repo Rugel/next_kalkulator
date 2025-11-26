@@ -6,9 +6,9 @@
 /* Container - Transparent Background */
 .container {
     width: 100%;
-    background: transparent;
-    position: relative;
-    z-index: 90;
+    position: sticky;
+    top: 6em;
+    z-index: 89;
     padding: 0 0 1rem 0;
     border-bottom: none;
 }
@@ -180,5 +180,11 @@
 @media (hover: none) and (pointer: coarse) {
     .link:active {
         transform: scale(0.98);
+    }
+}
+
+@media print {
+    .container {
+        display: none !important;
     }
 }

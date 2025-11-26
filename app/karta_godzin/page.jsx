@@ -129,14 +129,14 @@ class KartaGodz extends React.Component {
     const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
 
     return (
-      <div className="content">
+      <>
         <header>
           <Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
-          <Menu currentPage="karta_godzin" />
         </header>
+        <Menu currentPage="karta_godzin" />
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="3856131321" // ID jednostki reklamowej
@@ -170,7 +170,7 @@ class KartaGodz extends React.Component {
           adSlot="7166660680" // ID jednostki reklamowej
         />
         <Cookie />
-      </div>
+      </>
     );
   }
 }

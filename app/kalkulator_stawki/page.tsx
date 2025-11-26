@@ -53,13 +53,13 @@ class StaGodz extends React.Component {
     const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Rate /></span> zł / godz</p>) }
 
     return (
-      <div>
+      <>
         <header><Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
-          <Menu currentPage="stawka" />
         </header>
+        <Menu currentPage="stawka" />
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="4100717483" // ID jednostki reklamowej
@@ -113,7 +113,7 @@ class StaGodz extends React.Component {
           adSlot="6368891825" // ID jednostki reklamowej
         />
         <Cookie />
-      </div>
+      </>
     )
   }
 }

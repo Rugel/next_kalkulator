@@ -35,6 +35,6 @@ export default function StaGodz({
     children: React.ReactNode;
 }>) {
     return (
-        <div>{children}</div>
+        <>{children}</>
     );
 }

@@ -14,16 +14,16 @@ export const metadata: Metadata = {
         url: "https://stawka-godzinowa.pl/karta_godzin",
         siteName: "Karta ewidencji czasu pracy",
         images: [
-          {
-            url: "https://stawka-godzinowa.pl/karta_godzin_pracy.webp",
-            width: 1200,
-            height: 630,
-            alt: "Karta godzin pracy"
-          }
+            {
+                url: "https://stawka-godzinowa.pl/karta_godzin_pracy.webp",
+                width: 1200,
+                height: 630,
+                alt: "Karta godzin pracy"
+            }
         ],
         locale: "pl_PL",
         type: "website",
-      },
+    },
 };
 
 export default function KartaGodz({
@@ -32,6 +32,6 @@ export default function KartaGodz({
     children: React.ReactNode;
 }>) {
     return (
-        <div>{children}</div>
+        <>{children}</>
     );
 }

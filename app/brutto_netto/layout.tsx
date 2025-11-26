@@ -28,5 +28,5 @@ export const metadata: Metadata = {
 };
 
 export default function BruttoNettoLayout({ children }: { children: ReactNode }) {
-    return <main>{children}</main>;
+    return <>{children}</>;
 }

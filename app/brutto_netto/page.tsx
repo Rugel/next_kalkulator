@@ -69,13 +69,13 @@ class BruttoNetto extends React.Component {
     const Netto = () => netto;
     const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
     return (
-      <div>
+      <>
         <header><Wynik />
           <div id="tytul">
             <u><h1>Kalkulator Wynagrodzeń</h1></u>
           </div>
-          <Menu currentPage="brutto_netto" />
         </header>
+        <Menu currentPage="brutto_netto" />
         <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="3545619061" // ID jednostki reklamowej
@@ -167,7 +167,7 @@ class BruttoNetto extends React.Component {
           adSlot="7987991607" // ID jednostki reklamowej
         />
         <Cookie />
-      </div>
+      </>
     )
   }
 }

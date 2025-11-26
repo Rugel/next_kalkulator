@@ -114,8 +114,8 @@ class MainCom extends React.Component {
                     <div id="tytul">
                         <u><h1>Kalkulator Wynagrodzeń</h1></u>
                     </div>
-                    <Menu currentPage="godziny" />
                 </header>
+                <Menu currentPage="godziny" />
                 <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                     adSlot="8251150836" // ID jednostki reklamowej
