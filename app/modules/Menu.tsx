@@ -18,16 +18,59 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
   ];
 
+  const [isHamburgerMode, setIsHamburgerMode] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+
+  React.useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 768) {
+        if (window.scrollY > 100) {
+          setIsHamburgerMode(true);
+        } else {
+          setIsHamburgerMode(false);
+          setIsMenuOpen(false);
+        }
+      } else {
+        setIsHamburgerMode(false);
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Initial check
+    handleScroll();
+
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('resize', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, []);
+
   const handleNavigation = (itemId: string) => {
     if (currentPage !== itemId) {
       showSpinner();
     }
+    if (isHamburgerMode) {
+      setIsMenuOpen(false);
+    }
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${isHamburgerMode ? styles.hamburgerContainer : ''}`}>
       <nav className={styles.nav} aria-label="Main navigation">
-        <ul className={styles.list}>
+        {isHamburgerMode && (
+          <button
+            className={`${styles.hamburgerButton} ${isMenuOpen ? styles.hamburgerActive : ''}`}
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+            <span className={styles.bar}></span>
+          </button>
+        )}
+        <ul className={`${styles.list} ${isHamburgerMode ? (isMenuOpen ? styles.mobileOpen : styles.mobileHidden) : ''}`}>
           {menuItems.map((item) => (
             <li key={item.id} className={styles.item}>
               {currentPage === item.id ? (
