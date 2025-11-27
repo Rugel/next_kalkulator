@@ -462,6 +462,6 @@ a:visited {
   align-items: flex-start;
   gap: 0rem;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 1rem auto;
   padding: 0 1rem;
 }

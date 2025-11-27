@@ -23,13 +23,8 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.innerWidth < 768) {
-        if (window.scrollY > 100) {
-          setIsHamburgerMode(true);
-        } else {
-          setIsHamburgerMode(false);
-          setIsMenuOpen(false);
-        }
+      if (window.scrollY > 100) {
+        setIsHamburgerMode(true);
       } else {
         setIsHamburgerMode(false);
         setIsMenuOpen(false);
