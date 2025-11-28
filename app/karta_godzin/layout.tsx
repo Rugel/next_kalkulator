@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./print.css";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),

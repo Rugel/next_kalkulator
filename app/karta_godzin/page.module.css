@@ -1,0 +1,149 @@
+.logo {
+    position: absolute;
+    right: 7%;
+    margin-top: 15px;
+    width: 100px;
+    height: 180px;
+}
+
+.logInp {
+    text-align: left;
+    margin-left: 5lvw;
+    margin-top: 2em;
+    width: fit-content;
+    border: solid 1px;
+    padding: 5px;
+    max-width: 50%;
+    font-size: 0.8em;
+}
+
+.file {
+    font-size: .9em;
+}
+
+.title {
+    text-align: center;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.month {
+    text-align: center;
+    padding: 7px;
+    font-size: 20px;
+}
+
+.enploy {
+    margin-top: 2lvh;
+    margin-bottom: .5lvh;
+    line-height: 2.3lvh;
+    text-align: left;
+    margin-left: 8vw;
+    font-size: 18px;
+}
+
+.uwagi {
+    width: 20vw;
+}
+
+.sign {
+    position: relative;
+    line-height: 1lvh;
+    margin-top: 6lvh;
+    text-align: right;
+    align-content: right;
+    margin-right: 8vw;
+}
+
+.signHr {
+    position: absolute;
+    right: 0;
+    bottom: 14px;
+    width: 50%;
+}
+
+.holyday {
+    background-color: lightsalmon;
+}
+
+.saturday {
+    background-color: lightblue;
+}
+
+.noborder {
+    border: none;
+    text-align: end;
+}
+
+.link {
+    text-align: left;
+    margin-top: 15px;
+}
+
+.hr {
+    width: 70%;
+    border-top: dashed 2px;
+}
+
+.inputSection {
+    text-align: left;
+    margin-left: 5lvw;
+    margin-top: 2em;
+    width: fit-content;
+    border: solid 1px;
+    padding: 5px;
+    max-width: 50%;
+    font-size: 0.8em;
+}
+
+/* Table styles specific to karta_godzin */
+.table {
+    margin-left: 0;
+    margin-right: 0;
+    margin: auto;
+    border-collapse: collapse;
+}
+
+.table td {
+    border: solid 1px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.table th {
+    border: solid 2px;
+    padding: 3px;
+}
+
+@media only screen and (min-width:1220px) {
+    .hr {
+        width: 70%;
+    }
+
+    .signHr {
+        width: 30%;
+    }
+
+    .table {
+        width: 800px;
+    }
+}
+
+@media print {
+
+    .logInp,
+    .link,
+    .inputSection {
+        display: none !important;
+    }
+
+    .table {
+        height: 65dvh;
+        width: 85vw;
+    }
+
+    .title,
+    .month {
+        height: 4dvh;
+    }
+}

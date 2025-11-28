@@ -7,6 +7,7 @@ import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
 import { getMovableHolidays } from './holidays';
+import styles from './page.module.css';
 
 const data = new Date();
 let rok = data.getFullYear();
@@ -24,9 +25,9 @@ class KartaGodz extends React.Component {
   LogoHandlleChange = (e) => { const file = e.target.files[0]; this.setState({ logo: file }) };
 
   render() {
-    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div id='logo'><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
-    const Logo = () => <div id='logInp'><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
-    const Title = () => <div id='title'><h2>Karta Godzin Pracy</h2></div>;
+    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div className={styles.logo}><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
+    const Logo = () => <div className={styles.logInp}><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" className={styles.file} onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
+    const Title = () => <div className={styles.title}><h2>Karta Godzin Pracy</h2></div>;
     const text = this.state.inputVal;
     let month = text.slice(5, 7) * 1;
     let year = text.slice(0, 4) * 1;
@@ -108,12 +109,12 @@ class KartaGodz extends React.Component {
       const isMovable = isMovableHoliday(i, month);
 
       if (isSunday || isFixedHoliday || isMovable) {
-        table.push(<tr key={i} className='holyday'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>)
+        table.push(<tr key={i} className={styles.holyday}><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>)
       }
-      else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className='saturday'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
+      else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className={styles.saturday}><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
       else { table.push(<tr key={i} className='normal'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
     };
-    const Input = () => <div id='input'>
+    const Input = () => <div className={styles.inputSection}>
       <div className="input-wrapper">
         <label htmlFor="month-input" className="input-label">
           <em>wybierz żądany miesiąc</em>
@@ -121,10 +122,10 @@ class KartaGodz extends React.Component {
         <input id="month-input" type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} className="input" />
       </div>
     </div>;
-    const Month = () => <div id='month'><b>{monthStr} {year}</b></div>;
-    const Enploy = () => <div id='enploy'><em>pracownik:</em><hr className='hr' /><br /><em>stanowisko:</em><hr className='hr' /><br /></div>
+    const Month = () => <div className={styles.month}><b>{monthStr} {year}</b></div>;
+    const Enploy = () => <div className={styles.enploy}><em>pracownik:</em><hr className={styles.hr} /><br /><em>stanowisko:</em><hr className={styles.hr} /><br /></div>
     const Rows = () => table.map((e) => e);
-    const Table = () => <table id='table'>
+    const Table = () => <table className={styles.table}>
       <thead>
         <tr>
           <th>DATA</th>
@@ -132,15 +133,15 @@ class KartaGodz extends React.Component {
           <th>ZAKOŃ.</th>
           <th>GODZ.</th>
           <th id='podpis'>PODPIS</th>
-          <th id='uwagi'>UWAGI</th>
+          <th className={styles.uwagi}>UWAGI</th>
         </tr>
       </thead>
       <tbody>
         <Rows />
-        <tr><td className='noborder'></td><td className='noborder'></td><td className='noborder'><b>SUMA:</b></td><td></td><td className='noborder'></td><td className='noborder'></td></tr>
+        <tr><td className={styles.noborder}></td><td className={styles.noborder}></td><td className={styles.noborder}><b>SUMA:</b></td><td></td><td className={styles.noborder}></td><td className={styles.noborder}></td></tr>
       </tbody>
     </table>
-    const Podpis = () => <div id='sign'><hr id='sign_hr' /><em>podpis przełożonego</em></div>;
+    const Podpis = () => <div className={styles.sign}><hr className={styles.signHr} /><em>podpis przełożonego</em></div>;
     const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
 
     return (

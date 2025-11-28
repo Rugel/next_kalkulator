@@ -209,9 +209,7 @@ fieldset {
   font-size: large;
 }
 
-#input,
-#print,
-#logInp {
+#print {
   text-align: left;
   margin-left: 5lvw;
   margin-top: 2em;
@@ -223,10 +221,6 @@ fieldset {
   font-size: 0.8em;
 }
 
-#file {
-  font-size: .9em;
-}
-
 #print {
   max-width: 90%;
 }
@@ -235,22 +229,6 @@ button,
 input {
   padding: 3px;
   cursor: pointer;
-}
-
-#title,
-#month {
-  text-align: center;
-  padding: 7px;
-  font-size: 20px;
-}
-
-#enploy {
-  margin-top: 2lvh;
-  margin-bottom: .5lvh;
-  line-height: 2.3lvh;
-  text-align: left;
-  margin-left: 8vw;
-  font-size: 18px;
 }
 
 table {
@@ -281,58 +259,8 @@ th {
   padding: 3px;
 }
 
-#uwagi {
-  width: 20vw;
-}
-
-#logo {
-  position: absolute;
-  right: 7%;
-  margin-top: 15px;
-  width: 100px;
-  height: 180px;
-}
-
-.holyday {
-  background-color: lightsalmon;
-}
-
-.saturday {
-  background-color: lightblue;
-}
-
-#sign {
-  position: relative;
-  line-height: 1lvh;
-  margin-top: 6lvh;
-  text-align: right;
-  align-content: right;
-  margin-right: 8vw;
-}
-
-.noborder {
-  border: none;
-  text-align: end;
-}
-
-#link {
-  text-align: left;
-  margin-top: 15px;
-}
-
 hr {
   border-top: dashed 2px;
-}
-
-.hr {
-  width: 70%;
-}
-
-#sign_hr {
-  position: absolute;
-  right: 0;
-  bottom: 14px;
-  width: 50%;
 }
 
 .counts {
@@ -393,65 +321,6 @@ a:visited {
 @media only screen and (min-width:1220px) {
   table {
     width: 800px;
-  }
-
-  .hr {
-    width: 70%;
-  }
-
-  #sign_hr {
-    width: 30%;
-  }
-}
-
-@media print {
-  body {
-    margin: 0;
-    padding: 0;
-    background-image: none;
-  }
-
-  @page {
-    size: auto;
-    margin: 30px;
-  }
-
-  #print,
-  #input,
-  #logInp,
-  #link,
-  article,
-  header,
-  .cookies,
-  .footer,
-  ins,
-  .adsense,
-  .ads,
-  .adsense-wrapper,
-  .adsbygoogle,
-  .ipr-container,
-  [class*="ad-"],
-  [id*="ad-"],
-  [class*="ns-"] {
-    display: none !important;
-  }
-
-  table {
-    height: 65dvh;
-    width: 85vw;
-  }
-
-  #title,
-  #month {
-    height: 4dvh;
-  }
-
-  * {
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    page-break-inside: avoid !important;
-    page-break-after: avoid !important;
-    page-break-before: avoid !important;
   }
 }
 
