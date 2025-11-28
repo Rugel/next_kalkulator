@@ -14,10 +14,10 @@ const AdSense = ({ adClient, adSlot }) => {
   }, []);
 
   return (
-    <div className="adsense-wrapper">
+    <div className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
       <ins
         className="adsbygoogle"
-        style={{ display: 'block', textAlign: 'center' }}
+        style={{ display: 'block', textAlign: 'center', width: '100%' }}
         data-ad-client={adClient} // np. ca-pub-XXXXXXXXXXXXXXXX
         data-ad-slot={adSlot} // ID jednostki reklamowej
         data-ad-format="auto"
