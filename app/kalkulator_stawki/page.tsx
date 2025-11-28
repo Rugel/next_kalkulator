@@ -17,7 +17,7 @@ class StaGodz extends React.Component {
   handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
 
 
-  handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) } if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
+  handleChangeWorkdays = (e: { target: { value: number; }; }) => { this.setState({ workdays: e.target.value }); if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
 
   render() {
     const { workdays, brutto } = this.state;

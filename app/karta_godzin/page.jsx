@@ -6,6 +6,7 @@ import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
+import { getMovableHolidays } from './holidays';
 
 const data = new Date();
 let rok = data.getFullYear();
@@ -30,16 +31,16 @@ class KartaGodz extends React.Component {
     let month = text.slice(5, 7) * 1;
     let year = text.slice(0, 4) * 1;
     if (year < 1) { year = null };
-    const m = month + ((year - rok) * 12);
-    rok = year;
-    let miesiac = (data.setMonth(m - 1));
-    data.setDate(1);
-    miesiac = data.getMonth();
-    let nummie = miesiac + 1;
-    nummie < 10 ? nummie = `0${mies}` : nummie;
-    const day = data.getDay();
-    const sobota = 7 - day;
-    const niedziela = 1 - day;
+
+    // Create a fresh Date object for the selected month (don't mutate global data)
+    const firstDayOfMonth = new Date(year, month - 1, 1);
+    const day = firstDayOfMonth.getDay(); // 0 = Sunday, 6 = Saturday
+
+    // Calculate which day numbers are Saturdays and Sundays
+    // If day = 0 (Sunday), first Sunday is day 1, first Saturday is day 7
+    // If day = 6 (Saturday), first Saturday is day 1, first Sunday is day 2
+    const sobota = day === 6 ? 1 : (7 - day);
+    const niedziela = day === 0 ? 1 : (8 - day);
     let monthPre = month < 10 && month > 0 ? `0${month}` : month;
     let monthStr = month;
 
@@ -91,8 +92,22 @@ class KartaGodz extends React.Component {
     else {
       l = 30
     }
+
+    // Get movable holidays for the current year
+    const movableHolidays = getMovableHolidays(year);
+
+    // Helper function to check if current day is a movable holiday
+    const isMovableHoliday = (day, currentMonth) => {
+      return movableHolidays.some(holiday => holiday.day === day && holiday.month === currentMonth);
+    };
+
     for (let i = 1; i <= l; i++) {
-      if ((i === niedziela || i === niedziela + 7 || i === niedziela + 14 || i === niedziela + 21 || i === niedziela + 28 || i === niedziela + 35) || (i === 1 && (monthStr === "styczeń" || monthStr === "maj" || monthStr === "listopad")) || (i === 6 && monthStr === "styczeń") || (i === 3 && monthStr === "maj") || (i === 15 && monthStr === "sierpień") || (i === 11 && monthStr === "listopad") || (i === 25 && monthStr === "grudzień") || (i === 26 && monthStr === "grudzień")) {
+      // Check if day is Sunday or fixed holiday or movable holiday
+      const isSunday = (i === niedziela || i === niedziela + 7 || i === niedziela + 14 || i === niedziela + 21 || i === niedziela + 28 || i === niedziela + 35);
+      const isFixedHoliday = (i === 1 && (monthStr === "styczeń" || monthStr === "maj" || monthStr === "listopad")) || (i === 6 && monthStr === "styczeń") || (i === 3 && monthStr === "maj") || (i === 15 && monthStr === "sierpień") || (i === 11 && monthStr === "listopad") || (i === 25 && monthStr === "grudzień") || (i === 26 && monthStr === "grudzień");
+      const isMovable = isMovableHoliday(i, month);
+
+      if (isSunday || isFixedHoliday || isMovable) {
         table.push(<tr key={i} className='holyday'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>)
       }
       else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className='saturday'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }

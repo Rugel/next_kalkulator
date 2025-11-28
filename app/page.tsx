@@ -7,12 +7,13 @@ import Cookie from './modules/cookies';
 import AdSense from './modules/AdSense';
 import CheckBox from './modules/CheckBox';
 import Menu from './modules/Menu';
+import { calculateWorkingDays } from './utils/workdays';
 
 class MainCom extends React.Component {
     state = {
         hours: 0,
         rate: 0,
-        workdays: 21,
+        workdays: 0,
         satsun: 0,
         hollydays: 0,
         illnessworkdays: 0,
@@ -27,11 +28,20 @@ class MainCom extends React.Component {
         isConfirmeWorkplace: false,
     }
 
+    componentDidMount() {
+        // Calculate working days for current month on initial load
+        const now = new Date();
+        const currentYear = now.getFullYear();
+        const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
+        const workingDays = calculateWorkingDays(currentYear, currentMonth);
+        this.setState({ workdays: workingDays });
+    }
+
     handleChangeGodziny = (e: { target: { value: number; }; }) => { if (e.target.value >= 0 && e.target.value <= 744) { this.setState({ hours: e.target.value }) } else { this.setState({ hours: 168 }) } if (e.target.value < 0 || e.target.value > 744) { Swal.fire({ text: "Liczba musi się mieścić w przedziale 0 - 744", icon: "warning" }) } }
 
     handleChangeStawka = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ rate: e.target.value }) } else { this.setState({ rate: 0 }); Swal.fire({ text: 'Liczba nie może być ujemna', icon: 'warning' }) } }
 
-    handleChangeWorkdays = (e: { target: { value: number; }; }) => { if (e.target.value >= 19 && e.target.value < 24) { this.setState({ workdays: e.target.value }) } else { this.setState({ workdays: 21 }) } if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
+    handleChangeWorkdays = (e: { target: { value: number; }; }) => { this.setState({ workdays: e.target.value }); if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
 
     handleChangeSatsun = (e: { target: { value: number; }; }) => { if (e.target.value > 0 && e.target.value <= 288) { this.setState({ satsun: e.target.value }) } else { this.setState({ satsun: 0 }) } if (e.target.value < 0 || e.target.value > 288) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 0 - 288', icon: 'warning' }) } }
 
@@ -56,6 +66,14 @@ class MainCom extends React.Component {
     handleChangeConfirmU26 = () => { this.setState({ isConfirmedU26: !this.state.isConfirmedU26 }) }
 
     handleChangeConfirmWorkplace = () => { this.setState({ isConfirmeWorkplace: !this.state.isConfirmeWorkplace }) }
+
+    handleMonthSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const [year, month] = e.target.value.split('-');
+        if (year && month) {
+            const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
+            this.setState({ workdays: workingDays });
+        }
+    }
 
     render() {
         const { hours, rate, workdays, satsun, hollydays, illnessworkdays, illnessweekenddays, avaragehours, avaragemoney, add } = this.state;
@@ -124,7 +142,7 @@ class MainCom extends React.Component {
                     <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
                         <div className='box'>
                             <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
-                            <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} /><br /><br />
+                            <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia", „dla rodzin 4+",  „na powrót", „dla pracujących seniorów"'} /><br /><br />
                             <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
                             <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
                         </div>
@@ -134,7 +152,7 @@ class MainCom extends React.Component {
                         <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
                             <div className="form-group"><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
                             <div className="form-group"><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
-                            <div className="form-group"><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} /></div>
+                            <div className="form-group"><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} /></div>
                             <div className="form-group"><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} number={4} /></div>
                             <div className="form-group"><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} number={5} /></div>
                             <div className="form-group"><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} number={6} /></div>
@@ -158,7 +176,7 @@ class MainCom extends React.Component {
                                         <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
                                         <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
                                         <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                                        <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                                        <tr><td>kwota wpłaty finansowana przez pracodawcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
                                     </tbody>
                                 </table>
                                 <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
