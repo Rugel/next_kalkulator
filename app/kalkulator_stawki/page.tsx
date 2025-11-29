@@ -6,18 +6,36 @@ import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
+import { calculateWorkingDays } from '../utils/workdays';
 
 
 class StaGodz extends React.Component {
   state = {
     brutto: 0,
-    workdays: 21,
+    workdays: 0,
+  }
+
+  componentDidMount() {
+    // Calculate working days for current month on initial load
+    const now = new Date();
+    const currentYear = now.getFullYear();
+    const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
+    const workingDays = calculateWorkingDays(currentYear, currentMonth);
+    this.setState({ workdays: workingDays });
   }
 
   handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
 
 
   handleChangeWorkdays = (e: { target: { value: number; }; }) => { this.setState({ workdays: e.target.value }); if ((e.target.value > 2 && e.target.value < 19) || e.target.value > 23 || e.target.value < 0) { Swal.fire({ text: 'Liczba musi się mieścić w przedziale 19 - 23', icon: 'warning' }) } }
+
+  handleMonthSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const [year, month] = e.target.value.split('-');
+    if (year && month) {
+      const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
+      this.setState({ workdays: workingDays });
+    }
+  }
 
   render() {
     const { workdays, brutto } = this.state;
@@ -71,7 +89,7 @@ class StaGodz extends React.Component {
                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
               </div>
               <div className="form-group">
-                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={21} method={this.handleChangeWorkdays} number={2} />
+                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={this.state.workdays} method={this.handleChangeWorkdays} number={2} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} />
               </div>
             </form>
             <section>
