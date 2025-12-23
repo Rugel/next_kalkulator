@@ -105,7 +105,7 @@ class KartaGodz extends React.Component {
     for (let i = 1; i <= l; i++) {
       // Check if day is Sunday or fixed holiday or movable holiday
       const isSunday = (i === niedziela || i === niedziela + 7 || i === niedziela + 14 || i === niedziela + 21 || i === niedziela + 28 || i === niedziela + 35);
-      const isFixedHoliday = (i === 1 && (monthStr === "styczeń" || monthStr === "maj" || monthStr === "listopad")) || (i === 6 && monthStr === "styczeń") || (i === 3 && monthStr === "maj") || (i === 15 && monthStr === "sierpień") || (i === 11 && monthStr === "listopad") || (i === 25 && monthStr === "grudzień") || (i === 26 && monthStr === "grudzień");
+      const isFixedHoliday = (i === 1 && (monthStr === "styczeń" || monthStr === "maj" || monthStr === "listopad")) || (i === 6 && monthStr === "styczeń") || (i === 3 && monthStr === "maj") || (i === 15 && monthStr === "sierpień") || (i === 11 && monthStr === "listopad") || (i === 24 && monthStr === "grudzień") || (i === 25 && monthStr === "grudzień") || (i === 26 && monthStr === "grudzień");
       const isMovable = isMovableHoliday(i, month);
 
       if (isSunday || isFixedHoliday || isMovable) {

@@ -1,4 +1,4 @@
-import { getMovableHolidays } from '../karta_godzin/holidays';
+import { getMovableHolidays } from '../karta_godzin/holidays.js';
 
 /**
  * Check if a date is a weekend (Saturday or Sunday)
@@ -29,6 +29,7 @@ function isHoliday(date, year) {
         { month: 8, day: 15 },  // Assumption
         { month: 11, day: 1 },  // All Saints
         { month: 11, day: 11 }, // Independence Day
+        { month: 12, day: 24 }, // Christmas Eve (Wigilia)
         { month: 12, day: 25 }, // Christmas
         { month: 12, day: 26 }  // Boxing Day
     ];
