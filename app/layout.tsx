@@ -14,20 +14,25 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator Wynagrodzeń dla Pracownika ze Stawką Godzinową",
-  description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
-  keywords: "kalkulator, wynagodzenie, stawka godzinowa",
+  title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
+  description: "Kalkulator Wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+  keywords: "kalkulator, wynagrodzenie, stawka godzinowa",
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 5,
+  },
   openGraph: {
-    title: "Kalkulator Wynagrodzeń dla Pracownika ze Stawką Godzinową",
-    description: "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+    title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
+    description: "Kalkulator wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
     url: "https://stawka-godzinowa.pl",
-    siteName: "Kalkulator Wynagordzeń",
+    siteName: "Kalkulator Stawki Godzinowej",
     images: [
       {
         url: "https://stawka-godzinowa.pl/image.webp",
         width: 1200,
         height: 630,
-        alt: "Kalkulator Wynagrodzeń",
+        alt: "Kalkulator Stawki Godzinowej",
       },
     ],
     locale: "pl_PL",
@@ -63,7 +68,7 @@ export default function RootLayout({
             `,
           }}
         />
-        <meta name="apple-mobile-web-app-title" content="Kalkulator Wynagrodzeń" />
+        <meta name="apple-mobile-web-app-title" content="Kalkulator Stawki Godzinowej" />
         {/* Dane strukturalne dla SoftwareApplication */}
         <script
           type="application/ld+json"
@@ -71,8 +76,8 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Kalkulator Wynagrodzeń",
-              "description": "Kalkulator wynagrodzeń 2025 obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
+              "name": "Kalkulator Stawki Godzinowej",
+              "description": "Kalkulator wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
               "url": "https://stawka-godzinowa.pl",
               "image": "https://stawka-godzinowa.pl/image.webp",
               "applicationCategory": "Finance",

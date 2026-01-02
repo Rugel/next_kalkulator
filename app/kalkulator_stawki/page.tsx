@@ -74,7 +74,7 @@ class StaGodz extends React.Component {
       <>
         <header><Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u>
+            <u><h1>Kalkulator Stawki Godzinowej</h1></u>
           </div>
         </header>
         <Menu currentPage="stawka" />
@@ -84,6 +84,7 @@ class StaGodz extends React.Component {
         />
         <main>
           <section>
+            <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
             <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
               <div className="form-group">
                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
@@ -93,6 +94,7 @@ class StaGodz extends React.Component {
               </div>
             </form>
             <section>
+              <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wyniki Obliczeń</h2>
               <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
                 <table>
                   <thead>
@@ -114,6 +116,7 @@ class StaGodz extends React.Component {
               </div>
             </section>
             <article>
+              <h2>Jak Obliczyć Stawkę Godzinową?</h2>
               <div className='desc'>
                 <p>
                   Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br /> Wystarczy podzielić miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8. Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.

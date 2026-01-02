@@ -149,7 +149,7 @@ class KartaGodz extends React.Component {
         <header>
           <Wynik />
           <div id="tytul">
-            <u><h1>Kalkulator Wynagrodzeń</h1></u>
+            <u><h1>Karta Ewidencji Czasu Pracy</h1></u>
           </div>
         </header>
         <Menu currentPage="karta_godzin" />
@@ -168,6 +168,7 @@ class KartaGodz extends React.Component {
           <Table />
           <Podpis />
           <article>
+            <h2>Jak Używać Karty Godzin?</h2>
             <div className='desc'>
               <p>
                 Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>

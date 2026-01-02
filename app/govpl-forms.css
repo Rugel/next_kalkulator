@@ -177,7 +177,8 @@
     }
 }
 
-/* Dark Mode Support (Optional) */
+/* Dark Mode Support (Optional) - DISABLED to keep consistent light theme */
+/*
 @media (prefers-color-scheme: dark) {
     .form-group {
         background: #1F2937;
@@ -197,6 +198,7 @@
         color: #6B7280;
     }
 }
+*/
 
 /* Accessibility - High Contrast Mode */
 @media (prefers-contrast: high) {

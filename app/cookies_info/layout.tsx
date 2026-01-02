@@ -6,7 +6,11 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
     title: "Informacja o cookies",
     description: "Strona przedstawia informacje na temat plików cookies używanych na stronie internetowej",
-    keywords: "cookies, ciasteczka, polityka, prywatność"
+    keywords: "cookies, ciasteczka, polityka, prywatność",
+    robots: {
+        index: false,
+        follow: true,
+    }
 };
 
 export default function Cookies_info({
