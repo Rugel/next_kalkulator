@@ -27,7 +27,7 @@ export const metadata: Metadata = {
     },
 };
 
-export default function KartaGodz({
+export default function KartaGodzinLayout({
     children,
 }: Readonly<{
     children: React.ReactNode;

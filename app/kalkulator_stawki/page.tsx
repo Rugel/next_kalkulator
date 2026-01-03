@@ -7,6 +7,8 @@ import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
 import { calculateWorkingDays } from '../utils/workdays';
+import stylesList from "../components/ResultsList.module.css";
+import stylesInput from "../modules/Input.module.css";
 
 
 class StaGodz extends React.Component {
@@ -85,17 +87,17 @@ class StaGodz extends React.Component {
         <main>
           <section>
             <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
-            <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
-              <div className="form-group">
+            <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
+              <div className={stylesInput.formGroup}>
                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
               </div>
-              <div className="form-group">
+              <div className={stylesInput.formGroup}>
                 <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={this.state.workdays} method={this.handleChangeWorkdays} number={2} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} />
               </div>
             </form>
             <section>
               <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wyniki Obliczeń</h2>
-              <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
+              <div className={stylesList.list}><p><i><b><u>tabela kwot:</u></b></i></p>
                 <table>
                   <thead>
                     <tr>
@@ -104,15 +106,15 @@ class StaGodz extends React.Component {
                       <th scope="col">Waluta</th>
                     </tr>
                   </thead>
-                  <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
-                    <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
-                    <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
-                    <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
-                    <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                    <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                  <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className={stylesList.count}>{brutto}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie społeczne:</td><td className={stylesList.count}>{zus}</td><td>zł</td></tr>
+                    <tr><td>składka na ubezpieczenie zdrowotne: </td><td className={stylesList.count}>{zdr}</td><td>zł</td></tr>
+                    <tr><td>zaliczka na podatek dochodowy:</td><td className={stylesList.count}>{zal_pod}</td><td>zł</td></tr>
+                    <tr><td>składka na PPK:</td><td className={stylesList.count}>{ppk}</td><td>zł</td></tr>
+                    <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className={stylesList.count}>{pod_ppk}</td><td>zł</td></tr>
                   </tbody>
                 </table>
-                <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
+                <br /><p className={stylesList.small}><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
               </div>
             </section>
             <article>

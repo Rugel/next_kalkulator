@@ -8,6 +8,9 @@ import AdSense from './modules/AdSense';
 import CheckBox from './modules/CheckBox';
 import Menu from './modules/Menu';
 import { calculateWorkingDays } from './utils/workdays';
+import stylesFieldset from "./components/Fieldset.module.css";
+import stylesList from "./components/ResultsList.module.css";
+import stylesInput from "./modules/Input.module.css";
 
 class MainCom extends React.Component {
     state = {
@@ -139,8 +142,8 @@ class MainCom extends React.Component {
                     adSlot="8251150836" // ID jednostki reklamowej
                 />
                 <main>
-                    <fieldset><legend><strong><u>wstępne opcje</u></strong></legend>
-                        <div className='box'>
+                    <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
+                        <div className={stylesFieldset.box}>
                             <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
                             <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia", „dla rodzin 4+",  „na powrót", „dla pracujących seniorów"'} /><br /><br />
                             <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
@@ -150,21 +153,21 @@ class MainCom extends React.Component {
 
                     <section>
                         <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wprowadź Dane do Kalkulatora</h2>
-                        <form id="calculator-form" onSubmit={(e) => e.preventDefault()}>
-                            <div className="form-group"><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
-                            <div className="form-group"><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
-                            <div className="form-group"><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} /></div>
-                            <div className="form-group"><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} number={4} /></div>
-                            <div className="form-group"><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} number={5} /></div>
-                            <div className="form-group"><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} number={6} /></div>
-                            <div className="form-group"><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} number={7} /></div>
-                            <div className="form-group"><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} number={8} /></div>
-                            <div className="form-group"><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} number={9} /></div>
-                            <div className="form-group"><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
+                        <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
+                            <div className={stylesInput.formGroup}><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
+                            <div className={stylesInput.formGroup}><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
+                            <div className={stylesInput.formGroup}><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} /></div>
+                            <div className={stylesInput.formGroup}><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} number={4} /></div>
+                            <div className={stylesInput.formGroup}><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} number={5} /></div>
+                            <div className={stylesInput.formGroup}><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} number={6} /></div>
+                            <div className={stylesInput.formGroup}><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} number={7} /></div>
+                            <div className={stylesInput.formGroup}><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} number={8} /></div>
+                            <div className={stylesInput.formGroup}><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} number={9} /></div>
+                            <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
                         </form>
                         <article>
                             <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Szczegóły Wynagrodzenia</h2>
-                            <div className="list"><p><i><b><u>tabela kwot:</u></b></i></p>
+                            <div className={stylesList.list}><p><i><b><u>tabela kwot:</u></b></i></p>
                                 <table>
                                     <thead>
                                         <tr>
@@ -173,15 +176,15 @@ class MainCom extends React.Component {
                                             <th scope="col">Waluta</th>
                                         </tr>
                                     </thead>
-                                    <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className="count">{brutto}</td><td>zł</td></tr>
-                                        <tr><td>składka na ubezpieczenie społeczne:</td><td className="count">{zus}</td><td>zł</td></tr>
-                                        <tr><td>składka na ubezpieczenie zdrowotne: </td><td className="count">{zdr}</td><td>zł</td></tr>
-                                        <tr><td>zaliczka na podatek dochodowy:</td><td className="count">{zal_pod}</td><td>zł</td></tr>
-                                        <tr><td>składka na PPK:</td><td className="count">{ppk}</td><td>zł</td></tr>
-                                        <tr><td>kwota wpłaty finansowana przez pracodawcę na konto PPK pracownika:</td><td className="count">{pod_ppk}</td><td>zł</td></tr>
+                                    <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className={stylesList.count}>{brutto}</td><td>zł</td></tr>
+                                        <tr><td>składka na ubezpieczenie społeczne:</td><td className={stylesList.count}>{zus}</td><td>zł</td></tr>
+                                        <tr><td>składka na ubezpieczenie zdrowotne: </td><td className={stylesList.count}>{zdr}</td><td>zł</td></tr>
+                                        <tr><td>zaliczka na podatek dochodowy:</td><td className={stylesList.count}>{zal_pod}</td><td>zł</td></tr>
+                                        <tr><td>składka na PPK:</td><td className={stylesList.count}>{ppk}</td><td>zł</td></tr>
+                                        <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className={stylesList.count}>{pod_ppk}</td><td>zł</td></tr>
                                     </tbody>
                                 </table>
-                                <br /><p className="small"><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
+                                <br /><p className={stylesList.small}><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
                             </div></article></section>
                     <Desc />
                     <AdSense

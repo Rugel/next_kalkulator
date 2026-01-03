@@ -1,6 +1,6 @@
 /* =================================================
    MODERN LIST/TABLE STYLING
-   Nowoczesna stylizacja dla div.list i tabel
+   Migrated from list-styles.css
    ================================================= */
 
 /* List Container - Modern Card Design */
@@ -141,7 +141,7 @@
     z-index: 1;
 }
 
-/* Responsive Design for List */
+/* Responsiveness */
 @media (max-width: 768px) {
     .list {
         padding: 1.75rem;
@@ -199,7 +199,6 @@
         font-size: 0.8rem;
     }
 
-    /* Stack table on very small screens if needed */
     .list>table tbody td:first-child {
         font-weight: 600;
     }

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "./Input.module.css";
 
 interface InputProps {
     content: string;
@@ -12,14 +13,14 @@ interface InputProps {
 }
 
 const Input: React.FC<InputProps> = ({ content, method, plhld, name, number, monthSelector, onMonthSelect, defaultMonthValue }) => (
-    <div className="input-wrapper">
-        <label htmlFor={name} className="input-label">
+    <div className={styles.inputWrapper}>
+        <label htmlFor={name} className={styles.inputLabel}>
             {number && <span className="input-number">{number}. </span>}
             {content}
         </label>
         <input
             id={name}
-            className="input"
+            className={styles.input}
             type="number"
             onChange={method}
             value={monthSelector ? plhld : undefined}
@@ -29,14 +30,14 @@ const Input: React.FC<InputProps> = ({ content, method, plhld, name, number, mon
         />
         {monthSelector && (
             <div style={{ marginTop: '1rem' }}>
-                <label htmlFor={`${name}-month`} className="input-label">
+                <label htmlFor={`${name}-month`} className={styles.inputLabel}>
                     lub wybierz żądany miesiąc:
                 </label>
                 <input
                     id={`${name}-month`}
                     type="month"
                     onChange={onMonthSelect}
-                    className="input"
+                    className={styles.input}
                     defaultValue={defaultMonthValue}
                 />
             </div>

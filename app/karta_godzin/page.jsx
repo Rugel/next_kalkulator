@@ -6,6 +6,8 @@ import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
+import stylesList from "../components/ResultsList.module.css";
+import stylesInput from "../modules/Input.module.css";
 import { getMovableHolidays } from './holidays';
 import styles from './page.module.css';
 
@@ -115,11 +117,11 @@ class KartaGodz extends React.Component {
       else { table.push(<tr key={i} className='normal'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
     };
     const Input = () => <div className={styles.inputSection}>
-      <div className="input-wrapper">
-        <label htmlFor="month-input" className="input-label">
+      <div className={stylesInput.inputWrapper}>
+        <label htmlFor="month-input" className={stylesInput.inputLabel}>
           <em>wybierz żądany miesiąc</em>
         </label>
-        <input id="month-input" type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} className="input" />
+        <input id="month-input" type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} className={stylesInput.input} />
       </div>
     </div>;
     const Month = () => <div className={styles.month}><b>{monthStr} {year}</b></div>;
@@ -169,7 +171,7 @@ class KartaGodz extends React.Component {
           <Podpis />
           <article>
             <h2>Jak Używać Karty Godzin?</h2>
-            <div className='desc'>
+            <div className={stylesList.list}>
               <p>
                 Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
               <AdSenseInArticle adSlot={5751543216} />

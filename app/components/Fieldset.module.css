@@ -1,10 +1,10 @@
 /* =================================================
    MODERN FIELDSET STYLING
-   Nowoczesna stylizacja dla elementów fieldset
+   Migrated from fieldset-styles.css
    ================================================= */
 
 /* Fieldset - Modern Card Design with Gradient Border */
-fieldset {
+.fieldset {
     max-width: 700px;
     width: 90%;
     padding: 0;
@@ -17,8 +17,8 @@ fieldset {
     overflow: hidden;
 }
 
-/* Gradient Border Effect for Fieldset */
-fieldset::before {
+/* Gradient Border Effect */
+.fieldset::before {
     content: '';
     position: absolute;
     top: 0;
@@ -35,8 +35,8 @@ fieldset::before {
     pointer-events: none;
 }
 
-/* Legend - Modern Header with Gradient Background */
-legend {
+/* Legend */
+.legend {
     padding: 1.5rem 2rem;
     margin: 0;
     width: 100%;
@@ -52,11 +52,11 @@ legend {
     text-align: center;
 }
 
-legend strong {
+.legend strong {
     font-weight: 700;
 }
 
-legend u {
+.legend u {
     text-decoration: none;
     border-bottom: 2px solid rgba(255, 255, 255, 0.6);
     padding-bottom: 2px;
@@ -67,21 +67,22 @@ legend u {
     padding: 2rem;
     position: relative;
     z-index: 1;
+    text-align: left;
 }
 
-/* Responsive Design for Fieldsets */
+/* Responsive Design */
 @media (max-width: 768px) {
-    fieldset {
+    .fieldset {
         width: 95%;
         margin: 1.5rem auto;
         border-radius: 16px;
     }
 
-    fieldset::before {
+    .fieldset::before {
         border-radius: 16px;
     }
 
-    legend {
+    .legend {
         padding: 1.25rem 1.5rem;
         font-size: 1rem;
         border-radius: 13px 13px 0 0;
@@ -93,17 +94,17 @@ legend u {
 }
 
 @media (max-width: 480px) {
-    fieldset {
+    .fieldset {
         width: 98%;
         margin: 1rem auto;
         border-radius: 12px;
     }
 
-    fieldset::before {
+    .fieldset::before {
         border-radius: 12px;
     }
 
-    legend {
+    .legend {
         padding: 1rem;
         font-size: 0.9rem;
         border-radius: 9px 9px 0 0;
