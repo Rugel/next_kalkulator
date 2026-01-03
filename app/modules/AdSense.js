@@ -14,7 +14,7 @@ const AdSense = ({ adClient, adSlot }) => {
   }, []);
 
   return (
-    <div className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%' }}>
+    <div className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '280px', overflow: 'hidden' }}>
       <ins
         className="adsbygoogle"
         style={{ display: 'block', textAlign: 'center', width: '100%' }}

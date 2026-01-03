@@ -1,4 +1,12 @@
 import "./globals.css";
+import { Roboto } from 'next/font/google';
+
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700'],
+  subsets: ['latin-ext'],
+  display: 'swap',
+  variable: '--font-roboto',
+});
 
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
@@ -102,11 +110,10 @@ export default function RootLayout({
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
-          //strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
           crossOrigin="anonymous"
         />
       </head>
-      <body>
+      <body className={roboto.className}>
         <GlobalSpinner>
           <AnalyticsListener />
           {children}
