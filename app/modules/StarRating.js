@@ -162,9 +162,9 @@ export default function StarRating({ itemId }) {
 
   return (
     <div className={styles.ratingContainer}>
-      <h5 className={styles.header}>
+      <h2 className={styles.header}>
         {hasVoted ? "Dziękujemy za ocenę!" : "Oceń aplikację:"}
-      </h5>
+      </h2>
 
       <div className={styles.stars} onMouseLeave={() => setHoverRating(0)}>
         {[1, 2, 3, 4, 5].map((star, index) => {

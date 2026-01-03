@@ -113,9 +113,9 @@ export default function Weather() {
 
     return (
         <div className={styles.weatherContainer}>
-            <div className={styles.header}>
+            <h2 className={styles.header}>
                 Pogoda w Twoim mieście:
-            </div>
+            </h2>
 
             <div className={styles.inputGroup}>
                 <input
@@ -136,9 +136,9 @@ export default function Weather() {
                 />
             </div>
 
-            <div className={styles.header}>
-                Aktualna pogoda dla miasta <span className={styles.value} style={{ color: '#0077FF' }}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
-            </div>
+            <h3 className={styles.header}>
+                Aktualna pogoda dla miasta <span className={styles.value} style={{ color: '#0066db' }}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
+            </h3>
 
             <table className={styles.weatherTable}>
                 <tbody>

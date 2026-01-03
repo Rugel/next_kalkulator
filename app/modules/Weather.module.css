@@ -36,8 +36,8 @@
     padding: 0.5em;
     text-align: center;
     font-weight: bold;
-    color: #0077FF;
-    /* App Blue */
+    color: #0066db;
+    /* App Blue - Darker for accessibility */
     background-color: white;
     border: 2px solid #0B0C0C;
     outline: none;
@@ -92,13 +92,13 @@
 
 .label {
     font-weight: normal;
-    color: #666;
+    color: #444;
 }
 
 .value {
     font-weight: bold;
-    color: #0077FF;
-    /* App Blue */
+    color: #0066db;
+    /* App Blue - Darker for accessibility */
 }
 
 .weatherIcon {

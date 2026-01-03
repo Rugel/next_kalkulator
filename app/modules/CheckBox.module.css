@@ -3,6 +3,14 @@
    Nowoczesny styl przełącznika checkbox
    ================================================= */
 
+/* Kontener dla całego elementu (switch + label) */
+.checkboxWrapper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+}
+
 /* Kontener dla suwaka */
 .switchContainer {
     position: relative;
@@ -11,7 +19,7 @@
     height: 24px;
     margin-right: 14px;
     -webkit-tap-highlight-color: transparent;
-    vertical-align: middle;
+    flex-shrink: 0;
 }
 
 /* Ukrywamy domyślny checkbox */
@@ -133,4 +141,13 @@ input[type="checkbox"]:checked:focus+.slider {
     input[type="checkbox"]:checked+.slider:before {
         transform: translateX(22px);
     }
+}
+
+/* Styl tekstu obok checkboxa */
+.labelText {
+    cursor: pointer;
+    font-size: 1rem;
+    color: #444;
+    user-select: none;
+    line-height: 1.4;
 }

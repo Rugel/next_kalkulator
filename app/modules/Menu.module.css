@@ -103,12 +103,12 @@
     justify-content: space-between;
     width: 45px;
     height: 45px;
-    background: #54AD00;
+    background: #4a9900;
     border: none;
     border-radius: 50%;
     padding: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(84, 173, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(74, 153, 0, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 90;
     /* Pop in from the same scale as the menu disappears */
@@ -129,7 +129,7 @@
 
 .hamburgerButton:hover {
     transform: scale(1.1);
-    background: #60c200;
+    background: #56ae00;
 }
 
 .bar {
@@ -181,7 +181,7 @@
 .link:hover {
     color: #000;
     background: #e8e8e8;
-    border-color: #54AD00;
+    border-color: #4a9900;
     transform: scale(1.05);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -204,11 +204,11 @@
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: #54AD00;
+    background: #4a9900;
     color: white;
     border-radius: 50px;
-    border: 2px solid #54AD00;
-    box-shadow: 0 4px 15px rgba(84, 173, 0, 0.3);
+    border: 2px solid #4a9900;
+    box-shadow: 0 4px 15px rgba(74, 153, 0, 0.3);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     cursor: default;
 }
@@ -227,7 +227,7 @@
     }
 
     50% {
-        box-shadow: 0 4px 20px rgba(84, 173, 0, 0.5);
+        box-shadow: 0 4px 20px rgba(74, 153, 0, 0.5);
     }
 }
 
