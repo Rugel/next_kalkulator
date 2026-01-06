@@ -44,7 +44,7 @@ const B2BPage = () => {
     return (
         <>
             <header>
-                <p className="wynik">Dochód Netto ("na rękę"):<br />
+                <p className="wynik">Dochód Netto (&quot;na rękę&quot;):<br />
                     <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}>
                         {formatMoney(results.netto)}
                     </span> zł
