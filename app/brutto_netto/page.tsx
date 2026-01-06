@@ -20,6 +20,7 @@ class BruttoNetto extends React.Component {
     isConfirmedPpk: false,
     isConfirmedU26: false,
     isConfirmeWorkplace: false,
+    isTaxFreeExcluded: false,
   }
 
   handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
@@ -32,8 +33,10 @@ class BruttoNetto extends React.Component {
 
   handleChangeConfirmWorkplace = () => { this.setState({ isConfirmeWorkplace: !this.state.isConfirmeWorkplace }) }
 
+  handleChangeTaxFreeExcluded = () => { this.setState({ isTaxFreeExcluded: !this.state.isTaxFreeExcluded }) }
+
   render() {
-    let brutto = this.state.BaN;
+    let brutto = Number(this.state.BaN);
     //wyliczenie składek
     let ppk;
     let ppk_bru;
@@ -58,11 +61,18 @@ class BruttoNetto extends React.Component {
     if (pod_zal < 0) { pod_zal = 0 };
     let kw_zm = 3600;
     let zal_pod;
+    let kw_wolna = 300;
+    if (this.state.isTaxFreeExcluded) { kw_wolna = 0 };
+
     if (brutto - 85528 < 30000 && brutto - 85528 > 0) { kw_zm = Math.round((brutto - 85528) * 0.12) };
-    if (this.state.isConfirmed) { zal_pod = Math.round(pod_zal * 0.32) - 300 }
-    else { zal_pod = Math.round(pod_zal * 0.12) - 300 };
+    if (this.state.isConfirmed) { zal_pod = Math.round(pod_zal * 0.32) - kw_wolna }
+    else { zal_pod = Math.round(pod_zal * 0.12) - kw_wolna };
     if (zal_pod < 0 || (this.state.isConfirmedU26 && brutto <= 85528)) { zal_pod = 0 } else if (this.state.isConfirmedU26 && brutto > 85528 && brutto <= 205528) { zal_pod = Math.round((brutto - 85528) * 0.12) - kw_zm } else if (this.state.isConfirmedU26 && brutto > 205528) { zal_pod = Math.round(10800 + (brutto - 205528) * 0.32) };
     const pod_ppk = Math.round((ppk_bru - brutto) * 100) / 100;
+
+    // Koszty pracodawcy
+    const zus_pracodawca = Math.round(brutto * 0.2048 * 100) / 100;
+    const koszt_pracodawcy = Math.round((brutto + zus_pracodawca + pod_ppk) * 100) / 100;
 
     let netto: any = Math.round((brutto - zus - zdr - zal_pod - ppk) * 100) / 100;
     netto = netto.toString();
@@ -90,6 +100,7 @@ class BruttoNetto extends React.Component {
                 <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
                 <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} /><br /><br />
                 <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
+                <CheckBox Id={'taxfree'} OnChange={this.handleChangeTaxFreeExcluded} Checked={this.state.isTaxFreeExcluded} Text={'nie odliczaj kwoty wolnej od podatku (ulga 300 zł)'} /><br /><br />
                 <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
               </div>
             </fieldset>
@@ -110,12 +121,14 @@ class BruttoNetto extends React.Component {
                       <th scope="col">Waluta</th>
                     </tr>
                   </thead>
-                  <tbody><tr><td>wysokość wynagrodzenia brutto:</td><td className={stylesList.count}>{brutto}</td><td>zł</td></tr>
+                  <tbody><tr><td><b>wysokość wynagrodzenia brutto:</b></td><td className={stylesList.count}><b>{brutto}</b></td><td><b>zł</b></td></tr>
                     <tr><td>składka na ubezpieczenie społeczne:</td><td className={stylesList.count}>{zus}</td><td>zł</td></tr>
                     <tr><td>składka na ubezpieczenie zdrowotne: </td><td className={stylesList.count}>{zdr}</td><td>zł</td></tr>
                     <tr><td>zaliczka na podatek dochodowy:</td><td className={stylesList.count}>{zal_pod}</td><td>zł</td></tr>
                     <tr><td>składka na PPK:</td><td className={stylesList.count}>{ppk}</td><td>zł</td></tr>
                     <tr><td>kwota wpłaty finansowana przez pracodowcę na konto PPK pracownika:</td><td className={stylesList.count}>{pod_ppk}</td><td>zł</td></tr>
+                    <tr style={{ borderTop: '2px solid #ddd' }}><td><b>Całkowity koszt pracodawcy:</b></td><td className={stylesList.count}><b>{koszt_pracodawcy}</b></td><td><b>zł</b></td></tr>
+                    <tr><td><b>Kwota netto (do wypłaty):</b></td><td className={stylesList.count}><b>{netto}</b></td><td><b>zł</b></td></tr>
                   </tbody>
                 </table>
                 <br /><p className={stylesList.small}><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
