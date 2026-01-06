@@ -169,7 +169,7 @@ class KartaGodz extends React.Component {
           <Enploy />
           <Table />
           <Podpis />
-          <article>
+          <article className="desc">
             <h2>Jak Używać Karty Godzin?</h2>
             <div className={stylesList.list}>
               <p>

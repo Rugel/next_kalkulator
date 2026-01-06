@@ -15,6 +15,12 @@ import StarRating from "./modules/StarRating";
 import Footer from "./modules/footer";
 import { GlobalSpinner } from "./components/GlobalSpinner";
 
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
   alternates: {
@@ -23,11 +29,6 @@ export const metadata = {
   title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
   description: "Kalkulator Wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
   keywords: "kalkulator, wynagrodzenie, stawka godzinowa",
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-    maximumScale: 5,
-  },
   openGraph: {
     title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
     description: "Kalkulator wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",

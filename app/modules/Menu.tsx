@@ -5,18 +5,19 @@ import styles from './Menu.module.css';
 import { useSpinner } from '../components/GlobalSpinner';
 
 interface MenuProps {
-  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie';
+  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b';
 }
 
 const Menu: React.FC<MenuProps> = ({ currentPage }) => {
   const { showSpinner } = useSpinner();
 
   const menuItems = [
-    { id: 'godziny', label: 'Wyliczenie z godzin pracy', href: '/' },
-    { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO', href: '/brutto_netto' },
-    { id: 'stawka', label: 'Kalkulator stawki godz.', href: '/kalkulator_stawki' },
-    { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
+    { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/' },
+    { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto_netto' },
+    { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/kalkulator_stawki' },
     { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
+    { id: 'b2b', label: 'Kalkulator B2B', href: '/kalkulator-b2b' },
+    { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
   ];
 
   const [isHamburgerMode, setIsHamburgerMode] = React.useState(false);
