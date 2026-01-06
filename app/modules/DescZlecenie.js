@@ -9,7 +9,7 @@ const DescZlecenie = () => {
                 <h2>Kalkulator Umowy Zlecenie – Oblicz Wynagrodzenie Netto</h2>
                 <br />
                 <strong>
-                    Skorzystaj z naszego darmowego kalkulatora umowy zlecenie, aby szybko i precyzyjnie obliczyć kwotę, którą otrzymasz "na rękę".
+                    Skorzystaj z naszego darmowego kalkulatora umowy zlecenie, aby szybko i precyzyjnie obliczyć kwotę, którą otrzymasz &quot;na rękę&quot;.
                     Narzędzie uwzględnia aktualne przepisy podatkowe na rok 2026, w tym zwolnienia dla osób do 26. roku życia oraz status studenta.
                     Minimalna stawka godzinowa od 1 stycznia 2026 r. wynosi 31,40 zł brutto.
                 </strong>
@@ -32,7 +32,7 @@ const DescZlecenie = () => {
                         <strong>Status studenta/ucznia poniżej 26 roku życia:</strong> Najkorzystniejsza opcja podatkowa. Jeśli posiadasz ten status, Twoje wynagrodzenie brutto jest równe wynagrodzeniu netto (brak składek ZUS i podatku).
                     </li>
                     <li>
-                        <strong>Osoba do 26 roku życia (Zerowy PIT):</strong> Skorzystaj z ulgi "Bez PIT dla młodych". Płacisz składki ZUS, ale jesteś zwolniony z podatku dochodowego.
+                        <strong>Osoba do 26 roku życia (Zerowy PIT):</strong> Skorzystaj z ulgi &quot;Bez PIT dla młodych&quot;. Płacisz składki ZUS, ale jesteś zwolniony z podatku dochodowego.
                     </li>
                     <li>
                         <strong>Dobrowolne ubezpieczenie chorobowe:</strong> Zaznacz, jeśli chcesz opłacać składkę chorobową (2,45%), co daje prawo do płatnego zwolnienia lekarskiego (L4). Składka jest dobrowolna przy umowie zlecenie.
