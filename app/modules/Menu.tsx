@@ -5,7 +5,7 @@ import styles from './Menu.module.css';
 import { useSpinner } from '../components/GlobalSpinner';
 
 interface MenuProps {
-  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin';
+  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie';
 }
 
 const Menu: React.FC<MenuProps> = ({ currentPage }) => {
@@ -16,6 +16,7 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO', href: '/brutto_netto' },
     { id: 'stawka', label: 'Kalkulator stawki godz.', href: '/kalkulator_stawki' },
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
+    { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
   ];
 
   const [isHamburgerMode, setIsHamburgerMode] = React.useState(false);
