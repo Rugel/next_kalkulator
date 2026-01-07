@@ -55,10 +55,10 @@ const B2BPage = () => {
             </header>
             <Menu currentPage="b2b" />
 
-            <AdSense
+            {/* <AdSense
                 adClient="ca-pub-8789064360135564"
                 adSlot="8251150836"
-            />
+            />*/}
 
             <main>
                 <fieldset className={stylesFieldset.fieldset}>
@@ -115,7 +115,7 @@ const B2BPage = () => {
                 </fieldset>
 
                 <section>
-                    <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Dane Finansowe (Miesięczne)</h2>
+                    <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Dane Finansowe (Miesięczne)</h2>
                     <form className={stylesInput.calculatorForm} onSubmit={e => e.preventDefault()}>
                         <div className={stylesInput.formGroup}>
                             <Input
@@ -140,7 +140,7 @@ const B2BPage = () => {
                     </form>
 
                     <article>
-                        <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wyniki Szczegółowe</h2>
+                        <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Wyniki Szczegółowe</h2>
                         <div className={stylesList.list}>
                             <table>
                                 <thead>

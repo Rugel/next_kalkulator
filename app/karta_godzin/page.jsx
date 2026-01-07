@@ -151,14 +151,14 @@ class KartaGodz extends React.Component {
         <header>
           <Wynik />
           <div id="tytul">
-            <u><h1>Karta Ewidencji Czasu Pracy</h1></u>
+            <u><h1>Karta ewidencji czasu pracy</h1></u>
           </div>
         </header>
         <Menu currentPage="karta_godzin" />
-        <AdSense
-          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="3856131321" // ID jednostki reklamowej
-        />
+        {/*<AdSense
+          adClient="ca-pub-8789064360135564"
+          adSlot="3856131321"
+        />*/}
         <main>
           <RenderImage />
           <Input />
@@ -170,23 +170,24 @@ class KartaGodz extends React.Component {
           <Table />
           <Podpis />
           <article className="desc">
-            <h2>Jak Używać Karty Godzin?</h2>
+            <h2>Jak utworzyć Kartę Godzin Pracy?</h2>
+
+            <p>
+              Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
+            <AdSenseInArticle adSlot={5751543216} />
             <div className={stylesList.list}>
-              <p>
-                Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
-              <AdSenseInArticle adSlot={5751543216} />
-              <ul>
-                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
-                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
+              <ol>
+                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li><br />
+                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li><br />
                 <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
-              </ul>
-              <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
+              </ol>
             </div>
+            <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
           </article>
         </main>
         <AdSense
-          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="7166660680" // ID jednostki reklamowej
+          adClient="ca-pub-8789064360135564"
+          adSlot="7166660680"
         />
         <Cookie />
       </>

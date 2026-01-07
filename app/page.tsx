@@ -143,14 +143,14 @@ class MainCom extends React.Component {
             <>
                 <header><Wynik />
                     <div id="tytul">
-                        <u><h1>Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy</h1></u>
+                        <u><h1>Kalkulator Wynagrodzeń - oblicz pensję z godzin pracy</h1></u>
                     </div>
                 </header>
                 <Menu currentPage="godziny" />
-                <AdSense
+                {/* <AdSense
                     adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                     adSlot="8251150836" // ID jednostki reklamowej
-                />
+                /> */}
                 <main>
                     <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
                         <div className={stylesFieldset.box}>
@@ -163,7 +163,7 @@ class MainCom extends React.Component {
                     </fieldset>
 
                     <section>
-                        <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wprowadź Dane do Kalkulatora</h2>
+                        <h2 style={{ textAlign: 'center', margin: '3rem 0 0 0' }}>Wprowadź dane do Kalkulatora</h2>
                         <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
                             <div className={stylesInput.formGroup}><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
                             <div className={stylesInput.formGroup}><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
@@ -177,8 +177,8 @@ class MainCom extends React.Component {
                             <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
                         </form>
                         <article>
-                            <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Szczegóły Wynagrodzenia</h2>
-                            <div className={stylesList.list}><p><i><b><u>tabela kwot:</u></b></i></p>
+                            <h2 style={{ textAlign: 'center', margin: '3rem 0 0 0' }}>Szczegóły wynagrodzenia</h2>
+                            <div className={stylesList.list}>
                                 <table>
                                     <thead>
                                         <tr>

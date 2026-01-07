@@ -89,10 +89,10 @@ class BruttoNetto extends React.Component {
           </div>
         </header>
         <Menu currentPage="brutto_netto" />
-        <AdSense
+        {/*<AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="3545619061" // ID jednostki reklamowej
-        />
+        />*/}
         <main>
           <section>
             <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
@@ -106,13 +106,13 @@ class BruttoNetto extends React.Component {
             </fieldset>
           </section>
           <section>
-            <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Przelicz Brutto na Netto</h2>
+            <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Przelicz Brutto na Netto</h2>
             <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
               <div className={stylesInput.formGroup}><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} number={1} /></div>
             </form>
             <article>
-              <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Szczegóły Wynagrodzenia</h2>
-              <div className={stylesList.list}><p><i><b><u>tabela kwot:</u></b></i></p>
+              <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły wynagrodzenia</h2>
+              <div className={stylesList.list}>
                 <table>
                   <thead>
                     <tr>
@@ -135,7 +135,7 @@ class BruttoNetto extends React.Component {
               </div></article>
           </section>
           <article>
-            <h2>O Przeliczniku Brutto na Netto</h2>
+            <h2>O przeliczniku Brutto na Netto</h2>
             <div className='desc'>
               <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>

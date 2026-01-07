@@ -57,10 +57,10 @@ const ZleceniePage = () => {
             </header>
             <Menu currentPage="zlecenie" />
 
-            <AdSense
+            {/*<AdSense
                 adClient="ca-pub-8789064360135564"
                 adSlot="8251150836"
-            />
+            />*/}
 
             <main>
                 <fieldset className={stylesFieldset.fieldset}>
@@ -104,7 +104,7 @@ const ZleceniePage = () => {
                 </fieldset>
 
                 <section>
-                    <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wprowadź Dane</h2>
+                    <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Wprowadź Dane</h2>
                     <form id="zlecenie-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
                         <div className={stylesInput.formGroup}>
                             <Input
@@ -118,9 +118,8 @@ const ZleceniePage = () => {
                     </form>
 
                     <article>
-                        <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Szczegóły Wynagrodzenia</h2>
+                        <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły Wynagrodzenia</h2>
                         <div className={stylesList.list}>
-                            <p><i><b><u>Tabela kwot:</u></b></i></p>
                             <table>
                                 <thead>
                                     <tr>

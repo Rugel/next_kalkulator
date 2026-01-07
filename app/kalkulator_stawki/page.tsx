@@ -114,10 +114,10 @@ class StaGodz extends React.Component {
           </div>
         </header>
         <Menu currentPage="stawka" />
-        <AdSense
+        {/*<AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="4100717483" // ID jednostki reklamowej
-        />
+        />*/}
         <main>
           <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
             <div className={stylesFieldset.box}>
@@ -129,7 +129,7 @@ class StaGodz extends React.Component {
             </div>
           </fieldset>
           <section>
-            <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
+            <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
             <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
               <div className={stylesInput.formGroup}>
                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
@@ -139,8 +139,8 @@ class StaGodz extends React.Component {
               </div>
             </form>
             <section>
-              <h2 style={{ textAlign: 'center', margin: '1.5rem 0 1rem 0' }}>Wyniki Obliczeń</h2>
-              <div className={stylesList.list}><p><i><b><u>tabela kwot:</u></b></i></p>
+              <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Wyniki Obliczeń</h2>
+              <div className={stylesList.list}>
                 <table>
                   <thead>
                     <tr>
