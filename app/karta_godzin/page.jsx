@@ -175,8 +175,8 @@ class KartaGodz extends React.Component {
             <p>
               Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
             <AdSenseInArticle adSlot={5751543216} />
-            <div className={stylesList.list}>
-              <ol>
+            <div >
+              <ol className={stylesList.list}>
                 <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li><br />
                 <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li><br />
                 <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
