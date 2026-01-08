@@ -6,16 +6,7 @@
     height: 180px;
 }
 
-.logInp {
-    text-align: left;
-    margin-left: 5lvw;
-    margin-top: 2em;
-    width: fit-content;
-    border: solid 1px;
-    padding: 5px;
-    max-width: 50%;
-    font-size: 0.8em;
-}
+/* Removed logInp as it is replaced by shared styles */
 
 .file {
     font-size: .9em;
@@ -85,16 +76,7 @@
     border-top: dashed 2px;
 }
 
-.inputSection {
-    text-align: left;
-    margin-left: 5lvw;
-    margin-top: 2em;
-    width: fit-content;
-    border: solid 1px;
-    padding: 5px;
-    max-width: 50%;
-    font-size: 0.8em;
-}
+/* Removed inputSection as it is replaced by shared styles */
 
 /* Table styles specific to karta_godzin */
 .table {
@@ -131,9 +113,8 @@
 
 @media print {
 
-    .logInp,
-    .link,
-    .inputSection {
+    .controls,
+    .link {
         display: none !important;
     }
 

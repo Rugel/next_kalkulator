@@ -28,7 +28,7 @@ class KartaGodz extends React.Component {
 
   render() {
     const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div className={styles.logo}><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
-    const Logo = () => <div className={styles.logInp}><label htmlFor="file"><em>dodaj logo lub zdjęcie</em></label><br /><input type="file" id="file" className={styles.file} onChange={this.LogoHandlleChange} accept="image/*" /><br /><b>wybrano: </b>{this.state.logo.name}</div>;
+
     const Title = () => <div className={styles.title}><h2>Karta Godzin Pracy</h2></div>;
     const text = this.state.inputVal;
     let month = text.slice(5, 7) * 1;
@@ -116,14 +116,75 @@ class KartaGodz extends React.Component {
       else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className={styles.saturday}><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
       else { table.push(<tr key={i} className='normal'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
     };
-    const Input = () => <div className={styles.inputSection}>
-      <div className={stylesInput.inputWrapper}>
-        <label htmlFor="month-input" className={stylesInput.inputLabel}>
-          <em>wybierz żądany miesiąc</em>
-        </label>
-        <input id="month-input" type='month' name='input' onChange={this.InputHandleChange} value={this.state.inputVal} className={stylesInput.input} />
+    const Input = () => (
+      <div className={stylesInput.formGroup}>
+        <div className={stylesInput.inputWrapper}>
+          <label htmlFor="month-input" className={stylesInput.inputLabel}>
+            <em>wybierz żądany miesiąc</em>
+          </label>
+          <input
+            id="month-input"
+            type='month'
+            name='input'
+            onChange={this.InputHandleChange}
+            value={this.state.inputVal}
+            className={stylesInput.input}
+          />
+        </div>
       </div>
-    </div>;
+    );
+
+    const Logo = () => (
+      <div className={stylesInput.formGroup}>
+        <div className={stylesInput.inputWrapper}>
+          <label htmlFor="file" className={stylesInput.inputLabel}>
+            <em>dodaj logo lub zdjęcie</em>
+          </label>
+          <input
+            type="file"
+            id="file"
+            onChange={this.LogoHandlleChange}
+            accept="image/*"
+            style={{ display: 'none' }}
+          />
+          <label
+            htmlFor="file"
+            className={stylesInput.input}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              backgroundColor: '#f8f9fa',
+              fontWeight: '500',
+              color: '#495057'
+            }}
+          >
+            {this.state.logo ? (
+              <span>📁 {this.state.logo.name}</span>
+            ) : (
+              <span>📤 Wybierz plik...</span>
+            )}
+          </label>
+        </div>
+      </div>
+    );
+
+    const Controls = () => (
+      <div className={`${stylesInput.calculatorForm} ${styles.controls}`}>
+        <Input />
+        <Logo />
+        <div className={stylesInput.formGroup}>
+          <div className={stylesInput.inputWrapper} style={{ alignItems: 'center', textAlign: 'center' }}>
+            <label className={stylesInput.inputLabel} style={{ width: '100%' }}>
+              <em>Eksport</em>
+            </label>
+            <Print />
+          </div>
+        </div>
+      </div>
+    );
+
     const Month = () => <div className={styles.month}><b>{monthStr} {year}</b></div>;
     const Enploy = () => <div className={styles.enploy}><em>pracownik:</em><hr className={styles.hr} /><br /><em>stanowisko:</em><hr className={styles.hr} /><br /></div>
     const Rows = () => table.map((e) => e);
@@ -161,9 +222,7 @@ class KartaGodz extends React.Component {
         />*/}
         <main>
           <RenderImage />
-          <Input />
-          <Logo />
-          <Print />
+          <Controls />
           <Title />
           <Month />
           <Enploy />

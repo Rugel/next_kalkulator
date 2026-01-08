@@ -17,7 +17,14 @@ const Print = () => {
 
     if (!isClient) return null;
     return (
-        <div id='print'><label><button className={styles.button} onClick={handlePrint}>🖨️Drukuj</button><br /><em>aby zapisać do pliku należy wybrać w urządzeniach &quot;zapisz jako PDF&quot;</em></label></div>
+        <div className={styles.container}>
+            <button className={styles.button} onClick={handlePrint}>
+                🖨️ Drukuj Kartę
+            </button>
+            <span className={styles.text}>
+                aby zapisać do pliku wybierz "Zapisz jako PDF"
+            </span>
+        </div>
     );
 };
 export default Print;
