@@ -188,21 +188,35 @@
         padding-right: 0.75rem;
     }
 
-    /* Add horizontal scroll for table */
+    /* Ensure table stays within rounded borders */
     .list>table {
-        display: block;
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
-        margin: 0 -0.5rem;
-        width: calc(100% + 1rem);
-    }
-
-    .list>table thead,
-    .list>table tbody,
-    .list>table tr {
+        overflow: hidden;
+        border-radius: 10px;
         display: table;
         width: 100%;
-        table-layout: fixed;
+    }
+
+    /* Wrap table in scroll container if needed */
+    .list {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* Ensure first and last rows respect border radius */
+    .list>table thead tr:first-child th:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    .list>table thead tr:first-child th:last-child {
+        border-top-right-radius: 10px;
+    }
+
+    .list>table tbody tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    .list>table tbody tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
     }
 
     .list>table thead th,
@@ -213,12 +227,12 @@
 
     .list>table thead th:first-child,
     .list>table tbody td:first-child {
-        padding-left: 1rem;
+        padding-left: 0.75rem;
     }
 
     .list>table thead th:last-child,
     .list>table tbody td:last-child {
-        padding-right: 1rem;
+        padding-right: 0.75rem;
     }
 
     .list>table .count {
