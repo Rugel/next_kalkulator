@@ -1,15 +1,41 @@
+"use client";
+
 import Script from 'next/script';
+import { useEffect, useRef } from 'react';
 
 const AdSenseInArticle = ({ adSlot }) => {
+  const adRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    // Check if ad loaded after initialization
+    const checkAdLoaded = setTimeout(() => {
+      if (adRef.current && wrapperRef.current) {
+        const adIns = adRef.current;
+        const hasAd = adIns.innerHTML.trim() !== '' ||
+          adIns.getAttribute('data-ad-status') === 'filled' ||
+          adIns.childNodes.length > 0;
+
+        if (!hasAd) {
+          // Hide wrapper if no ad loaded
+          wrapperRef.current.style.display = 'none';
+        }
+      }
+    }, 2000);
+
+    return () => clearTimeout(checkAdLoaded);
+  }, []);
+
   return (
     <>
       <Script
         async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
-        strategy="afterInteractive" // Ładuje skrypt po interaktywności strony
+        strategy="afterInteractive"
       />
-      <div style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '250px', overflow: 'hidden' }}>
+      <div ref={wrapperRef} style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '0', overflow: 'hidden', transition: 'all 0.3s ease' }}>
         <ins
+          ref={adRef}
           className="adsbygoogle"
           style={{ display: 'block', textAlign: 'center', width: '100%' }}
           data-ad-format="fluid"

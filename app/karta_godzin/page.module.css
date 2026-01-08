@@ -29,7 +29,10 @@
     margin-bottom: .5lvh;
     line-height: 2.3lvh;
     text-align: left;
-    margin-left: 8vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    padding-left: 0;
     font-size: 18px;
 }
 
@@ -43,7 +46,10 @@
     margin-top: 6lvh;
     text-align: right;
     align-content: right;
-    margin-right: 8vw;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 800px;
+    width: 100%;
 }
 
 .signHr {
@@ -80,10 +86,11 @@
 
 /* Table styles specific to karta_godzin */
 .table {
-    margin-left: 0;
-    margin-right: 0;
-    margin: auto;
+    margin-left: auto;
+    margin-right: auto;
     border-collapse: collapse;
+    max-width: 800px;
+    width: 100%;
 }
 
 .table td {
@@ -121,6 +128,20 @@
     .table {
         height: 65dvh;
         width: 85vw;
+    }
+
+    .enploy {
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: none;
+    }
+
+    .sign {
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: none;
     }
 
     .title,
