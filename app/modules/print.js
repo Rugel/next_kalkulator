@@ -22,7 +22,7 @@ const Print = () => {
                 🖨️ Drukuj Kartę
             </button>
             <span className={styles.text}>
-                aby zapisać do pliku wybierz "Zapisz jako PDF"
+                aby zapisać do pliku wybierz &quot;Zapisz jako PDF&quot;
             </span>
         </div>
     );
