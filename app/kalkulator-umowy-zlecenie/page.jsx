@@ -57,10 +57,7 @@ const ZleceniePage = () => {
             </header>
             <Menu currentPage="zlecenie" />
 
-            {/*<AdSense
-                adClient="ca-pub-8789064360135564"
-                adSlot="8251150836"
-            />*/}
+
 
             <main>
                 <fieldset className={stylesFieldset.fieldset}>
@@ -118,6 +115,10 @@ const ZleceniePage = () => {
                     </form>
 
                     <article>
+                        <AdSense
+                            adClient="ca-pub-8789064360135564"
+                            adSlot="8251150836"
+                        />
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły Wynagrodzenia</h2>
                         <div className={stylesList.list}>
                             <table>

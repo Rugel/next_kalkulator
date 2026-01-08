@@ -55,10 +55,7 @@ const B2BPage = () => {
             </header>
             <Menu currentPage="b2b" />
 
-            {/* <AdSense
-                adClient="ca-pub-8789064360135564"
-                adSlot="8251150836"
-            />*/}
+
 
             <main>
                 <fieldset className={stylesFieldset.fieldset}>
@@ -140,6 +137,10 @@ const B2BPage = () => {
                     </form>
 
                     <article>
+                        <AdSense
+                            adClient="ca-pub-8789064360135564"
+                            adSlot="8251150836"
+                        />
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Wyniki Szczegółowe</h2>
                         <div className={stylesList.list}>
                             <table>

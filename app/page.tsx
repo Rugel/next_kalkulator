@@ -147,10 +147,7 @@ class MainCom extends React.Component {
                     </div>
                 </header>
                 <Menu currentPage="godziny" />
-                {/* <AdSense
-                    adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-                    adSlot="8251150836" // ID jednostki reklamowej
-                /> */}
+
                 <main>
                     <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
                         <div className={stylesFieldset.box}>
@@ -177,6 +174,10 @@ class MainCom extends React.Component {
                             <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
                         </form>
                         <article>
+                            <AdSense
+                                adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+                                adSlot="8251150836" // ID jednostki reklamowej
+                            />
                             <h2 style={{ textAlign: 'center', margin: '3rem 0 0 0' }}>Szczegóły wynagrodzenia</h2>
                             <div className={stylesList.list}>
                                 <table>

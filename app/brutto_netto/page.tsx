@@ -89,10 +89,7 @@ class BruttoNetto extends React.Component {
           </div>
         </header>
         <Menu currentPage="brutto_netto" />
-        {/*<AdSense
-          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="3545619061" // ID jednostki reklamowej
-        />*/}
+
         <main>
           <section>
             <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
@@ -111,6 +108,10 @@ class BruttoNetto extends React.Component {
               <div className={stylesInput.formGroup}><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} number={1} /></div>
             </form>
             <article>
+              <AdSense
+                adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+                adSlot="3545619061" // ID jednostki reklamowej
+              />
               <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły wynagrodzenia</h2>
               <div className={stylesList.list}>
                 <table>

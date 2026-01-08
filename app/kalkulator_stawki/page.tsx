@@ -114,10 +114,7 @@ class StaGodz extends React.Component {
           </div>
         </header>
         <Menu currentPage="stawka" />
-        {/*<AdSense
-          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="4100717483" // ID jednostki reklamowej
-        />*/}
+
         <main>
           <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
             <div className={stylesFieldset.box}>
@@ -139,7 +136,11 @@ class StaGodz extends React.Component {
               </div>
             </form>
             <section>
-              <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Wyniki Obliczeń</h2>
+              <AdSense
+                adClient="ca-pub-8789064360135564"
+                adSlot="4100717483"
+              />
+              <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły wynagrodzenia</h2>
               <div className={stylesList.list}>
                 <table>
                   <thead>
@@ -177,8 +178,8 @@ class StaGodz extends React.Component {
           </section>
         </main>
         <AdSense
-          adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-          adSlot="6368891825" // ID jednostki reklamowej
+          adClient="ca-pub-8789064360135564"
+          adSlot="6368891825"
         />
         <Cookie />
       </>
