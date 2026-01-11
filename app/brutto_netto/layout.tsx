@@ -6,6 +6,10 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "/brutto_netto",
     },
+    robots: {
+        index: true,
+        follow: true,
+    },
     title: "🖩 Kalkulator Wynagrodzenia Brutto na Netto",
     description: "Oblicz szybko swoje wynagrodzenie netto z kwoty brutto! Wybierz opcje, podaj wartość brutto i sprawdź wynik w Kalkulatorze.",
     keywords: "kalkulator wynagrodzenia, brutto netto, przelicznik płac, wynagrodzenie netto, obliczenia płacowe, kalkulator płac 2025",

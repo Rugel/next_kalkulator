@@ -29,6 +29,19 @@ export const metadata = {
   title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
   description: "Kalkulator Wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
   keywords: "kalkulator, wynagrodzenie, stawka godzinowa",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     title: "Kalkulator Stawki Godzinowej - oblicz swoje wynagrodzenie",
     description: "Kalkulator wynagrodzeń obliczy kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej, świadczenia chorobowego, urlopu oraz dodatków",
