@@ -9,8 +9,8 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Kalkulator Umowy Zlecenie 2026 - Oblicz Netto, ZUS i PIT",
-    description: "Darmowy kalkulator umowy zlecenie na rok 2026. Oblicz wynagrodzenie netto, składki ZUS i zaliczkę na podatek. Uwzględnia 'Zerowy PIT' dla młodych i status studenta.",
+    title: "Kalkulator Umowy Zlecenie 2026 - Oblicz Netto i Składki ZUS",
+    description: "Oblicz wynagrodzenie netto z umowy zlecenie w 2026 roku. Sprawdź stawkę godzinową, składki ZUS i podatek. Uwzględnia status studenta i zerowy PIT.",
     keywords: "kalkulator umowy zlecenie, umowa zlecenie 2026, wynagrodzenie netto, kalkulator płac, pit-2, zwolnienie z podatku, student zlecenia, składki zus zlecenie",
     openGraph: {
         title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",

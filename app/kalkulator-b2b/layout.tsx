@@ -9,8 +9,8 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Kalkulator B2B 2026 - Oblicz Netto, ZUS i Podatek (Ryczałt, Liniowy)",
-    description: "Darmowy kalkulator wynagrodzeń B2B na 2026 rok. Porównaj Ryczałt, Podatek Liniowy i Skalę. Oblicz ZUS, składkę zdrowotną i zysk netto 'na rękę'.",
+    title: "Kalkulator B2B 2026 - Ryczałt, Liniowy, Skala - Oblicz Netto",
+    description: "Kompleksowy kalkulator B2B na 2026 rok. Porównaj Ryczałt, Podatek Liniowy i Skalę Podatkową. Oblicz ZUS, składkę zdrowotną i realny zysk netto swojej firmy.",
     keywords: "kalkulator b2b, kalkulator wynagrodzeń 2026, samozatrudnienie, ryczałt vs liniowy, składki zus 2026, podatek b2b, faktura netto",
     openGraph: {
         title: "Kalkulator B2B 2026 - Sprawdź ile zarobisz na rękę",

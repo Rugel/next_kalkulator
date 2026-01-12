@@ -12,8 +12,8 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Stawka godzinowa? => ten Kalkulator obliczy Twoje wynagrodzenie!",
-    description: "Wyliczenie stawki godzinowej brutto z miesięcznego wynagrodzenia brutto - wystarczy podać kwotę i wpisać liczbę dni roboczych w danym miesiącu.",
+    title: "Jak obliczyć stawkę godzinową? - Kalkulator Wynagrodzenia",
+    description: "Prosty kalkulator stawki godzinowej. Przelicz miesięczne wynagrodzenie brutto na stawkę za godzinę pracy w zależności od wymiaru czasu pracy.",
     keywords: "kalkulator wynagrodzeń, stawka godzinowa, pensja, wypłata, brutto, netto, przelicznik ",
     openGraph: {
         title: "Stawka godzinowa? => ten Kalkulator obliczy Twoje wynagrodzenie!",

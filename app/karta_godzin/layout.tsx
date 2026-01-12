@@ -10,8 +10,8 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Karta ewidencji czasu pracy 🗎 - drukuj PDF dla dowolnego miesiąca",
-    description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
+    title: "Karta Ewidencji Czasu Pracy - Generator PDF do wydruku",
+    description: "Darmowy generator karty ewidencji czasu pracy pracownika. Wygeneruj i wydrukuj gotowy arkusz PDF dla dowolnego miesiąca roku. Prosto i szybko.",
     keywords: "karta, ewidencja, czas, praca",
     openGraph: {
         title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",

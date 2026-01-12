@@ -10,9 +10,9 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "🖩 Kalkulator Wynagrodzenia Brutto na Netto",
-    description: "Oblicz szybko swoje wynagrodzenie netto z kwoty brutto! Wybierz opcje, podaj wartość brutto i sprawdź wynik w Kalkulatorze.",
-    keywords: "kalkulator wynagrodzenia, brutto netto, przelicznik płac, wynagrodzenie netto, obliczenia płacowe, kalkulator płac 2025",
+    title: "Kalkulator Brutto na Netto 2026 - Umowa o Pracę (UoP)",
+    description: "Szybki przelicznik brutto na netto 2026. Oblicz wynagrodzenie na umowie o pracę, uwzględniając PPK, progi podatkowe i ulgę dla młodych (PIT 0).",
+    keywords: "kalkulator wynagrodzenia, brutto netto, przelicznik płac, wynagrodzenie netto, obliczenia płacowe, kalkulator płac 2026",
     openGraph: {
         title: "Przelicznik Wynagrodzenia Brutto na Netto",
         description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą prostego kalkulatora online – szybkie i dokładne wyniki!",
