@@ -6,27 +6,44 @@
 /* Container - Transparent Background */
 .container {
     width: 100%;
-    position: sticky;
-    top: 6em;
-    z-index: 89;
-    padding: 0 0 1rem 0;
-    border-bottom: none;
-    transition: all 0.3s ease;
-}
-
-.hamburgerContainer {
-    padding: 0.5rem 0;
+    position: relative;
+    z-index: 80;
+    padding: 1rem 0;
     background: transparent;
-    pointer-events: none;
-    /* Allow clicking through container when menu is closed */
 }
 
-.hamburgerContainer .nav {
-    pointer-events: auto;
-    /* Re-enable pointer events for nav elements */
+.stickyContainer {
+    position: fixed;
+    top: 95px;
+    /* Balanced distance from .wynik bar */
+    left: 0;
+    right: 0;
+    z-index: 100;
+    background: transparent;
+    padding: 0;
+    pointer-events: none;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stickyContainer .nav {
     display: flex;
     justify-content: flex-end;
-    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    pointer-events: auto;
 }
 
 .nav {
@@ -235,12 +252,12 @@
     animation: pulse 2s ease-in-out infinite;
 }
 
-/* Desktop Layout */
-@media (min-width: 768px) {
+/* Desktop Layout (Full Menu) */
+@media (min-width: 1024px) {
     .list {
         flex-direction: row;
         justify-content: center;
-        gap: 1.5rem;
+        gap: 2rem;
         flex-wrap: wrap;
     }
 
@@ -262,29 +279,15 @@
 
     .link,
     .active {
-        font-size: 0.8rem;
-        padding: 0.75rem 1.5rem;
-    }
-}
-
-/* Large Desktop - Bigger Buttons */
-@media (min-width: 1024px) {
-
-    .link,
-    .active {
         font-size: 0.85rem;
         padding: 0.875rem 2rem;
     }
-
-    .list {
-        gap: 2rem;
-    }
 }
 
-/* Mobile Optimization */
-@media (max-width: 767px) {
+/* Mobile Optimization (Static List) */
+@media (max-width: 1023px) {
     .container {
-        padding: 0 0 0.75rem 0;
+        padding: 1rem 1rem;
     }
 
     .list {

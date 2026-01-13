@@ -20,27 +20,27 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
   ];
 
-  const [isHamburgerMode, setIsHamburgerMode] = React.useState(false);
+  const [isSticky, setIsSticky] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const containerRef = React.useRef<HTMLDivElement>(null);
 
   React.useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsHamburgerMode(true);
-      } else {
-        setIsHamburgerMode(false);
-        setIsMenuOpen(false);
+      if (containerRef.current) {
+        const rect = containerRef.current.getBoundingClientRect();
+        // Show sticky hamburger when the static menu is scrolled out of view
+        if (rect.bottom < 0) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+          setIsMenuOpen(false);
+        }
       }
     };
 
-    // Initial check
-    handleScroll();
-
     window.addEventListener('scroll', handleScroll);
-    window.addEventListener('resize', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
-      window.removeEventListener('resize', handleScroll);
     };
   }, []);
 
@@ -48,46 +48,58 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     if (currentPage !== itemId) {
       showSpinner();
     }
-    if (isHamburgerMode) {
-      setIsMenuOpen(false);
-    }
+    setIsMenuOpen(false);
   };
 
+  const NavContent = ({ isMobileStyle = false }: { isMobileStyle?: boolean }) => (
+    <ul className={`${styles.list} ${isMobileStyle ? (isMenuOpen ? styles.mobileOpen : styles.mobileHidden) : ''}`}>
+      {menuItems.map((item) => (
+        <li key={item.id} className={styles.item}>
+          {currentPage === item.id ? (
+            <span className={styles.active}>
+              {item.label}
+            </span>
+          ) : (
+            <Link
+              href={item.href}
+              className={styles.link}
+              onClick={() => handleNavigation(item.id)}
+            >
+              {item.label}
+            </Link>
+          )}
+        </li>
+      ))}
+    </ul>
+  );
+
   return (
-    <div className={`${styles.container} ${isHamburgerMode ? styles.hamburgerContainer : ''}`}>
-      <nav className={styles.nav} aria-label="Main navigation">
-        {isHamburgerMode && (
-          <button
-            className={`${styles.hamburgerButton} ${isMenuOpen ? styles.hamburgerActive : ''}`}
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-            <span className={styles.bar}></span>
-          </button>
-        )}
-        <ul className={`${styles.list} ${isHamburgerMode ? (isMenuOpen ? styles.mobileOpen : styles.mobileHidden) : ''}`}>
-          {menuItems.map((item) => (
-            <li key={item.id} className={styles.item}>
-              {currentPage === item.id ? (
-                <span className={styles.active}>
-                  {item.label}
-                </span>
-              ) : (
-                <Link
-                  href={item.href}
-                  className={styles.link}
-                  onClick={() => handleNavigation(item.id)}
-                >
-                  {item.label}
-                </Link>
-              )}
-            </li>
-          ))}
-        </ul>
-      </nav>
-    </div>
+    <>
+      {/* Static Menu - Always visible at top of its position */}
+      <div ref={containerRef} className={styles.container}>
+        <nav className={styles.nav} aria-label="Main navigation">
+          <NavContent />
+        </nav>
+      </div>
+
+      {/* Sticky Hamburger - Visible only when scrolled past the static menu */}
+      {isSticky && (
+        <div className={styles.stickyContainer}>
+          <nav className={styles.nav} aria-label="Sticky navigation">
+            <button
+              className={`${styles.hamburgerButton} ${isMenuOpen ? styles.hamburgerActive : ''}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+              <span className={styles.bar}></span>
+            </button>
+            <NavContent isMobileStyle={true} />
+          </nav>
+        </div>
+      )}
+    </>
   );
 };
 
