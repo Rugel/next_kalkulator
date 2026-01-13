@@ -136,8 +136,8 @@ export default function Weather() {
                 />
             </div>
 
-            <h3 className={styles.header}>
-                Aktualna pogoda dla miasta <span className={styles.value} style={{ color: '#0066db' }}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
+            <h3 className={styles.subHeader}>
+                Aktualna pogoda dla miasta <span className={styles.value}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
             </h3>
 
             <table className={styles.weatherTable}>

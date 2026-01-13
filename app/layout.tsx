@@ -12,6 +12,7 @@ import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
 import Weather from "./modules/weather";
 import StarRating from "./modules/StarRating";
+import CommentsSection from "./modules/CommentsSection";
 import Footer from "./modules/footer";
 import { GlobalSpinner } from "./components/GlobalSpinner";
 
@@ -132,6 +133,7 @@ export default function RootLayout({
           <AnalyticsListener />
           {children}
           <div className="widgets-container">
+            <CommentsSection itemId={123} />
             <StarRating itemId={123} />
             <Weather />
           </div>
