@@ -30,6 +30,7 @@ export default function Weather() {
 
     const [coords, setCoords] = useState({ lat: null, lon: null });
     const [active, setActive] = useState(false);
+    const [isLocating, setIsLocating] = useState(false);
 
     const fetchWeather = useCallback(async (queryType, queryValue) => {
         const url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -61,6 +62,8 @@ export default function Weather() {
             }
         } catch (error) {
             console.error("Weather fetch error:", error);
+        } finally {
+            setIsLocating(false);
         }
     }, []);
 
@@ -99,6 +102,7 @@ export default function Weather() {
 
     const handleClickLocal = () => {
         if (navigator.geolocation) {
+            setIsLocating(true);
             navigator.geolocation.getCurrentPosition((position) => {
                 setCoords({
                     lat: position.coords.latitude,
@@ -107,6 +111,9 @@ export default function Weather() {
                 setActive(true);
                 // Clear input visually if needed, though controlled input is better
                 setWeatherData(prev => ({ ...prev, city: '' }));
+            }, (error) => {
+                console.error("Geolocation error:", error);
+                setIsLocating(false);
             });
         }
     };
@@ -126,14 +133,22 @@ export default function Weather() {
                     onChange={handleChangeCity}
                     autoComplete="off"
                 />
-                <Image
-                    src={geo}
-                    onClick={handleClickLocal}
-                    alt="GPS"
+                <div
                     className={styles.geoIcon}
-                    width={40}
-                    height={40}
-                />
+                    onClick={!isLocating ? handleClickLocal : undefined}
+                    title="Localized Weather"
+                >
+                    {isLocating ? (
+                        <div className={styles.spinner}></div>
+                    ) : (
+                        <Image
+                            src={geo}
+                            alt="GPS"
+                            width={40}
+                            height={40}
+                        />
+                    )}
+                </div>
             </div>
 
             <h3 className={styles.subHeader}>
