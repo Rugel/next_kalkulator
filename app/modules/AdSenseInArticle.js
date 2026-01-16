@@ -33,7 +33,7 @@ const AdSenseInArticle = ({ adSlot }) => {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
         strategy="afterInteractive"
       />
-      <div ref={wrapperRef} style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '0', overflow: 'hidden', transition: 'all 0.3s ease' }}>
+      <div ref={wrapperRef} style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '150px', overflow: 'hidden', transition: 'all 0.3s ease', backgroundColor: '#f9f9f9' }}>
         <ins
           ref={adRef}
           className="adsbygoogle"

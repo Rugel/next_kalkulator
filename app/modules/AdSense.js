@@ -37,7 +37,7 @@ const AdSense = ({ adClient, adSlot }) => {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '0', overflow: 'hidden', transition: 'all 0.3s ease' }}>
+    <div ref={wrapperRef} className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '280px', overflow: 'hidden', transition: 'all 0.3s ease', backgroundColor: '#f9f9f9' }}>
       <ins
         ref={adRef}
         className="adsbygoogle"
