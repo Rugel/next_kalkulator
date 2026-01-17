@@ -25,13 +25,12 @@ const AdSense = ({ adClient, adSlot }) => {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        minHeight: '280px',
-        maxHeight: '280px', // Prevent expansion
-        height: '280px',
+        minHeight: '300px',
+        maxHeight: '300px', // Prevent expansion
+        height: '300px',
         overflow: 'hidden',
         backgroundColor: '#f9f9f9',
-        position: 'relative', // Contain absolute positioned ads
-        containIntrinsicSize: '280px',
+        containIntrinsicSize: '300px',
         contentVisibility: 'auto'
       }}
     >
@@ -44,11 +43,7 @@ const AdSense = ({ adClient, adSlot }) => {
           width: '100%',
           maxWidth: '100%',
           height: '100%',
-          maxHeight: '280px',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0
+          maxHeight: '300px'
         }}
         data-ad-client={adClient}
         data-ad-slot={adSlot}

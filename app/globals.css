@@ -340,13 +340,13 @@ a:visited {
 
 /* Critical AdSense CLS Prevention */
 .adsense-wrapper {
-  max-height: 280px !important;
+  max-height: 300px !important;
   overflow: hidden !important;
 }
 
 .adsense-wrapper ins,
 .adsense-wrapper iframe {
-  max-height: 280px !important;
+  max-height: 300px !important;
   max-width: 100% !important;
 }
 
@@ -355,6 +355,7 @@ ins.adsbygoogle {
   max-height: inherit !important;
 }
 
-ins.adsbygoogle[data-ad-format="fluid"] {
-  max-height: 150px !important;
+ins.adsbygoogle[data-ad-format="fluid"],
+ins.adsbygoogle[data-ad-layout="in-article"] {
+  max-height: 250px !important;
 }
