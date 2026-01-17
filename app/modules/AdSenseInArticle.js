@@ -25,12 +25,12 @@ const AdSenseInArticle = ({ adSlot }) => {
           justifyContent: 'center',
           alignItems: 'center',
           width: '100%',
-          minHeight: '250px',
-          maxHeight: '250px',
-          height: '250px',
+          minHeight: '320px',
+          maxHeight: '320px',
+          height: '320px',
           overflow: 'hidden',
           backgroundColor: '#f9f9f9',
-          containIntrinsicSize: '250px',
+          containIntrinsicSize: '320px',
           contentVisibility: 'auto'
         }}
       >
@@ -43,7 +43,7 @@ const AdSenseInArticle = ({ adSlot }) => {
             width: '100%',
             maxWidth: '100%',
             height: '100%',
-            maxHeight: '250px'
+            maxHeight: '320px'
           }}
           data-ad-format="fluid"
           data-ad-layout="in-article"
