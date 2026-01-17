@@ -75,6 +75,7 @@ export default function RootLayout({
         <Script
           strategy="afterInteractive"
           src={`https://www.googletagmanager.com/gtag/js?id=G-PHKBZYQPHS`}
+          charSet="utf-8"
         />
         <Script
           id="gtag-init"
@@ -124,6 +125,7 @@ export default function RootLayout({
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
           crossOrigin="anonymous"
           strategy="afterInteractive"
+          charSet="utf-8"
         />
       </head>
       <body className={roboto.className}>
