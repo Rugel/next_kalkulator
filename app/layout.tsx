@@ -27,9 +27,9 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator Stawki Godzinowej 2026 - Oblicz Wynagrodzenie Netto/Brutto",
-  description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz stawkę godzinową, pensję netto/brutto, uwzględniając nadgodziny, chorobowe i urlop. Sprawdź ile zarobisz na rękę!",
-  keywords: "kalkulator wynagrodzeń 2026, stawka godzinowa, kalkulator płac, brutto netto, ile zarabiam, pensja na rękę, kalkulator nadgodzin",
+  title: "Kalkulator stawki godzinowej 2026 - Oblicz swoje wynagrodzenie",
+  description: "Najdokładniejszy kalkulator stawki godzinowej online. Szybko przelicz wynagrodzenie miesięczne na stawkę za godzinę pracy (brutto i netto).",
+  keywords: "kalkulator stawki godzinowej, stawka godzinowa, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
     follow: true,
@@ -44,8 +44,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Kalkulator Stawki Godzinowej 2026 - Oblicz Wynagrodzenie Netto/Brutto",
-    description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz stawkę godzinową, pensję netto/brutto, uwzględniając nadgodziny, chorobowe i urlop.",
+    title: "Jak obliczyć stawkę godzinową? - Kalkulator Wynagrodzeń",
+    description: "Praktyczne narzędzie do wyliczania stawki godzinowej z wynagrodzenia miesięcznego. Sprawdź swoje zarobki w kilka sekund.",
     url: "https://stawka-godzinowa.pl",
     siteName: "Kalkulator Stawki Godzinowej",
     images: [
@@ -112,11 +112,6 @@ export default function RootLayout({
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
                 "logo": "https://stawka-godzinowa.pl/logo.webp",
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.5",
-                "reviewCount": "35"
               }
             }),
           }}

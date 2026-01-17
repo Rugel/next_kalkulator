@@ -12,9 +12,9 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
   const { showSpinner } = useSpinner();
 
   const menuItems = [
-    { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/' },
+    { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/' },
+    { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/wyliczenie_z_godzin' },
     { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto_netto' },
-    { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/kalkulator_stawki' },
     { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
     { id: 'b2b', label: 'Kalkulator B2B', href: '/kalkulator-b2b' },
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },

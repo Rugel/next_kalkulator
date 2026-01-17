@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
-            url: `${baseUrl}/kalkulator_stawki`,
+            url: `${baseUrl}/wyliczenie_z_godzin`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,

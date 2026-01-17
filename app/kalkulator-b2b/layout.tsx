@@ -69,11 +69,42 @@ export default function B2BLayout({
         }
     };
 
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Jaką formę opodatkowania wybrać na B2B w 2026 roku?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Wybór zależy od wysokości przychodów i kosztów. Ryczałt (np. 12% dla IT) jest często korzystny przy niskich kosztach. Podatek liniowy (19%) opłaca się przy wysokich dochodach, a skala podatkowa (12%/32%) pozwala korzystać z kwoty wolnej 30 tys. zł i ulg prorodzinnych."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Ile wynosi składka zdrowotna na B2B w 2026 r.?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Na skali podatkowej wynosi 9% dochodu. Na podatku liniowym jest to 4,9% dochodu. Na ryczałcie składka zdrowotna jest stała i zależy od progu przychodów rocznych."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Czy B2B wlicza się do stażu pracy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Od 2026 roku planowane są zmiany wliczające okresy prowadzenia działalności do stażu pracy, od którego zależą uprawnienia pracownicze (np. wymiar urlopu), pod warunkiem opłacania składek emerytalno-rentowych."
+                }
+            }
+        ]
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, faqSchema]) }}
             />
             {children}
         </>

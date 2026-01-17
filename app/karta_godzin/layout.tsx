@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     },
     title: "Karta Ewidencji Czasu Pracy - Generator PDF do wydruku",
     description: "Darmowy generator karty ewidencji czasu pracy pracownika. Wygeneruj i wydrukuj gotowy arkusz PDF dla dowolnego miesiąca roku. Prosto i szybko.",
-    keywords: "karta, ewidencja, czas, praca",
+    keywords: "generator karty ewidencji czasu pracy, karta godzin pracy pdf, ewidencja czasu pracy 2026, darmowy druk ewidencji, lista obecności pdf",
     openGraph: {
         title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",
         description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",

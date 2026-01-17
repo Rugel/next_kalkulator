@@ -85,7 +85,7 @@ class BruttoNetto extends React.Component {
       <>
         <header><Wynik />
           <div id="tytul">
-            <u><h1>Przelicznik Brutto na Netto</h1></u>
+            <u><h1>Kalkulator wynagrodzeń Brutto na Netto</h1></u>
           </div>
         </header>
         <Menu currentPage="brutto_netto" />
@@ -136,9 +136,9 @@ class BruttoNetto extends React.Component {
               </div></article>
           </section>
           <article>
-            <h2>O przeliczniku Brutto na Netto</h2>
+            <h2>O kalkulatorze wynagrodzeń Brutto na Netto</h2>
             <div className='desc'>
-              <p>Użycie <strong>przelicznika BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
+              <p>Użycie <strong>kalkulatora wynagrodzeń BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
               <AdSenseInArticle adSlot={5569743645} />
               <h3>Jak Działa Przeliczanie Brutto na Netto?</h3>
@@ -179,6 +179,34 @@ class BruttoNetto extends React.Component {
                   </strong>
                   . Ostatni krok sprowadza się do dokonania odejmowania - od kwoty otrzymanej w kroku nr. 2 czyli po odliczeniu od kwoty brutto składek na ubezpieczenie społeczne, odejmujemy składkę zdrowotną obliczoną w kroku nr. 3, a następnie zaliczkę na podatek dochodowy obliczoną w kroku nr. 5. Tak otrzymana kwota jest <strong>kwotą netto.</strong>
                 </p>
+              </div>
+
+              <h3>Dlaczego warto korzystać z kalkulatora wynagrodzeń brutto netto?</h3>
+              <div className='desc'>
+                <p>
+                  Samodzielne obliczenie pensji &quot;na rękę&quot; może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
+                  Nasz <strong>kalkulator wynagrodzeń brutto netto</strong> pozwala na błyskawiczne uzyskanie precyzyjnego wyniku, uwzględniając najnowsze przepisy podatkowe obowiązujące w 2026 roku.
+                </p>
+                <ul>
+                  <li><strong>Oszczędność czasu:</strong> Nie musisz ręcznie liczyć skomplikowanych procentów i kwot wolnych.</li>
+                  <li><strong>Zawsze aktualne dane:</strong> Narzędzie uwzględnia aktualną skalę podatkową i limity składek.</li>
+                  <li><strong>Personalizacja wyników:</strong> Kalkulator bierze pod uwagę Twoją indywidualną sytuację, np. pracę poza miejscem zamieszkania czy korzystanie z ulgi dla młodych.</li>
+                </ul>
+              </div>
+
+              <h3>Najczęstsze pytania (FAQ) o kalkulator wynagrodzeń brutto netto</h3>
+              <div className='desc'>
+                <p><strong>Czym różni się wynagrodzenie brutto od netto?</strong><br />
+                  Wynagrodzenie brutto to kwota zapisana w Twojej umowie. Netto to kwota, która faktycznie trafia na Twoje konto po odjęciu wszystkich składek (emerytalnych, rentowych, chorobowych, zdrowotnych) oraz zaliczek na podatek dochodowy.</p>
+
+                <p><strong>Czy kalkulator uwzględnia PPK?</strong><br />
+                  Tak, nasz <strong>kalkulator wynagrodzeń brutto netto</strong> pozwala na zaznaczenie opcji uczestnictwa w PPK, co ma wpływ na finalną kwotę wypłaty.</p>
+
+                <p><strong>Jakie dane muszę podać w kalkulatorze?</strong><br />
+                  Wystarczy podać kwotę brutto i określić parametry takie jak wiek (do 26 lat), miejsce zamieszkania (koszty uzyskania przychodu) oraz to, czy rozliczasz się według pierwszego czy drugiego progu podatkowego.</p>
+
+                <p><strong>Czy kalkulator jest darmowy?</strong><br />
+                  Tak, udostępniamy ten <strong>kalkulator wynagrodzeń</strong> całkowicie bezpłatnie, aby każdy mógł szybko sprawdzić swoje realne zarobki.</p>
               </div>
             </div>
           </article>
