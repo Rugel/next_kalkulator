@@ -6,10 +6,13 @@ const AdSenseInArticle = ({ adSlot }) => {
   const adRef = useRef(null);
   const wrapperRef = useRef(null);
 
+  const isLoaded = useRef(false);
+
   useEffect(() => {
-    if (typeof window !== "undefined") {
+    if (typeof window !== "undefined" && !isLoaded.current) {
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
+        isLoaded.current = true;
       } catch (error) {
         console.error("Błąd ładowania AdSense (In-Article):", error);
       }
