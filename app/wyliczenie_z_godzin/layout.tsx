@@ -31,8 +31,105 @@ export default function WyliczenieLayout({
 }: Readonly<{
     children: React.ReactNode;
 }>) {
+    const breadcrumbSchema = {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Strona Główna",
+                "item": "https://stawka-godzinowa.pl"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Wyliczenie z Godzin Pracy",
+                "item": "https://stawka-godzinowa.pl/wyliczenie_z_godzin"
+            }
+        ]
+    };
+
+    const webAppSchema = {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Kalkulator Wynagrodzeń z Godzin",
+        "applicationCategory": "FinanceApplication",
+        "operatingSystem": "Web",
+        "url": "https://stawka-godzinowa.pl/wyliczenie_z_godzin",
+        "description": "Zaawansowany kalkulator wynagrodzeń obliczający płacę netto na podstawie przepracowanych godzin, stawki, urlopów i chorobowego.",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "PLN"
+        }
+    };
+
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Jak obliczyć wynagrodzenie z godzin pracy",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Wprowadź liczbę godzin",
+                "text": "Wpisz łączną liczbę godzin przepracowanych w miesiącu."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Podaj stawkę godzinową",
+                "text": "Wprowadź swoją stawkę brutto za jedną godzinę pracy."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Uwzględnij urlop i chorobowe",
+                "text": "Wpisz liczbę dni urlopu oraz ewentualnego zwolnienia lekarskiego."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Sprawdź wynik netto",
+                "text": "Kalkulator automatycznie wyliczy kwotę 'na rękę' po odliczeniu składek i podatku."
+            }
+        ]
+    };
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Co to jest kalkulator wynagrodzeń z godzin?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "To narzędzie pozwalające precyzyjnie wyliczyć pensję netto na podstawie rzeczywistej liczby przepracowanych godzin, stawki godzinowej oraz przysługujących urlopów i zwolnień lekarskich."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak obliczyć stawkę godzinową z wynagrodzenia brutto?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Aby uzyskać stawkę godzinową, podziel miesięczne wynagrodzenie brutto przez liczbę godzin roboczych w danym miesiącu (np. 168h)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Czy kalkulator uwzględnia PIT-2 w 2026 roku?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak, nasz kalkulator uwzględnia najnowsze przepisy dotyczące PIT-2 i kwoty wolnej od podatku, co pozwala na dokładne wyliczenie wypłaty netto."
+                }
+            }
+        ]
+    };
+
     return (
         <>
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, howToSchema, faqSchema]) }}
+            />
             {children}
         </>
     );
