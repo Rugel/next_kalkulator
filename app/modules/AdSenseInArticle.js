@@ -33,11 +33,23 @@ const AdSenseInArticle = ({ adSlot }) => {
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
         strategy="afterInteractive"
       />
-      <div ref={wrapperRef} style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '150px', overflow: 'hidden', transition: 'all 0.3s ease', backgroundColor: '#f9f9f9' }}>
+      <div
+        ref={wrapperRef}
+        style={{
+          display: 'flex',
+          justifyContent: 'center',
+          width: '100%',
+          height: '150px', // Fixed height to prevent CLS
+          overflow: 'hidden',
+          backgroundColor: '#f9f9f9',
+          containIntrinsicSize: '150px', // Reserve space even before content loads
+          contentVisibility: 'auto' // Performance optimization
+        }}
+      >
         <ins
           ref={adRef}
           className="adsbygoogle"
-          style={{ display: 'block', textAlign: 'center', width: '100%' }}
+          style={{ display: 'block', textAlign: 'center', width: '100%', height: '100%' }}
           data-ad-format="fluid"
           data-ad-layout="in-article"
           data-ad-client="ca-pub-8789064360135564"

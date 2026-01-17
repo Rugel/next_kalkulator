@@ -6,12 +6,14 @@
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: var(--font-roboto, 'Roboto'), -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
   text-align: center;
   /*background-image: url(images/pattern.webp);*/
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  font-display: swap;
+  /* Prevent FOUT and CLS */
 }
 
 main {

@@ -37,11 +37,24 @@ const AdSense = ({ adClient, adSlot }) => {
   }, []);
 
   return (
-    <div ref={wrapperRef} className="adsense-wrapper" style={{ display: 'flex', justifyContent: 'center', width: '100%', minHeight: '280px', overflow: 'hidden', transition: 'all 0.3s ease', backgroundColor: '#f9f9f9' }}>
+    <div
+      ref={wrapperRef}
+      className="adsense-wrapper"
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        width: '100%',
+        height: '280px', // Fixed height to prevent CLS
+        overflow: 'hidden',
+        backgroundColor: '#f9f9f9',
+        containIntrinsicSize: '280px', // Reserve space even before content loads
+        contentVisibility: 'auto' // Performance optimization
+      }}
+    >
       <ins
         ref={adRef}
         className="adsbygoogle"
-        style={{ display: 'block', textAlign: 'center', width: '100%' }}
+        style={{ display: 'block', textAlign: 'center', width: '100%', height: '100%' }}
         data-ad-client={adClient}
         data-ad-slot={adSlot}
         data-ad-format="auto"

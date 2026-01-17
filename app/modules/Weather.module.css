@@ -7,7 +7,14 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    min-height: 480px;
+    height: 520px;
+    /* Fixed height to prevent CLS - increased to fit all content */
+    contain: layout;
+    /* Performance optimization to prevent layout shifts */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    /* Hide overflow but ensure content fits */
 }
 
 @media print {
@@ -96,7 +103,7 @@
 }
 
 .weatherTable tr:last-child td {
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid #000;
 }
 
 .iconCell {

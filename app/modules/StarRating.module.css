@@ -11,7 +11,10 @@
   margin-left: auto;
   margin-right: auto;
   width: 100%;
-  min-height: 180px;
+  height: 180px;
+  /* Fixed height to prevent CLS */
+  contain: layout;
+  /* Performance optimization to prevent layout shifts */
 }
 
 @media print {

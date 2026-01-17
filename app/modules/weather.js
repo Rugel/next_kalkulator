@@ -31,6 +31,7 @@ export default function Weather() {
     const [coords, setCoords] = useState({ lat: null, lon: null });
     const [active, setActive] = useState(false);
     const [isLocating, setIsLocating] = useState(false);
+    const [isLoading, setIsLoading] = useState(true); // Track loading state for skeleton
 
     const fetchWeather = useCallback(async (queryType, queryValue) => {
         const url = 'https://api.openweathermap.org/data/2.5/weather';
@@ -64,6 +65,7 @@ export default function Weather() {
             console.error("Weather fetch error:", error);
         } finally {
             setIsLocating(false);
+            setIsLoading(false); // Data loaded
         }
     }, []);
 
@@ -118,6 +120,21 @@ export default function Weather() {
         }
     };
 
+    // Skeleton loader component
+    const SkeletonRow = () => (
+        <tr>
+            <td className={styles.iconCell}>
+                <div style={{ width: '1.5em', height: '1.5em', backgroundColor: '#e0e0e0', borderRadius: '4px' }}></div>
+            </td>
+            <td>
+                <div style={{ width: '100px', height: '14px', backgroundColor: '#e0e0e0', borderRadius: '4px' }}></div>
+            </td>
+            <td>
+                <div style={{ width: '80px', height: '14px', backgroundColor: '#e0e0e0', borderRadius: '4px' }}></div>
+            </td>
+        </tr>
+    );
+
     return (
         <div className={styles.weatherContainer}>
             <h2 className={styles.header}>
@@ -151,80 +168,100 @@ export default function Weather() {
                 </div>
             </div>
 
-            <h3 className={styles.subHeader}>
-                Aktualna pogoda dla miasta <span className={styles.value}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
-            </h3>
+            {isLoading ? (
+                <>
+                    <h3 className={styles.subHeader}>
+                        <div style={{ width: '300px', height: '16px', backgroundColor: '#e0e0e0', borderRadius: '4px', margin: '0 auto' }}></div>
+                    </h3>
+                    <table className={styles.weatherTable}>
+                        <tbody>
+                            <SkeletonRow />
+                            <SkeletonRow />
+                            <SkeletonRow />
+                            <SkeletonRow />
+                            <SkeletonRow />
+                            <SkeletonRow />
+                        </tbody>
+                    </table>
+                </>
+            ) : (
+                <>
+                    <h3 className={styles.subHeader}>
+                        Aktualna pogoda dla miasta <span className={styles.value}>{weatherData.cityOk} - {weatherData.country}</span> ({weatherData.time})
+                    </h3>
 
-            <table className={styles.weatherTable}>
-                <tbody>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={summer} alt="summer" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Stan:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.stan}</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={tempIcon} alt="temperature" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Temperatura:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.temp} &#176;C</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={wind} alt="wind" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Wiatr:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.wiatr} m/s</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={pressure} alt="pressure" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Ciśnienie:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.cisnienie} hPa</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={vision} alt="visibility" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Widoczność:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.visibility} m</span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={styles.iconCell}>
-                            <Image className={styles.weatherIcon} src={clouds} alt="clouds" />
-                        </td>
-                        <td>
-                            <span className={styles.label}>Zachmurzenie:</span>
-                        </td>
-                        <td>
-                            <span className={styles.value}>{weatherData.clouds} %</span>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+                    <table className={styles.weatherTable}>
+                        <tbody>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={summer} alt="summer" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Stan:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.stan}</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={tempIcon} alt="temperature" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Temperatura:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.temp} &#176;C</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={wind} alt="wind" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Wiatr:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.wiatr} m/s</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={pressure} alt="pressure" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Ciśnienie:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.cisnienie} hPa</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={vision} alt="visibility" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Widoczność:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.visibility} m</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className={styles.iconCell}>
+                                    <Image className={styles.weatherIcon} src={clouds} alt="clouds" width={24} height={24} />
+                                </td>
+                                <td>
+                                    <span className={styles.label}>Zachmurzenie:</span>
+                                </td>
+                                <td>
+                                    <span className={styles.value}>{weatherData.clouds} %</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </>
+            )}
         </div>
     );
 }
