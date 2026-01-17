@@ -69,6 +69,7 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        <meta charSet="UTF-8" />
         <meta name="google-site-verification" content="wWDCgkmW374nhFic4ZNADQdsdDPPJq4hrp3cdf81KXw" />
         {/* Global Site Tag */}
         <Script
