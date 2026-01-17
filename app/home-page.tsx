@@ -193,7 +193,7 @@ class StaGodz extends React.Component {
                 />
                 <header><Wynik />
                     <div id="tytul">
-                        <u><h1>Kalkulator stawki godzinowej 2026 - oblicz swoje wynagrodzenie</h1></u>
+                        <u><h1>Kalkulator stawki godzinowej 2026</h1></u>
                     </div>
                 </header>
                 <Menu currentPage="stawka" />

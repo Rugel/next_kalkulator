@@ -143,7 +143,7 @@ class WyliczenieZGodzin extends React.Component {
             <>
                 <header><Wynik />
                     <div id="tytul">
-                        <u><h1>Kalkulator wynagrodzeń z godzin pracy 2026 - oblicz pensję netto</h1></u>
+                        <u><h1>Wyliczenie wynagrodzenia z godzin pracy</h1></u>
                     </div>
                 </header>
                 <Menu currentPage="godziny" />
