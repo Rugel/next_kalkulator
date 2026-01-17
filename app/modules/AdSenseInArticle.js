@@ -38,18 +38,33 @@ const AdSenseInArticle = ({ adSlot }) => {
         style={{
           display: 'flex',
           justifyContent: 'center',
+          alignItems: 'center',
           width: '100%',
-          height: '150px', // Fixed height to prevent CLS
+          minHeight: '150px',
+          maxHeight: '150px',
+          height: '150px',
           overflow: 'hidden',
           backgroundColor: '#f9f9f9',
-          containIntrinsicSize: '150px', // Reserve space even before content loads
-          contentVisibility: 'auto' // Performance optimization
+          position: 'relative',
+          containIntrinsicSize: '150px',
+          contentVisibility: 'auto'
         }}
       >
         <ins
           ref={adRef}
           className="adsbygoogle"
-          style={{ display: 'block', textAlign: 'center', width: '100%', height: '100%' }}
+          style={{
+            display: 'block',
+            textAlign: 'center',
+            width: '100%',
+            maxWidth: '100%',
+            height: '100%',
+            maxHeight: '150px',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0
+          }}
           data-ad-format="fluid"
           data-ad-layout="in-article"
           data-ad-client="ca-pub-8789064360135564"
