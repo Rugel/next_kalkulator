@@ -10,28 +10,8 @@ const AdSense = ({ adClient, adSlot }) => {
     if (typeof window !== "undefined") {
       try {
         (window.adsbygoogle = window.adsbygoogle || []).push({});
-
-        // Check if ad loaded after a short delay
-        const checkAdLoaded = setTimeout(() => {
-          if (adRef.current && wrapperRef.current) {
-            const adIns = adRef.current;
-            const hasAd = adIns.innerHTML.trim() !== '' ||
-              adIns.getAttribute('data-ad-status') === 'filled' ||
-              adIns.childNodes.length > 0;
-
-            if (!hasAd) {
-              // Hide wrapper if no ad loaded
-              wrapperRef.current.style.display = 'none';
-            }
-          }
-        }, 2000);
-
-        return () => clearTimeout(checkAdLoaded);
       } catch (error) {
         console.error("Błąd ładowania AdSense:", error);
-        if (wrapperRef.current) {
-          wrapperRef.current.style.display = 'none';
-        }
       }
     }
   }, []);

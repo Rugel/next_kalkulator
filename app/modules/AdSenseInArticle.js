@@ -8,22 +8,7 @@ const AdSenseInArticle = ({ adSlot }) => {
   const wrapperRef = useRef(null);
 
   useEffect(() => {
-    // Check if ad loaded after initialization
-    const checkAdLoaded = setTimeout(() => {
-      if (adRef.current && wrapperRef.current) {
-        const adIns = adRef.current;
-        const hasAd = adIns.innerHTML.trim() !== '' ||
-          adIns.getAttribute('data-ad-status') === 'filled' ||
-          adIns.childNodes.length > 0;
-
-        if (!hasAd) {
-          // Hide wrapper if no ad loaded
-          wrapperRef.current.style.display = 'none';
-        }
-      }
-    }, 2000);
-
-    return () => clearTimeout(checkAdLoaded);
+    // Initial load handled by Script components
   }, []);
 
   return (
