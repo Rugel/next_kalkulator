@@ -27,13 +27,12 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Stawka Godzinowa? —> ten kalkulator obliczy jej wysokość z wynagrodzenia",
+  title: "Kalkulator stawki godzinowej – oblicz ją z wynagrodzenia",
   description: "Najlepszy kalkulator stawki godzinowej online - szybko przeliczy wynagrodzenie miesięczne na stawkę za godzinę pracy (brutto i netto).",
   keywords: "kalkulator stawki godzinowej, stawka godzinowa, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -44,16 +43,16 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Stawka Godzinowa? —> ten kalkulator obliczy jej wysokość z wynagrodzenia",
+    title: "Kalkulator stawki godzinowej – oblicz ją z wynagrodzenia",
     description: "Najlepszy kalkulator stawki godzinowej online - szybko przeliczy wynagrodzenie miesięczne na stawkę za godzinę pracy (brutto i netto).",
     url: "https://stawka-godzinowa.pl",
-    siteName: "Kalkulator Stawki Godzinowej",
+    siteName: "Kalkulator stawki godzinowej",
     images: [
       {
         url: "https://stawka-godzinowa.pl/image.webp",
         width: 1200,
         height: 630,
-        alt: "Kalkulator Stawki Godzinowej",
+        alt: "Kalkulator stawki godzinowej",
       },
     ],
     locale: "pl_PL",
