@@ -28,13 +28,8 @@ const AdSense = ({ adClient, adSlot }) => {
         justifyContent: 'center',
         alignItems: 'center',
         width: '100%',
-        minHeight: '340px',
-        maxHeight: '340px', // Prevent expansion
-        height: '340px',
-        overflow: 'hidden',
+        minHeight: '340px', // Zachowujemy minimalną wysokość, by uniknąć skoków
         backgroundColor: '#f9f9f9',
-        containIntrinsicSize: '340px',
-        contentVisibility: 'auto'
       }}
     >
       <ins
@@ -46,7 +41,6 @@ const AdSense = ({ adClient, adSlot }) => {
           width: '100%',
           maxWidth: '100%',
           height: '100%',
-          maxHeight: '340px'
         }}
         data-ad-client={adClient}
         data-ad-slot={adSlot}

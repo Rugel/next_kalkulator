@@ -180,6 +180,16 @@ footer {
   font-size: 1.1em;
 }
 
+.desc ul {
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+.desc li {
+  margin-bottom: 0.5em;
+  list-style-type: disc;
+}
+
 p {
   padding: .5em;
 }

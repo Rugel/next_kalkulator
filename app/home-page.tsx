@@ -265,7 +265,7 @@ class StaGodz extends React.Component {
                             <div className='desc'>
                                 <p>
                                     Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br />
-                                    Wystarczy użyć nasz <strong>kalkulator stawki godzinowej</strong> lub przeprowadzić obliczenia ręcznie: podziel miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8.
+                                    Wystarczy użyć <strong>kalkulatora stawki godzinowej</strong> lub przeprowadzić obliczenia ręcznie: podziel miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8.
                                     Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
                                 </p>
                                 <AdSenseInArticle adSlot={8969900782} />
