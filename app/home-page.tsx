@@ -11,6 +11,7 @@ import stylesList from "./components/ResultsList.module.css";
 import stylesInput from "./modules/Input.module.css";
 import CheckBox from './modules/CheckBox';
 import stylesFieldset from "./components/Fieldset.module.css";
+import CommentScrollLink from "./components/CommentScrollLink";
 
 class StaGodz extends React.Component {
     state = {
@@ -183,7 +184,7 @@ class StaGodz extends React.Component {
         rate = rate.replace('.', ',');
         const Rate = () => rate;
 
-        const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Rate /></span> zł / godz</p>) }
+        const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto wynosi:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Rate /></span> zł / godz<br /><CommentScrollLink /></p>) }
 
         return (
             <>

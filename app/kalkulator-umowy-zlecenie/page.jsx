@@ -9,6 +9,7 @@ import DescZlecenie from '../modules/DescZlecenie';
 import stylesFieldset from "../components/Fieldset.module.css";
 import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
+import CommentScrollLink from '../components/CommentScrollLink';
 
 const ZleceniePage = () => {
     const [brutto, setBrutto] = useState(0);
@@ -44,15 +45,15 @@ const ZleceniePage = () => {
 
     const NettoDisplay = () => {
         let n = formatCurrency(results.netto);
-        return <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}>{n}</span>;
+        return <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{n}</span>;
     };
 
     return (
         <>
             <header>
-                <p className="wynik">Miesięczne wynagrodzenie netto:<br /><NettoDisplay /> zł</p>
+                <p className="wynik">Miesięczne wynagrodzenie netto:<br /><NettoDisplay /> zł<br /><CommentScrollLink /></p>
                 <div id="tytul">
-                    <u><h1>Kalkulator Umowa Zlecenie - Oblicz Netto</h1></u>
+                    <u><h1>Kalkulator Umowa Zlecenie</h1></u>
                 </div>
             </header>
             <Menu currentPage="zlecenie" />

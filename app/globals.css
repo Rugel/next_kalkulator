@@ -23,12 +23,18 @@ main {
 #tytul {
   text-align: center;
   background-color: #99ff99;
-  padding: 6em 1em 1em 1em;
+  padding: 7em 1em 1em 1em;
   margin-bottom: 20px;
 }
 
 h1 {
   font-size: 24px;
+}
+
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 20px;
+  }
 }
 
 a,
@@ -70,7 +76,8 @@ span {
   position: fixed;
   font-size: 1.3em;
   background-color: #94FD37;
-  padding: 10px;
+  padding: 5px 10px;
+  line-height: 1.2;
   box-shadow: 0px 0px 15px;
   text-shadow: 3px 3px 5px grey;
   font-weight: 700;

@@ -10,6 +10,7 @@ import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
 import { getMovableHolidays } from './holidays';
 import styles from './page.module.css';
+import CommentScrollLink from '../components/CommentScrollLink';
 
 const data = new Date();
 let rok = data.getFullYear();
@@ -205,14 +206,14 @@ class KartaGodz extends React.Component {
       </tbody>
     </table>
     const Podpis = () => <div className={styles.sign}><hr className={styles.signHr} /><em>podpis przełożonego</em></div>;
-    const Wynik = () => { return (<div className="wynik">Karta Godzin Pracy<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px' }}><Month /></span></div>) }
+    const Wynik = () => { return (<p className="wynik">Pracownicza karta ewidencji czasu pracy:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span><br /><CommentScrollLink text="Zostaw komentarz" /></p>) }
 
     return (
       <>
         <header>
           <Wynik />
           <div id="tytul">
-            <u><h1>Karta ewidencji czasu pracy</h1></u>
+            <u><h1>Karta godzin pracy</h1></u>
           </div>
         </header>
         <Menu currentPage="karta_godzin" />

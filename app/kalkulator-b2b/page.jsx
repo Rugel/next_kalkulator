@@ -9,6 +9,7 @@ import { calculateB2B } from '../utils/b2b_logic';
 import stylesFieldset from "../components/Fieldset.module.css";
 import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
+import CommentScrollLink from '../components/CommentScrollLink';
 
 const B2BPage = () => {
     // State
@@ -45,12 +46,13 @@ const B2BPage = () => {
         <>
             <header>
                 <p className="wynik">Dochód netto wynosi:<br />
-                    <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}>
+                    <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>
                         {formatMoney(results.netto)}
-                    </span> zł
+                    </span> zł<br />
+                    <CommentScrollLink />
                 </p>
                 <div id="tytul">
-                    <u><h1>Kalkulator B2B 2026 - Wynagrodzenie Netto</h1></u>
+                    <u><h1>Kalkulator B2B 2026</h1></u>
                 </div>
             </header>
             <Menu currentPage="b2b" />

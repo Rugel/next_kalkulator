@@ -11,6 +11,7 @@ import { calculateWorkingDays } from '../utils/workdays';
 import stylesFieldset from "../components/Fieldset.module.css";
 import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
+import CommentScrollLink from '../components/CommentScrollLink';
 
 class WyliczenieZGodzin extends React.Component {
     state = {
@@ -137,13 +138,13 @@ class WyliczenieZGodzin extends React.Component {
         netto = netto.replace('.', ',');
         const Netto = () => netto;
 
-        const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px' }}><Netto /></span> zł</p>) }
+        const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /><CommentScrollLink /></p>) }
 
         return (
             <>
                 <header><Wynik />
                     <div id="tytul">
-                        <u><h1>Wyliczenie wynagrodzenia z godzin pracy</h1></u>
+                        <u><h1>Wyliczenie z godzin pracy</h1></u>
                     </div>
                 </header>
                 <Menu currentPage="godziny" />

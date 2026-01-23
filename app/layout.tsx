@@ -131,7 +131,9 @@ export default function RootLayout({
           <AnalyticsListener />
           {children}
           <div className="widgets-container">
-            <CommentsSection itemId={123} />
+            <div id="comments-section" style={{ width: '100%' }}>
+              <CommentsSection itemId={123} />
+            </div>
             <StarRating itemId={123} />
             <Weather />
           </div>
