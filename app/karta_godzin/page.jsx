@@ -206,7 +206,7 @@ class KartaGodz extends React.Component {
       </tbody>
     </table>
     const Podpis = () => <div className={styles.sign}><hr className={styles.signHr} /><em>podpis przełożonego</em></div>;
-    const Wynik = () => { return (<p className="wynik">Pracownicza karta ewidencji czasu pracy:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span><br /><CommentScrollLink text="Zostaw komentarz" /></p>) }
+    const Wynik = () => { return (<p className="wynik">Karta godzin pracy dla:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span><br /><CommentScrollLink text="Zostaw komentarz" /></p>) }
 
     return (
       <>
