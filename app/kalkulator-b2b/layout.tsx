@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         title: "Kalkulator B2B 2026 - Sprawdź ile zarobisz na rękę",
         description: "Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok 2026. Porównaj formy opodatkowania.",
         url: "https://stawka-godzinowa.pl/kalkulator-b2b",
-        siteName: "Kalkulator Wynagrodzeń",
+        siteName: "Stawka Godzinowa",
         images: [
             {
                 url: "https://stawka-godzinowa.pl/image.webp",

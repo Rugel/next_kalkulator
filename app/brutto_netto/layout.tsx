@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         title: "Kalkulator wynagrodzeń Brutto Netto",
         description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą szybkiego kalkulatora online. Dokładne wyniki dla umowy o pracę.",
         url: "https://stawka-godzinowa.pl/brutto_netto",
-        siteName: "Kalkulator Stawki Godzinowej",
+        siteName: "Stawka Godzinowa",
         images: [
             {
                 url: "https://stawka-godzinowa.pl/brutto_netto.webp",

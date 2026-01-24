@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",
         description: "Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok 2026. Uwzględnia ulgę dla młodych i koszty autorskie.",
         url: "https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie",
-        siteName: "Kalkulator Wynagrodzeń",
+        siteName: "Stawka Godzinowa",
         images: [
             {
                 url: "https://stawka-godzinowa.pl/image.webp",

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
         title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",
         description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
         url: "https://stawka-godzinowa.pl/karta_godzin",
-        siteName: "Kalkulator Stawki Godzinowej",
+        siteName: "Stawka Godzinowa",
         images: [
             {
                 url: "https://stawka-godzinowa.pl/karta_godzin_pracy.webp",

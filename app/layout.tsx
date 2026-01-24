@@ -27,8 +27,8 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator stawki godzinowej – oblicz ją z wynagrodzenia",
-  description: "Najlepszy kalkulator stawki godzinowej online - szybko przeliczy wynagrodzenie miesięczne na stawkę za godzinę pracy (brutto i netto).",
+  title: "Kalkulator stawki godzinowej liczonej z wynagrodzenia",
+  description: "Aktualny na 2026 rok kalkulator stawki godzinowej - szybko przeliczy wynagrodzenie miesięczne na stawkę godzinową brutto lub netto.",
   keywords: "kalkulator stawki godzinowej, stawka godzinowa, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
@@ -43,10 +43,10 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Kalkulator stawki godzinowej – oblicz ją z wynagrodzenia",
-    description: "Najlepszy kalkulator stawki godzinowej online - szybko przeliczy wynagrodzenie miesięczne na stawkę za godzinę pracy (brutto i netto).",
+    title: "Kalkulator stawki godzinowej liczonej z wynagrodzenia",
+    description: "Aktualny na 2026 rok kalkulator stawki godzinowej - szybko przeliczy wynagrodzenie miesięczne na stawkę godzinową brutto lub netto.",
     url: "https://stawka-godzinowa.pl",
-    siteName: "Kalkulator stawki godzinowej",
+    siteName: "Stawka Godzinowa",
     images: [
       {
         url: "https://stawka-godzinowa.pl/image.webp",
@@ -89,8 +89,24 @@ export default function RootLayout({
             `,
           }}
         />
-        <meta name="apple-mobile-web-app-title" content="Kalkulator Stawki Godzinowej" />
-        {/* Dane strukturalne dla SoftwareApplication */}
+        <meta name="apple-mobile-web-app-title" content="Stawka Godzinowa" />
+        {/* Dane strukturalne dla WebSite i SoftwareApplication */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "Stawka Godzinowa",
+              "url": "https://stawka-godzinowa.pl",
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://stawka-godzinowa.pl/?s={search_term_string}",
+                "query-input": "required name=search_term_string"
+              }
+            }),
+          }}
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
