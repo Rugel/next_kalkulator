@@ -27,8 +27,8 @@ export const metadata = {
   alternates: {
     canonical: '/',
   },
-  title: "Kalkulator stawki godzinowej liczonej z wynagrodzenia",
-  description: "Aktualny na 2026 rok kalkulator stawki godzinowej - szybko przeliczy wynagrodzenie miesięczne na stawkę godzinową brutto lub netto.",
+  title: "Kalkulator Wynagrodzeń | Stawka Godzinowa | Brutto <=> Netto",
+  description: "Szybki kalkulator wynagrodzeń 2026. Przelicz stawkę godzinową oraz płacę brutto na netto. Uwzględniamy aktualne składki i podatki. Oblicz swoje zarobki teraz!",
   keywords: "kalkulator stawki godzinowej, stawka godzinowa, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
@@ -43,8 +43,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: "Kalkulator stawki godzinowej liczonej z wynagrodzenia",
-    description: "Aktualny na 2026 rok kalkulator stawki godzinowej - szybko przeliczy wynagrodzenie miesięczne na stawkę godzinową brutto lub netto.",
+    title: "Kalkulator Wynagrodzeń | Stawka Godzinowa | Brutto <=> Netto",
+    description: "Szybki kalkulator wynagrodzeń 2026. Przelicz stawkę godzinową oraz płacę brutto na netto. Uwzględniamy aktualne składki i podatki. Oblicz swoje zarobki teraz!",
     url: "https://stawka-godzinowa.pl",
     siteName: "Stawka Godzinowa",
     images: [
@@ -52,7 +52,7 @@ export const metadata = {
         url: "https://stawka-godzinowa.pl/image.webp",
         width: 1200,
         height: 630,
-        alt: "Kalkulator stawki godzinowej",
+        alt: "Kalkulator Wynagrodzeń | Stawka Godzinowa | Brutto <=> Netto",
       },
     ],
     locale: "pl_PL",
