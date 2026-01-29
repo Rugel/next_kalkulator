@@ -22,15 +22,28 @@ class StaGodz extends React.Component {
         isConfirmedU26: false,
         isConfirmeWorkplace: false,
         isTaxFreeExcluded: false,
+        averageRating: "4.8",
+        totalVotes: 150
     }
 
-    componentDidMount() {
+    async componentDidMount() {
         // Calculate working days for current month on initial load
         const now = new Date();
         const currentYear = now.getFullYear();
         const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
         const workingDays = calculateWorkingDays(currentYear, currentMonth);
         this.setState({ workdays: workingDays });
+
+        // Fetch rating data for Structured Data
+        try {
+            const res = await fetch('/api/rating/123');
+            const data = await res.json();
+            if (data.average && data.votes) {
+                this.setState({ averageRating: data.average, totalVotes: data.votes });
+            }
+        } catch (e) {
+            console.error("Błąd pobierania oceny dla schema:", e);
+        }
     }
 
     handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
@@ -79,6 +92,13 @@ class StaGodz extends React.Component {
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "PLN"
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": this.state.averageRating,
+                "ratingCount": this.state.totalVotes,
+                "bestRating": "5",
+                "worstRating": "1"
             }
         };
 
