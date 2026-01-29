@@ -237,8 +237,8 @@ class KartaGodz extends React.Component {
             <AdSenseInArticle adSlot={5751543216} />
             <div >
               <ol className={stylesList.list}>
-                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li><br />
-                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li><br />
+                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
+                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
                 <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
               </ol>
             </div>
