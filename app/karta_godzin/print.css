@@ -27,8 +27,7 @@
     .ipr-container,
     [class*="ad-"],
     [id*="ad-"],
-    [class*="ns-"],
-    body>div:nth-child(26) {
+    [class*="ns-"] {
         display: none !important;
     }
 
