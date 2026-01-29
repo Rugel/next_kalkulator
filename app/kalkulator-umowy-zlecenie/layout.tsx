@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AggregateRatingSchema from "../components/AggregateRatingSchema";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -54,20 +55,6 @@ export default function ZlecenieLayout({
         ]
     };
 
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Kalkulator Umowy Zlecenie",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie",
-        "description": "Oblicz wynagrodzenie netto z umowy zlecenia. Aktualne stawki i przepisy na rok 2026.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN"
-        }
-    };
 
     const faqSchema = {
         "@context": "https://schema.org",
@@ -104,7 +91,12 @@ export default function ZlecenieLayout({
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, faqSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
+            />
+            <AggregateRatingSchema
+                name="Kalkulator Umowy Zlecenie"
+                description="Oblicz wynagrodzenie netto z umowy zlecenia. Aktualne stawki i przepisy na rok 2026."
+                url="https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie"
             />
             {children}
         </>

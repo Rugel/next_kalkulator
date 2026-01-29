@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AggregateRatingSchema from "../components/AggregateRatingSchema";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -54,21 +55,6 @@ export default function B2BLayout({
         ]
     };
 
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Kalkulator B2B 2026",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://stawka-godzinowa.pl/kalkulator-b2b",
-        "description": "Narzędzie do obliczania wynagrodzenia netto dla przedsiębiorców (B2B) w Polsce na rok 2026.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN"
-        }
-    };
-
     const faqSchema = {
         "@context": "https://schema.org",
         "@type": "FAQPage",
@@ -104,7 +90,12 @@ export default function B2BLayout({
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, faqSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
+            />
+            <AggregateRatingSchema
+                name="Kalkulator B2B 2026"
+                description="Narzędzie do obliczania wynagrodzenia netto dla przedsiębiorców (B2B) w Polsce na rok 2026."
+                url="https://stawka-godzinowa.pl/kalkulator-b2b"
             />
             {children}
         </>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AggregateRatingSchema from "../components/AggregateRatingSchema";
 import "./print.css";
 
 export const metadata: Metadata = {
@@ -55,20 +56,6 @@ export default function KartaGodzinLayout({
         ]
     };
 
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Generator Karty Ewidencji Czasu Pracy",
-        "applicationCategory": "BusinessApplication",
-        "operatingSystem": "Web",
-        "url": "https://stawka-godzinowa.pl/karta_godzin",
-        "description": "Wygeneruj i wydrukuj kartę ewidencji czasu pracy (PDF) dla dowolnego miesiąca.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN"
-        }
-    };
 
     const howToSchema = {
         "@context": "https://schema.org",
@@ -97,7 +84,13 @@ export default function KartaGodzinLayout({
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, howToSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema]) }}
+            />
+            <AggregateRatingSchema
+                name="Generator Karty Ewidencji Czasu Pracy"
+                description="Wygeneruj i wydrukuj kartę ewidencji czasu pracy (PDF) dla dowolnego miesiąca."
+                url="https://stawka-godzinowa.pl/karta_godzin"
+                category="BusinessApplication"
             />
             {children}
         </>

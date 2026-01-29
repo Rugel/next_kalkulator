@@ -12,6 +12,7 @@ import stylesInput from "./modules/Input.module.css";
 import CheckBox from './modules/CheckBox';
 import stylesFieldset from "./components/Fieldset.module.css";
 import CommentScrollLink from "./components/CommentScrollLink";
+import AggregateRatingSchema from "./components/AggregateRatingSchema";
 
 class StaGodz extends React.Component {
     state = {
@@ -22,8 +23,6 @@ class StaGodz extends React.Component {
         isConfirmedU26: false,
         isConfirmeWorkplace: false,
         isTaxFreeExcluded: false,
-        averageRating: "4.8",
-        totalVotes: 150
     }
 
     async componentDidMount() {
@@ -33,17 +32,6 @@ class StaGodz extends React.Component {
         const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
         const workingDays = calculateWorkingDays(currentYear, currentMonth);
         this.setState({ workdays: workingDays });
-
-        // Fetch rating data for Structured Data
-        try {
-            const res = await fetch('/api/rating/123');
-            const data = await res.json();
-            if (data.average && data.votes) {
-                this.setState({ averageRating: data.average, totalVotes: data.votes });
-            }
-        } catch (e) {
-            console.error("Błąd pobierania oceny dla schema:", e);
-        }
     }
 
     handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
@@ -78,28 +66,6 @@ class StaGodz extends React.Component {
                     "item": "https://stawka-godzinowa.pl"
                 }
             ]
-        };
-
-        const webAppSchema = {
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Stawka Godzinowa",
-            "applicationCategory": "FinanceApplication",
-            "operatingSystem": "Web",
-            "url": "https://stawka-godzinowa.pl",
-            "description": "Precyzyjne narzędzie do wyliczania stawki godzinowej z wynagrodzenia miesięcznego brutto. Uwzględnia liczbę dni roboczych i składki ZUS.",
-            "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "PLN"
-            },
-            "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": this.state.averageRating,
-                "ratingCount": this.state.totalVotes,
-                "bestRating": "5",
-                "worstRating": "1"
-            }
         };
 
         const howToSchema = {
@@ -210,9 +176,15 @@ class StaGodz extends React.Component {
             <>
                 <script
                     type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, howToSchema, faqSchema]) }}
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
                 />
-                <header><Wynik />
+                <AggregateRatingSchema
+                    name="Stawka Godzinowa"
+                    description="Precyzyjne narzędzie do wyliczania stawki godzinowej z wynagrodzenia miesięcznego brutto. Uwzględnia liczbę dni roboczych i składki ZUS."
+                    url="https://stawka-godzinowa.pl"
+                />
+                <header>
+                    <Wynik />
                     <div id="tytul">
                         <u><h1>Kalkulator stawki godzinowej 2026</h1></u>
                     </div>

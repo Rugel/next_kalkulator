@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import AggregateRatingSchema from "../components/AggregateRatingSchema";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -50,20 +51,6 @@ export default function WyliczenieLayout({
         ]
     };
 
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Kalkulator Wynagrodzeń z Godzin",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://stawka-godzinowa.pl/wyliczenie_z_godzin",
-        "description": "Zaawansowany kalkulator wynagrodzeń obliczający płacę netto na podstawie przepracowanych godzin, stawki, urlopów i chorobowego.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN"
-        }
-    };
 
     const howToSchema = {
         "@context": "https://schema.org",
@@ -128,7 +115,12 @@ export default function WyliczenieLayout({
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, howToSchema, faqSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
+            />
+            <AggregateRatingSchema
+                name="Kalkulator Wynagrodzeń z Godzin"
+                description="Zaawansowany kalkulator wynagrodzeń obliczający płacę netto na podstawie przepracowanych godzin, stawki, urlopów i chorobowego."
+                url="https://stawka-godzinowa.pl/wyliczenie_z_godzin"
             />
             {children}
         </>

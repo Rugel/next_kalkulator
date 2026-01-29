@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import AggregateRatingSchema from "../components/AggregateRatingSchema";
 
 export const metadata: Metadata = {
     metadataBase: new URL("https://stawka-godzinowa.pl"),
@@ -51,20 +52,6 @@ export default function BruttoNettoLayout({ children }: { children: ReactNode })
         ]
     };
 
-    const webAppSchema = {
-        "@context": "https://schema.org",
-        "@type": "WebApplication",
-        "name": "Przelicznik Brutto na Netto",
-        "applicationCategory": "FinanceApplication",
-        "operatingSystem": "Web",
-        "url": "https://stawka-godzinowa.pl/brutto_netto",
-        "description": "Oblicz swoje wynagrodzenie netto z kwoty brutto szybko i dokładnie.",
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "PLN"
-        }
-    };
 
     const howToSchema = {
         "@context": "https://schema.org",
@@ -139,7 +126,12 @@ export default function BruttoNettoLayout({ children }: { children: ReactNode })
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, howToSchema, faqSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
+            />
+            <AggregateRatingSchema
+                name="Przelicznik Brutto na Netto"
+                description="Oblicz swoje wynagrodzenie netto z kwoty brutto szybko i dokładnie."
+                url="https://stawka-godzinowa.pl/brutto_netto"
             />
             {children}
         </>
