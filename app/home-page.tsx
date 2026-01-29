@@ -70,7 +70,7 @@ class StaGodz extends React.Component {
         const webAppSchema = {
             "@context": "https://schema.org",
             "@type": "WebApplication",
-            "name": "Kalkulator Stawki Godzinowej",
+            "name": "Stawka Godzinowa",
             "applicationCategory": "FinanceApplication",
             "operatingSystem": "Web",
             "url": "https://stawka-godzinowa.pl",
