@@ -15,6 +15,8 @@ import StarRating from "./modules/StarRating";
 import CommentsSection from "./modules/CommentsSection";
 import Footer from "./modules/footer";
 import { GlobalSpinner } from "./components/GlobalSpinner";
+import WidgetsWrapper from "./components/WidgetsWrapper";
+import ConditionalAdSense from "./components/ConditionalAdSense";
 
 export const viewport = {
   width: 'device-width',
@@ -132,27 +134,21 @@ export default function RootLayout({
             }),
           }}
         />
-        {/* Skrypt AdSense */}
-        {/* Skrypt AdSense */}
-        <Script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
-          crossOrigin="anonymous"
-          strategy="afterInteractive"
-          charSet="utf-8"
-        />
+        <ConditionalAdSense />
       </head>
       <body className={roboto.className}>
         <GlobalSpinner>
           <AnalyticsListener />
           {children}
-          <div className="widgets-container">
-            <div id="comments-section" style={{ width: '100%' }}>
-              <CommentsSection itemId={123} />
+          <WidgetsWrapper>
+            <div className="widgets-container">
+              <div id="comments-section" style={{ width: '100%' }}>
+                <CommentsSection itemId={123} />
+              </div>
+              <StarRating itemId={123} />
+              <Weather />
             </div>
-            <StarRating itemId={123} />
-            <Weather />
-          </div>
+          </WidgetsWrapper>
           <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
             <Footer />
           </footer>
