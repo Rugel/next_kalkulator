@@ -1,47 +1,25 @@
-import React from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 
-const data = new Date();
-const year = data.getFullYear();
-let miesiac = data.getMonth();
-const day = data.getDate();
-switch (miesiac) {
-   default: miesiac = "styczeń";
-      break;
+const Footer = () => {
+   const [dateString, setDateString] = useState("");
 
-   case 1: miesiac = "luty";
-      break;
+   useEffect(() => {
+      const now = new Date();
+      // Format: "30 stycznia 2026"
+      const formatted = now.toLocaleDateString("pl-PL", {
+         day: "numeric",
+         month: "long",
+         year: "numeric"
+      });
+      setDateString(formatted);
+   }, []);
 
-   case 2: miesiac = "marzec";
-      break;
-
-   case 3: miesiac = "kwiecień";
-      break;
-
-   case 4: miesiac = "maj";
-      break;
-
-   case 5: miesiac = "czerwiec";
-      break;
-
-   case 6: miesiac = "lipiec";
-      break;
-
-   case 7: miesiac = "sierpień";
-      break;
-
-   case 8: miesiac = "wrzesień";
-      break;
-
-   case 9: miesiac = "październik";
-      break;
-
-   case 10: miesiac = "listopad";
-      break;
-
-   case 11: miesiac = "grudzień";
-      break;
-}
-
-const Footer = () => <div><strong><u>{day} {miesiac} {year} - &copy; Grzegorz Dychała</u></strong></div>;
+   return (
+      <div>
+         <strong><u>{dateString} - &copy; Grzegorz Dychała</u></strong>
+      </div>
+   );
+};
 
 export default Footer;
