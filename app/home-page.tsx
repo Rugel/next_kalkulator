@@ -12,7 +12,7 @@ import stylesInput from "./modules/Input.module.css";
 import CheckBox from './modules/CheckBox';
 import stylesFieldset from "./components/Fieldset.module.css";
 import CommentScrollLink from "./components/CommentScrollLink";
-import AggregateRatingSchema from "./components/AggregateRatingSchema";
+
 
 class StaGodz extends React.Component {
     state = {
@@ -178,11 +178,7 @@ class StaGodz extends React.Component {
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
                 />
-                <AggregateRatingSchema
-                    name="Stawka Godzinowa"
-                    description="Precyzyjne narzędzie do wyliczania stawki godzinowej z wynagrodzenia miesięcznego brutto. Uwzględnia liczbę dni roboczych i składki ZUS."
-                    url="https://stawka-godzinowa.pl"
-                />
+
                 <header>
                     <Wynik />
                     <div id="tytul">

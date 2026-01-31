@@ -17,6 +17,8 @@ import Footer from "./modules/footer";
 import { GlobalSpinner } from "./components/GlobalSpinner";
 import WidgetsWrapper from "./components/WidgetsWrapper";
 import ConditionalAdSense from "./components/ConditionalAdSense";
+import AggregateRatingSchema from "./components/AggregateRatingSchema";
+
 
 export const viewport = {
   width: 'device-width',
@@ -70,7 +72,13 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        <AggregateRatingSchema
+          name="Stawka Godzinowa"
+          description="Precyzyjne narzędzie do wyliczania stawki godzinowej z wynagrodzenia miesięcznego brutto. Uwzględnia liczbę dni roboczych i składki ZUS."
+          url="https://stawka-godzinowa.pl"
+        />
         <meta name="google-site-verification" content="wWDCgkmW374nhFic4ZNADQdsdDPPJq4hrp3cdf81KXw" />
+
         {/* Global Site Tag */}
         <Script
           strategy="afterInteractive"
