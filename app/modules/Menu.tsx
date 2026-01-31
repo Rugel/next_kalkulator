@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import styles from './Menu.module.css';
 import { useSpinner } from '../components/GlobalSpinner';
 
@@ -77,6 +78,18 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     <>
       {/* Static Menu - Always visible at top of its position */}
       <div ref={containerRef} className={styles.container}>
+        <div className={styles.logoContainer}>
+          <Link href="/" className={styles.logoLink} onClick={() => handleNavigation('stawka')}>
+            <Image
+              src="/logo.webp"
+              alt="Stawka Godzinowa"
+              width={200}
+              height={50}
+              priority
+              className={styles.logo}
+            />
+          </Link>
+        </div>
         <nav className={styles.nav} aria-label="Main navigation">
           <NavContent />
         </nav>

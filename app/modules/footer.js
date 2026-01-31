@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
+import Image from "next/image";
 
 const Footer = () => {
    const [dateString, setDateString] = useState("");
@@ -16,7 +17,14 @@ const Footer = () => {
    }, []);
 
    return (
-      <div>
+      <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
+         <Image
+            src="/logo.webp"
+            alt="Stawka Godzinowa"
+            width={120}
+            height={30}
+            style={{ height: '30px', width: 'auto', opacity: 0.9 }}
+         />
          <strong><u>{dateString} - &copy; Grzegorz Dychała</u></strong>
       </div>
    );
