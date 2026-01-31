@@ -43,20 +43,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
     margin-bottom: 1.5rem;
 }
 
 .cityInput {
     padding: 0.75rem;
     border: 1px solid #ddd;
-    border-radius: 6px;
+    border-radius: 6px 0 0 6px;
     font-family: inherit;
     font-size: 0.9rem;
     transition: border-color 0.2s, box-shadow 0.2s;
     width: 100%;
     max-width: 300px;
     text-align: center;
+    height: 45px;
+    border-right: none;
 }
 
 .cityInput:focus {
@@ -68,12 +69,12 @@
 .geoIcon {
     cursor: pointer;
     background-color: #f8f9fa;
-    padding: 8px;
-    border-radius: 6px;
+    padding: 0;
+    border-radius: 0 6px 6px 0;
     transition: transform 0.2s, background-color 0.2s;
     border: 1px solid #ddd;
-    width: 58px;
-    height: 58px;
+    width: 45px;
+    height: 45px;
     display: flex;
     align-items: center;
     justify-content: center;
