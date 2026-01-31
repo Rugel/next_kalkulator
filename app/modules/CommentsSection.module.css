@@ -8,8 +8,7 @@
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    height: 450px;
-    /* Fixed height to prevent CLS */
+    /* Removed fixed height to prevent content overflow when list/form grows */
     contain: layout;
     /* Performance optimization to prevent layout shifts */
 }
