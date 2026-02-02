@@ -6,7 +6,7 @@ import styles from './Menu.module.css';
 import { useSpinner } from '../components/GlobalSpinner';
 
 interface MenuProps {
-  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b';
+  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b' | 'inflacja';
 }
 
 const Menu: React.FC<MenuProps> = ({ currentPage }) => {
@@ -18,6 +18,7 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
     { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto_netto' },
     { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
     { id: 'b2b', label: 'Kalkulator B2B', href: '/kalkulator-b2b' },
+    { id: 'inflacja', label: 'Kalkulator Inflacji', href: '/kalkulator-inflacji' },
     { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta_godzin' },
   ];
 
