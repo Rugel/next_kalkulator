@@ -93,7 +93,7 @@ const InflationCalculatorPage = () => {
         <>
             <header>
                 <p className="wynik">
-                    Wartość kwoty po uwzględnieniu inflacji:<br />
+                    Kwota po uwzględnieniu inflacji:<br />
                     <ResultDisplay /> {getCurrencyLabel(endYear)}<br />
                     <CommentScrollLink />
                 </p>
@@ -175,11 +175,13 @@ const InflationCalculatorPage = () => {
                                     {endYear > startYear ? ' będzie warte ' : ' było warte '}
                                     <strong>{formatCurrency(finalResult.currentValue)} {getCurrencyLabel(endYear)}</strong> w roku <strong>{endYear}</strong>.
                                 </p>
-                                <p style={{ color: '#666', fontSize: '0.9rem' }}>
-                                    {endYear >= startYear ? 'Skumulowana inflacja' : 'Skumulowany wzrost cen'} w tym okresie:
-                                    <strong> {Math.abs(((finalResult.cumulativeMultiplier - 1) * 100)).toFixed(2)}%</strong>
-                                    {finalResult.cumulativeMultiplier < 1 && ' (spadek siły nabywczej)'}
-                                    {finalResult.cumulativeMultiplier > 1 && endYear < startYear && ' (w relacji do roku ' + endYear + ')'}
+                                <p style={{ color: '#2c3e50', fontSize: '1.2rem', marginTop: '1.5rem' }}>
+                                    {endYear >= startYear ? 'Skumulowana inflacja' : 'Skumulowany wzrost cen'} w tym okresie wynosi:
+                                    <span style={{ fontSize: '1.5rem', fontWeight: 'bold', color: '#d32f2f', marginLeft: '0.5rem' }}>
+                                        {Math.abs(((finalResult.cumulativeMultiplier - 1) * 100)).toFixed(2)}%
+                                    </span>
+                                    {finalResult.cumulativeMultiplier < 1 && <span style={{ fontSize: '0.9rem', color: '#666', marginLeft: '0.5rem' }}> (spadek siły nabywczej)</span>}
+                                    {finalResult.cumulativeMultiplier > 1 && endYear < startYear && <span style={{ fontSize: '0.9rem', color: '#666', marginLeft: '0.5rem' }}> (w relacji do roku {endYear})</span>}
                                 </p>
                             </div>
                         )}
