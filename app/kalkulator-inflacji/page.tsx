@@ -36,7 +36,7 @@ const InflationCalculatorPage = () => {
         if (startYear < 1995 && !alertShown) {
             Swal.fire({
                 title: 'Uwaga!',
-                text: 'Zwróć uwagę, że wprowadzasz kwotę w PLZ (tzw.„Starych Złotych“) sprzed denominacji.',
+                text: 'Zwróć uwagę, że wprowadzasz kwotę w PLZ (tzw. „starych złotych”) sprzed denominacji.',
                 icon: 'warning',
                 confirmButtonText: 'Rozumiem',
                 confirmButtonColor: '#764ba2'
@@ -142,7 +142,7 @@ const InflationCalculatorPage = () => {
                         </div>
                         {startYear < 1995 && (
                             <p style={{ fontSize: '0.8rem', color: '#666', marginTop: '-1rem', marginBottom: '1rem', padding: '0 1rem' }}>
-                                * Wartości dla roku {startYear} są podawane w "starych złotych" (PLZ) sprzed denominacji.
+                                * Wartości dla roku {startYear} są podawane w „starych złotych” (PLZ) sprzed denominacji.
                             </p>
                         )}
 
