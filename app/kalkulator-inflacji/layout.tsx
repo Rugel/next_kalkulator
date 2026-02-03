@@ -10,11 +10,11 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Kalkulator Inflacji 1982-2050 - Oblicz wartość pieniądza w czasie",
+    title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
     description: "Sprawdź inflację skumulowaną w Polsce od 1982 roku. Oblicz wartość swoich oszczędności po uwzględnieniu inflacji i denominacji. Prognozy do 2050 roku.",
     keywords: "kalkulator inflacji, inflacja w Polsce, siła nabywcza pieniądza, GUS inflacja, denominacja 1995, kalkulator wartości pieniądza, prognoza inflacji",
     openGraph: {
-        title: "Kalkulator Inflacji 1982-2050 - Sprawdź ile warte są Twoje pieniądze",
+        title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
         description: "Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.",
         url: "https://stawka-godzinowa.pl/kalkulator-inflacji",
         siteName: "Stawka Godzinowa",
