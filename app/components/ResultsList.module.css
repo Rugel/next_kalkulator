@@ -189,6 +189,12 @@
         border-radius: 12px;
     }
 
+    /* Ensure list numbers are visible on mobile */
+    .list:is(ol) {
+        padding-left: 2.5rem;
+        padding-right: 1rem;
+    }
+
     .list::before {
         border-radius: 12px;
     }
