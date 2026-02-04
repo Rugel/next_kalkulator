@@ -3,6 +3,7 @@
     margin: 0 auto;
     position: relative;
     width: 100%;
+    box-sizing: border-box;
 }
 
 .logo {
@@ -50,7 +51,7 @@
 .sign {
     position: relative;
     line-height: normal;
-    margin-top: 10lvh;
+    margin-top: calc(10lvh - 25px);
     text-align: right;
     align-content: right;
     margin-left: auto;
@@ -99,6 +100,7 @@
     border-collapse: collapse;
     max-width: 800px;
     width: 100%;
+    margin-top: 20px;
 }
 
 .table td {
@@ -133,7 +135,6 @@
         display: none !important;
     }
 
-    .table,
     .printableWrapper {
         width: 85vw;
         margin-left: auto;
@@ -141,6 +142,7 @@
     }
 
     .table {
+        width: 100%;
         height: 65dvh;
     }
 
@@ -162,4 +164,46 @@
     .month {
         height: 4dvh;
     }
+}
+
+/* Independent styles for PDF download */
+.printableWrapper:global(.pdf-version) {
+    margin-left: auto !important;
+    margin-right: auto !important;
+    padding: 0 50px !important;
+    box-sizing: border-box !important;
+}
+
+.printableWrapper:global(.pdf-version) .logo {
+    right: 50px !important;
+}
+
+.printableWrapper:global(.pdf-version) .table {
+    width: 100% !important;
+    margin-top: 50px !important;
+}
+
+.printableWrapper:global(.pdf-version) .table td {
+    padding-top: 1px !important;
+}
+
+.printableWrapper:global(.pdf-version) .enploy {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+}
+
+.printableWrapper:global(.pdf-version) .sign {
+    width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    max-width: none !important;
+    margin-top: calc(10lvh - 10px) !important;
+}
+
+.printableWrapper:global(.pdf-version) .title,
+.printableWrapper:global(.pdf-version) .month {
+    height: auto !important;
+    margin-bottom: 10px !important;
 }
