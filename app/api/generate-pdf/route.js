@@ -1,6 +1,6 @@
 
 import { NextResponse } from 'next/server';
-import puppeteer from 'puppeteer';
+
 import { getMovableHolidays } from '../../karta_godzin/holidays';
 
 export async function POST(req) {
@@ -12,7 +12,34 @@ export async function POST(req) {
         }
 
         // PDF generation logic
-        const browser = await puppeteer.launch();
+        let browser;
+        if (process.env.NODE_ENV === 'production') {
+            const chromium = await import('@sparticuz/chromium');
+            const puppeteer = await import('puppeteer-core');
+
+            // Configure chromium
+            // @sparticuz/chromium-min needs a specific pack for fonts if strictly necessary, 
+            // generally default chromium works if we don't need exotic fonts.
+            // Using standard @sparticuz/chromium package which includes a binary.
+
+            // Note: .default might be needed depending on ESM/CJS interop, checking imports safety
+            const chromiumLib = chromium.default || chromium;
+            const puppeteerLib = puppeteer.default || puppeteer;
+
+            browser = await puppeteerLib.launch({
+                args: chromiumLib.args,
+                defaultViewport: chromiumLib.defaultViewport,
+                executablePath: await chromiumLib.executablePath(),
+                headless: chromiumLib.headless,
+                ignoreHTTPSErrors: true,
+            });
+        } else {
+            // Local development
+            const puppeteer = await import('puppeteer');
+            const puppeteerLib = puppeteer.default || puppeteer;
+            browser = await puppeteerLib.launch();
+        }
+
         const page = await browser.newPage();
 
         // Reconstruct the HTML content

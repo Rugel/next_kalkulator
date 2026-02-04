@@ -80,7 +80,7 @@ const Print = ({ month, year, logo }) => {
                     onClick={handleDownload}
                     disabled={isGenerating}
                 >
-                    {isGenerating ? '⏳ Generowanie...' : '💾 Pobierz na dysk'}
+                    {isGenerating ? '⏳ Generowanie...' : '💾 Zapisz kartę'}
                 </button>
             </div>
             <span className={styles.text}>
