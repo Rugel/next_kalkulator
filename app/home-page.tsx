@@ -347,10 +347,10 @@ class StaGodz extends React.Component {
                                 </p>
                                 <ul>
                                     <li><strong>Przygotuj dane rynkowe:</strong> Użyj <strong>kalkulatora stawki godzinowej</strong>, aby przeliczyć zarówno swoją obecną pensję, jak i średnie zarobki w branży. To pomoże Ci określić, czy Twoja stawka jest konkurencyjna.</li>
-                                    <li><strong>Podkreśl wartość dodaną:</strong> Podczas negocjacji zamiast mówić "chcę więcej", powiedz "moja aktualna stawka wynosi X zł/h, a na podstawie moich kompetencji i osiągnięć, rynkowa stawka dla tej pozycji to Y zł/h".</li>
+                                    <li><strong>Podkreśl wartość dodaną:</strong> Podczas negocjacji zamiast mówić &quot;chcę więcej&quot;, powiedz &quot;moja aktualna stawka wynosi X zł/h, a na podstawie moich kompetencji i osiągnięć, rynkowa stawka dla tej pozycji to Y zł/h&quot;.</li>
                                     <li><strong>Uwzględnij koszty pracodawcy:</strong> Pamiętaj, że pracodawca płaci dodatkowo składki ZUS (około 20% Twojego brutto). Kalkulator pokazuje te wartości, co pozwala lepiej zrozumieć całkowity koszt Twojego zatrudnienia.</li>
                                     <li><strong>Negocjuj świadomie premie:</strong> Jeśli firma oferuje system premiowy zamiast podwyżki, przelicz wartość premii na stawkę godzinową, aby ocenić, czy to korzystna oferta.</li>
-                                    <li><strong>Porównuj "jabłka z jabłkami":</strong> Przy zmianie pracy używaj kalkulatora do porównania ofert. Czasem niższa pensja w firmie z krótszym czasem pracy oznacza wyższą stawkę godzinową.</li>
+                                    <li><strong>Porównuj &quot;jabłka z jabłkami&quot;:</strong> Przy zmianie pracy używaj kalkulatora do porównania ofert. Czasem niższa pensja w firmie z krótszym czasem pracy oznacza wyższą stawkę godzinową.</li>
                                 </ul>
                             </div>
 
