@@ -180,7 +180,7 @@ class KartaGodz extends React.Component {
             <label className={stylesInput.inputLabel} style={{ width: '100%' }}>
               <em>Eksport</em>
             </label>
-            <Print />
+            <Print month={month} year={year} logo={this.state.logo} />
           </div>
         </div>
       </div>
