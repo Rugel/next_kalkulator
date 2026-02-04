@@ -85,6 +85,7 @@ const Print = () => {
                 logging: false,
                 letterRendering: true,
                 windowWidth: 715,
+                width: 715, // Explicitly set capture width
                 scrollX: 0,
                 scrollY: 0,
                 x: 0,

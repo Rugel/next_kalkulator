@@ -187,11 +187,23 @@
     padding-top: 1px !important;
 }
 
+.printableWrapper:global(.pdf-version) .uwagi {
+    width: 150px !important;
+    /* Fixed width for PDF instead of 20vw */
+}
+
 .printableWrapper:global(.pdf-version) .enploy {
     width: 100% !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     max-width: none !important;
+    margin-top: 20px !important;
+    /* Fixed px instead of 2lvh */
+    margin-bottom: 5px !important;
+    /* Fixed px */
+    line-height: 25px !important;
+    /* Fixed px instead of 2.3lvh */
+    font-size: 18px !important;
 }
 
 .printableWrapper:global(.pdf-version) .sign {
@@ -199,11 +211,14 @@
     margin-left: 0 !important;
     margin-right: 0 !important;
     max-width: none !important;
-    margin-top: calc(10lvh - 10px) !important;
+    margin-top: 80px !important;
+    /* Fixed px (calc(10lvh - 10px) on desktop is ~90px, using 80px as requested reduction) */
 }
 
 .printableWrapper:global(.pdf-version) .title,
 .printableWrapper:global(.pdf-version) .month {
-    height: auto !important;
+    height: 40px !important;
+    /* Fixed px instead of 4dvh */
     margin-bottom: 10px !important;
+    font-size: 20px !important;
 }
