@@ -14,10 +14,13 @@
     text-align: left;
     position: relative;
     overflow: hidden;
-    list-style-position: inside;
+    list-style-position: outside;
+    list-style-type: decimal !important;
+    padding-left: 3.5rem;
 }
 
 .list li {
+    list-style-type: inherit !important;
     margin-bottom: 1rem;
     line-height: 1.6;
 }

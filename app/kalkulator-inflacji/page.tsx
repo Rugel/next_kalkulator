@@ -83,8 +83,8 @@ const InflationCalculatorPage = () => {
     const ResultDisplay = () => {
         if (!finalResult) return null;
         return (
-            <span style={{ color: 'red', fontSize: '1.2em', letterSpacing: '1px', display: 'inline-block', margin: '2px 0' }}>
-                {formatCurrency(finalResult.currentValue)} PLN
+            <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>
+                {formatCurrency(finalResult.currentValue)}
             </span>
         );
     };

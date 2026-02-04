@@ -177,9 +177,6 @@ class KartaGodz extends React.Component {
         <Logo />
         <div className={stylesInput.formGroup}>
           <div className={stylesInput.inputWrapper} style={{ alignItems: 'center', textAlign: 'center' }}>
-            <label className={stylesInput.inputLabel} style={{ width: '100%' }}>
-              <em>Eksport</em>
-            </label>
             <Print />
           </div>
         </div>
@@ -241,7 +238,7 @@ class KartaGodz extends React.Component {
               <ol className={stylesList.list}>
                 <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
                 <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
-                <li>użyć przycisku &quot;Drukuj&quot; i z opcji wybrać drukarkę w celu fizycznego wydruku lub wybrać opcję zapisu pliku na urządzeniu w formacie &quot;PDF&quot;, by np. przesłać go za pomocą e-mail</li>
+                <li>użyć przycisku &quot;Drukuj&quot; lub &quot;Zapisz&quot;</li>
               </ol>
             </div>
             <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>

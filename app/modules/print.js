@@ -126,12 +126,9 @@ const Print = () => {
                     🖨️ Drukuj Kartę
                 </button>
                 <button className={`${styles.button} ${styles.downloadButton}`} onClick={handleDownload}>
-                    💾 Pobierz na dysk
+                    💾 Zapisz kartę
                 </button>
             </div>
-            <span className={styles.text}>
-                aby zapisać do pliku wybierz &quot;Zapisz jako PDF&quot;
-            </span>
         </div>
     );
 };

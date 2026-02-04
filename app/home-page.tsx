@@ -288,6 +288,88 @@ class StaGodz extends React.Component {
                                 <p><strong>Czy stawka godzinowa zależy od rodzaju umowy?</strong><br />
                                     Tak, sposób wyliczania składek różni się między Umową o Pracę (UoP), Umową Zlecenie a B2B. Ten kalkulator jest zoptymalizowany pod kątem <strong>Umowy o Pracę</strong>.</p>
                             </div>
+
+                            <h2>Kiedy warto skorzystać z kalkulatora stawki godzinowej?</h2>
+                            <div className='desc'>
+                                <p>
+                                    <strong>Kalkulator stawki godzinowej</strong> to niezbędne narzędzie w wielu sytuacjach zawodowych. Oto najczęstsze przypadki, gdy warto z niego skorzystać:
+                                </p>
+                                <ul>
+                                    <li><strong>Porównywanie ofert pracy:</strong> Gdy rozważasz kilka propozycji zatrudnienia, przeliczenie wynagrodzenia na stawkę godzinową pozwala obiektywnie porównać oferty z różnymi pensjami miesięcznymi i systemami pracy.</li>
+                                    <li><strong>Negocjacje płacowe:</strong> Znajomość swojej aktualnej stawki za godzinę ułatwia prowadzenie rozmów o podwyżkę. Możesz precyzyjnie argumentować, dlaczego zasługujesz na wyższe wynagrodzenie.</li>
+                                    <li><strong>Przejście na inny typ umowy:</strong> Jeśli planujesz zmienić umowę o pracę na zlecenie lub działalność gospodarczą (B2B), kalkulator pomoże Ci ustalić odpowiednią stawkę, aby utrzymać lub poprawić swoje zarobki.</li>
+                                    <li><strong>Planowanie budżetu domowego:</strong> Wiedza o tym, ile zarabiasz za godzinę pracy, pomaga w lepszym zarządzaniu finansami osobistymi i podejmowaniu świadomych decyzji zakupowych.</li>
+                                    <li><strong>Wycena dodatkowych godzin:</strong> Przy pracy w nadgodzinach lub weekendy, znajomość bazowej stawki godzinowej pozwala obliczyć należne Ci wynagrodzenie z uwzględnieniem dodatków (np. 50% lub 100%).</li>
+                                </ul>
+                            </div>
+
+                            <h2>Porównanie stawki godzinowej dla różnych typów umów</h2>
+                            <div className='desc'>
+                                <p>
+                                    Wybór rodzaju umowy znacząco wpływa na sposób obliczania wynagrodzenia. Poniżej przedstawiamy kluczowe różnice między najpopularniejszymi formami współpracy:
+                                </p>
+                                <h3>Umowa o Pracę (UoP)</h3>
+                                <ul>
+                                    <li>Stałe miesięczne wynagrodzenie brutto (np. 5000 zł)</li>
+                                    <li>Stawka godzinowa zmienia się w zależności od liczby dni roboczych w miesiącu</li>
+                                    <li>Składki ZUS (13,71%) i podatek dochodowy odliczane automatycznie</li>
+                                    <li>Pełna ochrona socjalna: urlop, zwolnienia lekarskie, odprawy</li>
+                                    <li><strong>Kalkulator stawki godzinowej</strong> uwzględnia wszystkie potrącenia, pokazując rzeczywistą wartość Twojej godziny pracy</li>
+                                </ul>
+
+                                <h3>Umowa Zlecenie</h3>
+                                <ul>
+                                    <li>Wynagrodzenie ustalane jako stawka godzinowa (min. 31,40 zł brutto w 2026 r.)</li>
+                                    <li>Brak automatycznych odprowadzeń ZUS (jeśli zleceniobiorca ma już tytuł do ubezpieczenia)</li>
+                                    <li>Zaliczka na podatek dochodowy: 12% minus kwota wolna (300 zł)</li>
+                                    <li>Brak urlopu płatnego i ochrony przed wypowiedzeniem</li>
+                                    <li>Elastyczność w ustalaniu godzin pracy</li>
+                                </ul>
+
+                                <h3>Działalność gospodarcza (B2B)</h3>
+                                <ul>
+                                    <li>Pełna swoboda w ustalaniu stawki godzinowej</li>
+                                    <li>Możliwość wyboru formy opodatkowania: ryczałt, podatek liniowy 19%, skala podatkowa</li>
+                                    <li>Składki ZUS na własną rękę (od ok. 1600 zł miesięcznie)</li>
+                                    <li>Możliwość odliczania kosztów uzyskania przychodu</li>
+                                    <li>Wymaga prowadzenia księgowości</li>
+                                </ul>
+
+                                <p>
+                                    Nasz <strong>kalkulator wynagrodzeń</strong> koncentruje się na umowie o pracę, ale znajomość stawki godzinowej brutto pozwala również oszacować, jaką kwotę powinieneś zaproponować przy innych formach współpracy, aby utrzymać podobny poziom dochodów netto.
+                                </p>
+                            </div>
+
+                            <h3>Jak wykorzystać kalkulator stawki godzinowej w negocjacjach płacowych?</h3>
+                            <div className='desc'>
+                                <p>
+                                    Znajomość swojej stawki za godzinę to potężne narzędzie w rozmowach o wynagrodzenie. Oto praktyczne porady, jak ją wykorzystać:
+                                </p>
+                                <ul>
+                                    <li><strong>Przygotuj dane rynkowe:</strong> Użyj <strong>kalkulatora stawki godzinowej</strong>, aby przeliczyć zarówno swoją obecną pensję, jak i średnie zarobki w branży. To pomoże Ci określić, czy Twoja stawka jest konkurencyjna.</li>
+                                    <li><strong>Podkreśl wartość dodaną:</strong> Podczas negocjacji zamiast mówić "chcę więcej", powiedz "moja aktualna stawka wynosi X zł/h, a na podstawie moich kompetencji i osiągnięć, rynkowa stawka dla tej pozycji to Y zł/h".</li>
+                                    <li><strong>Uwzględnij koszty pracodawcy:</strong> Pamiętaj, że pracodawca płaci dodatkowo składki ZUS (około 20% Twojego brutto). Kalkulator pokazuje te wartości, co pozwala lepiej zrozumieć całkowity koszt Twojego zatrudnienia.</li>
+                                    <li><strong>Negocjuj świadomie premie:</strong> Jeśli firma oferuje system premiowy zamiast podwyżki, przelicz wartość premii na stawkę godzinową, aby ocenić, czy to korzystna oferta.</li>
+                                    <li><strong>Porównuj "jabłka z jabłkami":</strong> Przy zmianie pracy używaj kalkulatora do porównania ofert. Czasem niższa pensja w firmie z krótszym czasem pracy oznacza wyższą stawkę godzinową.</li>
+                                </ul>
+                            </div>
+
+                            <h3>Zmiany w 2026 roku wpływające na stawkę godzinową</h3>
+                            <div className='desc'>
+                                <p>
+                                    Rok 2026 przyniósł kilka istotnych zmian w przepisach, które mają bezpośredni wpływ na wynagrodzenia i stawki godzinowe w Polsce:
+                                </p>
+                                <ul>
+                                    <li><strong>Minimalne wynagrodzenie:</strong> Od stycznia 2026 minimalna pensja wynosi 4806 zł brutto, co przekłada się na stawkę godzinową około 28,61 zł przy standardowym miesiącu (21 dni roboczych).</li>
+                                    <li><strong>Minimalna stawka dla zleceń:</strong> Dla umów zlecenia obowiązuje minimalna stawka 31,40 zł brutto za godzinę.</li>
+                                    <li><strong>Kwota wolna od podatku:</strong> Powszechna ulga podatkowa wynosi 300 zł miesięcznie, co bezpośrednio wpływa na przełożenie wynagrodzenia brutto na netto.</li>
+                                    <li><strong>Składka zdrowotna:</strong> Nadal wynosi 9% podstawy wymiaru, nieodliczalna od podatku.</li>
+                                    <li><strong>PPK (Pracownicze Plany Kapitałowe):</strong> Podstawowa składka pracownika to 2% wynagrodzenia brutto, chyba że zdecydujesz się na rezygnację.</li>
+                                </ul>
+                                <p>
+                                    Nasz <strong>kalkulator stawki godzinowej 2026</strong> jest na bieżąco aktualizowany i uwzględnia wszystkie te zmiany, zapewniając precyzyjne obliczenia zgodne z obowiązującymi przepisami.
+                                </p>
+                            </div>
                         </article>
                     </section>
                 </main>
