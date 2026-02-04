@@ -1,6 +1,13 @@
+.printableWrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+}
+
 .logo {
     position: absolute;
-    right: 7%;
+    right: 0;
     margin-top: 15px;
     width: 100px;
     height: 180px;
@@ -42,20 +49,21 @@
 
 .sign {
     position: relative;
-    line-height: 1lvh;
-    margin-top: 6lvh;
+    line-height: normal;
+    margin-top: 10lvh;
     text-align: right;
     align-content: right;
     margin-left: auto;
     margin-right: auto;
     max-width: 800px;
     width: 100%;
+    padding-bottom: 5px;
 }
 
 .signHr {
     position: absolute;
     right: 0;
-    bottom: 14px;
+    bottom: 26px;
     width: 50%;
 }
 
@@ -125,9 +133,15 @@
         display: none !important;
     }
 
+    .table,
+    .printableWrapper {
+        width: 85vw;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     .table {
         height: 65dvh;
-        width: 85vw;
     }
 
     .enploy {

@@ -222,13 +222,15 @@ class KartaGodz extends React.Component {
           adSlot="3856131321"
         />*/}
         <main>
-          <RenderImage />
+          <div id="printable-content" className={styles.printableWrapper}>
+            <RenderImage />
+            <Title />
+            <Month />
+            <Enploy />
+            <Table />
+            <Podpis />
+          </div>
           <Controls />
-          <Title />
-          <Month />
-          <Enploy />
-          <Table />
-          <Podpis />
           <article className="desc">
             <h2>Jak utworzyć Kartę Godzin Pracy?</h2>
 
