@@ -277,12 +277,12 @@ class KartaGodz extends React.Component {
             <h2>Karta ewidencji czasu pracy do druku – darmowy generator PDF</h2>
 
             <p>
-              Szukasz gotowego i profesjonalnego rozwiązania do rejestrowania czasu pracy swoich pracowników? Nasz darmowy generator pozwala w kilka sekund przygotować kompletną <b>kartę ewidencji czasu pracy do druku</b>. Narzędzie zostało stworzone z myślą o pracodawcach, działach HR oraz osobach samozatrudnionych, które potrzebują rzetelnego i czytelnego dokumentu zgodnego z aktualnymi wymogami.</p>
+              Szukasz gotowego rozwiązania do rejestrowania czasu pracy swoich pracowników? Ten darmowy generator pozwala w kilka sekund przygotować kompletną <b>kartę ewidencji czasu pracy</b>. Narzędzie zostało stworzone z myślą o pracodawcach, działach HR oraz osobach samozatrudnionych, które potrzebują rzetelnego i czytelnego dokumentu zgodnego z aktualnymi wymogami.</p>
 
             <AdSenseInArticle adSlot={5751543216} />
 
             <h3>Dlaczego warto wybrać tę kartę godzin pracy?</h3>
-            <p>Prowadzenie ewidencji to obowiązek każdego pracodawcy, niezależnie od liczby zatrudnionych osób. Nasz generator ułatwia to zadanie, oferując:</p>
+            <p>Prowadzenie ewidencji to obowiązek każdego pracodawcy, niezależnie od liczby zatrudnionych osób. Ten generator ułatwia to zadanie, oferując:</p>
             <ul>
               <li><b>Pełną czytelność:</b> Tabela została zoptymalizowana tak, aby po wydruku na formacie A4 wszystkie dane były wyraźne i uporządkowane.</li>
               <li><b>Wyróżnienie dni wolnych:</b> System automatycznie zaznacza soboty (kolor niebieski) oraz niedziele i święta (kolor czerwony), co minimalizuje ryzyko pomyłek przy wypełnianiu.</li>
@@ -300,18 +300,18 @@ class KartaGodz extends React.Component {
               <li>Oznaczenie dni wolnych od pracy wraz z tytułem ich udzielenia.</li>
             </ul>
 
-            <h3>Jak przygotować kartę godzin pracy do druku?</h3>
+            <h3>Jak utworzyć kartę godzin pracy?</h3>
             <div >
               <ol className={stylesList.list}>
                 <li><b>Wybierz okres:</b> Wskaż rok oraz miesiąc, dla którego chcesz wygenerować zestawienie.</li>
                 <li><b>Personalizuj:</b> Możesz dodać logo swojej firmy, co sprawi, że dokument będzie wyglądał bardziej oficjalnie.</li>
-                <li><b>Generuj i drukuj:</b> Kliknij przycisk &quot;Drukuj&quot;, aby natychmiast wysłać dokument na drukarkę, lub &quot;Zapisz kartę&quot;, aby pobrać <b>plik PDF</b> na dysk.</li>
+                <li><b>Generuj i drukuj:</b> Kliknij przycisk &quot;Drukuj kartę&quot;, aby natychmiast wysłać dokument na drukarkę, lub &quot;Zapisz kartę&quot;, aby pobrać <b>plik PDF</b> na dysk.</li>
               </ol>
             </div>
 
-            <p>Nasz generator to idealne rozwiązanie, gdy potrzebna jest szybka <b>lista obecności do druku</b> lub formalna <b>karta ewidencji czasu pracy</b>. Dzięki optymalizacji wysokości i szerokości tabeli, dokument zawsze mieści się na jednej stronie, co pozwala na wygodne archiwizowanie dokumentacji pracowniczej w segregatorach.</p>
+            <p>Ten generator to idealne rozwiązanie, gdy potrzebna jest szybka <b>lista obecności do druku</b> lub formalna <b>karta ewidencji czasu pracy</b>. Dzięki optymalizacji wysokości i szerokości tabeli, dokument zawsze mieści się na jednej stronie, co pozwala na wygodne archiwizowanie dokumentacji pracowniczej w segregatorach.</p>
 
-            <p>Korzystanie z naszego narzędzia jest całkowicie bezpłatne. Możesz generować dowolną liczbę kart dla wszystkich swoich pracowników, mając pewność, że każda z nich będzie wyglądać profesjonalnie i estetycznie. Pamiętaj, że rzetelna dokumentacja kadrowa to podstawa bezpieczeństwa prawnego Twojej firmy.</p>
+            <p>Korzystanie z tego narzędzia jest całkowicie bezpłatne. Możesz generować dowolną liczbę kart dla wszystkich swoich pracowników, mając pewność, że każda z nich będzie wyglądać profesjonalnie i estetycznie. Rzetelna dokumentacja kadrowa to podstawa bezpieczeństwa prawnego Twojej firmy.</p>
           </article>
         </main>
         <AdSense
