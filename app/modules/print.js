@@ -76,7 +76,7 @@ const Print = () => {
         }
 
         const opt = {
-            margin: [10, 10, 10, 10],
+            margin: [5, 10, 10, 10],
             filename: 'karta_godzin.pdf',
             image: { type: 'jpeg', quality: 1.0 },
             html2canvas: {

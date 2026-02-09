@@ -30,7 +30,7 @@ class KartaGodz extends React.Component {
   render() {
     const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div className={styles.logo}><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
 
-    const Title = () => <div className={styles.title}><h2>Karta Godzin Pracy</h2></div>;
+    const Title = () => <div className={styles.title}><h2>EWIDENCJA CZASU PRACY</h2></div>;
     const text = this.state.inputVal;
     let month = text.slice(5, 7) * 1;
     let year = text.slice(0, 4) * 1;
@@ -112,10 +112,10 @@ class KartaGodz extends React.Component {
       const isMovable = isMovableHoliday(i, month);
 
       if (isSunday || isFixedHoliday || isMovable) {
-        table.push(<tr key={i} className={styles.holyday}><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>)
+        table.push(<tr key={i} className={styles.holyday}><td>{i < 10 ? `0${i}` : i}.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>)
       }
-      else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className={styles.saturday}><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
-      else { table.push(<tr key={i} className='normal'><td><b>{i}</b>.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td></tr>) }
+      else if (i === sobota || i === sobota + 7 || i === sobota + 14 || i === sobota + 21 || i === sobota + 28) { table.push(<tr key={i} className={styles.saturday}><td>{i < 10 ? `0${i}` : i}.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>) }
+      else { table.push(<tr key={i} className='normal'><td>{i < 10 ? `0${i}` : i}.{monthPre}.{year}</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>) }
     };
     const Input = () => (
       <div className={stylesInput.formGroup}>
@@ -183,26 +183,70 @@ class KartaGodz extends React.Component {
       </div>
     );
 
-    const Month = () => <div className={styles.month}><b>{monthStr} {year}</b></div>;
-    const Enploy = () => <div className={styles.enploy}><em>pracownik:</em><hr className={styles.hr} /><br /><em>stanowisko:</em><hr className={styles.hr} /><br /></div>
+    const Month = () => <div className={styles.month}><b>za miesiąc {monthStr} {year} roku</b></div>;
+    const Enploy = () => <div className={styles.enploy}>
+      <div className={styles.enployRow}>
+        <div className={styles.enployCol}>
+          <div className={styles.line}></div><span className={styles.label}>Imię i nazwisko pracownika:</span>
+        </div>
+        <div className={styles.enployCol}>
+          <div className={styles.line}></div><span className={styles.label}>Stanowisko:</span>
+        </div>
+      </div>
+      <div className={styles.enployRow}>
+        <div className={styles.enployCol}>
+          <div className={styles.line}></div><span className={styles.label}>Jednostka organizacyjna:</span>
+        </div>
+      </div>
+    </div>
     const Rows = () => table.map((e) => e);
     const Table = () => <table className={styles.table}>
       <thead>
         <tr>
-          <th>DATA</th>
-          <th>ROZPO.</th>
-          <th>ZAKOŃ.</th>
-          <th>GODZ.</th>
-          <th id='podpis'>PODPIS</th>
-          <th className={styles.uwagi}>UWAGI</th>
+          <th rowSpan="2" className={styles.headerDate}>DATA</th>
+          <th colSpan="3">GODZINY PRACY</th>
+          <th colSpan="3">W TYM:</th>
+          <th colSpan="2">ZWOLNIENIA I NIEOBECNOŚCI</th>
+          <th rowSpan="2">UWAGI</th>
+        </tr>
+        <tr>
+          <th className={styles.headerTime}>wejście</th>
+          <th className={styles.headerTime}>wyjście</th>
+          <th className={styles.headerSmall}>suma</th>
+          <th className={styles.headerSmall}>noce</th>
+          <th className={styles.headerSmall}>nadgodz.</th>
+          <th className={styles.headerSmall}>niedz. i święta</th>
+          <th className={styles.headerSmall}>rodzaj</th>
+          <th className={styles.headerSmall}>wymiar</th>
         </tr>
       </thead>
       <tbody>
         <Rows />
-        <tr><td className={styles.noborder}></td><td className={styles.noborder}></td><td className={styles.noborder}><b>SUMA:</b></td><td></td><td className={styles.noborder}></td><td className={styles.noborder}></td></tr>
+        <tr className={styles.sumRow}>
+          <td colSpan="3" className={styles.sumLabel}><b>SUMA:</b></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td colSpan="3" className={styles.noborder}></td>
+        </tr>
       </tbody>
     </table>
-    const Podpis = () => <div className={styles.sign}><hr className={styles.signHr} /><em>podpis przełożonego</em></div>;
+    const Legend = () => (
+      <div className={styles.legend}>
+        <p><b>kody nieobecności:</b> W - dzień wolny (5-dniowy tydz. pracy), N - niedziela / święto, X - wolny z harmonogramu, U / UW - urlop wypoczynkowy, UNŻ / UŻ - na żądanie, ZO - zwolnienie okolicznościowe, UM - macierzyński, UR - rodzicielski, UO - ojcowski, UB - bezpłatny, CH - chorobowe (L4), Op - opieka, W5 - wolne za sobotę, WNŚ - wolne za niedzielę/święto, NN - nieusprawiedliwiona nieobecność, ZW - zwolnienie (nieodprac.), WP - zwolnienie do odpracowania, Dyż / Dyz - dyżur, Z - zaległości.</p>
+      </div>
+    );
+    const Podpis = () => <div className={styles.signSection}>
+      <div className={styles.signItem}>
+        <hr className={styles.signHrFull} />
+        <em>podpis pracownika</em>
+      </div>
+      <div className={styles.signItem}>
+        <hr className={styles.signHrFull} />
+        <em>podpis przełożonego</em>
+      </div>
+    </div>;
     const Wynik = () => { return (<p className="wynik">Karta godzin pracy dla:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span><br /><CommentScrollLink text="Zostaw komentarz" /></p>) }
 
     return (
@@ -225,23 +269,49 @@ class KartaGodz extends React.Component {
             <Month />
             <Enploy />
             <Table />
+            <Legend />
             <Podpis />
           </div>
           <Controls />
           <article className="desc">
-            <h2>Jak utworzyć Kartę Godzin Pracy?</h2>
+            <h2>Karta ewidencji czasu pracy do druku – darmowy generator PDF</h2>
 
             <p>
-              Na tej stronie powyżej wygenerujesz oryginalnie zaprojektowaną <b>Kartę Godzin Pracy</b>, która może pełnić funkcję <b>karty ewidencji czasu pracy pracownika</b> - to zaledwie trzy kliknięcia by to zrobić:</p>
+              Szukasz gotowego i profesjonalnego rozwiązania do rejestrowania czasu pracy swoich pracowników? Nasz darmowy generator pozwala w kilka sekund przygotować kompletną <b>kartę ewidencji czasu pracy do druku</b>. Narzędzie zostało stworzone z myślą o pracodawcach, działach HR oraz osobach samozatrudnionych, które potrzebują rzetelnego i czytelnego dokumentu zgodnego z aktualnymi wymogami.</p>
+
             <AdSenseInArticle adSlot={5751543216} />
+
+            <h3>Dlaczego warto wybrać tę kartę godzin pracy?</h3>
+            <p>Prowadzenie ewidencji to obowiązek każdego pracodawcy, niezależnie od liczby zatrudnionych osób. Nasz generator ułatwia to zadanie, oferując:</p>
+            <ul>
+              <li><b>Pełną czytelność:</b> Tabela została zoptymalizowana tak, aby po wydruku na formacie A4 wszystkie dane były wyraźne i uporządkowane.</li>
+              <li><b>Wyróżnienie dni wolnych:</b> System automatycznie zaznacza soboty (kolor niebieski) oraz niedziele i święta (kolor czerwony), co minimalizuje ryzyko pomyłek przy wypełnianiu.</li>
+              <li><b>Szczegółowe kolumny:</b> Karta zawiera pola na godziny wejścia i wyjścia, sumę przepracowanego czasu, godziny nocne, nadgodziny oraz pracę w dni wolne.</li>
+              <li><b>Sekcję nieobecności:</b> Specjalne miejsce na wpisanie rodzaju i wymiaru zwolnień (np. urlop, chorobowe, opieka).</li>
+            </ul>
+
+            <h3>Ewidencja czasu pracy 2026 – co musi zawierać?</h3>
+            <p>Zgodnie z przepisami prawa pracy, <b>karta godzin pracy</b> powinna odzwierciedlać faktyczny czas wykonywania zadań przez pracownika. Nasz <b>arkusz ewidencji czasu pracy PDF</b> posiada dedykowane miejsca na:</p>
+            <ul>
+              <li>Dokładną datę (dzień miesiąca).</li>
+              <li>Godziny rozpoczęcia i zakończenia pracy.</li>
+              <li>Łączną liczbę godzin przepracowanych w danej dobie.</li>
+              <li>Wyszczególnienie godzin nadliczbowych oraz pracy w porze nocnej.</li>
+              <li>Oznaczenie dni wolnych od pracy wraz z tytułem ich udzielenia.</li>
+            </ul>
+
+            <h3>Jak przygotować kartę godzin pracy do druku?</h3>
             <div >
               <ol className={stylesList.list}>
-                <li> wybór miesiąca w danym roku, dla którego chcemy uzyskać kartę</li>
-                <li>opcjonalnie w celu lepszej personalizacji możemy dodać logo firmy lub jakąś grafikę</li>
-                <li>użyć przycisku &quot;Drukuj&quot; lub &quot;Zapisz&quot;</li>
+                <li><b>Wybierz okres:</b> Wskaż rok oraz miesiąc, dla którego chcesz wygenerować zestawienie.</li>
+                <li><b>Personalizuj:</b> Możesz dodać logo swojej firmy, co sprawi, że dokument będzie wyglądał bardziej oficjalnie.</li>
+                <li><b>Generuj i drukuj:</b> Kliknij przycisk &quot;Drukuj&quot;, aby natychmiast wysłać dokument na drukarkę, lub &quot;Zapisz kartę&quot;, aby pobrać <b>plik PDF</b> na dysk.</li>
               </ol>
             </div>
-            <p>Utworzony plik ma formę tabeli, gdzie kolejne jej wiersze reprezentują dni miesiąca. Dla lepszej przejrzystości formularza wiersze sobót mają kolor niebieski a niedziel i świąt stałych - kolor czerwony. Można generować pliki dla dowolnych miesięcy lat przeszłych, jak i przyszłych.</p>
+
+            <p>Nasz generator to idealne rozwiązanie, gdy potrzebna jest szybka <b>lista obecności do druku</b> lub formalna <b>karta ewidencji czasu pracy</b>. Dzięki optymalizacji wysokości i szerokości tabeli, dokument zawsze mieści się na jednej stronie, co pozwala na wygodne archiwizowanie dokumentacji pracowniczej w segregatorach.</p>
+
+            <p>Korzystanie z naszego narzędzia jest całkowicie bezpłatne. Możesz generować dowolną liczbę kart dla wszystkich swoich pracowników, mając pewność, że każda z nich będzie wyglądać profesjonalnie i estetycznie. Pamiętaj, że rzetelna dokumentacja kadrowa to podstawa bezpieczeństwa prawnego Twojej firmy.</p>
           </article>
         </main>
         <AdSense
