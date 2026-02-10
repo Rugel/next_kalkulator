@@ -35,6 +35,7 @@ const Print = () => {
         // A4 at 96dpi is ~794px. 210mm wide.
         // 715px represents ~189mm, leaving ~10mm margins on both sides.
         element.style.width = '715px';
+        element.style.minWidth = '715px';
         element.style.maxWidth = '715px';
         element.style.backgroundColor = 'white';
         element.style.overflow = 'hidden';
@@ -80,7 +81,7 @@ const Print = () => {
             filename: 'karta_godzin.pdf',
             image: { type: 'jpeg', quality: 1.0 },
             html2canvas: {
-                scale: 3, // High resolution
+                scale: 2, // Consistent resolution
                 useCORS: true,
                 logging: false,
                 letterRendering: true,
@@ -89,7 +90,8 @@ const Print = () => {
                 scrollX: 0,
                 scrollY: 0,
                 x: 0,
-                y: 0
+                y: 0,
+                devicePixelRatio: 1 // Force consistent pixel ratio
             },
             jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
         };
