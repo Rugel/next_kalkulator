@@ -1,4 +1,5 @@
 'use client';
+import Link from 'next/link';
 import React from 'react';
 import Input from './modules/input';
 import Swal from 'sweetalert2';
@@ -236,13 +237,13 @@ class StaGodz extends React.Component {
                             </div>
                         </section>
                         <article>
-                            <h3>Ile wynosi najniższa stawka godzinowa w 2026 roku?</h3>
+                            <h2 id="minimalna-stawka">Ile wynosi najniższa stawka godzinowa w 2026 roku?</h2>
                             <div className='desc'>
                                 <p>
                                     W 2026 roku w Polsce obowiązują dwie różne wartości dotyczące płacy minimalnej, w zależności od rodzaju zawartej umowy:
                                 </p>
                                 <ul>
-                                    <li><strong>Umowa Zlecenie:</strong> Ustawowa <strong>minimalna stawka godzinowa</strong> wynosi <strong>31,40 zł brutto</strong> (od 1 stycznia 2026 r.).</li>
+                                    <li><strong>Umowa Zlecenie:</strong> Ustawowa <strong>minimalna stawka godzinowa</strong> wynosi <strong>31,40 zł brutto</strong> (od 1 stycznia 2026 r. zgodnie z rozporządzeniem <a href="https://www.gov.pl/web/rodzina" target="_blank" rel="noopener noreferrer">Ministerstwa Rodziny i Polityki Społecznej</a>).</li>
                                     <li><strong>Umowa o Pracę:</strong> Minimalne wynagrodzenie miesięczne wynosi <strong>4806 zł brutto</strong>.</li>
                                 </ul>
                                 <p><strong>Jak przeliczyć minimalne wynagrodzenie na stawkę godzinową przy UoP?</strong><br />
@@ -255,7 +256,7 @@ class StaGodz extends React.Component {
                                 <p>
                                     Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br />
                                     Wystarczy użyć <strong>kalkulatora stawki godzinowej</strong> lub przeprowadzić obliczenia ręcznie: podziel miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8.
-                                    Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h.
+                                    Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h. Jeśli interesuje Cię konkretnie wynagrodzenie "na rękę", wybierz <Link href="/brutto_netto">przelicznik brutto-netto</Link>.
                                 </p>
                                 <AdSenseInArticle adSlot={8969900782} />
                                 <p>
@@ -268,7 +269,7 @@ class StaGodz extends React.Component {
                             <div className='desc'>
                                 <p>
                                     Znajomość swojej stawki za godzinę pracy jest kluczowa przy negocjacjach płacowych, planowaniu budżetu domowego oraz porównywaniu ofert pracy.
-                                    Nasz <strong>kalkulator stawki godzinowej</strong> zapewnia:
+                                    Ten <strong>kalkulator stawki godzinowej</strong> zapewnia:
                                 </p>
                                 <ul>
                                     <li><strong>Precyzję:</strong> Uwzględnia realną liczbę dni roboczych w konkretnym miesiącu roku 2026.</li>
@@ -280,13 +281,16 @@ class StaGodz extends React.Component {
                             <h3>Najczęstsze pytania (FAQ) o kalkulator stawki godzinowej</h3>
                             <div className='desc'>
                                 <p><strong>Jak przeliczyć kwotę netto na stawkę godzinową?</strong><br />
-                                    Najpierw ustal kwotę brutto swojego wynagrodzenia (pomoże Ci w tym nasz przelicznik brutto-netto), a następnie podziel ją przez liczbę godzin przepracowanych w miesiącu. Nasz <strong>kalkulator stawki godzinowej</strong> zrobi to za Ciebie automatycznie.</p>
+                                    Najpierw ustal kwotę brutto swojego wynagrodzenia (pomoże Ci w tym przelicznik brutto-netto), a następnie podziel ją przez liczbę godzin przepracowanych w miesiącu. Ten <strong>kalkulator stawki godzinowej</strong> zrobi to za Ciebie automatycznie.</p>
 
                                 <p><strong>Ile godzin pracy ma typowy miesiąc?</strong><br />
                                     Średnio w miesiącu przypada około 168 godzin pracy (21 dni roboczych x 8 godzin). Jednak liczba ta zmienia się w zależności od świąt i układu kalendarza w 2026 roku.</p>
 
                                 <p><strong>Czy stawka godzinowa zależy od rodzaju umowy?</strong><br />
-                                    Tak, sposób wyliczania składek różni się między Umową o Pracę (UoP), Umową Zlecenie a B2B. Ten kalkulator jest zoptymalizowany pod kątem <strong>Umowy o Pracę</strong>.</p>
+                                    Tak, sposób wyliczania składek różni się między Umową o Pracę (UoP), Umową Zlecenie a B2B. Ten kalkulator jest zoptymalizowany pod kątem <strong>Umowy o Pracę</strong>. Jeśli pracujesz na innej podstawie, sprawdź nasz <Link href="/kalkulator-umowy-zlecenie">kalkulator zlecenia</Link> lub <Link href="/kalkulator-b2b">kalkulator B2B</Link>.</p>
+
+                                <p><strong>Jak obliczyć stawkę godzinową z netto (na rękę)?</strong><br />
+                                    Aby obliczyć stawkę godzinową z kwoty netto, musisz najpierw "ubruttowić" swoją pensję, uwzględniając składki ZUS i podatek. Najprościej zrobić to, wpisując kwotę w nasz kalkulator, który automatycznie przelicza wartości w obie strony.</p>
                             </div>
 
                             <h2>Kiedy warto skorzystać z kalkulatora stawki godzinowej?</h2>
@@ -336,7 +340,7 @@ class StaGodz extends React.Component {
                                 </ul>
 
                                 <p>
-                                    Nasz <strong>kalkulator wynagrodzeń</strong> koncentruje się na umowie o pracę, ale znajomość stawki godzinowej brutto pozwala również oszacować, jaką kwotę powinieneś zaproponować przy innych formach współpracy, aby utrzymać podobny poziom dochodów netto.
+                                    Ten <strong>kalkulator wynagrodzeń</strong> koncentruje się na umowie o pracę, ale znajomość stawki godzinowej brutto pozwala również oszacować, jaką kwotę powinieneś zaproponować przy innych formach współpracy, aby utrzymać podobny poziom dochodów netto.
                                 </p>
                             </div>
 
@@ -350,24 +354,24 @@ class StaGodz extends React.Component {
                                     <li><strong>Podkreśl wartość dodaną:</strong> Podczas negocjacji zamiast mówić &quot;chcę więcej&quot;, powiedz &quot;moja aktualna stawka wynosi X zł/h, a na podstawie moich kompetencji i osiągnięć, rynkowa stawka dla tej pozycji to Y zł/h&quot;.</li>
                                     <li><strong>Uwzględnij koszty pracodawcy:</strong> Pamiętaj, że pracodawca płaci dodatkowo składki ZUS (około 20% Twojego brutto). Kalkulator pokazuje te wartości, co pozwala lepiej zrozumieć całkowity koszt Twojego zatrudnienia.</li>
                                     <li><strong>Negocjuj świadomie premie:</strong> Jeśli firma oferuje system premiowy zamiast podwyżki, przelicz wartość premii na stawkę godzinową, aby ocenić, czy to korzystna oferta.</li>
-                                    <li><strong>Porównuj &quot;jabłka z jabłkami&quot;:</strong> Przy zmianie pracy używaj kalkulatora do porównania ofert. Czasem niższa pensja w firmie z krótszym czasem pracy oznacza wyższą stawkę godzinową.</li>
+                                    <li><strong>Obiektywne zestawienie ofert:</strong> Przy zmianie pracy używaj kalkulatora do porównania propozycji. Pamiętaj, że niższa pensja miesięczna przy mniejszej wymaganym wymiarze czasu oznacza czasami wyższą stawkę za godzinę pracy.</li>
                                 </ul>
                             </div>
 
-                            <h3>Zmiany w 2026 roku wpływające na stawkę godzinową</h3>
+                            <h3>Kluczowe parametry i zmiany w 2026 roku</h3>
                             <div className='desc'>
                                 <p>
-                                    Rok 2026 przyniósł kilka istotnych zmian w przepisach, które mają bezpośredni wpływ na wynagrodzenia i stawki godzinowe w Polsce:
+                                    W 2026 roku Twoje wynagrodzenie jest kształtowane przez nowe stawki płacy minimalnej oraz kontynuację zasad podatkowych obowiązujących od lat:
                                 </p>
                                 <ul>
-                                    <li><strong>Minimalne wynagrodzenie:</strong> Od stycznia 2026 minimalna pensja wynosi 4806 zł brutto, co przekłada się na stawkę godzinową około 28,61 zł przy standardowym miesiącu (21 dni roboczych).</li>
-                                    <li><strong>Minimalna stawka dla zleceń:</strong> Dla umów zlecenia obowiązuje minimalna stawka 31,40 zł brutto za godzinę.</li>
-                                    <li><strong>Kwota wolna od podatku:</strong> Powszechna ulga podatkowa wynosi 300 zł miesięcznie, co bezpośrednio wpływa na przełożenie wynagrodzenia brutto na netto.</li>
-                                    <li><strong>Składka zdrowotna:</strong> Nadal wynosi 9% podstawy wymiaru, nieodliczalna od podatku.</li>
-                                    <li><strong>PPK (Pracownicze Plany Kapitałowe):</strong> Podstawowa składka pracownika to 2% wynagrodzenia brutto, chyba że zdecydujesz się na rezygnację.</li>
+                                    <li><strong>Nowa płaca minimalna (UoP):</strong> Od stycznia 2026 r. minimalne wynagrodzenie wzrosło do <strong>4806 zł brutto</strong>. Przekłada się to na około 28,61 zł za godzinę (przy 168h pracy).</li>
+                                    <li><strong>Nowa stawka minimalna (Zlecenie):</strong> Dla osób na umowie zlecenia minimalna stawka wzrosła do <strong>31,40 zł brutto</strong> za godzinę.</li>
+                                    <li><strong>Kwota wolna od podatku (bez zmian):</strong> Nadal obowiązuje kwota wolna 30 000 zł rocznie, co w przeliczeniu na zaliczki miesięczne daje 300 zł ulgi podatkowej.</li>
+                                    <li><strong>Składka zdrowotna (bez zmian):</strong> Pozostaje na poziomie 9% podstawy wymiaru i nadal nie podlega odliczeniu od podatku.</li>
+                                    <li><strong>PPK (zasady stałe):</strong> Podstawowa składka pracownika to niezmiennie 2% wynagrodzenia brutto, o ile nie złożono rezygnacji.</li>
                                 </ul>
                                 <p>
-                                    Nasz <strong>kalkulator stawki godzinowej 2026</strong> jest na bieżąco aktualizowany i uwzględnia wszystkie te zmiany, zapewniając precyzyjne obliczenia zgodne z obowiązującymi przepisami.
+                                    Ten <strong>kalkulator stawki godzinowej 2026</strong> uwzględnia zarówno te nowości, jak i stałe parametry systemowe, zapewniając precyzyjny wynik "na rękę".
                                 </p>
                             </div>
                         </article>
