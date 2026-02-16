@@ -256,7 +256,7 @@ class StaGodz extends React.Component {
                                 <p>
                                     Przeliczanie kwoty brutto wynagrodzenia na stawkę godzinową brutto dla 40-godzinnego systemu pracy jest proste.<br />
                                     Wystarczy użyć <strong>kalkulatora stawki godzinowej</strong> lub przeprowadzić obliczenia ręcznie: podziel miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8.
-                                    Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h. Jeśli interesuje Cię konkretnie wynagrodzenie "na rękę", wybierz <Link href="/brutto_netto">przelicznik brutto-netto</Link>.
+                                    Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h. Jeśli interesuje Cię konkretnie wynagrodzenie &quot;na rękę&quot;, wybierz <Link href="/brutto_netto">przelicznik brutto-netto</Link>.
                                 </p>
                                 <AdSenseInArticle adSlot={8969900782} />
                                 <p>
@@ -290,7 +290,7 @@ class StaGodz extends React.Component {
                                     Tak, sposób wyliczania składek różni się między Umową o Pracę (UoP), Umową Zlecenie a B2B. Ten kalkulator jest zoptymalizowany pod kątem <strong>Umowy o Pracę</strong>. Jeśli pracujesz na innej podstawie, sprawdź nasz <Link href="/kalkulator-umowy-zlecenie">kalkulator zlecenia</Link> lub <Link href="/kalkulator-b2b">kalkulator B2B</Link>.</p>
 
                                 <p><strong>Jak obliczyć stawkę godzinową z netto (na rękę)?</strong><br />
-                                    Aby obliczyć stawkę godzinową z kwoty netto, musisz najpierw "ubruttowić" swoją pensję, uwzględniając składki ZUS i podatek. Najprościej zrobić to, wpisując kwotę w nasz kalkulator, który automatycznie przelicza wartości w obie strony.</p>
+                                    Aby obliczyć stawkę godzinową z kwoty netto, musisz najpierw &quot;ubruttowić&quot; swoją pensję, uwzględniając składki ZUS i podatek. Najprościej zrobić to, wpisując kwotę w nasz kalkulator, który automatycznie przelicza wartości w obie strony.</p>
                             </div>
 
                             <h2>Kiedy warto skorzystać z kalkulatora stawki godzinowej?</h2>
@@ -371,7 +371,7 @@ class StaGodz extends React.Component {
                                     <li><strong>PPK (zasady stałe):</strong> Podstawowa składka pracownika to niezmiennie 2% wynagrodzenia brutto, o ile nie złożono rezygnacji.</li>
                                 </ul>
                                 <p>
-                                    Ten <strong>kalkulator stawki godzinowej 2026</strong> uwzględnia zarówno te nowości, jak i stałe parametry systemowe, zapewniając precyzyjny wynik "na rękę".
+                                    Ten <strong>kalkulator stawki godzinowej 2026</strong> uwzględnia zarówno te nowości, jak i stałe parametry systemowe, zapewniając precyzyjny wynik &quot;na rękę&quot;.
                                 </p>
                             </div>
                         </article>
