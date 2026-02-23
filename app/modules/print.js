@@ -19,48 +19,37 @@ const Print = () => {
         if (!isClient) return;
 
         const html2pdf = (await import('html2pdf.js')).default;
-        const element = document.getElementById('printable-content');
+        const originalElement = document.getElementById('printable-content');
 
-        if (!element) return;
+        if (!originalElement) return;
+
+        // Create a hidden container for the clone to avoid layout shifts on mobile
+        const hiddenContainer = document.createElement('div');
+        hiddenContainer.style.position = 'fixed';
+        hiddenContainer.style.left = '-9999px';
+        hiddenContainer.style.top = '0';
+        hiddenContainer.style.width = '715px';
+        document.body.appendChild(hiddenContainer);
+
+        // Clone the element
+        const element = originalElement.cloneNode(true);
+        hiddenContainer.appendChild(element);
 
         // Add a class to allow specific PDF styling in CSS
         element.classList.add('pdf-version');
 
         // Force a specific width for the capture to ensure layout consistency
-        const originalWidth = element.style.width;
-        const originalMaxWidth = element.style.maxWidth;
-        const originalBackgroundColor = element.style.backgroundColor;
-        const originalOverflow = element.style.overflow;
-
-        // A4 at 96dpi is ~794px. 210mm wide.
-        // 715px represents ~189mm, leaving ~10mm margins on both sides.
         element.style.width = '715px';
         element.style.minWidth = '715px';
         element.style.maxWidth = '715px';
         element.style.backgroundColor = 'white';
         element.style.overflow = 'hidden';
 
-        // Fix logo aspect ratio and container height if needed, but rely mostly on CSS
+        // Fix logo aspect ratio and container height in the clone
         const logoElement = element.querySelector('[class*="logo"]');
-        let originalLogoStyle = null;
-        let logoImage = null;
-        let originalLogoImageStyle = null;
-
         if (logoElement) {
-            originalLogoStyle = {
-                height: logoElement.style.height,
-                maxHeight: logoElement.style.maxHeight
-            };
-
-            // Check for the image inside
-            logoImage = logoElement.querySelector('img');
+            const logoImage = logoElement.querySelector('img');
             if (logoImage) {
-                originalLogoImageStyle = {
-                    position: logoImage.style.position,
-                    height: logoImage.style.height,
-                    width: logoImage.style.width,
-                    objectFit: logoImage.style.objectFit
-                };
                 // Make image relative so 'auto' height on container works
                 logoImage.style.position = 'relative';
                 // Remove forced 100% height which caused distortion when combined with width constraints
@@ -99,24 +88,10 @@ const Print = () => {
         try {
             await html2pdf().from(element).set(opt).save();
         } finally {
-            // Restore logo styles
-            if (logoElement && originalLogoStyle) {
-                logoElement.style.height = originalLogoStyle.height;
-                logoElement.style.maxHeight = originalLogoStyle.maxHeight;
+            // Clean up the hidden container
+            if (document.body.contains(hiddenContainer)) {
+                document.body.removeChild(hiddenContainer);
             }
-            if (logoImage && originalLogoImageStyle) {
-                logoImage.style.position = originalLogoImageStyle.position;
-                logoImage.style.height = originalLogoImageStyle.height;
-                logoImage.style.width = originalLogoImageStyle.width;
-                logoImage.style.objectFit = originalLogoImageStyle.objectFit;
-            }
-
-            // Restore original styles
-            element.classList.remove('pdf-version');
-            element.style.width = originalWidth;
-            element.style.maxWidth = originalMaxWidth;
-            element.style.backgroundColor = originalBackgroundColor;
-            element.style.overflow = originalOverflow;
         }
     };
 

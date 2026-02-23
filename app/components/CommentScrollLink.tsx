@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-const CommentScrollLink = ({ text = "[Zostaw komentarz i napisz co myślisz o wyniku]" }: { text?: string }) => {
+const CommentScrollLink = ({ text = "Zostaw komentarz i napisz co myślisz o wyniku" }: { text?: string }) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
         const el = document.getElementById('comments-section');
