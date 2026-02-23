@@ -36,6 +36,7 @@ const Print = () => {
                 scale: 3, // Reduced from 4 for better Chrome stability while keeping high sharpness
                 useCORS: true,
                 letterRendering: true,
+                windowWidth: 1024, // Force desktop-like width even on mobile devices
                 onclone: (clonedDoc) => {
                     // Remove all iframes to avoid SecurityErrors and capture issues
                     const iframes = clonedDoc.querySelectorAll('iframe, .adsbygoogle, ins');

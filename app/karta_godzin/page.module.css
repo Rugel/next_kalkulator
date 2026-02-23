@@ -216,6 +216,7 @@
     /* Smaller padding because JS margin handles the rest */
     background-color: white !important;
     zoom: 1 !important;
+    /* Ensure no mobile zoom/scale affects the PDF */
     transform: none !important;
 }
 
