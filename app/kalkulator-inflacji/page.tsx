@@ -113,7 +113,20 @@ const InflationCalculatorPage = () => {
                             <select
                                 className={stylesInput.input}
                                 value={startYear}
-                                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setStartYear(parseInt(e.target.value))}
+                                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                                    const val = parseInt(e.target.value);
+                                    if (val > endYear) {
+                                        Swal.fire({
+                                            title: 'Błąd!',
+                                            text: 'Rok początkowy nie może być późniejszy niż rok końcowy.',
+                                            icon: 'error',
+                                            confirmButtonText: 'Rozumiem',
+                                            confirmButtonColor: '#764ba2'
+                                        });
+                                    } else {
+                                        setStartYear(val);
+                                    }
+                                }}
                             >
                                 {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
                             </select>
@@ -124,7 +137,20 @@ const InflationCalculatorPage = () => {
                             <select
                                 className={stylesInput.input}
                                 value={endYear}
-                                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setEndYear(parseInt(e.target.value))}
+                                onChange={(e: React.ChangeEvent<HTMLSelectElement>) => {
+                                    const val = parseInt(e.target.value);
+                                    if (val < startYear) {
+                                        Swal.fire({
+                                            title: 'Błąd!',
+                                            text: 'Rok końcowy nie może być wcześniejszy niż rok początkowy.',
+                                            icon: 'error',
+                                            confirmButtonText: 'Rozumiem',
+                                            confirmButtonColor: '#764ba2'
+                                        });
+                                    } else {
+                                        setEndYear(val);
+                                    }
+                                }}
                             >
                                 {yearOptions.map(y => <option key={y} value={y}>{y}</option>)}
                             </select>
