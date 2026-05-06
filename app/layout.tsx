@@ -18,7 +18,7 @@ import { GlobalSpinner } from "./components/GlobalSpinner";
 import WidgetsWrapper from "./components/WidgetsWrapper";
 import ConditionalAdSense from "./components/ConditionalAdSense";
 import AggregateRatingSchema from "./components/AggregateRatingSchema";
-
+import FloatingCalculator from "./components/FloatingCalculator";
 
 export const viewport = {
   width: 'device-width',
@@ -160,6 +160,7 @@ export default function RootLayout({
           <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
             <Footer />
           </footer>
+          <FloatingCalculator />
         </GlobalSpinner>
       </body>
     </html>
