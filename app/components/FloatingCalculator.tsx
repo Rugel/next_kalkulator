@@ -9,7 +9,7 @@ export default function FloatingCalculator() {
   return (
     <>
       {/* Overlay Backdrop */}
-      <div 
+      <div
         style={{
           position: 'fixed',
           top: 0,
@@ -28,8 +28,8 @@ export default function FloatingCalculator() {
       />
 
       {/* Centered Calculator Container */}
-      <div 
-        style={{ 
+      <div
+        style={{
           position: 'fixed',
           top: '50%',
           left: '50%',
@@ -39,7 +39,7 @@ export default function FloatingCalculator() {
           transition: 'all 300ms ease-in-out',
           opacity: isOpen ? 1 : 0,
           pointerEvents: isOpen ? 'auto' : 'none',
-          fontFamily: 'sans-serif' 
+          fontFamily: 'sans-serif'
         }}
       >
         <ScientificCalculator />
@@ -53,7 +53,7 @@ export default function FloatingCalculator() {
         style={{
           position: 'fixed',
           bottom: '1rem',
-          left: '1rem',
+          right: '1rem',
           zIndex: 99999,
           width: '3.5rem',
           height: '3.5rem',

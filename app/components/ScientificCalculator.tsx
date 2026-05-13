@@ -11,53 +11,53 @@ type ActionType = string | null;
 
 const DEFS: Array<[string, string, string, ActionType, ActionType, string]> = [
   // row 0
-  ['SHIFT','SHIFT','',       'shift',  '',        styles.kSHIFT],
-  ['ALPHA','ALPHA','',       null,     null,      styles.kALPHA],
-  ['MODE', 'MODE', 'SETUP',  'mode',   'mode',    styles.kMODE ],
-  ['BACK', '⌫',   'INS',    'del',    'del',     styles.kDEL  ],
-  ['ON',   'ON',  '',        'ac',     'ac',      styles.kON   ],
+  ['SHIFT', 'SHIFT', '', 'shift', '', styles.kSHIFT],
+  ['ALPHA', 'ALPHA', '', null, null, styles.kALPHA],
+  ['MODE', 'MODE', 'SETUP', 'mode', 'mode', styles.kMODE],
+  ['BACK', '⌫', 'INS', 'del', 'del', styles.kDEL],
+  ['ON', 'ON', '', 'ac', 'ac', styles.kON],
   // row 1
-  ['SIN','sin','sin⁻¹','sin(','asin(',styles.kFunc],
-  ['COS','cos','cos⁻¹','cos(','acos(',styles.kFunc],
-  ['TAN','tan','tan⁻¹','tan(','atan(',styles.kFunc],
-  ['HYP','hyp','hyp⁻¹','sinh(','asinh(',styles.kFunc],
-  ['DRG','DRG▸','','drg','drg',styles.kFunc],
+  ['SIN', 'sin', 'sin⁻¹', 'sin(', 'asin(', styles.kFunc],
+  ['COS', 'cos', 'cos⁻¹', 'cos(', 'acos(', styles.kFunc],
+  ['TAN', 'tan', 'tan⁻¹', 'tan(', 'atan(', styles.kFunc],
+  ['HYP', 'hyp', 'hyp⁻¹', 'sinh(', 'asinh(', styles.kFunc],
+  ['DRG', 'DRG▸', '', 'drg', 'drg', styles.kFunc],
   // row 2
-  ['INV', 'x⁻¹','x!',   '^-1','fact(',styles.kFunc],
-  ['SQ',  'x²', '∛',    '^2', 'cbrt(',styles.kFunc],
-  ['LOG', 'log','10ˣ',  'log(','10^(',styles.kFunc],
-  ['LN',  'ln', 'eˣ',   'ln(', 'e^(', styles.kFunc],
-  ['SQRT','√',  'xʸ',   'sqrt(','pow(',styles.kFunc],
+  ['INV', 'x⁻¹', 'x!', '^-1', 'fact(', styles.kFunc],
+  ['SQ', 'x²', '∛', '^2', 'cbrt(', styles.kFunc],
+  ['LOG', 'log', '10ˣ', 'log(', '10^(', styles.kFunc],
+  ['LN', 'ln', 'eˣ', 'ln(', 'e^(', styles.kFunc],
+  ['SQRT', '√', 'xʸ', 'sqrt(', 'pow(', styles.kFunc],
   // row 3
-  ['LP',   '(',  '[',   '(',    '[',    styles.kFunc],
-  ['RP',   ')',  ']',   ')',    ']',    styles.kFunc],
-  ['POW',  'xʸ', 'ʸ√x', '^(',   'root(',styles.kFunc],
-  ['MP',   'M+', 'M−',  'mplus','mminus',styles.kMem],
-  ['MR',   'MR', 'MC',  'mr',   'mc',   styles.kMem],
+  ['LP', '(', '[', '(', '[', styles.kFunc],
+  ['RP', ')', ']', ')', ']', styles.kFunc],
+  ['POW', 'xʸ', 'ʸ√x', '^(', 'root(', styles.kFunc],
+  ['MP', 'M+', 'M−', 'mplus', 'mminus', styles.kMem],
+  ['MR', 'MR', 'MC', 'mr', 'mc', styles.kMem],
   // row 4
-  ['N7','7','','7','',styles.kNum],
-  ['N8','8','','8','',styles.kNum],
-  ['N9','9','','9','',styles.kNum],
-  ['DEL','DEL','','del','del',styles.kDEL],
-  ['AC', 'AC', '','ac', 'ac', styles.kAC ],
+  ['N7', '7', '', '7', '', styles.kNum],
+  ['N8', '8', '', '8', '', styles.kNum],
+  ['N9', '9', '', '9', '', styles.kNum],
+  ['DEL', 'DEL', '', 'del', 'del', styles.kDEL],
+  ['AC', 'AC', '', 'ac', 'ac', styles.kAC],
   // row 5
-  ['N4','4','','4','',styles.kNum],
-  ['N5','5','','5','',styles.kNum],
-  ['N6','6','','6','',styles.kNum],
-  ['MUL','×','','×','×',styles.kOp],
-  ['DIV','÷','','÷','÷',styles.kOp],
+  ['N4', '4', '', '4', '', styles.kNum],
+  ['N5', '5', '', '5', '', styles.kNum],
+  ['N6', '6', '', '6', '', styles.kNum],
+  ['MUL', '×', '', '×', '×', styles.kOp],
+  ['DIV', '÷', '', '÷', '÷', styles.kOp],
   // row 6
-  ['N1','1','','1','',styles.kNum],
-  ['N2','2','','2','',styles.kNum],
-  ['N3','3','','3','',styles.kNum],
-  ['ADD','+','','+','+',styles.kOp],
-  ['SUB','−','','−','−',styles.kOp],
+  ['N1', '1', '', '1', '', styles.kNum],
+  ['N2', '2', '', '2', '', styles.kNum],
+  ['N3', '3', '', '3', '', styles.kNum],
+  ['ADD', '+', '', '+', '+', styles.kOp],
+  ['SUB', '−', '', '−', '−', styles.kOp],
   // row 7
-  ['N0',  '0',   '',     '0',   '0',  styles.kNum],
-  ['DOT', '.',   ',',    '.',   ',',  styles.kNum],
-  ['EE',  '×10ˣ','π',   'E',   'π',  styles.kFunc],
-  ['ANS', 'Ans', 'e',   'ANS', 'e',  styles.kFunc],
-  ['EQ',  '=',   '',     '=',   '=',  styles.kEQ  ],
+  ['N0', '0', '', '0', '0', styles.kNum],
+  ['DOT', '.', ',', '.', ',', styles.kNum],
+  ['EE', '×10ˣ', 'π', 'E', 'π', styles.kFunc],
+  ['ANS', 'Ans', 'e', 'ANS', 'e', styles.kFunc],
+  ['EQ', '=', '', '=', '=', styles.kEQ],
 ];
 
 const TRAIL_OPS = /[+\-×÷(,\^]$/;
@@ -79,7 +79,7 @@ export default function ScientificCalculator() {
     stateRef.current = { expr, ans, mem, evaled, angleMode };
   }, [expr, ans, mem, evaled, angleMode]);
 
-  const evaluateMath = useCallback((raw: string, currentAns: number, currentAngle: 'DEG'|'RAD'|'GRD') => {
+  const evaluateMath = useCallback((raw: string, currentAns: number, currentAngle: 'DEG' | 'RAD' | 'GRD') => {
     const deg = currentAngle === 'DEG';
     const grad = currentAngle === 'GRD';
     const toR = deg ? 'x*Math.PI/180' : grad ? 'x*Math.PI/200' : 'x';
@@ -159,19 +159,19 @@ export default function ScientificCalculator() {
 
   const act = useCallback((action: ActionType, id: string | null) => {
     if (action === null || action === undefined) return;
-    
+
     setShifted((prevShifted) => {
       const wasShifted = prevShifted;
       const isShiftButton = id === 'SHIFT';
       const isNowShifted = isShiftButton ? !wasShifted : false;
-      
+
       const st = stateRef.current;
       let newExpr = st.expr;
       let newEvaled = st.evaled;
       let newAngle = st.angleMode;
-      
+
       switch (action) {
-        case 'shift': 
+        case 'shift':
           // handled by outer scope
           return !wasShifted;
         case 'mode':
@@ -183,18 +183,18 @@ export default function ScientificCalculator() {
           break;
         case 'del':
           if (!newExpr) break;
-          const fns = ['asin(','acos(','atan(','asinh(','acosh(','atanh(','sinh(','cosh(','tanh(',
-                     'sin(','cos(','tan(','log(','ln(','sqrt(','cbrt(','fact(','e^(','10^(','pow(','root(','ANS'];
+          const fns = ['asin(', 'acos(', 'atan(', 'asinh(', 'acosh(', 'atanh(', 'sinh(', 'cosh(', 'tanh(',
+            'sin(', 'cos(', 'tan(', 'log(', 'ln(', 'sqrt(', 'cbrt(', 'fact(', 'e^(', '10^(', 'pow(', 'root(', 'ANS'];
           let cut = false;
           for (const f of fns) { if (newExpr.endsWith(f)) { newExpr = newExpr.slice(0, -f.length); cut = true; break; } }
           if (!cut) { const m = newExpr.match(/\^\($/); if (m) { newExpr = newExpr.slice(0, -2); } else { newExpr = newExpr.slice(0, -1); } }
           setExpr(newExpr); setEvaled(false); clearRes();
           break;
         case 'mplus':
-          try { const v = evaluateMath(newExpr, st.ans, st.angleMode); setMem(prev => prev + v); setHasMem(true); } catch(e){}
+          try { const v = evaluateMath(newExpr, st.ans, st.angleMode); setMem(prev => prev + v); setHasMem(true); } catch (e) { }
           break;
         case 'mminus':
-          try { const v = evaluateMath(newExpr, st.ans, st.angleMode); setMem(prev => { const n = prev - v; setHasMem(n !== 0); return n; }); } catch(e){}
+          try { const v = evaluateMath(newExpr, st.ans, st.angleMode); setMem(prev => { const n = prev - v; setHasMem(n !== 0); return n; }); } catch (e) { }
           break;
         case 'mr':
           if (newEvaled) newExpr = '';
@@ -212,7 +212,7 @@ export default function ScientificCalculator() {
             setExpr(newExpr + ' =');
             setAns(r);
             setEvaled(true);
-          } catch(er) {
+          } catch (er) {
             showVal('Math ERROR', true);
             setExpr(newExpr);
           }
@@ -237,14 +237,14 @@ export default function ScientificCalculator() {
 
   useEffect(() => {
     const KM: Record<string, string> = {
-      '0':'0','1':'1','2':'2','3':'3','4':'4',
-      '5':'5','6':'6','7':'7','8':'8','9':'9',
-      '+':'+','-':'−','*':'×','/':'÷',
-      '.':'.','(':' (',')':")",'%':'%',
-      'Enter':'=','=':'=',
-      'Backspace':'del','Escape':'ac',
+      '0': '0', '1': '1', '2': '2', '3': '3', '4': '4',
+      '5': '5', '6': '6', '7': '7', '8': '8', '9': '9',
+      '+': '+', '-': '−', '*': '×', '/': '÷',
+      '.': '.', '(': ' (', ')': ")", '%': '%',
+      'Enter': '=', '=': '=',
+      'Backspace': 'del', 'Escape': 'ac',
     };
-    
+
     const handleKeyDown = (ev: KeyboardEvent) => {
       if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
       const a = KM[ev.key];
@@ -261,8 +261,8 @@ export default function ScientificCalculator() {
       <div className={styles.calc}>
         <div className={styles.brand}>
           <div className={styles.brandText}>
-            <div className={`${styles.brandName} ${orbitron.className}`}>Scientifix</div>
-            <div className={`${styles.brandModel} ${orbitron.className}`}>fx-999 Pro</div>
+            <div className={`${styles.brandName} ${orbitron.className}`}>stawka-godzinowa.pl</div>
+            <div className={`${styles.brandModel} ${orbitron.className}`}>Kalkulator Naukowy</div>
           </div>
           <div className={styles.solarPanel}>
             <div className={styles.solarSeg}></div>

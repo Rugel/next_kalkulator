@@ -31,6 +31,15 @@ h1 {
   font-size: 24px;
 }
 
+.seo-intro {
+  max-width: 680px;
+  margin: 0.6em auto 0;
+  font-size: 0.95em;
+  color: #333;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
 @media only screen and (max-width: 480px) {
   h1 {
     font-size: 20px;

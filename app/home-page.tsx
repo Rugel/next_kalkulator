@@ -183,7 +183,10 @@ class StaGodz extends React.Component {
                 <header>
                     <Wynik />
                     <div id="tytul">
-                        <u><h1>Kalkulator stawki godzinowej 2026</h1></u>
+                        <h1>Kalkulator stawki godzinowej 2026</h1>
+                        <p className="seo-intro">
+                            Kalkulator stawki godzinowej pozwala błyskawicznie przeliczyć miesięczne wynagrodzenie brutto na stawkę za godzinę pracy. Uwzględniamy składki ZUS, podatek dochodowy i PPK – zarówno dla umowy o pracę, jak i zlecenia.
+                        </p>
                     </div>
                 </header>
                 <Menu currentPage="stawka" />
@@ -200,7 +203,7 @@ class StaGodz extends React.Component {
                     </fieldset>
                     <section>
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
-                        <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
+                        <form id="calculator-form" aria-label="Kalkulator stawki godzinowej" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
                             <div className={stylesInput.formGroup}>
                                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
                             </div>

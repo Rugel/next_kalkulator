@@ -28,12 +28,13 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
-  alternates: {
-    canonical: '/',
+  // canonical i OpenGraph definiowane per-page w page.tsx / podstronach
+  title: {
+    template: '%s | stawka-godzinowa.pl',
+    default: 'Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto',
   },
-  title: "Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto",
-  description: "🧮 Precyzyjny kalkulator stawki godzinowej 2026. Oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. ✅ Sprawdź, ile zarabiasz na godzinę!",
-  keywords: "kalkulator stawki godzinowej, stawka godzinowa, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
+  description: "🧮 Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.",
+  keywords: "kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa 2026, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
     follow: true,
@@ -45,22 +46,6 @@ export const metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1,
     },
-  },
-  openGraph: {
-    title: "Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto",
-    description: "🧮 Precyzyjny kalkulator stawki godzinowej 2026. Oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. ✅ Sprawdź, ile zarabiasz na godzinę!",
-    url: "https://stawka-godzinowa.pl",
-    siteName: "Stawka Godzinowa",
-    images: [
-      {
-        url: "https://stawka-godzinowa.pl/image.webp",
-        width: 1200,
-        height: 630,
-        alt: "Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto",
-      },
-    ],
-    locale: "pl_PL",
-    type: "website",
   },
 };
 
@@ -123,12 +108,22 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
-              "name": "Stawka Godzinowa",
-              "description": "Precyzyjny kalkulator stawki godzinowej 2026. Oblicz kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej oraz składek ZUS i podatków.",
+              "name": "Kalkulator Stawki Godzinowej",
+              "alternateName": "stawka-godzinowa.pl",
+              "description": "Precyzyjny kalkulator stawki godzinowej 2026. Oblicz kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej oraz składek ZUS i podatków. Obsługuje umowę o pracę, zlecenie i B2B.",
               "url": "https://stawka-godzinowa.pl",
               "image": "https://stawka-godzinowa.pl/image.webp",
-              "applicationCategory": "Finance",
-              "operatingSystem": "Web",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "All",
+              "browserRequirements": "Requires JavaScript",
+              "inLanguage": "pl",
+              "featureList": [
+                "Obliczanie stawki godzinowej brutto i netto",
+                "Uwzględnienie składek ZUS, podatku dochodowego i PPK",
+                "Automatyczne pobieranie liczby dni roboczych",
+                "Obsługa ulg podatkowych: dla młodych, 4+, seniorów",
+                "Porównanie kosztów dla UoP, Zlecenia i B2B"
+              ],
               "offers": {
                 "@type": "Offer",
                 "price": "0",
@@ -137,7 +132,11 @@ export default function RootLayout({
               "publisher": {
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
-                "logo": "https://stawka-godzinowa.pl/logo.webp",
+                "url": "https://stawka-godzinowa.pl",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://stawka-godzinowa.pl/logo.webp"
+                }
               }
             }),
           }}
