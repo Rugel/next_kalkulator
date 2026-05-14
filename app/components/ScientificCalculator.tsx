@@ -246,6 +246,14 @@ export default function ScientificCalculator() {
     };
 
     const handleKeyDown = (ev: KeyboardEvent) => {
+      // Ignore keystrokes if the user is typing in an input or textarea
+      if (
+        document.activeElement instanceof HTMLInputElement ||
+        document.activeElement instanceof HTMLTextAreaElement ||
+        (document.activeElement as HTMLElement)?.isContentEditable
+      ) {
+        return;
+      }
       if (ev.ctrlKey || ev.metaKey || ev.altKey) return;
       const a = KM[ev.key];
       if (a) { ev.preventDefault(); act(a, null); }
