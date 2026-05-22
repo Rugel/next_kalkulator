@@ -4,26 +4,39 @@ import { useState, useEffect, useCallback, useId } from 'react';
 import styles from './StarRating.module.css';
 import Swal from 'sweetalert2';
 
-const StarIcon = ({ percentage, id }) => (
-  <svg
-    className={styles.starIcon}
-    viewBox="0 0 24 24"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <defs>
-      <linearGradient id={id}>
-        <stop offset={`${percentage}%`} stopColor="#FFD700" />
-        <stop offset={`${percentage}%`} stopColor="transparent" />
-      </linearGradient>
-    </defs>
-    <path
-      fill={`url(#${id})`}
-      stroke="#999"
-      strokeWidth="1.5"
-      d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
-    />
-  </svg>
-);
+const STAR_EMPTY = '#e2e8f0';
+const STAR_GOLD = '#c9a227';
+const STAR_GOLD_LIGHT = '#e8c54a';
+const STAR_STROKE_EMPTY = '#cbd5e1';
+const STAR_STROKE_FILL = '#a8891f';
+
+const StarIcon = ({ percentage, id }) => {
+  const filled = percentage > 0;
+  return (
+    <svg
+      className={styles.starIcon}
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+    >
+      <defs>
+        <linearGradient id={id} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor={STAR_GOLD_LIGHT} />
+          <stop offset={`${percentage}%`} stopColor={STAR_GOLD} />
+          <stop offset={`${percentage}%`} stopColor={STAR_EMPTY} />
+          <stop offset="100%" stopColor={STAR_EMPTY} />
+        </linearGradient>
+      </defs>
+      <path
+        fill={`url(#${id})`}
+        stroke={filled ? STAR_STROKE_FILL : STAR_STROKE_EMPTY}
+        strokeWidth="1.25"
+        strokeLinejoin="round"
+        d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"
+      />
+    </svg>
+  );
+};
 
 export default function StarRating({ itemId }) {
   const [hoverRating, setHoverRating] = useState(0);
@@ -51,17 +64,7 @@ export default function StarRating({ itemId }) {
     try {
       if ('storage' in navigator && 'estimate' in navigator.storage) {
         const { quota } = await navigator.storage.estimate();
-        console.log(`[Incognito Check] Storage Quota: ${quota} bytes (${(quota / 1024 / 1024).toFixed(2)} MB)`);
-
-        // Improved heuristic for modern browsers (Chrome/Edge):
-        // Incognito mode often caps quota significantly lower than normal mode.
-        // While old limits were ~120MB, newer versions might go up to ~2GB or 10% of disk.
-        // However, normal profiles usually have tens or hundreds of GBs available.
-        // We set a threshold of 1.2GB (1,200,000,000 bytes).
-        // If quota is less than this, we assume Incognito/Private.
         if (quota < 1200000000) return true;
-      } else {
-        console.log('[Incognito Check] Storage API not available');
       }
       return false;
     } catch (e) {
@@ -89,7 +92,7 @@ export default function StarRating({ itemId }) {
   }, [itemId, fetchRating]);
 
   const handleRating = async (value) => {
-    if (isCheckingIncognito) return; // Wait for check to complete
+    if (isCheckingIncognito) return;
 
     if (hasVoted) {
       Swal.fire({
@@ -116,8 +119,8 @@ export default function StarRating({ itemId }) {
       text: `Czy na pewno chcesz ocenić aplikację na ${value} gwiazdek?`,
       icon: 'question',
       showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
+      confirmButtonColor: '#0d7a6b',
+      cancelButtonColor: '#64748b',
       confirmButtonText: 'Tak, oceń!',
       cancelButtonText: 'Anuluj'
     });
@@ -142,7 +145,8 @@ export default function StarRating({ itemId }) {
           title: 'Dziękujemy!',
           text: 'Twój głos został zapisany.',
           icon: 'success',
-          confirmButtonText: 'OK'
+          confirmButtonText: 'OK',
+          confirmButtonColor: '#0d7a6b',
         });
       } else {
         throw new Error('Failed to submit rating');
@@ -160,52 +164,87 @@ export default function StarRating({ itemId }) {
 
   if (!itemId) return null;
 
+  const displayAverage = hoverRating > 0 && !hasVoted
+    ? hoverRating.toFixed(1)
+    : average;
+
+  const votesLabel = votes === 1 ? '1 głos' : `${votes} głosów`;
+
   return (
     <div className={styles.ratingContainer}>
-      <h2 className={styles.header}>
-        {hasVoted ? "Dziękujemy za ocenę!" : "Oceń aplikację:"}
+      <h2 className={`${styles.header} ${hasVoted ? styles.headerVoted : ''}`}>
+        {hasVoted ? 'Dziękujemy za ocenę!' : 'Oceń aplikację'}
       </h2>
 
-      <div className={styles.stars} onMouseLeave={() => setHoverRating(0)}>
-        {[1, 2, 3, 4, 5].map((star, index) => {
-          // Determine the value to display
-          let displayValue = 0;
-          if (hoverRating > 0 && !hasVoted) {
-            // When hovering, show full stars up to the hovered one
-            displayValue = hoverRating >= star ? 100 : 0;
-          } else {
-            // Otherwise show the average (or 0 if no votes yet)
-            const ratingValue = parseFloat(average) || 0;
-            if (ratingValue >= star) {
-              displayValue = 100;
-            } else if (ratingValue > star - 1) {
-              displayValue = (ratingValue - (star - 1)) * 100;
-            } else {
-              displayValue = 0;
-            }
-          }
+      <div className={styles.body}>
+        <div className={styles.scoreBlock}>
+          <span className={styles.scoreValue}>{displayAverage}</span>
+          <div className={styles.scoreMeta}>
+            <span className={styles.scoreMax}>na 5</span>
+            <span className={styles.votesCount}>{votesLabel}</span>
+          </div>
+        </div>
 
-          const gradientId = `star-${componentId}-${index}`;
+        <div className={styles.starsColumn}>
+          <p className={`${styles.starsHint} ${hoverRating > 0 && !hasVoted ? styles.starsHintActive : ''}`}>
+            {isCheckingIncognito
+              ? 'Ładowanie…'
+              : hasVoted
+                ? `Twoja ocena: ${userRating} ★`
+                : hoverRating > 0
+                  ? `${hoverRating} z 5 gwiazdek`
+                  : 'Kliknij gwiazdkę'}
+          </p>
 
-          return (
-            <button
-              key={star}
-              className={styles.starBtn}
-              onClick={() => handleRating(star)}
-              onMouseEnter={() => !hasVoted && setHoverRating(star)}
-              // disabled={hasVoted} // Removed disabled to allow clicking and showing the alert
-              aria-label={`Oceń na ${star} gwiazdek`}
-              style={{ opacity: isCheckingIncognito ? 0.5 : 1, cursor: isCheckingIncognito ? 'wait' : 'pointer' }}
-            >
-              <StarIcon percentage={displayValue} id={gradientId} />
-            </button>
-          );
-        })}
+          <div
+            className={`${styles.stars} ${!hasVoted && !isCheckingIncognito ? styles.starsInteractive : ''}`}
+            onMouseLeave={() => setHoverRating(0)}
+            role="group"
+            aria-label="Ocena w gwiazdkach od 1 do 5"
+          >
+            {[1, 2, 3, 4, 5].map((star, index) => {
+              let displayValue = 0;
+              if (hoverRating > 0 && !hasVoted) {
+                displayValue = hoverRating >= star ? 100 : 0;
+              } else {
+                const ratingValue = parseFloat(average) || 0;
+                if (ratingValue >= star) {
+                  displayValue = 100;
+                } else if (ratingValue > star - 1) {
+                  displayValue = (ratingValue - (star - 1)) * 100;
+                }
+              }
+
+              const gradientId = `star-${componentId}-${index}`;
+              const isPreview = !hasVoted && hoverRating >= star;
+
+              return (
+                <button
+                  key={star}
+                  type="button"
+                  className={`${styles.starBtn} ${isPreview ? styles.starBtnPreview : ''}`}
+                  onClick={() => handleRating(star)}
+                  onMouseEnter={() => !hasVoted && setHoverRating(star)}
+                  disabled={isCheckingIncognito}
+                  aria-label={`Oceń na ${star} gwiazdek`}
+                  style={{
+                    opacity: isCheckingIncognito ? 0.45 : 1,
+                    cursor: isCheckingIncognito ? 'wait' : hasVoted ? 'default' : 'pointer',
+                  }}
+                >
+                  <StarIcon percentage={displayValue} id={gradientId} />
+                </button>
+              );
+            })}
+          </div>
+        </div>
       </div>
 
-      <p className={styles.stats}>
-        Średnia: <b>{average}</b> ({votes} głosów)
-      </p>
+      {hasVoted && userRating > 0 && (
+        <p className={styles.thankYou}>
+          Twoja opinia pomaga nam ulepszać kalkulator.
+        </p>
+      )}
     </div>
   );
 }

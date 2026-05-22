@@ -156,7 +156,7 @@ export default function RootLayout({
               <Weather />
             </div>
           </WidgetsWrapper>
-          <footer className="footer" style={{ backgroundColor: '#444', padding: '1rem', color: 'white', marginTop: '2rem' }}>
+          <footer className="footer">
             <Footer />
           </footer>
           <FloatingCalculator />

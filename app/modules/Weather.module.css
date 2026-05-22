@@ -1,18 +1,28 @@
 .weatherContainer {
     padding: 1.5rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    background: var(--bank-surface-elevated, #ffffff);
+    border-radius: var(--bank-radius-lg, 16px);
+    border: 1px solid var(--bank-border, #e2e8f0);
+    box-shadow: var(--bank-shadow-md, 0 4px 24px rgba(10, 22, 40, 0.08));
     max-width: 600px;
     margin-left: auto;
     margin-right: auto;
     width: 100%;
     min-height: 520px;
-    /* Fixed height to prevent CLS - increased to fit all content */
-    /* Performance optimization to prevent layout shifts */
     display: flex;
     flex-direction: column;
-    /* Hide overflow but ensure content fits */
+    position: relative;
+    overflow: hidden;
+}
+
+.weatherContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--bank-gradient-gold, linear-gradient(90deg, #8a7020, #c9a227, #e8c54a));
 }
 
 @media print {
@@ -22,21 +32,22 @@
 }
 
 .header {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
-    color: #333;
+    color: var(--bank-navy-800, #0d2147);
     margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--bank-gold-muted, rgba(201, 162, 39, 0.15));
     width: 100%;
     text-align: center;
+    letter-spacing: 0.02em;
 }
 
 .subHeader {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     margin-bottom: 1rem;
-    color: #444;
+    color: var(--bank-text-muted, #64748b);
 }
 
 .inputGroup {
@@ -47,9 +58,9 @@
 }
 
 .cityInput {
-    padding: 0.75rem;
-    border: 1px solid #ddd;
-    border-radius: 6px 0 0 6px;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--bank-border-strong, #cbd5e1);
+    border-radius: var(--bank-radius-sm, 8px) 0 0 var(--bank-radius-sm, 8px);
     font-family: inherit;
     font-size: 0.9rem;
     transition: border-color 0.2s, box-shadow 0.2s;
@@ -58,21 +69,23 @@
     text-align: center;
     height: 45px;
     border-right: none;
+    background: var(--bank-surface-elevated, #ffffff);
+    color: var(--bank-text, #1e293b);
 }
 
 .cityInput:focus {
     outline: none;
-    border-color: #007bff;
-    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    border-color: var(--bank-teal, #0d7a6b);
+    box-shadow: 0 0 0 3px rgba(13, 122, 107, 0.1);
 }
 
 .geoIcon {
     cursor: pointer;
-    background-color: #f8f9fa;
+    background-color: var(--bank-surface, #f0f3f8);
     padding: 0;
-    border-radius: 0 6px 6px 0;
-    transition: transform 0.2s, background-color 0.2s;
-    border: 1px solid #ddd;
+    border-radius: 0 var(--bank-radius-sm, 8px) var(--bank-radius-sm, 8px) 0;
+    transition: background-color 0.2s;
+    border: 1px solid var(--bank-border-strong, #cbd5e1);
     width: 45px;
     height: 45px;
     display: flex;
@@ -82,27 +95,27 @@
 }
 
 .geoIcon:hover {
-    transform: scale(1.05);
-    background-color: #e2e6ea;
+    background-color: var(--bank-navy-800, #0d2147);
+    border-color: var(--bank-navy-800, #0d2147);
 }
 
 .weatherTable {
     margin: 1rem auto;
     border-collapse: collapse;
     background-color: transparent;
-    color: #333;
+    color: var(--bank-text, #1e293b);
     width: 100%;
 }
 
 .weatherTable td {
     padding: 0.75rem 1rem;
-    border-bottom: 1px solid #f0f0f0;
+    border-bottom: 1px solid var(--bank-border, #e2e8f0);
     vertical-align: middle;
     text-align: left;
 }
 
 .weatherTable tr:last-child td {
-    border-bottom: 1px solid #000;
+    border-bottom: 2px solid var(--bank-navy-700, #123566);
 }
 
 .iconCell {
@@ -112,14 +125,15 @@
 
 .label {
     font-weight: 600;
-    color: #666;
-    font-size: 0.9rem;
+    color: var(--bank-text-muted, #64748b);
+    font-size: 0.875rem;
 }
 
 .value {
     font-weight: 700;
-    color: #0066db;
+    color: var(--bank-teal, #0d7a6b);
     font-size: 0.95rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .weatherIcon {
@@ -131,17 +145,15 @@
 @media (max-width: 600px) {
     .weatherContainer {
         padding: 1rem;
-        border-radius: 0;
-        box-shadow: none;
-        border-top: 1px solid #eee;
+        border-radius: var(--bank-radius-md, 12px);
     }
 }
 
 .spinner {
     width: 24px;
     height: 24px;
-    border: 3px solid rgba(0, 102, 219, 0.2);
-    border-top: 3px solid #0066db;
+    border: 3px solid rgba(13, 122, 107, 0.2);
+    border-top: 3px solid var(--bank-teal, #0d7a6b);
     border-radius: 50%;
     animation: spin 0.8s linear infinite;
 }

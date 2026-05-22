@@ -1,9 +1,7 @@
 /* =================================================
-   MODERN MENU NAVIGATION STYLING
-   Nowoczesna stylizacja menu bez zielonego tła
+   BANKING NAVIGATION
    ================================================= */
 
-/* Container - Transparent Background */
 .container {
     width: 100%;
     position: relative;
@@ -19,7 +17,6 @@
 .stickyContainer {
     position: fixed;
     top: 110px;
-    /* Balanced distance from .wynik bar */
     left: 0;
     right: 0;
     z-index: 100;
@@ -77,10 +74,9 @@
     height: auto;
     max-width: 250px;
     width: 100%;
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.1));
+    filter: drop-shadow(0 4px 12px rgba(10, 22, 40, 0.25));
 }
 
-/* Menu List */
 .list {
     display: flex;
     flex-direction: column;
@@ -89,7 +85,6 @@
     margin: 0;
     align-items: center;
     gap: 0.75rem;
-    /* Default state for transitions */
     opacity: 1;
     transform: scale(1) translateY(0);
     filter: blur(0);
@@ -104,9 +99,7 @@
     position: absolute;
     right: 0;
     top: 0;
-    /* Morphing effect: shrink into the hamburger button position */
     transform-origin: calc(100% - 22px) 22px;
-    /* Approximate center of the 45px button */
     transform: scale(0.1);
     filter: blur(2px);
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
@@ -118,11 +111,11 @@
     position: absolute;
     top: 100%;
     right: 1rem;
-    background: white;
+    background: var(--bank-surface-elevated, #ffffff);
     padding: 1rem;
-    border-radius: 1rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    border: 1px solid #e0e0e0;
+    border-radius: var(--bank-radius-lg, 16px);
+    box-shadow: var(--bank-shadow-lg, 0 12px 48px rgba(10, 22, 40, 0.14));
+    border: 1px solid var(--bank-border, #e2e8f0);
     width: 250px;
     opacity: 1;
     transform: translateY(10px);
@@ -143,22 +136,20 @@
     }
 }
 
-/* Hamburger Button */
 .hamburgerButton {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 45px;
     height: 45px;
-    background: #2f7d00;
-    border: none;
+    background: var(--bank-navy-800, #0d2147);
+    border: 1px solid rgba(201, 162, 39, 0.35);
     border-radius: 50%;
     padding: 12px;
     cursor: pointer;
-    box-shadow: 0 4px 12px rgba(74, 153, 0, 0.3);
+    box-shadow: var(--bank-shadow-md, 0 4px 24px rgba(10, 22, 40, 0.08));
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     z-index: 90;
-    /* Pop in from the same scale as the menu disappears */
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     pointer-events: auto;
 }
@@ -176,14 +167,15 @@
 }
 
 .hamburgerButton:hover {
-    transform: scale(1.1);
-    background: #56ae00;
+    transform: scale(1.05);
+    background: var(--bank-navy-700, #123566);
+    border-color: var(--bank-gold, #c9a227);
 }
 
 .bar {
     width: 100%;
     height: 3px;
-    background: white;
+    background: var(--bank-gold-light, #e8c54a);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
@@ -205,94 +197,86 @@
     max-width: 400px;
 }
 
-/* Menu Links - Pill-shaped Buttons */
 .link {
     display: block;
     padding: 0.875rem 1.75rem;
     text-decoration: none;
-    color: #004a99;
+    color: var(--bank-navy-800, #0d2147);
     font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: #f5f5f5;
-    border-radius: 50px;
-    border: 2px solid #e0e0e0;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bank-surface-elevated, #ffffff);
+    border-radius: var(--bank-radius-sm, 8px);
+    border: 1px solid var(--bank-border, #e2e8f0);
+    font-family: inherit;
 }
 
 .link:visited {
-    color: #004a99;
+    color: var(--bank-navy-800, #0d2147);
 }
 
-/* Hover Effect - Scale & Highlight */
 .link:hover {
-    color: #000;
-    background: #e8e8e8;
-    border-color: #2f7d00;
-    transform: scale(1.05);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--bank-navy-900, #0a1628);
+    background: var(--bank-surface, #f0f3f8);
+    border-color: var(--bank-teal, #0d7a6b);
+    transform: translateY(-1px);
+    box-shadow: var(--bank-shadow-sm, 0 1px 3px rgba(10, 22, 40, 0.06));
 }
 
-/* Remove old ::after underline effect */
 .link::after {
     display: none;
 }
 
-/* Active State - Green Accent */
 .active {
     display: block;
     padding: 0.875rem 1.75rem;
     text-decoration: none;
     font-weight: 700;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    font-size: 0.8rem;
+    letter-spacing: 0.06em;
     text-align: center;
     position: relative;
     overflow: hidden;
-    background: #2f7d00;
-    color: white;
-    border-radius: 50px;
-    border: 2px solid #2f7d00;
-    box-shadow: 0 4px 15px rgba(74, 153, 0, 0.3);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bank-gradient-accent, linear-gradient(135deg, #0d7a6b 0%, #123566 100%));
+    color: var(--bank-text-inverse, #f8fafc);
+    border-radius: var(--bank-radius-sm, 8px);
+    border: 1px solid transparent;
+    box-shadow: var(--bank-shadow-md, 0 4px 24px rgba(10, 22, 40, 0.08));
+    font-family: inherit;
     cursor: default;
 }
 
-/* Remove old ::after effect from active */
 .active::after {
     display: none;
 }
 
-/* Pulse animation for active item */
 @keyframes pulse {
-
     0%,
     100% {
-        box-shadow: 0 4px 15px rgba(84, 173, 0, 0.3);
+        box-shadow: var(--bank-shadow-md, 0 4px 24px rgba(10, 22, 40, 0.08));
     }
 
     50% {
-        box-shadow: 0 4px 20px rgba(74, 153, 0, 0.5);
+        box-shadow: 0 6px 28px rgba(13, 122, 107, 0.25);
     }
 }
 
 .active {
-    animation: pulse 2s ease-in-out infinite;
+    animation: pulse 3s ease-in-out infinite;
 }
 
-/* Desktop Layout (Full Menu) */
 @media (min-width: 1024px) {
     .list {
         flex-direction: row;
         justify-content: center;
-        gap: 2rem;
+        gap: 0.75rem;
         flex-wrap: wrap;
     }
 
@@ -318,12 +302,11 @@
 
     .link,
     .active {
-        font-size: 0.85rem;
-        padding: 0.875rem 2rem;
+        font-size: 0.75rem;
+        padding: 0.75rem 1.5rem;
     }
 }
 
-/* Mobile Optimization (Static List) */
 @media (max-width: 1023px) {
     .container {
         padding: 1rem 1rem;
@@ -335,12 +318,11 @@
 
     .link,
     .active {
-        font-size: 0.8rem;
-        padding: 0.75rem 1.25rem;
+        font-size: 0.75rem;
+        padding: 0.7rem 1.15rem;
     }
 }
 
-/* Touch Device Optimization */
 @media (hover: none) and (pointer: coarse) {
     .link:active {
         transform: scale(0.98);

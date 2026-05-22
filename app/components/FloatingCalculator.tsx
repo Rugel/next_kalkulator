@@ -2,81 +2,32 @@
 
 import React, { useState } from 'react';
 import ScientificCalculator from './ScientificCalculator';
+import styles from './FloatingCalculator.module.css';
 
 export default function FloatingCalculator() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* Overlay Backdrop */}
       <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.75)',
-          backdropFilter: 'blur(3px)',
-          WebkitBackdropFilter: 'blur(3px)',
-          zIndex: 99998,
-          opacity: isOpen ? 1 : 0,
-          pointerEvents: isOpen ? 'auto' : 'none',
-          transition: 'opacity 300ms ease-in-out'
-        }}
+        className={`${styles.backdrop} ${isOpen ? styles.backdropOpen : styles.backdropClosed}`}
         onClick={() => setIsOpen(false)}
+        aria-hidden={!isOpen}
       />
 
-      {/* Centered Calculator Container */}
       <div
-        style={{
-          position: 'fixed',
-          top: '50%',
-          left: '50%',
-          transform: `translate(-50%, -50%) ${isOpen ? 'scale(1)' : 'scale(0.9)'}`,
-          zIndex: 99999,
-          width: 'max-content',
-          transition: 'all 300ms ease-in-out',
-          opacity: isOpen ? 1 : 0,
-          pointerEvents: isOpen ? 'auto' : 'none',
-          fontFamily: 'sans-serif'
-        }}
+        className={`${styles.panel} ${isOpen ? styles.panelOpen : styles.panelClosed}`}
       >
         <ScientificCalculator />
       </div>
 
-      {/* Toggle Button */}
       <button
+        type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Calculator"
-        title="Kalkulator Naukowy"
-        style={{
-          position: 'fixed',
-          bottom: '1rem',
-          right: '1rem',
-          zIndex: 99999,
-          width: '3.5rem',
-          height: '3.5rem',
-          backgroundColor: '#ea580c',
-          color: 'white',
-          borderRadius: '9999px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -4px rgba(0, 0, 0, 0.4)',
-          transition: 'transform 150ms, background-color 150ms',
-          cursor: 'pointer',
-          border: 'none',
-          outline: 'none'
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.backgroundColor = '#f97316';
-          e.currentTarget.style.transform = 'scale(1.05)';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.backgroundColor = '#ea580c';
-          e.currentTarget.style.transform = 'scale(1)';
-        }}
+        aria-expanded={isOpen}
+        title="Kalkulator — stawka-godzinowa.pl"
+        className={`${styles.fab} ${isOpen ? styles.fabOpen : ''}`}
       >
         {isOpen ? (
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">

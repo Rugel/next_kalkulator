@@ -1,9 +1,7 @@
 /* =================================================
-   MODERN CHECKBOX TOGGLE SWITCH STYLING
-   Nowoczesny styl przełącznika checkbox
+   BANKING TOGGLE SWITCH
    ================================================= */
 
-/* Kontener dla całego elementu (switch + label) */
 .checkboxWrapper {
     display: flex;
     align-items: center;
@@ -11,7 +9,6 @@
     cursor: pointer;
 }
 
-/* Kontener dla suwaka */
 .switchContainer {
     position: relative;
     display: inline-block;
@@ -22,14 +19,12 @@
     flex-shrink: 0;
 }
 
-/* Ukrywamy domyślny checkbox */
 .switchContainer input[type="checkbox"] {
     opacity: 0;
     width: 0;
     height: 0;
 }
 
-/* Tło suwaka */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -37,16 +32,14 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(135deg, #e0e0e0 0%, #bdbdbd 100%);
+    background: var(--bank-border-strong, #cbd5e1);
     border-radius: 24px;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),
-        0 1px 2px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: inset 0 1px 3px rgba(10, 22, 40, 0.12);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     outline: none;
     -webkit-tap-highlight-color: transparent;
 }
 
-/* Gałka suwaka */
 .slider:before {
     position: absolute;
     content: "";
@@ -54,79 +47,39 @@
     width: 18px;
     left: 3px;
     bottom: 3px;
-    background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+    background: var(--bank-surface-elevated, #ffffff);
     border-radius: 50%;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2),
-        0 1px 3px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 6px rgba(10, 22, 40, 0.15);
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Stan włączony - zmiana koloru tła na fioletowy gradient */
 input[type="checkbox"]:checked+.slider {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-        0 1px 3px rgba(102, 126, 234, 0.2),
-        0 0 12px rgba(102, 126, 234, 0.3);
+    background: var(--bank-gradient-accent, linear-gradient(135deg, #0d7a6b, #123566));
+    box-shadow: inset 0 1px 3px rgba(10, 22, 40, 0.2);
 }
 
-/* Stan włączony - przesunięcie gałki */
 input[type="checkbox"]:checked+.slider:before {
     transform: translateX(26px);
-    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3),
-        0 1px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(10, 22, 40, 0.2);
 }
 
-/* Efekt najechania myszą */
 .slider:hover {
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),
-        0 1px 2px rgba(0, 0, 0, 0.1),
-        0 0 8px rgba(0, 0, 0, 0.08);
+    background: #b8c5d4;
 }
 
-/* Efekt najechania myszą na włączony checkbox */
 input[type="checkbox"]:checked+.slider:hover {
-    box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-        0 1px 3px rgba(102, 126, 234, 0.2),
-        0 0 16px rgba(102, 126, 234, 0.4);
+    filter: brightness(1.05);
 }
 
-/* Usunięcie fokusowego podświetlenia */
 input[type="checkbox"]:focus+.slider {
     outline: none;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15),
-        0 1px 2px rgba(0, 0, 0, 0.1),
-        0 0 0 3px rgba(102, 126, 234, 0.2);
+    box-shadow: inset 0 1px 3px rgba(10, 22, 40, 0.12), 0 0 0 3px rgba(13, 122, 107, 0.2);
 }
 
-/* Fokus dla włączonego checkboxa */
 input[type="checkbox"]:checked:focus+.slider {
-    box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-        0 1px 3px rgba(102, 126, 234, 0.2),
-        0 0 0 3px rgba(102, 126, 234, 0.3);
+    box-shadow: inset 0 1px 3px rgba(10, 22, 40, 0.2), 0 0 0 3px rgba(13, 122, 107, 0.25);
 }
 
-/* Animacja dla checked state */
-@keyframes checkPulse {
-    0% {
-        box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-            0 1px 3px rgba(102, 126, 234, 0.2),
-            0 0 12px rgba(102, 126, 234, 0.3);
-    }
-
-    50% {
-        box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-            0 1px 3px rgba(102, 126, 234, 0.2),
-            0 0 16px rgba(102, 126, 234, 0.5);
-    }
-
-    100% {
-        box-shadow: inset 0 2px 4px rgba(102, 126, 234, 0.3),
-            0 1px 3px rgba(102, 126, 234, 0.2),
-            0 0 12px rgba(102, 126, 234, 0.3);
-    }
-}
-
-/* Responsywny design dla mobile */
 @media (max-width: 767px) {
     .switchContainer {
         width: 44px;
@@ -143,11 +96,11 @@ input[type="checkbox"]:checked:focus+.slider {
     }
 }
 
-/* Styl tekstu obok checkboxa */
 .labelText {
     cursor: pointer;
-    font-size: 1rem;
-    color: #444;
+    font-size: 0.9375rem;
+    color: var(--bank-text, #1e293b);
     user-select: none;
-    line-height: 1.4;
+    line-height: 1.45;
+    font-weight: 500;
 }

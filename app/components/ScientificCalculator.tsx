@@ -268,9 +268,9 @@ export default function ScientificCalculator() {
     <div className={`${styles.calcWrapper} ${shareTechMono.className}`}>
       <div className={styles.calc}>
         <div className={styles.brand}>
-          <div className={styles.brandText}>
-            <div className={`${styles.brandName} ${orbitron.className}`}>stawka-godzinowa.pl</div>
-            <div className={`${styles.brandModel} ${orbitron.className}`}>Kalkulator Naukowy</div>
+          <div className={`${styles.brandTitle} ${orbitron.className}`}>
+            <span className={styles.brandDomain}>stawka-godzinowa</span>
+            <span className={styles.brandTld}>.pl</span>
           </div>
           <div className={styles.solarPanel}>
             <div className={styles.solarSeg}></div>

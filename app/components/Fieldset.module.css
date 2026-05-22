@@ -1,68 +1,59 @@
 /* =================================================
-   MODERN FIELDSET STYLING
-   Migrated from fieldset-styles.css
+   BANKING FIELDSET / CARD
    ================================================= */
 
-/* Fieldset - Modern Card Design with Gradient Border */
 .fieldset {
     max-width: 700px;
     width: 90%;
     padding: 0;
     margin: 2rem auto;
-    background: white;
-    border: none;
-    border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+    background: var(--bank-surface-elevated, #ffffff);
+    border: 1px solid var(--bank-border, #e2e8f0);
+    border-radius: var(--bank-radius-xl, 20px);
+    box-shadow: var(--bank-shadow-lg, 0 12px 48px rgba(10, 22, 40, 0.12));
     position: relative;
     overflow: hidden;
 }
 
-/* Gradient Border Effect */
 .fieldset::before {
     content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
-    bottom: 0;
-    border-radius: 20px;
-    padding: 3px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask-composite: exclude;
+    height: 3px;
+    background: var(--bank-gradient-gold, linear-gradient(90deg, #8a7020, #c9a227, #e8c54a));
     pointer-events: none;
+    z-index: 2;
 }
 
-/* Legend */
 .legend {
-    padding: 1.5rem 2rem;
+    padding: 1.25rem 2rem;
     margin: 0;
     width: 100%;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    font-size: 1.1rem;
-    font-weight: 700;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background: var(--bank-gradient-header, linear-gradient(160deg, #060d18, #0a1628, #0d2147));
+    color: var(--bank-text-inverse, #f8fafc);
+    font-size: 0.95rem;
+    font-weight: 600;
+    font-family: inherit;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-radius: 17px 17px 0 0;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.2);
+    letter-spacing: 0.08em;
+    border-radius: calc(var(--bank-radius-xl, 20px) - 1px) calc(var(--bank-radius-xl, 20px) - 1px) 0 0;
     text-align: center;
+    border-bottom: 1px solid rgba(201, 162, 39, 0.3);
 }
 
 .legend strong {
     font-weight: 700;
+    color: var(--bank-gold-light, #e8c54a);
 }
 
 .legend u {
     text-decoration: none;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid rgba(232, 197, 74, 0.5);
     padding-bottom: 2px;
 }
 
-/* Box content inside fieldset */
 .box {
     padding: 2rem;
     position: relative;
@@ -70,22 +61,16 @@
     text-align: left;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
     .fieldset {
         width: 95%;
         margin: 1.5rem auto;
-        border-radius: 16px;
-    }
-
-    .fieldset::before {
-        border-radius: 16px;
+        border-radius: var(--bank-radius-lg, 16px);
     }
 
     .legend {
-        padding: 1.25rem 1.5rem;
-        font-size: 1rem;
-        border-radius: 13px 13px 0 0;
+        padding: 1rem 1.5rem;
+        font-size: 0.875rem;
     }
 
     .box {
@@ -97,17 +82,12 @@
     .fieldset {
         width: 98%;
         margin: 1rem auto;
-        border-radius: 12px;
-    }
-
-    .fieldset::before {
-        border-radius: 12px;
+        border-radius: var(--bank-radius-md, 12px);
     }
 
     .legend {
-        padding: 1rem;
-        font-size: 0.9rem;
-        border-radius: 9px 9px 0 0;
+        padding: 0.875rem 1rem;
+        font-size: 0.8rem;
     }
 
     .box {
