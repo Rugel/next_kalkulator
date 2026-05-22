@@ -3,6 +3,7 @@
         margin: 0;
         padding: 0;
         background-image: none;
+        background-color: white;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -19,6 +20,7 @@
 
     #print,
     article,
+    button,
     header,
     nav,
     .cookies,
@@ -30,7 +32,6 @@
     .adsense-wrapper,
     .adsbygoogle,
     .ipr-container,
-    .calcWrapper,
     [class*="ad-"],
     [id*="ad-"],
     [class*="ns-"] {
