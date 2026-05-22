@@ -60,10 +60,12 @@ main {
 #tytul {
   text-align: center;
   background: var(--bank-gradient-header);
-  padding: 7em 1em 2.5em 1em;
+  padding: 7.5em 1em 0.5em 1em;
   margin-bottom: 0;
   position: relative;
   overflow: hidden;
+  box-shadow: 0 4px 20px rgba(13, 122, 107, 0.15);
+  filter: brightness(1.5);
 }
 
 #tytul::before {
