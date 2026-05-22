@@ -5,7 +5,7 @@ const Cookies_info = () => (
     <>
         <header>
             <div id="tytul" style={{ padding: '2em 1em 1em 1em' }}>
-                <u><h1>Informacja o plikach cookies</h1></u>
+                <h1>Informacja o plikach cookies</h1>
             </div>
         </header>
         <Menu currentPage="stawka" />

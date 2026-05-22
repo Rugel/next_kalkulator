@@ -53,7 +53,7 @@ const ZleceniePage = () => {
             <header>
                 <p className="wynik">Miesięczne wynagrodzenie netto:<br /><NettoDisplay /> zł<br /><CommentScrollLink /></p>
                 <div id="tytul">
-                    <u><h1>Kalkulator Umowa Zlecenie</h1></u>
+                    <h1>Kalkulator Umowa Zlecenie</h1>
                 </div>
             </header>
             <Menu currentPage="zlecenie" />

@@ -52,7 +52,7 @@ const B2BPage = () => {
                     <CommentScrollLink />
                 </p>
                 <div id="tytul">
-                    <u><h1>Kalkulator B2B 2026</h1></u>
+                    <h1>Kalkulator B2B 2026</h1>
                 </div>
             </header>
             <Menu currentPage="b2b" />

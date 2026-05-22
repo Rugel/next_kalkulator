@@ -254,7 +254,7 @@ class KartaGodz extends React.Component {
         <header>
           <Wynik />
           <div id="tytul">
-            <u><h1>Karta godzin pracy</h1></u>
+            <h1>Karta godzin pracy</h1>
           </div>
         </header>
         <Menu currentPage="karta_godzin" />

@@ -98,7 +98,7 @@ const InflationCalculatorPage = () => {
                     <CommentScrollLink />
                 </p>
                 <div id="tytul">
-                    <u><h1>Kalkulator Inflacji</h1></u>
+                    <h1>Kalkulator Inflacji</h1>
                 </div>
             </header>
 
