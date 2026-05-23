@@ -30,6 +30,12 @@ export const metadata: Metadata = {
         locale: "pl_PL",
         type: "website",
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",
+        description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
+        images: ["https://stawka-godzinowa.pl/karta_godzin_pracy.webp"],
+    },
 };
 
 export default function KartaGodzinLayout({

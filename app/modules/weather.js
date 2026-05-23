@@ -142,47 +142,49 @@ export default function Weather() {
             </h2>
 
             <div className={styles.inputGroup}>
-                <input
-                    className={styles.cityInput}
-                    type="text"
-                    placeholder={weatherData.cityOk}
-                    value={weatherData.city === 'Warszawa' ? '' : weatherData.city}
-                    onChange={handleChangeCity}
-                    autoComplete="off"
-                />
-                <div
-                    className={styles.geoIcon}
-                    onClick={!isLocating ? handleClickLocal : undefined}
-                    title="Localized Weather"
-                >
-                    {isLocating ? (
-                        <div className={styles.spinner}></div>
-                    ) : (
-                        <Image
-                            src={geo}
-                            alt="GPS"
-                            width={24}
-                            height={24}
-                        />
-                    )}
-                </div>
+                    <input
+                        className={styles.cityInput}
+                        type="text"
+                        placeholder={weatherData.cityOk}
+                        value={weatherData.city === 'Warszawa' ? '' : weatherData.city}
+                        onChange={handleChangeCity}
+                        onFocus={(e) => e.target.select()} // Select all text on focus
+                        autoComplete="off"
+                    />
+                    <button
+                        className={styles.geoIcon}
+                        onClick={!isLocating ? handleClickLocal : undefined}
+                        title="Lokalizuj" // More descriptive title
+                        aria-label="Lokalizuj bieżącą pogodę"
+                    >
+                        {isLocating ? (
+                            <div className={styles.spinner}></div>
+                        ) : (
+                            <Image
+                                src={geo}
+                                alt="Lokalizacja GPS"
+                                width={24}
+                                height={24}
+                            />
+                        )}
+                    </button>
             </div>
 
             {isLoading ? (
                 <>
-                    <h3 className={styles.subHeader}>
-                        <div style={{ width: '300px', height: '16px', backgroundColor: '#e0e0e0', borderRadius: '4px', margin: '0 auto' }}></div>
-                    </h3>
-                    <table className={styles.weatherTable}>
-                        <tbody>
-                            <SkeletonRow />
-                            <SkeletonRow />
-                            <SkeletonRow />
-                            <SkeletonRow />
-                            <SkeletonRow />
-                            <SkeletonRow />
-                        </tbody>
-                    </table>
+                        <h3 className={styles.subHeader}>
+                            <div style={{ width: '300px', height: '16px', backgroundColor: '#e0e0e0', borderRadius: '4px', margin: '0 auto', marginBottom: '1.5rem' }}></div>
+                        </h3>
+                        <table className={styles.weatherTable}>
+                            <tbody>
+                                <SkeletonRow />
+                                <SkeletonRow />
+                                <SkeletonRow />
+                                <SkeletonRow />
+                                <SkeletonRow />
+                                <SkeletonRow />
+                            </tbody>
+                        </table>
                 </>
             ) : (
                 <>

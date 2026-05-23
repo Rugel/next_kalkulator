@@ -56,73 +56,6 @@ class StaGodz extends React.Component {
         const { workdays } = this.state;
         let brutto = Number(this.state.brutto);
 
-        const breadcrumbSchema = {
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-                {
-                    "@type": "ListItem",
-                    "position": 1,
-                    "name": "Strona Główna",
-                    "item": "https://stawka-godzinowa.pl"
-                }
-            ]
-        };
-
-        const howToSchema = {
-            "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "Jak obliczyć stawkę godzinową",
-            "step": [
-                {
-                    "@type": "HowToStep",
-                    "name": "Wprowadź wynagrodzenie brutto",
-                    "text": "Wpisz kwotę miesięcznego wynagrodzenia brutto z Twojej umowy."
-                },
-                {
-                    "@type": "HowToStep",
-                    "name": "Wybierz miesiąc",
-                    "text": "Wybierz konkretny miesiąc, aby system automatycznie pobrał liczbę dni roboczych."
-                },
-                {
-                    "@type": "HowToStep",
-                    "name": "Sprawdź stawkę godzinową",
-                    "text": "Kalkulator od razu wyświetli Twoją stawkę za jedną godzinę pracy oraz szczegóły składek."
-                }
-            ]
-        };
-
-        const faqSchema = {
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Ile wynosi najniższa stawka godzinowa w 2026 roku?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "W 2026 roku minimalna stawka godzinowa dla umowy zlecenia wynosi 31,40 zł brutto, a minimalne wynagrodzenie na UoP to 4806 zł brutto."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Jak przeliczyć kwotę brutto na stawkę godzinową?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Podziel miesięczne wynagrodzenie brutto przez liczbę dni roboczych w miesiącu, a następnie przez 8 godzin dziennie."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Czy stawka godzinowa zależy od liczby dni w miesiącu?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Tak, przy stałej pensji miesięcznej Twoja stawka godzinowa jest wyższa w miesiącach z mniejszą liczbą dni roboczych (np. luty)."
-                    }
-                }
-            ]
-        };
-
         //wyliczenie składek
         let ppk;
         let ppk_bru;
@@ -175,11 +108,6 @@ class StaGodz extends React.Component {
 
         return (
             <>
-                <script
-                    type="application/ld+json"
-                    dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
-                />
-
                 <header>
                     <Wynik />
                     <div id="tytul">

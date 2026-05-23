@@ -1,6 +1,11 @@
 {
-  "name": "Kalkulator Wynagrodzeń",
-  "short_name": "Kal - Wyn",
+  "name": "Kalkulator Wynagrodzeń - Stawka Godzinowa",
+  "short_name": "StawkaGodz",
+  "description": "Kalkulator wynagrodzeń, stawek godzinowych i składek. Oblicz netto, brutto, B2B, zlecenie i inflację.",
+  "start_url": "/",
+  "scope": "/",
+  "lang": "pl-PL",
+  "categories": ["finance", "business", "productivity"],
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -16,6 +21,6 @@
     }
   ],
   "theme_color": "#ffffff",
-  "background_color": "#0fe84e",
+  "background_color": "#ffffff",
   "display": "standalone"
 }

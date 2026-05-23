@@ -28,6 +28,12 @@ export const metadata: Metadata = {
         ],
         locale: "pl_PL",
         type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
+        description: "Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.",
+        images: ["https://stawka-godzinowa.pl/image.webp"],
     }
 };
 

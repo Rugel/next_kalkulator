@@ -129,21 +129,21 @@ export default function ScientificCalculator() {
     return parseFloat(v.toPrecision(10)).toString();
   };
 
-  const showVal = (v: any, err = false) => {
+  const showVal = useCallback((v: any, err = false) => {
     setIsErr(err);
     if (!err) {
       setResultVal(formatResult(v));
     } else {
       setResultVal(v);
     }
-  };
+  }, []);
 
-  const clearRes = () => {
+  const clearRes = useCallback(() => {
     setIsErr(false);
     setResultVal('');
-  };
+  }, []);
 
-  const livePreview = (newExpr: string) => {
+  const livePreview = useCallback((newExpr: string) => {
     try {
       const last = newExpr[newExpr.length - 1];
       if (newExpr && !TRAIL_OPS.test(newExpr) && last !== '.') {
@@ -155,7 +155,7 @@ export default function ScientificCalculator() {
     } catch (e) {
       clearRes();
     }
-  };
+  }, [evaluateMath, showVal, clearRes]);
 
   const act = useCallback((action: ActionType, id: string | null) => {
     if (action === null || action === undefined) return;
@@ -233,7 +233,7 @@ export default function ScientificCalculator() {
       }
       return isNowShifted;
     });
-  }, [evaluateMath]);
+  }, [evaluateMath, livePreview, showVal, clearRes]);
 
   useEffect(() => {
     const KM: Record<string, string> = {

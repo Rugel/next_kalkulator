@@ -30,6 +30,12 @@ export const metadata: Metadata = {
         locale: "pl_PL",
         type: "website",
     },
+    twitter: {
+        card: "summary_large_image",
+        title: "Kalkulator wynagrodzeń Brutto Netto",
+        description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą szybkiego kalkulatora online. Dokładne wyniki dla umowy o pracę.",
+        images: ["https://stawka-godzinowa.pl/brutto_netto.webp"],
+    },
 };
 
 export default function BruttoNettoLayout({ children }: { children: ReactNode }) {

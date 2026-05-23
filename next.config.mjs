@@ -2,6 +2,9 @@
 const nextConfig = {
   //output: 'export', // Statyczne eksportowanie aplikacji
   reactStrictMode: true, // Włącza tryb ścisły Reacta dla łatwiejszego debugowania
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   webpack: (config, { isServer }) => {
     if (!isServer) {
       // Rozwiązuje problemy z niektórymi bibliotekami w przeglądarce

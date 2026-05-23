@@ -5,9 +5,10 @@ import React from 'react';
 
 export default function WidgetsWrapper({ children }: { children: React.ReactNode }) {
     const pathname = usePathname();
-    const isCookiesPage = pathname === '/cookies_info';
+    // Show widgets only on the homepage — hide on all sub-pages
+    const isHomePage = pathname === '/';
 
-    if (isCookiesPage) return null;
+    if (!isHomePage) return null;
 
     return <>{children}</>;
 }

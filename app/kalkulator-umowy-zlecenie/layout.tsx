@@ -28,6 +28,12 @@ export const metadata: Metadata = {
         ],
         locale: "pl_PL",
         type: "website"
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",
+        description: "Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok 2026. Uwzględnia ulgę dla młodych i koszty autorskie.",
+        images: ["https://stawka-godzinowa.pl/image.webp"],
     }
 };
 
