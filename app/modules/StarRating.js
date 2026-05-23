@@ -53,6 +53,11 @@ export default function StarRating({ itemId }) {
       const voted = localStorage.getItem(`voted:${itemId}`) === 'true';
       setHasVoted(voted);
 
+      const savedRating = parseInt(localStorage.getItem(`rating:${itemId}`) || '0', 10);
+      if (voted && savedRating > 0) {
+        setUserRating(savedRating);
+      }
+
       detectIncognito().then((result) => {
         setIsIncognito(result);
         setIsCheckingIncognito(false);
@@ -140,6 +145,7 @@ export default function StarRating({ itemId }) {
         setUserRating(value);
         if (typeof window !== 'undefined') {
           localStorage.setItem(`voted:${itemId}`, 'true');
+          localStorage.setItem(`rating:${itemId}`, String(value));
         }
         Swal.fire({
           title: 'Dziękujemy!',

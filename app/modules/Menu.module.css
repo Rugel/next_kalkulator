@@ -16,7 +16,7 @@
 
 .stickyContainer {
     position: fixed;
-    top: 110px;
+    top: 130px;
     left: 0;
     right: 0;
     z-index: 100;
@@ -140,18 +140,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 45px;
-    height: 45px;
-    background: var(--bank-navy-800, #0d2147);
+    width: 3.5rem;
+    height: 3.5rem;
+    background: var(--bank-gradient-accent, linear-gradient(135deg, #0d7a6b, #123566));
     border: 1px solid rgba(201, 162, 39, 0.35);
-    border-radius: 50%;
+    border-radius: 9999px;
     padding: 12px;
     cursor: pointer;
-    box-shadow: var(--bank-shadow-md, 0 4px 24px rgba(10, 22, 40, 0.08));
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--bank-shadow-lg, 0 12px 48px rgba(10, 22, 40, 0.12));
+    transition: all 150ms ease;
     z-index: 90;
     animation: popIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     pointer-events: auto;
+    outline: none;
 }
 
 @keyframes popIn {
@@ -167,9 +168,9 @@
 }
 
 .hamburgerButton:hover {
+    filter: brightness(1.1);
     transform: scale(1.05);
-    background: var(--bank-navy-700, #123566);
-    border-color: var(--bank-gold, #c9a227);
+    box-shadow: 0 8px 32px rgba(13, 122, 107, 0.35);
 }
 
 .bar {
