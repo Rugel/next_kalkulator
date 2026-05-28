@@ -81,15 +81,15 @@ class BruttoNetto extends React.Component {
     netto = netto.replace('.', ',');
 
     const Netto = () => netto;
-    const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /><CommentScrollLink /></p>) }
+    const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /></p>) }
     return (
       <>
+        <Menu currentPage="brutto_netto" />
         <header><Wynik />
           <div id="tytul">
             <h1>Kalkulator Brutto na Netto</h1>
           </div>
         </header>
-        <Menu currentPage="brutto_netto" />
 
         <main>
           <section>

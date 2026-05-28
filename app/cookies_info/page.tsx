@@ -3,12 +3,12 @@ import Menu from "../modules/Menu";
 
 const Cookies_info = () => (
     <>
+        <Menu currentPage="stawka" />
         <header>
             <div id="tytul" style={{ padding: '2em 1em 1em 1em' }}>
                 <h1>Informacja o plikach cookies</h1>
             </div>
         </header>
-        <Menu currentPage="stawka" />
         <div className="cookies" style={{ marginTop: '0' }}>
             <h3>Czym są pliki cookies?</h3>
             <p>Pliki cookies (tzw. „ciasteczka”) to niewielkie pliki tekstowe zapisywane i przechowywane na urządzeniu końcowym użytkownika (np. komputerze, smartfonie czy tablecie) podczas przeglądania stron internetowych. Pliki te są powszechnie stosowane w celu poprawy funkcjonalności stron internetowych, dostarczania spersonalizowanych treści oraz analizowania ruchu na stronie.</p><br />

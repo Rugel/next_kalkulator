@@ -138,16 +138,16 @@ class WyliczenieZGodzin extends React.Component {
         netto = netto.replace('.', ',');
         const Netto = () => netto;
 
-        const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /><CommentScrollLink /></p>) }
+        const Wynik = () => { return (<p className="wynik">Miesięczne wynagrodzenie netto:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł</p>) }
 
         return (
             <>
+                <Menu currentPage="godziny" />
                 <header><Wynik />
                     <div id="tytul">
                         <h1>Wyliczenie z godzin pracy</h1>
                     </div>
                 </header>
-                <Menu currentPage="godziny" />
 
                 <main>
                     <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>

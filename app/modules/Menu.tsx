@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Menu.module.css';
 import { useSpinner } from '../components/GlobalSpinner';
+import CommentScrollLink from '../components/CommentScrollLink';
 
 interface MenuProps {
   currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b' | 'inflacja';
@@ -84,8 +85,8 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
             <Image
               src="/logo.webp"
               alt="Stawka Godzinowa"
-              width={200}
-              height={50}
+              width={120}
+              height={30}
               priority
               className={styles.logo}
             />
@@ -94,6 +95,9 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
         <nav className={styles.nav} aria-label="Main navigation">
           <NavContent />
         </nav>
+        <div className={styles.commentLink}>
+          <CommentScrollLink />
+        </div>
       </div>
 
       {/* Sticky Hamburger - Visible only when scrolled past the static menu */}
@@ -118,4 +122,5 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
 };
 
 export default Menu;
+
 

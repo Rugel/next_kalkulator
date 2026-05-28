@@ -91,18 +91,16 @@ const InflationCalculatorPage = () => {
 
     return (
         <>
+            <Menu currentPage="inflacja" />
             <header>
                 <p className="wynik">
                     Kwota po uwzględnieniu inflacji:<br />
-                    <ResultDisplay /> {getCurrencyLabel(endYear)}<br />
-                    <CommentScrollLink />
+                    <ResultDisplay /> {getCurrencyLabel(endYear)}
                 </p>
                 <div id="tytul">
                     <h1>Kalkulator Inflacji</h1>
                 </div>
             </header>
-
-            <Menu currentPage="inflacja" />
 
             <main>
                 <fieldset className={stylesFieldset.fieldset}>

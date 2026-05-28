@@ -1,4 +1,4 @@
-﻿/* ============================================================
+/* ============================================================
    BANKING DESIGN SYSTEM — stawka-godzinowa.pl
    ============================================================ */
 :root {
@@ -59,41 +59,49 @@ main {
 
 #tytul {
   text-align: center;
-  background: var(--bank-gradient-header);
-  padding: 7.3em 1em 0.5em 1em;
+  background: #ffffff;
+  padding: 2.5rem 1.5rem 2.25rem 1.5rem;
   margin-bottom: 0;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(13, 122, 107, 0.15);
-  filter: brightness(2);
+  box-shadow: 0 4px 20px rgba(10, 22, 40, 0.05);
+  border-bottom: 1px solid var(--bank-border);
 }
 
 #tytul::before {
   content: '';
   position: absolute;
-  top: -40%;
-  right: -15%;
-  width: 55%;
-  height: 140%;
-  background: radial-gradient(ellipse, rgba(201, 162, 39, 0.12) 0%, transparent 65%);
+  top: -30%;
+  right: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(201, 162, 39, 0.05) 0%, transparent 70%);
+  filter: blur(30px);
   pointer-events: none;
 }
 
 #tytul::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(201, 162, 39, 0.4), transparent);
+  bottom: -30%;
+  left: -10%;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(13, 122, 107, 0.06) 0%, transparent 70%);
+  filter: blur(30px);
+  pointer-events: none;
 }
 
 h1 {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var(--bank-text-inverse);
-  letter-spacing: 0.02em;
+  font-size: 1.7rem;
+  font-weight: 800;
+  line-height: 1.25;
+  background: linear-gradient(135deg, var(--bank-navy-900) 30%, var(--bank-teal) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
   position: relative;
   z-index: 1;
 }
@@ -107,18 +115,29 @@ h2, h3 {
 }
 
 .seo-intro {
-  max-width: 680px;
-  margin: 0.75em auto 0;
-  font-size: 0.95em;
-  color: rgba(248, 250, 252, 0.85);
+  max-width: 720px;
+  margin: 1.25rem auto 0;
+  font-size: 1.05rem;
+  color: var(--bank-text-muted);
   line-height: 1.65;
   position: relative;
   z-index: 1;
+  font-weight: 400;
+  letter-spacing: 0.01em;
 }
 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 768px) {
+  #tytul {
+    padding: 1.75rem 1.25rem 1.5rem 1.25rem;
+  }
+  
   h1 {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+  }
+
+  .seo-intro {
+    font-size: 0.95rem;
+    margin-top: 1rem;
   }
 
   h2, h3 {
@@ -171,19 +190,19 @@ a:hover {
   margin: auto;
   left: 0;
   right: 0;
-  margin-top: 0;
+  bottom: 0;
   position: fixed;
   font-size: 1.05rem;
   background: var(--bank-navy-900);
   padding: 0.65rem 1.25rem;
   line-height: 1.45;
-  box-shadow: var(--bank-shadow-lg);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.25);
   text-shadow: none;
   font-weight: 500;
   color: var(--bank-text-inverse);
   background-image: var(--bank-gradient-result);
-  border-bottom: 2px solid var(--bank-gold);
-  z-index: 99;
+  border-top: 2px solid var(--bank-gold);
+  z-index: 9999;
   letter-spacing: 0.02em;
 }
 
@@ -193,14 +212,6 @@ a:hover {
   font-variant-numeric: tabular-nums;
 }
 
-.wynik a {
-  color: rgba(232, 197, 74, 0.9) !important;
-  font-size: 0.65em !important;
-  text-decoration: underline;
-  text-underline-offset: 3px;
-  display: inline-block;
-  margin-top: 5px;
-}
 
 .wynik-highlight {
   color: var(--bank-gold-light) !important;
@@ -492,28 +503,20 @@ div[class*="CookieConsent"] {
   }
 }
 
+/* Widgets container — widgets ułożone jeden pod drugim, centered */
 .widgets-container {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 1.25rem;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem 1rem;
+  max-width: 620px;
+  margin: 0 auto;
+  width: 100%;
 }
 
 .widgets-container > * {
-  flex: 1 1 320px;
-  max-width: 600px;
   width: 100%;
-  box-sizing: border-box;
-}
-
-/* Komentarze na pełną szerokość; pozostałe widgety obok siebie z zachowaniem min. szerokości */
-.widgets-container > #comments-section {
-  flex: 1 1 100%;
-  max-width: 100%;
 }
 
 /* Critical AdSense CLS Prevention */

@@ -104,12 +104,12 @@ class StaGodz extends React.Component {
         rate = rate.replace('.', ',');
         const Rate = () => rate;
 
-        const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Rate /></span> zł / godz<br /><CommentScrollLink /></p>) }
+        const Wynik = () => { return (<p className="wynik">Stawka godzinowa brutto:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Rate /></span> zł / godz</p>) }
 
         return (
             <>
+                <Menu currentPage="stawka" />
                 <header>
-                    <Wynik />
                     <div id="tytul">
                         <h1>Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto</h1>
                         <p className="seo-intro">
@@ -117,7 +117,6 @@ class StaGodz extends React.Component {
                         </p>
                     </div>
                 </header>
-                <Menu currentPage="stawka" />
 
                 <main>
                     <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
@@ -307,6 +306,7 @@ class StaGodz extends React.Component {
                             </div>
                         </article>
                     </section>
+                    <Wynik />
                 </main>
                 <AdSense
                     adClient="ca-pub-8789064360135564"
