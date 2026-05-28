@@ -30,7 +30,7 @@ export const metadata = {
   // canonical i OpenGraph definiowane per-page w page.tsx / podstronach
   title: {
     template: '%s | stawka-godzinowa.pl',
-    default: 'Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto',
+    default: 'Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto',
   },
   description: "🧮 Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.",
   keywords: "kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa 2026, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",

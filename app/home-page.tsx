@@ -111,7 +111,7 @@ class StaGodz extends React.Component {
                 <header>
                     <Wynik />
                     <div id="tytul">
-                        <h1>Kalkulator stawki godzinowej 2026</h1>
+                        <h1>Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto</h1>
                         <p className="seo-intro">
                             Kalkulator stawki godzinowej pozwala błyskawicznie przeliczyć miesięczne wynagrodzenie brutto na stawkę za godzinę pracy. Uwzględniamy składki ZUS, podatek dochodowy i PPK – zarówno dla umowy o pracę, jak i zlecenia.
                         </p>

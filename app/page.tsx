@@ -2,7 +2,7 @@ import HomePage from "./home-page";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto",
+    title: "Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto",
     description:
         "🧮 Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK. ✅ Sprawdź, ile zarabiasz na godzinę!",
     keywords:
@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         canonical: "https://stawka-godzinowa.pl",
     },
     openGraph: {
-        title: "Kalkulator Stawki Godzinowej 2026 💰 | Netto / Brutto",
+        title: "Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto",
         description:
             "Oblicz swoją stawkę godzinową brutto i netto w 2026 roku. Uwzględniamy ZUS, podatek dochodowy i PPK. Precyzyjny kalkulator wynagrodzeń.",
         url: "https://stawka-godzinowa.pl",
