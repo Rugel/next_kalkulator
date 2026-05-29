@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
 
-const CommentScrollLink = ({ text = "Zostaw komentarz i napisz co myślisz o wyniku" }: { text?: string }) => {
+const CommentScrollLink = ({ text = "Zostaw komentarz!" }: { text?: string }) => {
     const handleClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
         e.preventDefault();
         const el = document.getElementById('comments-section');
@@ -15,12 +15,13 @@ const CommentScrollLink = ({ text = "Zostaw komentarz i napisz co myślisz o wyn
             href="#comments-section"
             onClick={handleClick}
             style={{
-                fontSize: '0.65em',
+                fontSize: '0.85em',
                 textDecoration: 'underline',
-                color: '#555',
+                color: '#1a73e8',
                 cursor: 'pointer',
                 display: 'inline-block',
-                marginTop: '5px'
+                marginTop: '5px',
+                fontWeight: 500
             }}
         >
             {text}

@@ -21,12 +21,14 @@
   pointer-events: auto;
 }
 
+/* Panel wyśrodkowany na ekranie (jak oryginalnie) */
 .panel {
   position: fixed;
   top: 50%;
   left: 50%;
   z-index: 10061;
   width: max-content;
+  max-width: 95vw;
   transition: all 300ms ease-in-out;
   font-family: inherit;
 }
@@ -43,40 +45,50 @@
   pointer-events: auto;
 }
 
+/* Prostokątny przycisk przyklejony do prawej strony paska .wynik */
 .fab {
   position: fixed;
-  bottom: 1.5rem;
-  right: 1rem;
+  bottom: 0;
+  right: 0;
   z-index: 10040;
-  width: 3.5rem;
-  height: 3.5rem;
-  background: var(--bank-gradient-accent, linear-gradient(135deg, #0d7a6b, #123566));
+  width: 3rem;
+  height: auto;
+  min-height: 2.8rem;
+  background: linear-gradient(135deg, #0d7a6b, #123566);
   color: var(--bank-text-inverse, #f8fafc);
-  border-radius: 9999px;
+  border-radius: 8px 0 0 0;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  box-shadow: var(--bank-shadow-lg, 0 12px 48px rgba(10, 22, 40, 0.12));
+  gap: 2px;
+  padding: 6px 4px;
+  box-shadow: -2px -2px 12px rgba(10, 22, 40, 0.15);
   transition: transform 150ms, filter 150ms, box-shadow 150ms;
   cursor: pointer;
   border: 1px solid rgba(201, 162, 39, 0.35);
+  border-bottom: none;
+  border-right: none;
   outline: none;
+  line-height: 1;
 }
 
 .fab:hover {
   filter: brightness(1.1);
   transform: scale(1.05);
-  box-shadow: 0 8px 32px rgba(13, 122, 107, 0.35);
+  box-shadow: -2px -4px 16px rgba(13, 122, 107, 0.35);
 }
 
-/* Nad overlayem i kalkulatorem — wyraźny przycisk zamknięcia */
+/* Stan otwarty */
 .fabOpen {
   z-index: 10062;
   background: linear-gradient(135deg, #123566 0%, #0d2147 100%);
   border: 2px solid var(--bank-gold, #c9a227);
+  border-bottom: none;
+  border-right: none;
   box-shadow:
     0 0 0 2px rgba(201, 162, 39, 0.25),
-    0 8px 32px rgba(10, 22, 40, 0.45);
+    -2px -2px 16px rgba(10, 22, 40, 0.35);
   filter: none;
 }
 
@@ -85,5 +97,5 @@
   transform: scale(1.08);
   box-shadow:
     0 0 0 3px rgba(201, 162, 39, 0.35),
-    0 10px 36px rgba(10, 22, 40, 0.5);
+    -2px -4px 20px rgba(10, 22, 40, 0.5);
 }
