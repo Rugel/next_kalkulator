@@ -201,7 +201,7 @@
 }
 
 .bar {
-    width: 100%;
+    width: auto;
     height: 3px;
     background: #94a3b8;
     border-radius: 2px;
@@ -233,13 +233,13 @@
 
 .link {
     display: block;
-    padding: 1.5rem 2.2rem;
+    padding: 1rem 1rem;
     text-decoration: none;
     color: #cbd5e1;
     font-weight: 500;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: none;
-    font-size: 1.2rem;
+    font-size: .8rem;
     letter-spacing: 0.01em;
     text-align: center;
     position: relative;
@@ -275,12 +275,12 @@
 
 .active {
     display: block;
-    padding: 1.5rem 2.2rem;
+    padding: 1rem 1rem;
     text-decoration: none;
     font-weight: 700;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     text-transform: none;
-    font-size: 1.2rem;
+    font-size: .8rem;
     letter-spacing: 0.02em;
     text-align: center;
     position: relative;
@@ -305,7 +305,7 @@
 }
 
 .commentLink a {
-    font-size: 1rem !important;
+    font-size: .8rem !important;
     text-underline-offset: 3px;
     display: inline-block;
     margin-top: 5px;
@@ -357,8 +357,8 @@
 
     .link,
     .active {
-        font-size: 1.1rem;
-        padding: 1.1rem 1.6rem;
+        font-size: .8rem;
+        padding: 1rem 1rem;
         border-radius: 0;
         border-left: none;
         border-top: 1px solid rgba(255, 255, 255, 0.08);
@@ -393,8 +393,8 @@
 
     .link,
     .active {
-        font-size: 1.1rem;
-        padding: 1.2rem 1.6rem;
+        font-size: .8rem;
+        padding: 1rem 1rem;
     }
 }
 
