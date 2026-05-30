@@ -13,11 +13,28 @@ export default function FloatingCalculator() {
       const atBottom =
         window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 1);
       setIsBottom(atBottom);
+      try {
+        // Toggle class directly on .wynik elements to hide them at bottom
+        const targets = Array.from(document.querySelectorAll('.wynik, [id="wynik"], [class*="wynik"]'));
+        targets.forEach((el: Element) => {
+          el.classList.toggle('fc-hide-wynik', atBottom);
+        });
+      } catch (e) {
+        /* ignore in non-browser env */
+      }
     };
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => {
       window.removeEventListener('scroll', onScroll);
+      try {
+        const targets = Array.from(document.querySelectorAll('.wynik, [id="wynik"], [class*="wynik"]'));
+        targets.forEach((el: Element) => {
+          el.classList.remove('fc-hide-wynik');
+        });
+      } catch (e) {
+        /* ignore */
+      }
     };
   }, []);
 
