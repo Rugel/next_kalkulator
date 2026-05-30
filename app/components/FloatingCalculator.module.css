@@ -99,3 +99,13 @@
     0 0 0 3px rgba(201, 162, 39, 0.35),
     -2px -4px 20px rgba(10, 22, 40, 0.5);
 }
+
+/* Ukryj FAB gdy strona jest na samym dole (zapobiega zasłanianiu .wynik) */
+.fabHidden {
+  transform: translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+  transition: transform 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+/* Globalny styl przeniesiony do app/globals.css (unikamy nieczystych selektorów w CSS Modules) */

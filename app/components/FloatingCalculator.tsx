@@ -1,11 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ScientificCalculator from './ScientificCalculator';
 import styles from './FloatingCalculator.module.css';
 
 export default function FloatingCalculator() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isBottom, setIsBottom] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      const atBottom =
+        window.innerHeight + window.scrollY >= (document.documentElement.scrollHeight - 1);
+      setIsBottom(atBottom);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
 
   return (
     <>
@@ -26,9 +40,9 @@ export default function FloatingCalculator() {
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Toggle Calculator"
         aria-expanded={isOpen}
-        title="Kalkulator — stawka-godzinowa.pl"
-        className={`${styles.fab} ${isOpen ? styles.fabOpen : ''}`}
-      >
+      title="Kalkulator — stawka-godzinowa.pl"
+      className={`${styles.fab} ${isOpen ? styles.fabOpen : ''} ${isBottom ? styles.fabHidden : ''}`}
+    >
         {isOpen ? (
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <line x1="18" y1="6" x2="6" y2="18"></line>

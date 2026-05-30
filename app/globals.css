@@ -212,6 +212,14 @@ a:hover {
   font-variant-numeric: tabular-nums;
 }
 
+/* Ukryj .wynik gdy elementowi zostanie dodana klasa fc-hide-wynik (bez wpływu na inne elementy) */
+.wynik.fc-hide-wynik {
+  opacity: 0;
+  transform: translateY(12px);
+  pointer-events: none;
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+
 
 .wynik-highlight {
   color: var(--bank-gold-light) !important;
