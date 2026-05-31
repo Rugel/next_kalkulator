@@ -1,4 +1,4 @@
-import { getMovableHolidays } from '../karta-godzin/holidays.js';
+import { getMovableHolidays } from '../karta-godzin/holidays';
 
 /**
  * Check if a date is a weekend (Saturday or Sunday)
