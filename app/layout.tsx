@@ -159,6 +159,24 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* WebApplication - Kalkulator jako aplikacja webowa */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebApplication",
+              "name": "Kalkulator Stawki Godzinowej 2026",
+              "applicationCategory": "FinanceApplication",
+              "operatingSystem": "Web",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "PLN"
+              }
+            }),
+          }}
+        />
         {/* HowTo - Jak obliczyć stawkę godzinową */}
         <script
           type="application/ld+json"
@@ -219,6 +237,24 @@ export default function RootLayout({
                     "text": "Tak, przy stałej pensji miesięcznej Twoja stawka godzinowa jest wyższa w miesiącach z mniejszą liczbą dni roboczych (np. luty)."
                   }
                 }
+              ]
+            }),
+          }}
+        />
+        {/* Organization - Dane o autorze */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "Stawka Godzinowa",
+              "url": "https://stawka-godzinowa.pl",
+              "logo": "https://stawka-godzinowa.pl/logo.webp",
+              "description": "Profesjonalny kalkulator stawki godzinowej i wynagrodzeń dla umów o pracę, zlecenia i B2B. Aktualne dane na rok 2026.",
+              "sameAs": [
+                "https://www.facebook.com/stawkagodzinowa",
+                "https://twitter.com/stawkagodzinowa"
               ]
             }),
           }}
