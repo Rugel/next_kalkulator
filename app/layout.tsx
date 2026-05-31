@@ -10,7 +10,6 @@ const roboto = Roboto({
 
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
-import Weather from "./modules/weather";
 import StarRating from "./modules/StarRating";
 import CommentsSection from "./modules/CommentsSection";
 import Footer from "./modules/footer";
@@ -271,7 +270,6 @@ export default function RootLayout({
                 <CommentsSection itemId={123} />
               </div>
               <StarRating itemId={123} />
-              <Weather />
             </div>
           </WidgetsWrapper>
           <footer className="footer">
