@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: "Stawka Godzinowa",
         images: [
             {
-                url: "https://stawka-godzinowa.pl/image.webp",
+                url: "https://stawka-godzinowa.pl/kalkulator_inflacji.webp",
                 width: 1200,
                 height: 630,
                 alt: "Kalkulator Inflacji",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
         description: "Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.",
-        images: ["https://stawka-godzinowa.pl/image.webp"],
+        images: ["https://stawka-godzinowa.pl/kalkulator_inflacji.webp"],
     }
 };
 

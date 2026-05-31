@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: "Stawka Godzinowa",
         images: [
             {
-                url: "https://stawka-godzinowa.pl/image.webp",
+                url: "https://stawka-godzinowa.pl/kalkulator_zlecenie.webp",
                 width: 1200,
                 height: 630,
                 alt: "Kalkulator Umowy Zlecenie",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",
         description: "Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok 2026. Uwzględnia ulgę dla młodych i koszty autorskie.",
-        images: ["https://stawka-godzinowa.pl/image.webp"],
+        images: ["https://stawka-godzinowa.pl/kalkulator_zlecenie.webp"],
     }
 };
 

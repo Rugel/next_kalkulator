@@ -16,7 +16,7 @@ export const metadata: Metadata = {
         siteName: "Stawka Godzinowa",
         images: [
             {
-                url: "https://stawka-godzinowa.pl/image.webp",
+                url: "https://stawka-godzinowa.pl/wyliczenie_z_godzin.webp",
                 width: 1200,
                 height: 630,
                 alt: "Kalkulator Wynagrodzeń z godzin",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy",
         description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.",
-        images: ["https://stawka-godzinowa.pl/image.webp"],
+        images: ["https://stawka-godzinowa.pl/wyliczenie_z_godzin.webp"],
     },
 };
 

@@ -15,7 +15,7 @@ export default function PolitykaPrywatnosci() {
       <p>
         Administratorem danych osobowych jest Grzegorz Dychała,
         prowadzący serwis <strong>stawka-godzinowa.pl</strong>.
-        Kontakt: rugelot&#64;gmail.com
+        Kontakt: kontakt&#64;stawka-godzinowa.pl
       </p>
 
       <h2>2. Jakie dane zbieramy</h2>

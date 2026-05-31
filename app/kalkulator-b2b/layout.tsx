@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         siteName: "Stawka Godzinowa",
         images: [
             {
-                url: "https://stawka-godzinowa.pl/image.webp",
+                url: "https://stawka-godzinowa.pl/kalkulator_b2b.webp",
                 width: 1200,
                 height: 630,
                 alt: "Kalkulator B2B 2026",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Kalkulator B2B 2026 - Sprawdź ile zarobisz na rękę",
         description: "Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok 2026. Porównaj formy opodatkowania.",
-        images: ["https://stawka-godzinowa.pl/image.webp"],
+        images: ["https://stawka-godzinowa.pl/kalkulator_b2b.webp"],
     }
 };
 
