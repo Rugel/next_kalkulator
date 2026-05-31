@@ -9,12 +9,12 @@ export default function WidgetsWrapper({ children }: { children: React.ReactNode
     // Pages where widgets should be visible (main calculator pages)
     const widgetPages = [
         '/',
-        '/brutto-netto',
+        '/brutto_netto',
         '/kalkulator-b2b',
         '/kalkulator-umowy-zlecenie',
         '/kalkulator-inflacji',
         '/karta-godzin',
-        '/wyliczenie-z-godzin',
+        '/wyliczenie_z_godzin',
     ];
 
     const showWidgets = widgetPages.includes(pathname);

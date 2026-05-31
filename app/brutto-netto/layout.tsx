@@ -5,7 +5,7 @@ import AggregateRatingSchema from "../components/AggregateRatingSchema";
 export const metadata: Metadata = {
     metadataBase: new URL("https://stawka-godzinowa.pl"),
     alternates: {
-        canonical: "/brutto-netto",
+        canonical: "/brutto_netto",
     },
     robots: {
         index: true,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Kalkulator wynagrodzeń Brutto Netto",
         description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą szybkiego kalkulatora online. Dokładne wyniki dla umowy o pracę.",
-        url: "https://stawka-godzinowa.pl/brutto-netto",
+        url: "https://stawka-godzinowa.pl/brutto_netto",
         siteName: "Stawka Godzinowa",
         images: [
             {
@@ -53,10 +53,11 @@ export default function BruttoNettoLayout({ children }: { children: ReactNode })
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Przelicznik Brutto na Netto",
-                "item": "https://stawka-godzinowa.pl/brutto-netto"
+                "item": "https://stawka-godzinowa.pl/brutto_netto"
             }
         ]
     };
+
 
     const howToSchema = {
         "@context": "https://schema.org",
@@ -136,7 +137,7 @@ export default function BruttoNettoLayout({ children }: { children: ReactNode })
             <AggregateRatingSchema
                 name="Przelicznik Brutto na Netto"
                 description="Oblicz swoje wynagrodzenie netto z kwoty brutto szybko i dokładnie."
-                url="https://stawka-godzinowa.pl/brutto-netto"
+                url="https://stawka-godzinowa.pl/brutto_netto"
             />
             {children}
         </>

@@ -13,15 +13,15 @@ interface MenuProps {
 const Menu: React.FC<MenuProps> = ({ currentPage }) => {
   const { showSpinner } = useSpinner();
 
-  const menuItems = [
-    { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/' },
-      { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/wyliczenie-z-godzin' },
-      { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto-netto' },
-    { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
-    { id: 'b2b', label: 'Kalkulator B2B', href: '/kalkulator-b2b' },
-    { id: 'inflacja', label: 'Kalkulator Inflacji', href: '/kalkulator-inflacji' },
-      { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta-godzin' },
-  ];
+    const menuItems = [
+        { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/' },
+        { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/wyliczenie-z-godzin' },
+        { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto-netto' },
+        { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
+        { id: 'b2b', label: 'Kalkulator B2B', href: '/kalkulator-b2b' },
+        { id: 'inflacja', label: 'Kalkulator Inflacji', href: '/kalkulator-inflacji' },
+        { id: 'karta_godzin', label: 'Karta godzin pracy', href: '/karta-godzin' },
+    ];
 
   const [isSticky, setIsSticky] = React.useState(false);
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
