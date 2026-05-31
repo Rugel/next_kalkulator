@@ -86,6 +86,7 @@
     max-width: 104px;
     width: 100%;
     filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.4));
+    transition: max-width 0.3s ease;
 }
 
 .list {
@@ -314,6 +315,27 @@
 
 .commentLink a:hover {
     color: black !important;
+}
+
+/* Responsive logo on mobile */
+@media (max-width: 480px) {
+    .logo {
+        max-width: 80px;
+    }
+
+    .logoContainer {
+        padding: 0.35rem 0.55rem;
+    }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .logo {
+        max-width: 90px;
+    }
+
+    .logoContainer {
+        padding: 0.4rem 0.6rem;
+    }
 }
 
 @media (min-width: 1024px) {
