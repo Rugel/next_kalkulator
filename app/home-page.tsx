@@ -98,7 +98,7 @@ class StaGodz extends React.Component {
         nettoStr = nettoStr.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         nettoStr = nettoStr.replace('.', ',');
 
-        let rate: any = Math.round((brutto / workdays / 8) * 100) / 100;
+        let rate: any = workdays > 0 ? Math.round((brutto / workdays / 8) * 100) / 100 : 0;
         rate = rate.toString();
         rate = rate.replace(/\B(?=(\d{3})+(?!\d))/g, " ");
         rate = rate.replace('.', ',');
