@@ -22,6 +22,21 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/wyliczenie_z_godzin',
+        destination: '/wyliczenie-z-godzin',
+        permanent: true,
+      },
+      {
+        source: '/brutto_netto',
+        destination: '/brutto-netto',
+        permanent: true,
+      },
+      {
+        source: '/karta_godzin',
+        destination: '/karta-godzin',
+        permanent: true,
+      },
     ]
   },
 };

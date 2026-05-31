@@ -12,19 +12,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
             priority: 1.0,
         },
         {
-            url: `${baseUrl}/wyliczenie_z_godzin`,
+            url: `${baseUrl}/wyliczenie-z-godzin`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/brutto_netto`,
+            url: `${baseUrl}/brutto-netto`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
-            url: `${baseUrl}/karta_godzin`,
+            url: `${baseUrl}/karta-godzin`,
             lastModified: currentDate,
             changeFrequency: 'monthly',
             priority: 0.8,
