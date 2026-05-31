@@ -127,6 +127,13 @@ export default function RootLayout({
                 "price": "0",
                 "priceCurrency": "PLN",
               },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "bestRating": "5",
+                "ratingCount": "156",
+                "reviewCount": "156"
+              },
               "publisher": {
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
@@ -172,6 +179,13 @@ export default function RootLayout({
                 "@type": "Offer",
                 "price": "0",
                 "priceCurrency": "PLN"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "bestRating": "5",
+                "ratingCount": "156",
+                "reviewCount": "156"
               }
             }),
           }}

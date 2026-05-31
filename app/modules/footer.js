@@ -26,6 +26,9 @@ const Footer = () => {
             style={{ height: '30px', width: 'auto', opacity: 0.9 }}
          />
          <strong><u>{dateString} - &copy; Grzegorz Dychała</u></strong>
+         <a href="/polityka-prywatnosci" style={{ color: 'inherit', textDecoration: 'underline' }}>
+            Polityka prywatności
+         </a>
       </div>
    );
 };
