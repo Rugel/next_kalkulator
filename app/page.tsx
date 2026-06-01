@@ -1,4 +1,5 @@
 import HomePage from "./home-page";
+import SchemaOrg from "./components/SchemaOrg";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -37,42 +38,9 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
-    const faqSchema = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": [
-            {
-                "@type": "Question",
-                "name": "Ile wynosi najniższa stawka godzinowa w 2026 roku?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "W 2026 roku minimalna stawka godzinowa dla umowy zlecenia wynosi 31,40 zł brutto, a minimalne wynagrodzenie na UoP to 4806 zł brutto."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Jak przeliczyć kwotę brutto na stawkę godzinową?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Podziel miesięczne wynagrodzenie brutto przez liczbę dni roboczych w miesiącu, a następnie przez 8 godzin dziennie."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "Czy stawka godzinowa zależy od liczby dni w miesiącu?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "Tak, przy stałej pensji miesięcznej Twoja stawka godzinowa jest wyższa w miesiącach z mniejszą liczbą dni roboczych (np. luty)."
-                }
-            }
-        ]
-    };
     return (
         <>
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-            />
+            <SchemaOrg />
             <HomePage />
         </>
     );
