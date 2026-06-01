@@ -5,10 +5,21 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
         canonical: '/kalkulator-inflacji',
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/kalkulator-inflacji',
+        },
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
     description: "Sprawdź inflację skumulowaną w Polsce od 1982 roku. Oblicz wartość swoich oszczędności po uwzględnieniu inflacji i denominacji. Prognozy do 2050 roku.",
@@ -113,6 +124,12 @@ export default function InflationLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, faqSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Kalkulator Inflacji</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

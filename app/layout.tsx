@@ -45,6 +45,11 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  twitter: {
+    card: 'summary_large_image',
+    site: '@stawkagodzinowa',
+    creator: '@stawkagodzinowa',
+  },
 };
 
 export default function RootLayout({
@@ -55,6 +60,9 @@ export default function RootLayout({
   return (
     <html lang="pl">
       <head>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" />
+        <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <AggregateRatingSchema
           name="Stawka Godzinowa"
           description="Precyzyjny kalkulator stawki godzinowej 2026. Narzędzie do wyliczania wynagrodzenia netto i brutto z uwzględnieniem składek ZUS i dni roboczych."
@@ -87,12 +95,13 @@ export default function RootLayout({
           }}
         />
         <meta name="apple-mobile-web-app-title" content="Stawka Godzinowa" />
-        {/* Dane strukturalne dla WebSite i SoftwareApplication */}
+        {/* Dane strukturalne - WebSite */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@id": "https://stawka-godzinowa.pl/#website",
               "@type": "WebSite",
               "name": "Stawka Godzinowa",
               "url": "https://stawka-godzinowa.pl",
@@ -104,19 +113,21 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* Dane strukturalne - WebApplication (główna aplikacja) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "Kalkulator Stawki Godzinowej",
+              "@id": "https://stawka-godzinowa.pl/#webapp",
+              "@type": "WebApplication",
+              "name": "Kalkulator Stawki Godzinowej 2026",
               "alternateName": "stawka-godzinowa.pl",
               "description": "Precyzyjny kalkulator stawki godzinowej 2026. Oblicz kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej oraz składek ZUS i podatków. Obsługuje umowę o pracę, zlecenie i B2B.",
               "url": "https://stawka-godzinowa.pl",
               "image": "https://stawka-godzinowa.pl/image.webp",
               "applicationCategory": "FinanceApplication",
-              "operatingSystem": "All",
+              "operatingSystem": "Web",
               "browserRequirements": "Requires JavaScript",
               "inLanguage": "pl",
               "featureList": [
@@ -129,10 +140,11 @@ export default function RootLayout({
               "offers": {
                 "@type": "Offer",
                 "price": "0",
-                "priceCurrency": "PLN",
+                "priceCurrency": "PLN"
               },
               "publisher": {
                 "@type": "Organization",
+                "@id": "https://stawka-godzinowa.pl/#organization",
                 "name": "Stawka Godzinowa",
                 "url": "https://stawka-godzinowa.pl",
                 "logo": {
@@ -150,6 +162,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@id": "https://stawka-godzinowa.pl/#breadcrumb",
               "@type": "BreadcrumbList",
               "itemListElement": [
                 {
@@ -160,31 +173,6 @@ export default function RootLayout({
                 }
               ]
             }),
-          }}
-        />
-        {/* WebApplication - Kalkulator jako aplikacja webowa */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "WebApplication",
-              "name": "Kalkulator Stawki Godzinowej 2026",
-              "applicationCategory": "FinanceApplication",
-              "operatingSystem": "Web",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "PLN"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.5",
-                "bestRating": "5",
-                "ratingCount": "40",
-                "reviewCount": "40"
-              }
-            })
           }}
         />
         {/* HowTo - Jak obliczyć stawkę godzinową */}

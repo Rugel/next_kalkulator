@@ -5,6 +5,21 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
         canonical: '/wyliczenie-z-godzin',
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/wyliczenie-z-godzin',
+        },
+    },
+    robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: "Kalkulator Wynagrodzeń z Godzin Pracy 2026 - Oblicz Płace UoP",
     description: "Oblicz wynagrodzenie netto z godzin pracy. Kalkulator uwzględnia stawkę godzinową, nadgodziny, dni wolne, urlop oraz zwolnienie chorobowe (UoP).",
@@ -123,6 +138,12 @@ export default function WyliczenieLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Wyliczenie z Godzin Pracy</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

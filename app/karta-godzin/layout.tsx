@@ -6,6 +6,9 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
         canonical: '/karta-godzin',
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/karta-godzin',
+        },
     },
     robots: {
         index: true,
@@ -92,6 +95,12 @@ export default function KartaGodzinLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Karta Ewidencji Czasu Pracy</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

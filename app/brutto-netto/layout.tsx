@@ -6,10 +6,21 @@ export const metadata: Metadata = {
     metadataBase: new URL("https://stawka-godzinowa.pl"),
     alternates: {
         canonical: "/brutto-netto",
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/brutto-netto',
+        },
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: "Kalkulator wynagrodzeń Brutto Netto 2026 - Oblicz Płace UoP",
     description: "Profesjonalny kalkulator wynagrodzeń brutto netto 2026. Szybko oblicz swoją płacę na rękę (UoP) uwzględniając PPK, progi podatkowe i ulgi podatkowe.",
@@ -134,6 +145,12 @@ export default function BruttoNettoLayout({ children }: { children: ReactNode })
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Przelicznik Brutto na Netto</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

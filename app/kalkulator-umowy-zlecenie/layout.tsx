@@ -5,10 +5,21 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
         canonical: '/kalkulator-umowy-zlecenie',
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie',
+        },
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: "Kalkulator Umowy Zlecenie 2026 - Oblicz Netto i Składki ZUS",
     description: "Oblicz wynagrodzenie netto z umowy zlecenie w 2026 roku. Sprawdź stawkę godzinową, składki ZUS i podatek. Uwzględnia status studenta i zerowy PIT.",
@@ -99,6 +110,12 @@ export default function ZlecenieLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Kalkulator Umowy Zlecenie</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

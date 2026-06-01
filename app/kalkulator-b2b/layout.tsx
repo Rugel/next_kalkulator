@@ -5,10 +5,21 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
         canonical: '/kalkulator-b2b',
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl/kalkulator-b2b',
+        },
     },
     robots: {
         index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: "Kalkulator B2B 2026 - Ryczałt, Liniowy, Skala - Oblicz Netto",
     description: "Kompleksowy kalkulator B2B na 2026 rok. Porównaj Ryczałt, Podatek Liniowy i Skalę Podatkową. Oblicz ZUS, składkę zdrowotną i realny zysk netto swojej firmy.",
@@ -98,6 +109,12 @@ export default function B2BLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
             />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li><a href="https://stawka-godzinowa.pl">Strona Główna</a></li>
+                    <li aria-current="page">Kalkulator B2B</li>
+                </ol>
+            </nav>
             {children}
         </>
     );

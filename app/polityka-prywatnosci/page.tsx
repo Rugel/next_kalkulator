@@ -4,6 +4,9 @@ export const metadata: Metadata = {
   title: "Polityka prywatności – stawka-godzinowa.pl",
   description: "Polityka prywatności serwisu stawka-godzinowa.pl. Dowiedz się, jakie dane zbieramy, w jakim celu i jakie przysługują Ci prawa (RODO).",
   robots: { index: false, follow: false },
+  alternates: {
+    canonical: "https://stawka-godzinowa.pl/polityka-prywatnosci",
+  },
 };
 
 export default function PolitykaPrywatnosci() {

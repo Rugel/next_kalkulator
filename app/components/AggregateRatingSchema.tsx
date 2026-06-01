@@ -19,7 +19,7 @@ export default function AggregateRatingSchema({
     itemId = 123,
     image = "https://stawka-godzinowa.pl/image.webp"
 }: AggregateRatingSchemaProps) {
-    const [rating, setRating] = useState({ average: "4.5", votes: 40 });
+    const [rating, setRating] = useState({ average: "4.5", votes: 8 });
 
     useEffect(() => {
         async function fetchRating() {
@@ -42,6 +42,7 @@ export default function AggregateRatingSchema({
 
     const schema = {
         "@context": "https://schema.org",
+        "@id": `${url}#aggregate-rating`,
         "@type": "WebApplication",
         "name": name,
         "description": description,
