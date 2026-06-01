@@ -1,3 +1,6 @@
 {
-    "deepseek.apiKey": "sk-b97385d4525a47a1a84847481e130797"
+    "deepseek.apiKey": "sk-b97385d4525a47a1a84847481e130797",
+    "files.associations": {
+        "*.html": "html"
+    }
 }
