@@ -144,42 +144,18 @@ class BruttoNetto extends React.Component {
               <AdSenseInArticle adSlot={5569743645} />
               <h3>Jak Działa Przeliczanie Brutto na Netto?</h3>
               <div className='desc'>
-                <p>
-                  <strong>
-                    1. Ustalenie wynagrodzenia brutto
-                  </strong>
-                  . Wynagrodzenie brutto to kwota, którą pracownik otrzymuje od pracodawcy przed odliczeniem podatków i składek na ubezpieczenia społeczne. Jest to kwota, która widnieje w umowie o pracę.
-                </p>
-                <p>
-                  <strong>
-                    2. Odliczenie składek na ubezpieczenie społeczne
-                  </strong>
-                  . Składki na ubezpieczenia społeczne to kwoty, które są automatycznie potrącane z wynagrodzenia brutto. W Polsce składki te obejmują ubezpieczenie emerytalne (9,76%), rentowe (1,5%) i chorobowe (2,45%). Te procenty są obliczane od Twojego wynagrodzenia brutto - razem jest to 13,71%.
-                </p>
-                <p>
-                  <strong>
-                    3. Obliczenie składki na ubezpieczenie zdrowotne
-                  </strong>
-                  . Kwota pozostała po odjęciu składek społecznych staje się podstawą do obliczenie składki zdrowotnej, której wymiar wynosi 9% - narazie jej nie odliczamy od podstawy.
-                </p>
-                <p>
-                  <strong>
-                    4. Ustalenie dochodu pracownika
-                  </strong>
-                  . Od wcześniej obliczonej podstawy odejmujemy tzw. koszty uzyskania dochodu, które w zależności od miejsca wykonywania pracy obecnie wynoszą 250 zł lub 300 zł. Po dokonaniu tego odliczenia otrzymujemy <strong>dochód.</strong>
-                </p>
-                <p>
-                  <strong>
-                    5. Obliczenie zaliczki na podatek dochodowy
-                  </strong>
-                  . Wspomnianą zaliczkę obliczamy według obowiązującej skali podatkowj. Obecnie dla pierwszego progu podatkowego jest to 12 % dochodu minus kwota zmniejszająca podatek wynikająca z powszechnej ulgi czyli 300 zł. Tak obliczoną kwotę pracodawca przekazuje do urzędu skarbowego.
-                </p>
-                <p>
-                  <strong>
-                    6. Obliczenie wynagrodzenia netto
-                  </strong>
-                  . Ostatni krok sprowadza się do dokonania odejmowania - od kwoty otrzymanej w kroku nr. 2 czyli po odliczeniu od kwoty brutto składek na ubezpieczenie społeczne, odejmujemy składkę zdrowotną obliczoną w kroku nr. 3, a następnie zaliczkę na podatek dochodowy obliczoną w kroku nr. 5. Tak otrzymana kwota jest <strong>kwotą netto.</strong>
-                </p>
+                <h4>1. Ustalenie wynagrodzenia brutto</h4>
+                <p>Wynagrodzenie brutto to kwota, którą pracownik otrzymuje od pracodawcy przed odliczeniem podatków i składek na ubezpieczenia społeczne. Jest to kwota, która widnieje w umowie o pracę.</p>
+                <h4>2. Odliczenie składek na ubezpieczenie społeczne</h4>
+                <p>Składki na ubezpieczenia społeczne to kwoty, które są automatycznie potrącane z wynagrodzenia brutto. W Polsce składki te obejmują ubezpieczenie emerytalne (9,76%), rentowe (1,5%) i chorobowe (2,45%). Te procenty są obliczane od Twojego wynagrodzenia brutto - razem jest to 13,71%.</p>
+                <h4>3. Obliczenie składki na ubezpieczenie zdrowotne</h4>
+                <p>Kwota pozostała po odjęciu składek społecznych staje się podstawą do obliczenie składki zdrowotnej, której wymiar wynosi 9% - narazie jej nie odliczamy od podstawy.</p>
+                <h4>4. Ustalenie dochodu pracownika</h4>
+                <p>Od wcześniej obliczonej podstawy odejmujemy tzw. koszty uzyskania dochodu, które w zależności od miejsca wykonywania pracy obecnie wynoszą 250 zł lub 300 zł. Po dokonaniu tego odliczenia otrzymujemy <strong>dochód.</strong></p>
+                <h4>5. Obliczenie zaliczki na podatek dochodowy</h4>
+                <p>Wspomnianą zaliczkę obliczamy według obowiązującej skali podatkowj. Obecnie dla pierwszego progu podatkowego jest to 12 % dochodu minus kwota zmniejszająca podatek wynikająca z powszechnej ulgi czyli 300 zł. Tak obliczoną kwotę pracodawca przekazuje do urzędu skarbowego.</p>
+                <h4>6. Obliczenie wynagrodzenia netto</h4>
+                <p>Ostatni krok sprowadza się do dokonania odejmowania - od kwoty otrzymanej w kroku nr. 2 czyli po odliczeniu od kwoty brutto składek na ubezpieczenie społeczne, odejmujemy składkę zdrowotną obliczoną w kroku nr. 3, a następnie zaliczkę na podatek dochodowy obliczoną w kroku nr. 5. Tak otrzymana kwota jest <strong>kwotą netto.</strong></p>
               </div>
 
               <h3>Dlaczego warto korzystać z kalkulatora wynagrodzeń brutto netto?</h3>

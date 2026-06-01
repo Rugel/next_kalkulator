@@ -61,6 +61,10 @@ export default function RootLayout({
           url="https://stawka-godzinowa.pl"
         />
         <meta name="google-site-verification" content="wWDCgkmW374nhFic4ZNADQdsdDPPJq4hrp3cdf81KXw" />
+        <meta name="author" content="Grzegorz Dychała" />
+        <meta name="copyright" content="Copyright © 2026 stawka-godzinowa.pl" />
+        <link rel="alternate" hrefLang="pl" href="https://stawka-godzinowa.pl" />
+        <link rel="alternate" hrefLang="x-default" href="https://stawka-godzinowa.pl" />
 
         {/* Global Site Tag */}
         <Script
@@ -127,13 +131,6 @@ export default function RootLayout({
                 "price": "0",
                 "priceCurrency": "PLN",
               },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "bestRating": "5",
-                "ratingCount": "156",
-                "reviewCount": "156"
-              },
               "publisher": {
                 "@type": "Organization",
                 "name": "Stawka Godzinowa",
@@ -182,12 +179,12 @@ export default function RootLayout({
               },
               "aggregateRating": {
                 "@type": "AggregateRating",
-                "ratingValue": "4.8",
+                "ratingValue": "4.5",
                 "bestRating": "5",
-                "ratingCount": "156",
-                "reviewCount": "156"
+                "ratingCount": "40",
+                "reviewCount": "40"
               }
-            }),
+            })
           }}
         />
         {/* HowTo - Jak obliczyć stawkę godzinową */}

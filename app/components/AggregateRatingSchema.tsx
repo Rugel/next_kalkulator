@@ -19,7 +19,7 @@ export default function AggregateRatingSchema({
     itemId = 123,
     image = "https://stawka-godzinowa.pl/image.webp"
 }: AggregateRatingSchemaProps) {
-    const [rating, setRating] = useState({ average: "4.8", votes: 150 });
+    const [rating, setRating] = useState({ average: "4.5", votes: 40 });
 
     useEffect(() => {
         async function fetchRating() {

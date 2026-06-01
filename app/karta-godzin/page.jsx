@@ -28,7 +28,7 @@ class KartaGodz extends React.Component {
   LogoHandlleChange = (e) => { const file = e.target.files[0]; this.setState({ logo: file }) };
 
   render() {
-    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div className={styles.logo}><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='logo' /></div>) } else { return null } };
+    const RenderImage = () => { if (this.state.logo) { const url = URL.createObjectURL(this.state.logo); return (<div className={styles.logo}><Image fill style={{ objectFit: 'scale-down' }} src={url} alt='Logo firmy na karcie ewidencji czasu pracy' /></div>) } else { return null } };
 
     const Title = () => <div className={styles.title}><h2>EWIDENCJA CZASU PRACY</h2></div>;
     const text = this.state.inputVal;

@@ -2,12 +2,37 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Polityka prywatności – stawka-godzinowa.pl",
+  description: "Polityka prywatności serwisu stawka-godzinowa.pl. Dowiedz się, jakie dane zbieramy, w jakim celu i jakie przysługują Ci prawa (RODO).",
   robots: { index: false, follow: false },
 };
 
 export default function PolitykaPrywatnosci() {
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Strona Główna",
+        "item": "https://stawka-godzinowa.pl"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Polityka Prywatności",
+        "item": "https://stawka-godzinowa.pl/polityka-prywatnosci"
+      }
+    ]
+  };
+
   return (
-    <main style={{ maxWidth: 800, margin: "0 auto", padding: "2rem 1rem", lineHeight: 1.7 }}>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <main style={{ maxWidth: 800, margin: "0 auto", padding: "2rem 1rem", lineHeight: 1.7 }}>
       <h1>Polityka Prywatności</h1>
       <p><em>Ostatnia aktualizacja: 31 maja 2026 r.</em></p>
 
@@ -60,5 +85,6 @@ export default function PolitykaPrywatnosci() {
         policies.google.com.
       </p>
     </main>
+    </>
   );
 }

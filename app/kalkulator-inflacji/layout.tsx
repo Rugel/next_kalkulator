@@ -113,11 +113,6 @@ export default function InflationLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, webAppSchema, faqSchema]) }}
             />
-            <AggregateRatingSchema
-                name="Kalkulator Inflacji"
-                description="Oblicz wartość pieniądza w czasie. Dane historyczne GUS od 1982 roku oraz prognozy do 2050 roku."
-                url="https://stawka-godzinowa.pl/kalkulator-inflacji"
-            />
             {children}
         </>
     );

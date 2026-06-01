@@ -4,7 +4,7 @@ import AggregateRatingSchema from "../components/AggregateRatingSchema";
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
-        canonical: '/wyliczenie_z_godzin',
+        canonical: '/wyliczenie-z-godzin',
     },
     title: "Kalkulator Wynagrodzeń z Godzin Pracy 2026 - Oblicz Płace UoP",
     description: "Oblicz wynagrodzenie netto z godzin pracy. Kalkulator uwzględnia stawkę godzinową, nadgodziny, dni wolne, urlop oraz zwolnienie chorobowe (UoP).",
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy",
         description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.",
-        url: "https://stawka-godzinowa.pl/wyliczenie_z_godzin",
+        url: "https://stawka-godzinowa.pl/wyliczenie-z-godzin",
         siteName: "Stawka Godzinowa",
         images: [
             {
@@ -52,7 +52,7 @@ export default function WyliczenieLayout({
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Wyliczenie z Godzin Pracy",
-                "item": "https://stawka-godzinowa.pl/wyliczenie_z_godzin"
+                "item": "https://stawka-godzinowa.pl/wyliczenie-z-godzin"
             }
         ]
     };
@@ -122,11 +122,6 @@ export default function WyliczenieLayout({
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema, faqSchema]) }}
-            />
-            <AggregateRatingSchema
-                name="Kalkulator Wynagrodzeń z Godzin"
-                description="Zaawansowany kalkulator wynagrodzeń obliczający płacę netto na podstawie przepracowanych godzin, stawki, urlopów i chorobowego."
-                url="https://stawka-godzinowa.pl/wyliczenie_z_godzin"
             />
             {children}
         </>

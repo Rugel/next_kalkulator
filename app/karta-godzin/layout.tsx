@@ -5,7 +5,7 @@ import "./print.css";
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     alternates: {
-        canonical: '/karta_godzin',
+        canonical: '/karta-godzin',
     },
     robots: {
         index: true,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Karta ewidencji czasu pracy - drukuj PDF dla dowolnego miesiąca",
         description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
-        url: "https://stawka-godzinowa.pl/karta_godzin",
+        url: "https://stawka-godzinowa.pl/karta-godzin",
         siteName: "Stawka Godzinowa",
         images: [
             {
@@ -57,7 +57,7 @@ export default function KartaGodzinLayout({
                 "@type": "ListItem",
                 "position": 2,
                 "name": "Karta Ewidencji Czasu Pracy",
-                "item": "https://stawka-godzinowa.pl/karta_godzin"
+                "item": "https://stawka-godzinowa.pl/karta-godzin"
             }
         ]
     };
@@ -91,12 +91,6 @@ export default function KartaGodzinLayout({
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema]) }}
-            />
-            <AggregateRatingSchema
-                name="Generator Karty Ewidencji Czasu Pracy"
-                description="Wygeneruj i wydrukuj kartę ewidencji czasu pracy (PDF) dla dowolnego miesiąca."
-                url="https://stawka-godzinowa.pl/karta_godzin"
-                category="BusinessApplication"
             />
             {children}
         </>

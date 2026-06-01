@@ -98,11 +98,6 @@ export default function B2BLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
             />
-            <AggregateRatingSchema
-                name="Kalkulator B2B 2026"
-                description="Narzędzie do obliczania wynagrodzenia netto dla przedsiębiorców (B2B) w Polsce na rok 2026."
-                url="https://stawka-godzinowa.pl/kalkulator-b2b"
-            />
             {children}
         </>
     );

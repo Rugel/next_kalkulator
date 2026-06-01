@@ -99,11 +99,6 @@ export default function ZlecenieLayout({
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, faqSchema]) }}
             />
-            <AggregateRatingSchema
-                name="Kalkulator Umowy Zlecenie"
-                description="Oblicz wynagrodzenie netto z umowy zlecenia. Aktualne stawki i przepisy na rok 2026."
-                url="https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie"
-            />
             {children}
         </>
     );

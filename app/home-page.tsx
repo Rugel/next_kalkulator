@@ -199,6 +199,9 @@ class StaGodz extends React.Component {
                             <div className='desc'>
                                 <p>
                                     Znajomość swojej stawki za godzinę pracy jest kluczowa przy negocjacjach płacowych, planowaniu budżetu domowego oraz porównywaniu ofert pracy.
+                                    <Link href="/karta-godzin">Karta ewidencji czasu pracy</Link> – pobierz i wydrukuj PDF z miesięczną ewidencją czasu pracy dla pracownika.<br />
+                                    <Link href="/wyliczenie-z-godzin">Wyliczenie wynagrodzenia z godzin pracy</Link> – oblicz pensję netto na podstawie faktycznie przepracowanych godzin, nadgodzin, urlopu i chorobowego.<br />
+                                    <Link href="/kalkulator-inflacji">Kalkulator Inflacji w latach 1982-2050</Link> – sprawdź, jak inflacja zmieniła wartość Twoich pieniędzy w czasie.<br /><br />
                                     Ten <strong>kalkulator stawki godzinowej</strong> zapewnia:
                                 </p>
                                 <ul>
