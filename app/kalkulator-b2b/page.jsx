@@ -19,7 +19,7 @@ const B2BPage = () => {
     const [isChorobowe, setIsChorobowe] = useState(true);
     const [ryczaltRate, setRyczaltRate] = useState(0.12); // default 12%
 
-    const [results, setResults] = useState(calculateB2B(0, 0, 'liniowy', {}));
+    const [results, setResults] = useState(calculateB2B(10000, 0, 'liniowy', { zusVariant: 'duzy_zus', isChorobowe: true, ryczaltRate: 0.12, isFp: true }));
 
     // Effect to calculate
     useEffect(() => {
