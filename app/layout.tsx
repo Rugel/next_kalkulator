@@ -25,7 +25,10 @@ export const viewport = {
 
 export const metadata = {
   metadataBase: new URL('https://stawka-godzinowa.pl'),
-  // canonical i OpenGraph definiowane per-page w page.tsx / podstronach
+  // canonical fallback dla stron bez własnego canonical w page.tsx
+  alternates: {
+    canonical: 'https://stawka-godzinowa.pl',
+  },
   title: {
     template: '%s | stawka-godzinowa.pl',
     default: 'Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto',

@@ -1,0 +1,387 @@
+.logoHero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.logo {
+  width: auto;
+  height: auto;
+}
+
+.cardsSection {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--bank-navy-800);
+  margin-bottom: 2rem;
+  letter-spacing: -0.02em;
+}
+
+.cardsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  background: var(--bank-surface-elevated);
+  border: 1px solid var(--bank-border);
+  border-radius: var(--bank-radius-lg);
+  box-shadow: var(--bank-shadow-sm);
+  text-decoration: none;
+  color: var(--bank-text);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  -webkit-user-select: auto;
+  -moz-user-select: auto;
+  -ms-user-select: auto;
+  user-select: auto;
+  flex: 1 1 280px;
+  max-width: 380px;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--bank-shadow-md);
+  border-color: var(--bank-teal);
+}
+
+.cardIcon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  line-height: 1;
+}
+
+.cardTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bank-navy-800);
+  margin-bottom: 0.75rem;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.9rem;
+  color: var(--bank-text-muted);
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
+}
+
+.aboutSection {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* --- Dlaczego warto --- */
+.whySection {
+  padding: 2rem 1.5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.whyText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--bank-text-muted);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* --- Tabela --- */
+.tableSection {
+  padding: 2rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.tableWrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.comparisonTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--bank-surface-elevated);
+  border-radius: var(--bank-radius-lg);
+  overflow: hidden;
+  box-shadow: var(--bank-shadow-sm);
+}
+
+.comparisonTable th,
+.comparisonTable td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--bank-border);
+  white-space: nowrap;
+}
+
+.comparisonTable thead th {
+  background: var(--bank-navy-800);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.comparisonTable tbody tr:nth-child(even) {
+  background: var(--bank-surface);
+}
+
+.comparisonTable tbody tr:hover {
+  background: rgba(13, 122, 107, 0.06);
+}
+
+.tableNote {
+  margin-top: 0.75rem;
+  font-size: 0.82rem;
+  color: var(--bank-text-muted);
+  text-align: center;
+}
+
+/* --- Jak działa --- */
+.howSection {
+  padding: 2rem 1.5rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.howText {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--bank-text-muted);
+  max-width: 720px;
+  margin: 0 auto 1.5rem;
+}
+
+.howList {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.howList li {
+  padding: 0.6rem 1rem;
+  background: var(--bank-surface-elevated);
+  border: 1px solid var(--bank-border);
+  border-radius: var(--bank-radius-md);
+  font-size: 0.95rem;
+  color: var(--bank-text);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .cardsSection {
+    padding: 2rem 1rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.4rem;
+  }
+
+  .cardsGrid {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .card {
+    padding: 1.5rem 1rem;
+    flex: 0 1 100%;
+    max-width: 400px;
+  }
+
+  .comparisonTable {
+    font-size: 0.8rem;
+  }
+
+  .comparisonTable th,
+  .comparisonTable td {
+    padding: 0.5rem 0.65rem;
+  }
+
+}
+
+/* --- Sekcja FAQ --- */
+.faqSection {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faqList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faqItem {
+  background: var(--bank-surface-elevated);
+  border: 1px solid var(--bank-border);
+  border-radius: var(--bank-radius-md);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+}
+
+.faqItem:hover {
+  border-color: var(--bank-teal);
+}
+
+.faqQuestion {
+  padding: 1rem 1.25rem;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--bank-navy-800);
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.faqQuestion::-webkit-details-marker {
+  display: none;
+}
+
+.faqQuestion::after {
+  content: '+';
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: var(--bank-teal);
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+  flex-shrink: 0;
+}
+
+details[open] .faqQuestion::after {
+  content: '−';
+}
+
+.faqAnswer {
+  padding: 0 1.25rem 1rem;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--bank-text-muted);
+}
+
+/* --- Sekcja "Dla kogo" --- */
+.audienceSection {
+  padding: 2rem 1.5rem 3rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.audienceContent {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--bank-text-muted);
+}
+
+.audienceList {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.audienceList li {
+  padding: 0.75rem 1rem;
+  background: var(--bank-surface-elevated);
+  border: 1px solid var(--bank-border);
+  border-radius: var(--bank-radius-md);
+  font-size: 0.95rem;
+  color: var(--bank-text);
+  line-height: 1.5;
+}
+
+.audienceList li strong {
+  color: var(--bank-navy-800);
+}
+
+/* --- Sekcja "Dlaczego warto" z obrazkiem --- */
+.whyContent {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 2rem;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.whyTextWrapper {
+  flex: 1 1 55%;
+}
+
+.whyImageWrapper {
+  flex: 0 0 45%;
+}
+
+.whyImage {
+  width: 100%;
+  height: auto;
+  border-radius: var(--bank-radius-lg);
+  box-shadow: var(--bank-shadow-sm);
+}
+
+@media (max-width: 768px) {
+  .whyContent {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .whyTextWrapper,
+  .whyImageWrapper {
+    flex: 0 0 100%;
+  }
+
+  .faqSection {
+    padding: 2rem 1rem 2rem;
+  }
+
+  .faqQuestion {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+
+  .faqAnswer {
+    padding: 0 1rem 0.85rem;
+    font-size: 0.9rem;
+  }
+
+  .audienceSection {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .audienceList li {
+    font-size: 0.9rem;
+    padding: 0.65rem 0.85rem;
+  }
+}

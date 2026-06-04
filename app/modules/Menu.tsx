@@ -7,14 +7,15 @@ import { useSpinner } from '../components/GlobalSpinner';
 import CommentScrollLink from '../components/CommentScrollLink';
 
 interface MenuProps {
-  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b' | 'inflacja';
+  currentPage: 'stawka' | 'brutto_netto' | 'godziny' | 'karta_godzin' | 'zlecenie' | 'b2b' | 'inflacja' | 'strona-glowna';
 }
 
 const Menu: React.FC<MenuProps> = ({ currentPage }) => {
   const { showSpinner } = useSpinner();
 
     const menuItems = [
-        { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/' },
+        { id: 'strona-glowna', label: 'Strona Główna', href: '/' },
+        { id: 'stawka', label: 'Kalkulator stawki godz. (UoP)', href: '/kalkulator-stawki' },
         { id: 'godziny', label: 'Wyliczenie z godzin pracy (UoP)', href: '/wyliczenie-z-godzin' },
         { id: 'brutto_netto', label: 'Przelicznik BRUTTO/NETTO (UoP)', href: '/brutto-netto' },
         { id: 'zlecenie', label: 'Umowa Zlecenie', href: '/kalkulator-umowy-zlecenie' },
@@ -81,7 +82,7 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
       {/* Static Menu - Always visible at top of its position */}
       <div ref={containerRef} className={styles.container}>
         <div className={styles.logoContainer}>
-          <Link href="/" className={styles.logoLink} onClick={() => handleNavigation('stawka')}>
+          <Link href="/" className={styles.logoLink} onClick={() => handleNavigation('strona-glowna')}>
             <Image
               src="/logo.webp"
               alt="Stawka Godzinowa"

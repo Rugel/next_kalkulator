@@ -9,6 +9,8 @@ export default function WidgetsWrapper({ children }: { children: React.ReactNode
     // Pages where widgets should be visible (main calculator pages)
     const widgetPages = [
         '/',
+        '/strona-glowna',
+        '/kalkulator-stawki',
         '/brutto-netto',
         '/kalkulator-b2b',
         '/kalkulator-umowy-zlecenie',

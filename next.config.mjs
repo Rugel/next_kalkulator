@@ -19,7 +19,7 @@ const nextConfig = {
     return [
       {
         source: '/kalkulator_stawki',
-        destination: '/',
+        destination: '/kalkulator-stawki',
         permanent: true,
       },
       {

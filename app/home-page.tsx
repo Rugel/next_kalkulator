@@ -12,7 +12,6 @@ import stylesList from "./components/ResultsList.module.css";
 import stylesInput from "./modules/Input.module.css";
 import CheckBox from './modules/CheckBox';
 import stylesFieldset from "./components/Fieldset.module.css";
-import CommentScrollLink from "./components/CommentScrollLink";
 
 
 class StaGodz extends React.Component {

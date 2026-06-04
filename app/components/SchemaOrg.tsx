@@ -1,24 +1,4 @@
 export default function SchemaOrg() {
-  const webApp = {
-    "@context": "https://schema.org",
-    "@type": "WebApplication",
-    "name": "Kalkulator Stawki Godzinowej 2026",
-    "url": "https://stawka-godzinowa.pl",
-    "description": "Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia.",
-    "applicationCategory": "FinanceApplication",
-    "operatingSystem": "Web",
-    "inLanguage": "pl-PL",
-    "author": {
-      "@type": "Person",
-      "name": "Grzegorz Dychała"
-    },
-    "offers": {
-      "@type": "Offer",
-      "price": "0",
-      "priceCurrency": "PLN"
-    }
-  };
-
   const faq = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -68,10 +48,6 @@ export default function SchemaOrg() {
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webApp) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
