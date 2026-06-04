@@ -37,6 +37,11 @@ const nextConfig = {
         destination: '/karta-godzin',
         permanent: true,
       },
+      {
+        source: '/godziny',
+        destination: '/wyliczenie-z-godzin',
+        permanent: true,
+      },
     ]
   },
 };

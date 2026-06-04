@@ -17,8 +17,7 @@ import { GlobalSpinner } from "./components/GlobalSpinner";
 import WidgetsWrapper from "./components/WidgetsWrapper";
 import ConditionalAdSense from "./components/ConditionalAdSense";
 import AggregateRatingSchema from "./components/AggregateRatingSchema";
-import FloatingCalculator from "./components/FloatingCalculator";
-
+import WynikVisibilityHandler from "./components/WynikVisibilityHandler";
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -31,7 +30,7 @@ export const metadata = {
     template: '%s | stawka-godzinowa.pl',
     default: 'Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto',
   },
-  description: "🧮 Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.",
+  description: "Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.",
   keywords: "kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa 2026, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
   robots: {
     index: true,
@@ -225,6 +224,7 @@ export default function RootLayout({
       </head>
       <body className={roboto.className}>
         <GlobalSpinner>
+          <WynikVisibilityHandler />
           <AnalyticsListener />
           {children}
           <WidgetsWrapper>
@@ -238,7 +238,6 @@ export default function RootLayout({
           <footer className="footer">
             <Footer />
           </footer>
-          <FloatingCalculator />
         </GlobalSpinner>
       </body>
     </html>

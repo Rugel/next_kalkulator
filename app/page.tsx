@@ -5,7 +5,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
     title: "Kalkulator stawki godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto",
     description:
-        "🧮 Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK. ✅ Sprawdź, ile zarabiasz na godzinę!",
+        "Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK. Sprawdź, ile zarabiasz na godzinę!",
     keywords:
         "kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa 2026, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026, kalkulator wynagrodzeń",
     alternates: {
