@@ -18,6 +18,7 @@ import WidgetsWrapper from "./components/WidgetsWrapper";
 import ConditionalAdSense from "./components/ConditionalAdSense";
 import AggregateRatingSchema from "./components/AggregateRatingSchema";
 import WynikVisibilityHandler from "./components/WynikVisibilityHandler";
+import CookieBanner from "./components/CookieBanner";
 export const viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -226,6 +227,7 @@ export default function RootLayout({
         <ConditionalAdSense />
       </head>
       <body className={roboto.className}>
+        <CookieBanner />
         <GlobalSpinner>
           <WynikVisibilityHandler />
           <AnalyticsListener />

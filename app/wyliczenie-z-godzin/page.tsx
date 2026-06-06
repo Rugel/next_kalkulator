@@ -3,7 +3,6 @@ import React from 'react';
 import Input from '../modules/input';
 import Desc from '../modules/descryption';
 import Swal from 'sweetalert2';
-import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
@@ -206,7 +205,6 @@ class WyliczenieZGodzin extends React.Component {
                         adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                         adSlot="4009249960" // ID jednostki reklamowej
                     />
-                    <Cookie />
                 </main>
             </>
         )

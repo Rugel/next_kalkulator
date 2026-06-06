@@ -3,7 +3,6 @@
 import React from 'react';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
-import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import CheckBox from '../modules/CheckBox';
@@ -192,7 +191,6 @@ class BruttoNetto extends React.Component {
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="7987991607" // ID jednostki reklamowej
         />
-        <Cookie />
       </>
     )
   }

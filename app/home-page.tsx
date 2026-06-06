@@ -3,7 +3,6 @@ import Link from 'next/link';
 import React from 'react';
 import Input from './modules/input';
 import Swal from 'sweetalert2';
-import Cookie from './modules/cookies';
 import AdSense from './modules/AdSense';
 import AdSenseInArticle from './modules/AdSenseInArticle';
 import Menu from './modules/Menu';
@@ -313,8 +312,7 @@ class StaGodz extends React.Component {
                 <AdSense
                     adClient="ca-pub-8789064360135564"
                     adSlot="6368891825"
-                />
-                <Cookie />
+        />
             </>
         )
     }

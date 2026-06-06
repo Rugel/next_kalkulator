@@ -17,7 +17,7 @@ const CommentScrollLink = ({ text = "Zostaw komentarz!" }: { text?: string }) =>
             style={{
                 fontSize: '0.85em',
                 textDecoration: 'underline',
-                color: '#1a73e8',
+                color: '#0b57d0',
                 cursor: 'pointer',
                 display: 'inline-block',
                 marginTop: '5px',

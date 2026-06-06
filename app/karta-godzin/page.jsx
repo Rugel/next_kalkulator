@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Print from '../modules/print';
-import Cookie from '../modules/cookies';
 import AdSense from '../modules/AdSense';
 import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
@@ -317,8 +316,7 @@ class KartaGodz extends React.Component {
         <AdSense
           adClient="ca-pub-8789064360135564"
           adSlot="7166660680"
-        />
-        <Cookie />
+                    />
       </>
     );
   }
