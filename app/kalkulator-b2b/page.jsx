@@ -45,14 +45,14 @@ const B2BPage = () => {
         <>
             <Menu currentPage="b2b" />
             <header>
+                <div id="tytul">
+                    <h1>Kalkulator B2B 2026</h1>
+                </div>
                 <p className="wynik">Dochód netto wynosi:<br />
                     <span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>
                         {formatMoney(results.netto)}
                     </span> zł<br />
                 </p>
-                <div id="tytul">
-                    <h1>Kalkulator B2B 2026</h1>
-                </div>
             </header>
 
 

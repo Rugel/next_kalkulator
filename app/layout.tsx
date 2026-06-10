@@ -65,7 +65,6 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="preload" href="/image.webp" as="image" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <AggregateRatingSchema
