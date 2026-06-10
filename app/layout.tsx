@@ -1,5 +1,6 @@
 import "./globals.css";
 import { Roboto } from 'next/font/google';
+import { CURRENT_YEAR } from './lib/current-year';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -32,10 +33,10 @@ export const metadata = {
   },
   title: {
     template: '%s | stawka-godzinowa.pl',
-    default: 'Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto',
+    default: `Kalkulator Stawki Godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,
   },
-  description: "Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.",
-  keywords: "kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa 2026, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac 2026",
+  description: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.`,
+  keywords: `kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa ${CURRENT_YEAR}, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac ${CURRENT_YEAR}`,
   robots: {
     index: true,
     follow: true,
@@ -64,16 +65,17 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="preload" href="/image.webp" as="image" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <AggregateRatingSchema
           name="Stawka Godzinowa"
-          description="Precyzyjny kalkulator stawki godzinowej 2026. Narzędzie do wyliczania wynagrodzenia netto i brutto z uwzględnieniem składek ZUS i dni roboczych."
+          description={`Precyzyjny kalkulator stawki godzinowej ${CURRENT_YEAR}. Narzędzie do wyliczania wynagrodzenia netto i brutto z uwzględnieniem składek ZUS i dni roboczych.`}
           url="https://stawka-godzinowa.pl"
         />
         <meta name="google-site-verification" content="wWDCgkmW374nhFic4ZNADQdsdDPPJq4hrp3cdf81KXw" />
         <meta name="author" content="Grzegorz Dychała" />
-        <meta name="copyright" content="Copyright © 2026 stawka-godzinowa.pl" />
+        <meta name="copyright" content={`Copyright © ${CURRENT_YEAR} stawka-godzinowa.pl`} />
         <link rel="alternate" hrefLang="pl" href="https://stawka-godzinowa.pl" />
         <link rel="alternate" hrefLang="x-default" href="https://stawka-godzinowa.pl" />
 
@@ -124,9 +126,9 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@id": "https://stawka-godzinowa.pl/#webapp",
               "@type": "WebApplication",
-              "name": "Kalkulator Stawki Godzinowej 2026",
+              "name": `Kalkulator Stawki Godzinowej ${CURRENT_YEAR}`,
               "alternateName": "stawka-godzinowa.pl",
-              "description": "Precyzyjny kalkulator stawki godzinowej 2026. Oblicz kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej oraz składek ZUS i podatków. Obsługuje umowę o pracę, zlecenie i B2B.",
+              "description": `Precyzyjny kalkulator stawki godzinowej ${CURRENT_YEAR}. Oblicz kwotę netto lub brutto na podstawie godzin pracy, stawki godzinowej oraz składek ZUS i podatków. Obsługuje umowę o pracę, zlecenie i B2B.`,
               "url": "https://stawka-godzinowa.pl",
               "image": "https://stawka-godzinowa.pl/image.webp",
               "applicationCategory": "FinanceApplication",
@@ -216,7 +218,7 @@ export default function RootLayout({
               "name": "Stawka Godzinowa",
               "url": "https://stawka-godzinowa.pl",
               "logo": "https://stawka-godzinowa.pl/logo.webp",
-              "description": "Profesjonalny kalkulator stawki godzinowej i wynagrodzeń dla umów o pracę, zlecenia i B2B. Aktualne dane na rok 2026.",
+              "description": `Profesjonalny kalkulator stawki godzinowej i wynagrodzeń dla umów o pracę, zlecenia i B2B. Aktualne dane na rok ${CURRENT_YEAR}.`,
               "sameAs": [
                 "https://www.facebook.com/stawkagodzinowa",
                 "https://twitter.com/stawkagodzinowa"

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
+import { CURRENT_YEAR } from "../lib/current-year";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    title: "Kalkulator Umowy Zlecenie 2026 - Oblicz Netto i Składki ZUS",
-    description: "Oblicz wynagrodzenie netto z umowy zlecenie w 2026 roku. Sprawdź stawkę godzinową, składki ZUS i podatek. Uwzględnia status studenta i zerowy PIT.",
-    keywords: "kalkulator umowy zlecenie, umowa zlecenie 2026, wynagrodzenie netto, kalkulator płac, pit-2, zwolnienie z podatku, student zlecenia, składki zus zlecenie",
+    title: `Kalkulator Umowy Zlecenie ${CURRENT_YEAR} - Oblicz Netto i Składki ZUS`,
+    description: `Oblicz wynagrodzenie netto z umowy zlecenie w ${CURRENT_YEAR} roku. Sprawdź stawkę godzinową, składki ZUS i podatek. Uwzględnia status studenta i zerowy PIT.`,
+    keywords: `kalkulator umowy zlecenie, umowa zlecenie ${CURRENT_YEAR}, wynagrodzenie netto, kalkulator płac, pit-2, zwolnienie z podatku, student zlecenia, składki zus zlecenie`,
     openGraph: {
-        title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",
-        description: "Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok 2026. Uwzględnia ulgę dla młodych i koszty autorskie.",
+        title: `Kalkulator Umowy Zlecenie ${CURRENT_YEAR} - Sprawdź ile dostaniesz na rękę`,
+        description: `Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok ${CURRENT_YEAR}. Uwzględnia ulgę dla młodych i koszty autorskie.`,
         url: "https://stawka-godzinowa.pl/kalkulator-umowy-zlecenie",
         siteName: "Stawka Godzinowa",
         images: [
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Kalkulator Umowy Zlecenie 2026 - Sprawdź ile dostaniesz na rękę",
-        description: "Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok 2026. Uwzględnia ulgę dla młodych i koszty autorskie.",
+        title: `Kalkulator Umowy Zlecenie ${CURRENT_YEAR} - Sprawdź ile dostaniesz na rękę`,
+        description: `Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok ${CURRENT_YEAR}. Uwzględnia ulgę dla młodych i koszty autorskie.`,
         images: ["https://stawka-godzinowa.pl/kalkulator_zlecenie.webp"],
     }
 };

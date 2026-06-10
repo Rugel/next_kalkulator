@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
+import { CURRENT_YEAR } from "../lib/current-year";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    title: "Kalkulator Wynagrodzeń z Godzin Pracy 2026 - Oblicz Płace UoP",
+    title: `Kalkulator Wynagrodzeń z Godzin Pracy ${CURRENT_YEAR} - Oblicz Płace UoP`,
     description: "Oblicz wynagrodzenie netto z godzin pracy. Kalkulator uwzględnia stawkę godzinową, nadgodziny, dni wolne, urlop oraz zwolnienie chorobowe (UoP).",
     keywords: "wyliczenie pensji z godzin, kalkulator godzin pracy, obliczanie wynagrodzenia z przepracowanych godzin, kalkulator płac uop",
     openGraph: {
         title: "Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy",
-        description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.",
+        description: `Najlepszy kalkulator wynagrodzeń ${CURRENT_YEAR}. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.`,
         url: "https://stawka-godzinowa.pl/wyliczenie-z-godzin",
         siteName: "Stawka Godzinowa",
         images: [
@@ -43,7 +44,7 @@ export const metadata: Metadata = {
     twitter: {
         card: "summary_large_image",
         title: "Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy",
-        description: "Najlepszy kalkulator wynagrodzeń 2026. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.",
+        description: `Najlepszy kalkulator wynagrodzeń ${CURRENT_YEAR}. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.`,
         images: ["https://stawka-godzinowa.pl/wyliczenie_z_godzin.webp"],
     },
 };

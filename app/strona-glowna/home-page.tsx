@@ -3,6 +3,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Menu from '../modules/Menu';
+import { CURRENT_YEAR } from '../lib/current-year';
 import styles from './HomePage.module.css';
 
 const TABLE_ROWS: [string, string, string, string, string, string, string][] = [
@@ -44,14 +45,14 @@ export default function HomePage() {
             <Menu currentPage="strona-glowna" />
             <header>
                 <div id="tytul">
-                    <h1>Kalkulator stawki godzinowej 2026 – Oblicz ile naprawdę zarabiasz</h1>
+                    <h1>Kalkulator stawki godzinowej {CURRENT_YEAR} – Oblicz ile naprawdę zarabiasz</h1>
                     <p className="seo-intro">
                         Szukasz wiarygodnego sposobu, aby sprawdzić <strong>realną wartość swojej stawki godzinowej</strong>?
                         Witaj na stawka-godzinowa.pl &ndash; praktycznym i aktualnym narzędziu, które pomaga precyzyjnie przeliczać wynagrodzenie
                         i obliczyć <strong>ile zarabiasz na godzinę</strong>.
                     </p>
                     <p className="seo-intro" style={{ marginTop: '1rem' }}>
-                        W 2026 roku minimalne wynagrodzenie na umowie o pracę wynosi <strong>4806 zł brutto miesięcznie</strong>,
+                        W {CURRENT_YEAR} roku minimalne wynagrodzenie na umowie o pracę wynosi <strong>4806 zł brutto miesięcznie</strong>,
                         a minimalna stawka godzinowa na umowie zlecenie to <strong>31,40 zł brutto</strong>.
                         Sprawdź, ile wynosi Twoja rzeczywista stawka godzinowa netto po odliczeniu składek ZUS i podatku.
                     </p>
@@ -71,15 +72,15 @@ export default function HomePage() {
                                 <strong>działalnością gospodarczą (B2B)</strong>.
                             </p>
                             <p className={styles.whyText} style={{ marginTop: '1rem' }}>
-                                Dzięki kalkulatorowi dowiesz się, ile wynoszą <strong>koszty pracodawcy UoP</strong> w 2026 roku,
-                                jakie <strong>składki ZUS 2026</strong> są potrącane z Twojego wynagrodzenia oraz jaka jest
+                                Dzięki kalkulatorowi dowiesz się, ile wynoszą <strong>koszty pracodawcy UoP</strong> w {CURRENT_YEAR} roku,
+                                jakie <strong>składki ZUS {CURRENT_YEAR}</strong> są potrącane z Twojego wynagrodzenia oraz jaka jest
                                 różnica między wynagrodzeniem brutto a netto w zależności od formy zatrudnienia.
                             </p>
                         </div>
                         <div className={styles.whyImageWrapper}>
                             <Image
                                 src="/image.webp"
-                                alt="Kalkulator stawki godzinowej 2026 – oblicz wynagrodzenie netto i brutto"
+                                alt={`Kalkulator stawki godzinowej ${CURRENT_YEAR} – oblicz wynagrodzenie netto i brutto`}
                                 width={600}
                                 height={315}
                                 className={styles.whyImage}
@@ -91,7 +92,7 @@ export default function HomePage() {
 
                 {/* --- Tabela porównawcza --- */}
                 <section className={styles.tableSection} aria-labelledby="table-heading">
-                    <h2 id="table-heading" className={styles.sectionTitle}>Porównanie form zatrudnienia w 2026 roku</h2>
+                    <h2 id="table-heading" className={styles.sectionTitle}>Porównanie form zatrudnienia w {CURRENT_YEAR} roku</h2>
                     <div className={styles.tableWrapper}>
                         <table className={styles.comparisonTable}>
                             <thead>

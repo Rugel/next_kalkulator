@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
+import { CURRENT_YEAR } from "../lib/current-year";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
-    description: "Sprawdź inflację skumulowaną w Polsce od 1982 roku. Oblicz wartość swoich oszczędności po uwzględnieniu inflacji i denominacji. Prognozy do 2050 roku.",
+    title: `Kalkulator Inflacji w latach 1982-${CURRENT_YEAR + 24} | Oblicz wartość pieniądza`,
+    description: `Sprawdź inflację skumulowaną w Polsce od 1982 roku. Oblicz wartość swoich oszczędności po uwzględnieniu inflacji i denominacji. Prognozy do ${CURRENT_YEAR + 24} roku.`,
     keywords: "kalkulator inflacji, inflacja w Polsce, siła nabywcza pieniądza, GUS inflacja, denominacja 1995, kalkulator wartości pieniądza, prognoza inflacji",
     openGraph: {
-        title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
-        description: "Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.",
+        title: `Kalkulator Inflacji w latach 1982-${CURRENT_YEAR + 24} | Oblicz wartość pieniądza`,
+        description: `Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.`,
         url: "https://stawka-godzinowa.pl/kalkulator-inflacji",
         siteName: "Stawka Godzinowa",
         images: [
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Kalkulator Inflacji w latach 1982-2050 | Oblicz wartość pieniądza",
-        description: "Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.",
+        title: `Kalkulator Inflacji w latach 1982-${CURRENT_YEAR + 24} | Oblicz wartość pieniądza`,
+        description: `Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.`,
         images: ["https://stawka-godzinowa.pl/kalkulator_inflacji.webp"],
     }
 };

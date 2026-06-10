@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
+import { CURRENT_YEAR } from "../lib/current-year";
 
 export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
@@ -21,12 +22,12 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    title: "Kalkulator B2B 2026 - Ryczałt, Liniowy, Skala - Oblicz Netto",
-    description: "Kompleksowy kalkulator B2B na 2026 rok. Porównaj Ryczałt, Podatek Liniowy i Skalę Podatkową. Oblicz ZUS, składkę zdrowotną i realny zysk netto swojej firmy.",
-    keywords: "kalkulator b2b, kalkulator wynagrodzeń 2026, samozatrudnienie, ryczałt vs liniowy, składki zus 2026, podatek b2b, faktura netto",
+    title: `Kalkulator B2B ${CURRENT_YEAR} - Ryczałt, Liniowy, Skala - Oblicz Netto`,
+    description: `Kompleksowy kalkulator B2B na ${CURRENT_YEAR} rok. Porównaj Ryczałt, Podatek Liniowy i Skalę Podatkową. Oblicz ZUS, składkę zdrowotną i realny zysk netto swojej firmy.`,
+    keywords: `kalkulator b2b, kalkulator wynagrodzeń ${CURRENT_YEAR}, samozatrudnienie, ryczałt vs liniowy, składki zus ${CURRENT_YEAR}, podatek b2b, faktura netto`,
     openGraph: {
-        title: "Kalkulator B2B 2026 - Sprawdź ile zarobisz na rękę",
-        description: "Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok 2026. Porównaj formy opodatkowania.",
+        title: `Kalkulator B2B ${CURRENT_YEAR} - Sprawdź ile zarobisz na rękę`,
+        description: `Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok ${CURRENT_YEAR}. Porównaj formy opodatkowania.`,
         url: "https://stawka-godzinowa.pl/kalkulator-b2b",
         siteName: "Stawka Godzinowa",
         images: [
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
                 url: "https://stawka-godzinowa.pl/kalkulator_b2b.webp",
                 width: 1200,
                 height: 630,
-                alt: "Kalkulator B2B 2026",
+                alt: `Kalkulator B2B ${CURRENT_YEAR}`,
             },
         ],
         locale: "pl_PL",
@@ -42,8 +43,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Kalkulator B2B 2026 - Sprawdź ile zarobisz na rękę",
-        description: "Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok 2026. Porównaj formy opodatkowania.",
+        title: `Kalkulator B2B ${CURRENT_YEAR} - Sprawdź ile zarobisz na rękę`,
+        description: `Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok ${CURRENT_YEAR}. Porównaj formy opodatkowania.`,
         images: ["https://stawka-godzinowa.pl/kalkulator_b2b.webp"],
     }
 };

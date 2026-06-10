@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
+import { CURRENT_YEAR } from "../lib/current-year";
 import "./print.css";
 
 export const metadata: Metadata = {
@@ -14,12 +15,12 @@ export const metadata: Metadata = {
         index: true,
         follow: true,
     },
-    title: "Karta ewidencji czasu pracy do druku - Generator PDF 2026",
-    description: "Pobierz i wydrukuj profesjonalną kartę ewidencji czasu pracy do druku. Darmowy generator PDF dla pracowników i pracodawców. Miesięczna ewidencja zgodna z przepisami.",
+    title: `Karta ewidencji czasu pracy do druku - Generator PDF ${CURRENT_YEAR}`,
+    description: `Pobierz i wydrukuj profesjonalną kartę ewidencji czasu pracy do druku. Darmowy generator PDF dla pracowników i pracodawców. Miesięczna ewidencja zgodna z przepisami.`,
     keywords: "karta ewidencji czasu pracy do druku, ewidencja czasu pracy pdf, generator karty godzin, miesięczny arkusz ewidencji, lista obecności pracownika do druku",
     openGraph: {
-        title: "Karta ewidencji czasu pracy do druku - Generator PDF 2026",
-        description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
+        title: `Karta ewidencji czasu pracy do druku - Generator PDF ${CURRENT_YEAR}`,
+        description: `Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku`,
         url: "https://stawka-godzinowa.pl/karta-godzin",
         siteName: "Stawka Godzinowa",
         images: [
@@ -35,8 +36,8 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: "Karta ewidencji czasu pracy do druku - Generator PDF 2026",
-        description: "Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku",
+        title: `Karta ewidencji czasu pracy do druku - Generator PDF ${CURRENT_YEAR}`,
+        description: `Pobierz kartę ewidencji czasu pracy pracownika w celu jej wydruku dla wybranego dowolnego miesiąca roku - karta godzin pracy - pdf do wydruku`,
         images: ["https://stawka-godzinowa.pl/karta_godzin_pracy.webp"],
     },
 };

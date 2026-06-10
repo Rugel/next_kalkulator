@@ -1,3 +1,5 @@
+import { CURRENT_YEAR } from '../lib/current-year';
+
 export default function SchemaOrg() {
   const faq = {
     "@context": "https://schema.org",
@@ -16,7 +18,7 @@ export default function SchemaOrg() {
         "name": "Ile godzin pracy ma typowy miesiąc?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Średnio w miesiącu przypada około 168 godzin pracy (21 dni roboczych x 8 godzin). Liczba ta zmienia się w zależności od świąt i układu kalendarza w 2026 roku."
+          "text": `Średnio w miesiącu przypada około 168 godzin pracy (21 dni roboczych x 8 godzin). Liczba ta zmienia się w zależności od świąt i układu kalendarza w ${CURRENT_YEAR} roku.`
         }
       },
       {
@@ -37,10 +39,10 @@ export default function SchemaOrg() {
       },
       {
         "@type": "Question",
-        "name": "Ile wynosi minimalna stawka godzinowa w 2026 roku?",
+        "name": `Ile wynosi minimalna stawka godzinowa w ${CURRENT_YEAR} roku?`,
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "W 2026 roku minimalna stawka godzinowa dla umowy zlecenie wynosi 31,40 zł brutto. Dla umowy o pracę minimalne wynagrodzenie miesięczne wynosi 4806 zł brutto, co przy 168 godzinach pracy daje 28,61 zł brutto za godzinę."
+          "text": `W ${CURRENT_YEAR} roku minimalna stawka godzinowa dla umowy zlecenie wynosi 31,40 zł brutto. Dla umowy o pracę minimalne wynagrodzenie miesięczne wynosi 4806 zł brutto, co przy 168 godzinach pracy daje 28,61 zł brutto za godzinę.`
         }
       }
     ]

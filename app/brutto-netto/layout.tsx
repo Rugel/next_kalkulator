@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import AggregateRatingSchema from "../components/AggregateRatingSchema";
 
+import { CURRENT_YEAR } from "../lib/current-year";
+
 export const metadata: Metadata = {
     metadataBase: new URL("https://stawka-godzinowa.pl"),
     alternates: {
@@ -22,9 +24,9 @@ export const metadata: Metadata = {
             'max-snippet': -1,
         },
     },
-    title: "Kalkulator wynagrodzeń Brutto Netto 2026 - Oblicz Płace UoP",
-    description: "Profesjonalny kalkulator wynagrodzeń brutto netto 2026. Szybko oblicz swoją płacę na rękę (UoP) uwzględniając PPK, progi podatkowe i ulgi podatkowe.",
-    keywords: "kalkulator wynagrodzeń brutto netto, przelicznik wynagrodzenia, brutto netto, wynagrodzenie netto, kalkulator płac 2026, umowa o pracę",
+    title: `Kalkulator wynagrodzeń Brutto Netto ${CURRENT_YEAR} - Oblicz Płace UoP`,
+    description: `Profesjonalny kalkulator wynagrodzeń brutto netto ${CURRENT_YEAR}. Szybko oblicz swoją płacę na rękę (UoP) uwzględniając PPK, progi podatkowe i ulgi podatkowe.`,
+    keywords: `kalkulator wynagrodzeń brutto netto, przelicznik wynagrodzenia, brutto netto, wynagrodzenie netto, kalkulator płac ${CURRENT_YEAR}, umowa o pracę`,
     openGraph: {
         title: "Kalkulator wynagrodzeń Brutto Netto",
         description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą szybkiego kalkulatora online. Dokładne wyniki dla umowy o pracę.",
