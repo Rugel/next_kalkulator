@@ -115,17 +115,7 @@ class StaGodz extends React.Component {
                         </p>
                     </div>
                 </header>
-
                 <main>
-                    <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
-                        <div className={stylesFieldset.box}>
-                            <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
-                            <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} /><br /><br />
-                            <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
-                            <CheckBox Id={'taxfree'} OnChange={this.handleChangeTaxFreeExcluded} Checked={this.state.isTaxFreeExcluded} Text={'nie odliczaj kwoty wolnej od podatku (ulga 300 zł)'} /><br /><br />
-                            <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
-                        </div>
-                    </fieldset>
                     <section>
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
                         <form id="calculator-form" aria-label="Kalkulator stawki godzinowej" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
@@ -312,7 +302,7 @@ class StaGodz extends React.Component {
                 <AdSense
                     adClient="ca-pub-8789064360135564"
                     adSlot="6368891825"
-        />
+                />
             </>
         )
     }
