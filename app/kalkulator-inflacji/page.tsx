@@ -166,7 +166,7 @@ const InflationCalculatorPage = () => {
                         </div>
                         {startYear < 1995 && (
                             <p style={{ fontSize: '0.8rem', color: '#666', marginTop: '-1rem', marginBottom: '1rem', padding: '0 1rem' }}>
-                                * Wartości dla roku {startYear} są podawane w „starych złotych" (PLZ) sprzed denominacji.
+                                {`* Wartości dla roku ${startYear} są podawane w "starych złotych" (PLZ) sprzed denominacji.`}
                             </p>
                         )}
 
