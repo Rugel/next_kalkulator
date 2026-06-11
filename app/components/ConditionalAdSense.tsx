@@ -16,7 +16,6 @@ export default function ConditionalAdSense() {
             src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8789064360135564"
             crossOrigin="anonymous"
             strategy="afterInteractive"
-            charSet="utf-8"
         />
     );
 }
