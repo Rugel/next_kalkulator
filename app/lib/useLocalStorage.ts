@@ -21,7 +21,7 @@ export function useLocalStorage<T>(key: string, initialValue: T): [T, (value: T 
     } catch (error) {
       console.warn(`Error reading localStorage key "${key}":`, error);
     }
-  }, []);
+  }, [key]);
 
   // Return a wrapped version of useState's setter function that
   // persists the new value to localStorage.
