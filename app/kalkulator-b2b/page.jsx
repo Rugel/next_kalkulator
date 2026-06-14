@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from '../lib/useLocalStorage';
 import Input from '../modules/input';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
@@ -11,13 +12,13 @@ import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
 
 const B2BPage = () => {
-    // State
-    const [revenue, setRevenue] = useState(10000);
-    const [costs, setCosts] = useState(0);
-    const [taxType, setTaxType] = useState('liniowy'); // skala, liniowy, ryczalt
-    const [zusVariant, setZusVariant] = useState('duzy_zus'); // ulga_start, preferencyjny, duzy_zus
-    const [isChorobowe, setIsChorobowe] = useState(true);
-    const [ryczaltRate, setRyczaltRate] = useState(0.12); // default 12%
+    // State - persisted in localStorage
+    const [revenue, setRevenue] = useLocalStorage('b2b_revenue', 10000);
+    const [costs, setCosts] = useLocalStorage('b2b_costs', 0);
+    const [taxType, setTaxType] = useLocalStorage('b2b_taxType', 'liniowy');
+    const [zusVariant, setZusVariant] = useLocalStorage('b2b_zusVariant', 'duzy_zus');
+    const [isChorobowe, setIsChorobowe] = useLocalStorage('b2b_isChorobowe', true);
+    const [ryczaltRate, setRyczaltRate] = useLocalStorage('b2b_ryczaltRate', 0.12);
 
     const [results, setResults] = useState(calculateB2B(10000, 0, 'liniowy', { zusVariant: 'duzy_zus', isChorobowe: true, ryczaltRate: 0.12, isFp: true }));
 

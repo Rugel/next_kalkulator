@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import LocalStorageHelper from '../lib/localStorageClass';
 import Image from 'next/image';
 import Print from '../modules/print';
 import AdSense from '../modules/AdSense';
@@ -19,8 +20,12 @@ mies < 10 ? mies = `0${mies}` : mies;
 class KartaGodz extends React.Component {
 
   state = {
-    inputVal: `${rok}-${mies}`,
+    inputVal: LocalStorageHelper.get('karta_inputVal', `${rok}-${mies}`),
     logo: ''
+  }
+
+  componentDidUpdate() {
+    LocalStorageHelper.set('karta_inputVal', this.state.inputVal);
   }
 
   InputHandleChange = (e) => { this.setState({ inputVal: e.target.value }) };

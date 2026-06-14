@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import LocalStorageHelper from '../lib/localStorageClass';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
 import AdSense from '../modules/AdSense';
@@ -15,12 +16,21 @@ import CommentScrollLink from '../components/CommentScrollLink';
 
 class BruttoNetto extends React.Component {
   state = {
-    BaN: 0,
-    isConfirmed: false,
-    isConfirmedPpk: false,
-    isConfirmedU26: false,
-    isConfirmeWorkplace: false,
-    isTaxFreeExcluded: false,
+    BaN: LocalStorageHelper.get('bn_BaN', 0),
+    isConfirmed: LocalStorageHelper.get('bn_isConfirmed', false),
+    isConfirmedPpk: LocalStorageHelper.get('bn_isConfirmedPpk', false),
+    isConfirmedU26: LocalStorageHelper.get('bn_isConfirmedU26', false),
+    isConfirmeWorkplace: LocalStorageHelper.get('bn_isConfirmeWorkplace', false),
+    isTaxFreeExcluded: LocalStorageHelper.get('bn_isTaxFreeExcluded', false),
+  }
+
+  componentDidUpdate() {
+    LocalStorageHelper.set('bn_BaN', this.state.BaN);
+    LocalStorageHelper.set('bn_isConfirmed', this.state.isConfirmed);
+    LocalStorageHelper.set('bn_isConfirmedPpk', this.state.isConfirmedPpk);
+    LocalStorageHelper.set('bn_isConfirmedU26', this.state.isConfirmedU26);
+    LocalStorageHelper.set('bn_isConfirmeWorkplace', this.state.isConfirmeWorkplace);
+    LocalStorageHelper.set('bn_isTaxFreeExcluded', this.state.isTaxFreeExcluded);
   }
 
   handleChangeBaN = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ BaN: e.target.value }) } else if (e.target.value < 0) { this.setState({ BaN: 0 }); Swal.fire({ text: 'Kwota nie może być ujemna', icon: 'warning' }) } }
@@ -106,7 +116,7 @@ class BruttoNetto extends React.Component {
           <section>
             <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Przelicz Brutto na Netto</h2>
             <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
-              <div className={stylesInput.formGroup}><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={undefined} number={1} /></div>
+              <div className={stylesInput.formGroup}><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={this.state.BaN} number={1} /></div>
             </form>
             <article>
               <AdSense

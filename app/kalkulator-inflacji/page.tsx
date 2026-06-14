@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect, useMemo } from 'react';
+import { useLocalStorage } from '../lib/useLocalStorage';
 import Menu from '../modules/Menu';
 import AdSense from '../modules/AdSense';
 import Input from '../modules/input';
@@ -12,10 +13,10 @@ import stylesInput from "../modules/Input.module.css";
 import CommentScrollLink from '../components/CommentScrollLink';
 
 const InflationCalculatorPage = () => {
-    const [amount, setAmount] = useState(100);
-    const [startYear, setStartYear] = useState(2024);
-    const [endYear, setEndYear] = useState(2025);
-    const [futureInflation, setFutureInflation] = useState(2.5);
+    const [amount, setAmount] = useLocalStorage('inflacja_amount', 100);
+    const [startYear, setStartYear] = useLocalStorage('inflacja_startYear', 2024);
+    const [endYear, setEndYear] = useLocalStorage('inflacja_endYear', 2025);
+    const [futureInflation, setFutureInflation] = useLocalStorage('inflacja_futureInflation', 2.5);
     const [results, setResults] = useState<CalculationResult[]>([]);
     const [alertShown, setAlertShown] = useState(false);
 

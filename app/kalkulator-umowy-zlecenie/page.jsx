@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import { useLocalStorage } from '../lib/useLocalStorage';
 import Input from '../modules/input';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
@@ -11,12 +12,12 @@ import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
 
 const ZleceniePage = () => {
-    const [brutto, setBrutto] = useState(0);
-    const [isStudentU26, setIsStudentU26] = useState(false);
-    const [isU26, setIsU26] = useState(false);
-    const [isChorobowe, setIsChorobowe] = useState(false);
-    const [isPit2, setIsPit2] = useState(true); // Default Yes for PIT-2 usually? Or No. Let's start false or match main page options style. Main page defaults to false usually.
-    const [costsRate50, setCostsRate50] = useState(false);
+    const [brutto, setBrutto] = useLocalStorage('zlecenie_brutto', 0);
+    const [isStudentU26, setIsStudentU26] = useLocalStorage('zlecenie_isStudentU26', false);
+    const [isU26, setIsU26] = useLocalStorage('zlecenie_isU26', false);
+    const [isChorobowe, setIsChorobowe] = useLocalStorage('zlecenie_isChorobowe', false);
+    const [isPit2, setIsPit2] = useLocalStorage('zlecenie_isPit2', true);
+    const [costsRate50, setCostsRate50] = useLocalStorage('zlecenie_costsRate50', false);
     const [results, setResults] = useState(calculateZlecenie(0, {}));
 
     useEffect(() => {

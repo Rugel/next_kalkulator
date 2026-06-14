@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import LocalStorageHelper from '../lib/localStorageClass';
 import Input from '../modules/input';
 import Desc from '../modules/descryption';
 import Swal from 'sweetalert2';
@@ -14,22 +15,41 @@ import CommentScrollLink from '../components/CommentScrollLink';
 
 class WyliczenieZGodzin extends React.Component {
     state = {
-        hours: 0,
-        rate: 0,
-        workdays: 0,
-        satsun: 0,
-        hollydays: 0,
-        illnessworkdays: 0,
-        illnessweekenddays: 0,
-        avaragehours: 168,
-        avaragemoney: 8408.17,
-        add: 0,
-        BaN: 0,
-        isConfirmed: false,
-        isConfirmedPpk: false,
-        isConfirmedU26: false,
-        isConfirmeWorkplace: false,
-        isTaxFreeExcluded: false,
+        hours: LocalStorageHelper.get('wzh_hours', 0),
+        rate: LocalStorageHelper.get('wzh_rate', 0),
+        workdays: LocalStorageHelper.get('wzh_workdays', 0),
+        satsun: LocalStorageHelper.get('wzh_satsun', 0),
+        hollydays: LocalStorageHelper.get('wzh_hollydays', 0),
+        illnessworkdays: LocalStorageHelper.get('wzh_illnessworkdays', 0),
+        illnessweekenddays: LocalStorageHelper.get('wzh_illnessweekenddays', 0),
+        avaragehours: LocalStorageHelper.get('wzh_avaragehours', 168),
+        avaragemoney: LocalStorageHelper.get('wzh_avaragemoney', 8408.17),
+        add: LocalStorageHelper.get('wzh_add', 0),
+        BaN: LocalStorageHelper.get('wzh_BaN', 0),
+        isConfirmed: LocalStorageHelper.get('wzh_isConfirmed', false),
+        isConfirmedPpk: LocalStorageHelper.get('wzh_isConfirmedPpk', false),
+        isConfirmedU26: LocalStorageHelper.get('wzh_isConfirmedU26', false),
+        isConfirmeWorkplace: LocalStorageHelper.get('wzh_isConfirmeWorkplace', false),
+        isTaxFreeExcluded: LocalStorageHelper.get('wzh_isTaxFreeExcluded', false),
+    }
+
+    componentDidUpdate() {
+        LocalStorageHelper.set('wzh_hours', this.state.hours);
+        LocalStorageHelper.set('wzh_rate', this.state.rate);
+        LocalStorageHelper.set('wzh_workdays', this.state.workdays);
+        LocalStorageHelper.set('wzh_satsun', this.state.satsun);
+        LocalStorageHelper.set('wzh_hollydays', this.state.hollydays);
+        LocalStorageHelper.set('wzh_illnessworkdays', this.state.illnessworkdays);
+        LocalStorageHelper.set('wzh_illnessweekenddays', this.state.illnessweekenddays);
+        LocalStorageHelper.set('wzh_avaragehours', this.state.avaragehours);
+        LocalStorageHelper.set('wzh_avaragemoney', this.state.avaragemoney);
+        LocalStorageHelper.set('wzh_add', this.state.add);
+        LocalStorageHelper.set('wzh_BaN', this.state.BaN);
+        LocalStorageHelper.set('wzh_isConfirmed', this.state.isConfirmed);
+        LocalStorageHelper.set('wzh_isConfirmedPpk', this.state.isConfirmedPpk);
+        LocalStorageHelper.set('wzh_isConfirmedU26', this.state.isConfirmedU26);
+        LocalStorageHelper.set('wzh_isConfirmeWorkplace', this.state.isConfirmeWorkplace);
+        LocalStorageHelper.set('wzh_isTaxFreeExcluded', this.state.isTaxFreeExcluded);
     }
 
     componentDidMount() {
@@ -162,16 +182,16 @@ class WyliczenieZGodzin extends React.Component {
                     <section>
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0 0' }}>Wprowadź dane do Kalkulatora</h2>
                         <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
-                            <div className={stylesInput.formGroup}><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={undefined} number={1} /></div>
-                            <div className={stylesInput.formGroup}><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={undefined} number={2} /></div>
+                            <div className={stylesInput.formGroup}><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={this.state.hours} number={1} /></div>
+                            <div className={stylesInput.formGroup}><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={this.state.rate} number={2} /></div>
                             <div className={stylesInput.formGroup}><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} /></div>
-                            <div className={stylesInput.formGroup}><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={undefined} number={4} /></div>
-                            <div className={stylesInput.formGroup}><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={undefined} number={5} /></div>
-                            <div className={stylesInput.formGroup}><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={undefined} number={6} /></div>
-                            <div className={stylesInput.formGroup}><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={undefined} number={7} /></div>
-                            <div className={stylesInput.formGroup}><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.workdays * 8} number={8} /></div>
+                            <div className={stylesInput.formGroup}><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={this.state.satsun} number={4} /></div>
+                            <div className={stylesInput.formGroup}><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={this.state.hollydays} number={5} /></div>
+                            <div className={stylesInput.formGroup}><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={this.state.illnessworkdays} number={6} /></div>
+                            <div className={stylesInput.formGroup}><Input name='illfreedays' content='Licza dni wolnych od pracy spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh2} plhld={this.state.illnessweekenddays} number={7} /></div>
+                            <div className={stylesInput.formGroup}><Input name='avaragehours' content='Srednia miesięczna liczba przepracowanych godzin (z ostatnich kilku miesięcy)' method={this.handleChangeSrGodz} plhld={this.state.avaragehours} number={8} /></div>
                             <div className={stylesInput.formGroup}><Input name='avaragemoney' content='Srednia miesięczna kwota brutto wynagrodzenia (z ostatnich kilku miesięcy)' method={this.handleChangeSrWyp} plhld={this.state.avaragemoney} number={9} /></div>
-                            <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={undefined} number={10} /></div>
+                            <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={this.state.add} number={10} /></div>
                         </form>
                         <article>
                             <AdSense

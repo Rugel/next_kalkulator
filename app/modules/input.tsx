@@ -23,8 +23,8 @@ const Input: React.FC<InputProps> = ({ content, method, plhld, name, number, mon
             className={styles.input}
             type="number"
             onChange={method}
-            value={monthSelector ? plhld : undefined}
-            placeholder={monthSelector ? undefined : plhld}
+            value={monthSelector ? plhld : (plhld !== undefined ? plhld : undefined)}
+            placeholder={monthSelector ? undefined : (plhld === undefined ? undefined : undefined)}
             name={name}
             aria-label={content}
         />

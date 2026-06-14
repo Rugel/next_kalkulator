@@ -1,6 +1,7 @@
 'use client';
 import Link from 'next/link';
 import React from 'react';
+import LocalStorageHelper from './lib/localStorageClass';
 import Input from './modules/input';
 import Swal from 'sweetalert2';
 import AdSense from './modules/AdSense';
@@ -15,13 +16,22 @@ import stylesFieldset from "./components/Fieldset.module.css";
 
 class StaGodz extends React.Component {
     state = {
-        brutto: 0,
-        workdays: 0,
-        isConfirmed: false,
-        isConfirmedPpk: false,
-        isConfirmedU26: false,
-        isConfirmeWorkplace: false,
-        isTaxFreeExcluded: false,
+        brutto: LocalStorageHelper.get('stawka_brutto', 0),
+        workdays: LocalStorageHelper.get('stawka_workdays', 0),
+        isConfirmed: LocalStorageHelper.get('stawka_isConfirmed', false),
+        isConfirmedPpk: LocalStorageHelper.get('stawka_isConfirmedPpk', false),
+        isConfirmedU26: LocalStorageHelper.get('stawka_isConfirmedU26', false),
+        isConfirmeWorkplace: LocalStorageHelper.get('stawka_isConfirmeWorkplace', false),
+        isTaxFreeExcluded: LocalStorageHelper.get('stawka_isTaxFreeExcluded', false),
+    }
+
+    componentDidUpdate() {
+        LocalStorageHelper.set('stawka_brutto', this.state.brutto);
+        LocalStorageHelper.set('stawka_isConfirmed', this.state.isConfirmed);
+        LocalStorageHelper.set('stawka_isConfirmedPpk', this.state.isConfirmedPpk);
+        LocalStorageHelper.set('stawka_isConfirmedU26', this.state.isConfirmedU26);
+        LocalStorageHelper.set('stawka_isConfirmeWorkplace', this.state.isConfirmeWorkplace);
+        LocalStorageHelper.set('stawka_isTaxFreeExcluded', this.state.isTaxFreeExcluded);
     }
 
     async componentDidMount() {
@@ -31,6 +41,8 @@ class StaGodz extends React.Component {
         const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
         const workingDays = calculateWorkingDays(currentYear, currentMonth);
         this.setState({ workdays: workingDays });
+        // Save workdays to localStorage when calculated
+        LocalStorageHelper.set('stawka_workdays', workingDays);
     }
 
     handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
@@ -120,7 +132,7 @@ class StaGodz extends React.Component {
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Oblicz Swoją Stawkę Godzinową</h2>
                         <form id="calculator-form" aria-label="Kalkulator stawki godzinowej" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
                             <div className={stylesInput.formGroup}>
-                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={undefined} number={1} />
+                                <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={this.state.brutto} number={1} />
                             </div>
                             <div className={stylesInput.formGroup}>
                                 <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={this.state.workdays} method={this.handleChangeWorkdays} number={2} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} />
