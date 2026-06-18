@@ -107,7 +107,7 @@ class BruttoNetto extends React.Component {
             <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
               <div className={stylesFieldset.box}>
                 <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
-                <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: „dla młodych do 26 roku życia”, „dla rodzin 4+”,  „na powrót”, „dla pracujących seniorów”'} /><br /><br />
+                <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: dla młodych do 26 roku życia, dla rodzin 4+, na powrót, dla pracujących seniorów'} /><br /><br />
                 <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
                 <CheckBox Id={'taxfree'} OnChange={this.handleChangeTaxFreeExcluded} Checked={this.state.isTaxFreeExcluded} Text={'nie odliczaj kwoty wolnej od podatku (ulga 300 zł)'} /><br /><br />
                 <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
@@ -172,7 +172,7 @@ class BruttoNetto extends React.Component {
               <h3>Dlaczego warto korzystać z kalkulatora wynagrodzeń brutto netto?</h3>
               <div className='desc'>
                 <p>
-                  Samodzielne obliczenie pensji "na rękę" może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
+                  Samodzielne obliczenie pensji 'na rękę' może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
                   Nasz <strong>kalkulator wynagrodzeń brutto netto</strong> pozwala na błyskawiczne uzyskanie precyzyjnego wyniku, uwzględniając najnowsze przepisy podatkowe obowiązujące w 2026 roku.
                 </p>
                 <ul>
