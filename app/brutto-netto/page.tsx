@@ -150,7 +150,7 @@ class BruttoNetto extends React.Component {
           <article>
             <h2>O kalkulatorze wynagrodzeń Brutto na Netto</h2>
             <div className='desc'>
-              <p>Użycie <strong>kalkulatora wynagrodzeń BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we &quot;wstępnych opcjach&quot; oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
+              <p>Użycie <strong>kalkulatora wynagrodzeń BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we wstępnych opcjach oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
               <AdSenseInArticle adSlot={5569743645} />
               <h3>Jak Działa Przeliczanie Brutto na Netto?</h3>
@@ -172,7 +172,7 @@ class BruttoNetto extends React.Component {
               <h3>Dlaczego warto korzystać z kalkulatora wynagrodzeń brutto netto?</h3>
               <div className='desc'>
                 <p>
-                  Samodzielne obliczenie pensji 'na rękę' może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
+                  Samodzielne obliczenie pensji na rękę może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
                   Nasz <strong>kalkulator wynagrodzeń brutto netto</strong> pozwala na błyskawiczne uzyskanie precyzyjnego wyniku, uwzględniając najnowsze przepisy podatkowe obowiązujące w 2026 roku.
                 </p>
                 <ul>
