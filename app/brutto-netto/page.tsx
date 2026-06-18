@@ -107,7 +107,7 @@ class BruttoNetto extends React.Component {
             <fieldset className={stylesFieldset.fieldset}><legend className={stylesFieldset.legend}><strong><u>wstępne opcje</u></strong></legend>
               <div className={stylesFieldset.box}>
                 <CheckBox Id={'ppk'} OnChange={this.handleChangeConfirmPpk} Checked={this.state.isConfirmedPpk} Text={'nie uczestniczę w PPK'} /><br /><br />
-                <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: dla młodych do 26 roku życia, dla rodzin 4+, na powrot, dla pracujących seniorów'} /><br /><br />
+                <CheckBox Id={'u26'} OnChange={this.handleChangeConfirmU26} Checked={this.state.isConfirmedU26} Text={'korzystam przynajmniej z jednej z wymienionych ulg: dla młodych do 26 roku życia, dla rodzin 4+, na powrot, dla pracujacych seniorów'} /><br /><br />
                 <CheckBox Id={'workplace'} OnChange={this.handleChangeConfirmWorkplace} Checked={this.state.isConfirmeWorkplace} Text={'zakład pracy znajduje się poza miejscowością zamieszkania'} /><br /><br />
                 <CheckBox Id={'taxfree'} OnChange={this.handleChangeTaxFreeExcluded} Checked={this.state.isTaxFreeExcluded} Text={'nie odliczaj kwoty wolnej od podatku (ulga 300 zł)'} /><br /><br />
                 <CheckBox Id={'box'} OnChange={this.handleChangeConfirm} Checked={this.state.isConfirmed} Text={'zaliczka na podatek dochodowy jest pobierana wg drugiego progu skali podatkowej'} />
