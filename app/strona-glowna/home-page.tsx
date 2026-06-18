@@ -85,6 +85,7 @@ export default function HomePage() {
                                 height={315}
                                 className={styles.whyImage}
                                 priority
+                                fetchPriority="high"
                             />
                         </div>
                     </div>

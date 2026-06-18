@@ -42,6 +42,11 @@ export default function Page() {
     return (
         <>
             <SchemaOrg />
+            <nav aria-label="Breadcrumb" className="breadcrumb">
+                <ol>
+                    <li aria-current="page">Strona Główna</li>
+                </ol>
+            </nav>
             <HomePage />
         </>
     );

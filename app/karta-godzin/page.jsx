@@ -251,16 +251,16 @@ class KartaGodz extends React.Component {
         <em>podpis przełożonego</em>
       </div>
     </div>;
-    const Wynik = () => { return (<p className="wynik">Karta godzin pracy dla:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span></p>) }
+    const Wynik = () => { return (<p className="wynik" aria-live="polite">Karta godzin pracy dla:<br /><span style={{ color: '#FD5B35', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}>{monthStr} {year}</span></p>) }
 
     return (
       <>
         <Menu currentPage="karta_godzin" />
         <header>
-          <Wynik />
           <div id="tytul">
             <h1>Karta godzin pracy</h1>
           </div>
+          <Wynik />
         </header>
         {/*<AdSense
           adClient="ca-pub-8789064360135564"

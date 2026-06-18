@@ -38,10 +38,28 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: '/kalkulator_umowy_zlecenie',
+        destination: '/kalkulator-umowy-zlecenie',
+        permanent: true,
+      },
+      {
         source: '/godziny',
         destination: '/wyliczenie-z-godzin',
         permanent: true,
       },
+    ]
+  },
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          { key: 'X-Frame-Options', value: 'DENY' },
+          { key: 'X-Content-Type-Options', value: 'nosniff' },
+          { key: 'Referrer-Policy', value: 'strict-origin-when-cross-origin' },
+          { key: 'Permissions-Policy', value: 'geolocation=(), microphone=(), camera=()' }
+        ]
+      }
     ]
   },
 };

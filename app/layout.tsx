@@ -146,6 +146,13 @@ export default function RootLayout({
                 "price": "0",
                 "priceCurrency": "PLN"
               },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "reviewCount": "150",
+                "bestRating": "5",
+                "worstRating": "1"
+              },
               "publisher": {
                 "@type": "Organization",
                 "@id": "https://stawka-godzinowa.pl/#organization",

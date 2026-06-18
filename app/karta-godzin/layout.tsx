@@ -71,6 +71,7 @@ export default function KartaGodzinLayout({
         "@context": "https://schema.org",
         "@type": "HowTo",
         "name": "Jak wygenerować kartę godzin pracy",
+        "totalTime": "PT2M",
         "step": [
             {
                 "@type": "HowToStep",
@@ -86,6 +87,37 @@ export default function KartaGodzinLayout({
                 "@type": "HowToStep",
                 "name": "Wydruk lub Zapis",
                 "text": "Użyj przycisku Drukuj, aby wydrukować kartę lub zapisać ją jako plik PDF."
+            }
+        ]
+    };
+
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Czy karta ewidencji czasu pracy jest wymagana prawnie?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak, zgodnie z Kodeksem Pracy każdy pracodawca jest zobowiązany do prowadzenia ewidencji czasu pracy pracowników. Karta godzin pracy jest podstawowym dokumentem potwierdzającym przepracowany czas."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Jak często powinien się prowadzić ewidencję czasu pracy?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Ewidencja czasu pracy powinna być prowadzona codziennie. Na podstawie miesięcznej karty godzin pracodawca zbiera dane do rozliczenia wynagrodzenia i urlopów."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Czy można edytować kartę godzin pracy po wydruku?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Nasz generator pozwala na wygenerowanie karty w dowolnym momencie. Możesz ją wydrukować, wypełnić ręcznie lub edytować cyfrowo w programie do edycji PDF."
+                }
             }
         ]
     };

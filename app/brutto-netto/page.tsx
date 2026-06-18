@@ -1,6 +1,7 @@
 'use client';
 
 import React from 'react';
+import Link from 'next/link';
 import LocalStorageHelper from '../lib/localStorageClass';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
@@ -90,15 +91,15 @@ class BruttoNetto extends React.Component {
     netto = netto.replace('.', ',');
 
     const Netto = () => netto;
-    const Wynik = () => { return (<p className="wynik">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /></p>) }
+    const Wynik = () => { return (<p className="wynik" aria-live="polite">Kwota netto wynosi:<br /><span style={{ color: 'red', fontSize: '1.5em', letterSpacing: '2px', display: 'inline-block', margin: '2px 0' }}><Netto /></span> zł<br /></p>) }
     return (
       <>
         <Menu currentPage="brutto_netto" />
         <header>
+          <Wynik />
           <div id="tytul">
             <h1>Kalkulator Brutto na Netto</h1>
           </div>
-          <Wynik />
         </header>
 
         <main>
@@ -171,7 +172,7 @@ class BruttoNetto extends React.Component {
               <h3>Dlaczego warto korzystać z kalkulatora wynagrodzeń brutto netto?</h3>
               <div className='desc'>
                 <p>
-                  Samodzielne obliczenie pensji &quot;na rękę&quot; może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
+                  Samodzielne obliczenie pensji "na rękę" może być skomplikowane ze względu na liczne zmienne, takie jak składki ZUS, podatek dochodowy, czy uczestnictwo w Pracowniczych Planach Kapitałowych (PPK).
                   Nasz <strong>kalkulator wynagrodzeń brutto netto</strong> pozwala na błyskawiczne uzyskanie precyzyjnego wyniku, uwzględniając najnowsze przepisy podatkowe obowiązujące w 2026 roku.
                 </p>
                 <ul>
@@ -179,6 +180,10 @@ class BruttoNetto extends React.Component {
                   <li><strong>Zawsze aktualne dane:</strong> Narzędzie uwzględnia aktualną skalę podatkową i limity składek.</li>
                   <li><strong>Personalizacja wyników:</strong> Kalkulator bierze pod uwagę Twoją indywidualną sytuację, np. pracę poza miejscem zamieszkania czy korzystanie z ulgi dla młodych.</li>
                 </ul>
+                <p style={{ marginTop: '1rem' }}>
+                  Sprawdź również nasze <Link href="/kalkulator-stawki">kalkulator stawki godzinowej</Link> lub 
+                  <Link href="/kalkulator-b2b"> kalkulator B2B</Link> dla porównania różnych form zatrudnienia.
+                </p>
               </div>
 
               <h3>Najczęstsze pytania (FAQ) o kalkulator wynagrodzeń brutto netto</h3>

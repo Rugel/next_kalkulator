@@ -12,6 +12,10 @@ export const metadata: Metadata = {
     alternates: {
         canonical: "https://stawka-godzinowa.pl/kalkulator-stawki",
     },
+    robots: {
+        index: false,
+        follow: true,
+    },
     openGraph: {
         title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,
         description:
@@ -39,9 +43,44 @@ export const metadata: Metadata = {
 };
 
 export default function Page() {
+    const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": `Jak obliczyć stawkę godzinową w ${CURRENT_YEAR} roku?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `Aby obliczyć stawkę godzinową, podziel miesięczne wynagrodzenie brutto przez liczbę godzin pracy w miesiącu (zwykle 168h). Nasz kalkulator automatycznie uwzględnia składki ZUS, podatek PIT i PPK.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": `Ile wynosi minimalna stawka godzinowa w ${CURRENT_YEAR} roku?`,
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": `W ${CURRENT_YEAR} roku minimalne wynagrodzenie na umowie o pracę wynosi 4806 zł brutto miesięcznie, co daje około 28,61 zł brutto za godzinę. Na umowie zlecenie minimalna stawka to 31,40 zł brutto.`
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Czy kalkulator uwzględnia wszystkie składki ZUS?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Tak, kalkulator uwzględnia składki emerytalne (9,76%), rentowe (1,5%), chorobowe (2,45%) oraz zdrowotne (9%). Dodatkowo oblicza wpłaty pracodawcy na PPK."
+                }
+            }
+        ]
+    };
+
     return (
         <>
             <SchemaOrg />
+            <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+            />
             <HomePage />
         </>
     );
