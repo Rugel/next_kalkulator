@@ -47,11 +47,6 @@ const nextConfig = {
         destination: '/wyliczenie-z-godzin',
         permanent: true,
       },
-      {
-        source: '/kalkulator-stawki',
-        destination: '/',
-        permanent: true,
-      },
     ]
   },
   async headers() {

@@ -332,7 +332,7 @@ Poniższe poprawki zostały wdrożone w ramach niniejszego audytu:
 | # | Priorytet | Obszar | Status | Pliki |
 |:---:|:---:|:---|---|:---:|
 | 1 | 🔴 P0 | **Indeksacja** – zmiana `index:false` → `index:true` | ✅ **WDROŻONE** | `app/kalkulator-stawki/layout.tsx`, `app/kalkulator-stawki/page.tsx` |
-| 2 | 🔴 P0 | **Duplikacja treści** – 301 redirect `/kalkulator-stawki` → `/` | ✅ **WDROŻONE** | `next.config.mjs` |
+| 2 | 🔴 P0 | **Duplikacja treści** – usunięto 301 redirect, strona ponownie dostępna pod `/kalkulator-stawki` | ✅ **WDROŻONE (poprawione)** | `next.config.mjs` |
 | 3 | 🟠 P1 | **H1 kolejność** – `<Wynik />` przesunięty za `<h1>` | ✅ **WDROŻONE** | `app/brutto-netto/page.tsx`, `app/wyliczenie-z-godzin/page.tsx` |
 | 4 | 🟠 P1 | **CSP Header** – dodano Content-Security-Policy | ✅ **WDROŻONE** | `next.config.mjs` |
 | 5 | 🟠 P1 | **HSTS** – dodano Strict-Transport-Security | ✅ **WDROŻONE** | `next.config.mjs` |
