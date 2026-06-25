@@ -13,8 +13,16 @@ export const metadata: Metadata = {
         canonical: "https://stawka-godzinowa.pl/kalkulator-stawki",
     },
     robots: {
-        index: false,
+        index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     openGraph: {
         title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,

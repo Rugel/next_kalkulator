@@ -11,8 +11,16 @@ export const metadata: Metadata = {
         },
     },
     robots: {
-        index: false,
+        index: true,
         follow: true,
+        googleBot: {
+            index: true,
+            follow: true,
+            noimageindex: false,
+            'max-video-preview': -1,
+            'max-image-preview': 'large',
+            'max-snippet': -1,
+        },
     },
     title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,
     description: `Kalkulator stawki godzinowej ${CURRENT_YEAR}. Oblicz wynagrodzenie netto i brutto dla UoP i zlecenia. Uwzględnia ZUS, podatek oraz PPK. Sprawdź, ile zarabiasz!`,
@@ -61,11 +69,34 @@ export default function KalkulatorStawkiLayout({ children }: { children: ReactNo
         ]
     };
 
+    const howToSchema = {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "Jak obliczyć stawkę godzinową",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Wprowadź wynagrodzenie brutto",
+                "text": "Wpisz kwotę miesięcznego wynagrodzenia brutto z Twojej umowy."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Wybierz miesiąc",
+                "text": "Wybierz konkretny miesiąc, aby system automatycznie pobrał liczbę dni roboczych."
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Sprawdź stawkę godzinową",
+                "text": "Kalkulator od razu wyświetli Twoją stawkę za jedną godzinę pracy oraz szczegóły składek."
+            }
+        ]
+    };
+
     return (
         <>
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema]) }}
+                dangerouslySetInnerHTML={{ __html: JSON.stringify([breadcrumbSchema, howToSchema]) }}
             />
             <nav aria-label="Breadcrumb" className="breadcrumb">
                 <ol>

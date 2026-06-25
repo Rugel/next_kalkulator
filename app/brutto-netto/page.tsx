@@ -96,10 +96,10 @@ class BruttoNetto extends React.Component {
       <>
         <Menu currentPage="brutto_netto" />
         <header>
-          <Wynik />
           <div id="tytul">
             <h1>Kalkulator Brutto na Netto</h1>
           </div>
+          <Wynik />
         </header>
 
         <main>
