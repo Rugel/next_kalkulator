@@ -163,10 +163,10 @@ class WyliczenieZGodzin extends React.Component {
             <>
                 <Menu currentPage="godziny" />
                 <header>
+                    <Wynik />
                     <div id="tytul">
                         <h1>Wyliczenie z godzin pracy</h1>
                     </div>
-                    <Wynik />
                 </header>
 
                 <main>

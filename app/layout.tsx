@@ -67,7 +67,6 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <AggregateRatingSchema
           name="Stawka Godzinowa"
           description={`Precyzyjny kalkulator stawki godzinowej ${CURRENT_YEAR}. Narzędzie do wyliczania wynagrodzenia netto i brutto z uwzględnieniem składek ZUS i dni roboczych.`}
