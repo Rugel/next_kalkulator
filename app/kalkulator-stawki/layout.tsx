@@ -12,10 +12,6 @@ export const metadata: Metadata = {
     },
     robots: {
         index: true,
-<<<<<<< HEAD
-
-=======
->>>>>>> d28cb36628c5d1a11c546be266935f8adf86a7d2
         follow: true,
         googleBot: {
             index: true,
