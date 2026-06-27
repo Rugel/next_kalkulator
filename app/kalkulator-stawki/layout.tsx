@@ -11,7 +11,8 @@ export const metadata: Metadata = {
         },
     },
     robots: {
-        index: false,
+        index: true,
+
         follow: true,
     },
     title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,

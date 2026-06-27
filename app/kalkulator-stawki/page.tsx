@@ -13,7 +13,8 @@ export const metadata: Metadata = {
         canonical: "https://stawka-godzinowa.pl/kalkulator-stawki",
     },
     robots: {
-        index: false,
+        index: true,
+
         follow: true,
     },
     openGraph: {
