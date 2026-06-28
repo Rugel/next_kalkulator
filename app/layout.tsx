@@ -40,6 +40,7 @@ export const metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: true,
     googleBot: {
       index: true,
       follow: true,
@@ -75,8 +76,7 @@ export default function RootLayout({
         <meta name="google-site-verification" content="wWDCgkmW374nhFic4ZNADQdsdDPPJq4hrp3cdf81KXw" />
         <meta name="author" content="Grzegorz Dychała" />
         <meta name="copyright" content={`Copyright © ${CURRENT_YEAR} stawka-godzinowa.pl`} />
-        <link rel="alternate" hrefLang="pl" href="https://stawka-godzinowa.pl" />
-        <link rel="alternate" hrefLang="x-default" href="https://stawka-godzinowa.pl" />
+
 
         {/* Global Site Tag */}
         <Script
