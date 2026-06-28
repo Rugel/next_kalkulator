@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import AdSenseInArticle from "./AdSenseInArticle";
+// import AdSenseInArticle from "./AdSenseInArticle";
 
 const DescB2B = () => {
     return (
@@ -17,7 +17,7 @@ const DescB2B = () => {
                     Wybór odpowiedniej formy opodatkowania (Ryczałt, Podatek Liniowy, Zasady Ogólne) jest kluczowy dla optymalizacji podatkowej.
                 </p>
 
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
 
                 <h3>Składki ZUS w 2026 roku – Co się zmienia?</h3>
                 <p>
@@ -38,7 +38,7 @@ const DescB2B = () => {
                     </li>
                 </ul>
 
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
 
                 <p>
                     Pamiętaj, że ostateczny wybór formy opodatkowania powinien być skonsultowany z księgowym lub doradcą podatkowym.

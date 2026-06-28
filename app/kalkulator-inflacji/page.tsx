@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 import { useLocalStorage } from '../lib/useLocalStorage';
 import Menu from '../modules/Menu';
-import AdSense from '../modules/AdSense';
+// import AdSense from '../modules/AdSense';
 import Input from '../modules/input';
 import { calculateInflation, CalculationResult, HISTORICAL_INFLATION } from '../utils/inflation_logic';
 import DescInflacja from '../modules/DescInflacja';
@@ -186,10 +186,10 @@ const InflationCalculatorPage = () => {
 
                 <section>
                     <article>
-                        <AdSense
-                            adClient="ca-pub-8789064360135564"
-                            adSlot="8251150836"
-                        />
+                        {/* <AdSense
+                          adClient="ca-pub-8789064360135564"
+                          adSlot="8251150836"
+                          /> */}
 
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 1rem' }}>Szczegółowe Wyniki</h2>
 
@@ -245,10 +245,10 @@ const InflationCalculatorPage = () => {
                 </section>
 
                 <DescInflacja />
-                <AdSense
-                    adClient="ca-pub-8789064360135564"
-                    adSlot="4009249960"
-                />
+                {/* <AdSense
+                  adClient="ca-pub-8789064360135564"
+                  adSlot="4009249960"
+                  /> */}
             </main>
         </>
     );

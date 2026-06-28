@@ -5,8 +5,8 @@ import Link from 'next/link';
 import LocalStorageHelper from '../lib/localStorageClass';
 import Input from '../modules/input';
 import Swal from 'sweetalert2';
-import AdSense from '../modules/AdSense';
-import AdSenseInArticle from '../modules/AdSenseInArticle';
+// import AdSense from '../modules/AdSense';
+// import AdSenseInArticle from '../modules/AdSenseInArticle';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
 import stylesFieldset from "../components/Fieldset.module.css";
@@ -120,10 +120,10 @@ class BruttoNetto extends React.Component {
               <div className={stylesInput.formGroup}><Input name='BnN' content="Podaj kwotę brutto w celu obliczenia kwoty netto" method={this.handleChangeBaN} plhld={this.state.BaN} number={1} /></div>
             </form>
             <article>
-              <AdSense
+              {/* <AdSense
                 adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
                 adSlot="3545619061" // ID jednostki reklamowej
-              />
+                /> */}
               <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły wynagrodzenia</h2>
               <div className={stylesList.list}>
                 <table>
@@ -152,7 +152,7 @@ class BruttoNetto extends React.Component {
             <div className='desc'>
               <p>Użycie <strong>kalkulatora wynagrodzeń BRUTTO na NETTO</strong> wymaga zaznaczenia odpowiednich pozycji we wstępnych opcjach oraz wpisania żądanej do przeliczenia kwoty brutto.</p>
               <p>Przeliczenie wynagrodzenia brutto na netto dokonuje się na podstawie aktualnych stawek podatkowych oraz składek na ubezpieczenia społeczne i zdrowotne. Oto ogólny,  uproszczony opis jak to działa:</p>
-              <AdSenseInArticle adSlot={5569743645} />
+              {/* <AdSenseInArticle adSlot={5569743645} /> */}
               <h3>Jak Działa Przeliczanie Brutto na Netto?</h3>
               <div className='desc'>
                 <h4>1. Ustalenie wynagrodzenia brutto</h4>
@@ -203,10 +203,10 @@ class BruttoNetto extends React.Component {
             </div>
           </article>
         </main>
-        <AdSense
+        {/* <AdSense
           adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
           adSlot="7987991607" // ID jednostki reklamowej
-        />
+          /> */}
       </>
     )
   }

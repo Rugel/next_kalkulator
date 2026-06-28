@@ -4,7 +4,7 @@ import LocalStorageHelper from '../lib/localStorageClass';
 import Input from '../modules/input';
 import Desc from '../modules/descryption';
 import Swal from 'sweetalert2';
-import AdSense from '../modules/AdSense';
+// import AdSense from '../modules/AdSense';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
 import { calculateWorkingDays } from '../utils/workdays';
@@ -195,10 +195,10 @@ class WyliczenieZGodzin extends React.Component {
                             <div className={stylesInput.formGroup}><Input name='addmoney' content='Kwota brutto ewentualnych dodatków typu: premia, mieszkaniówka' method={this.handleChangeAdd} plhld={this.state.add} number={10} /></div>
                         </form>
                         <article>
-                            <AdSense
-                                adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-                                adSlot="8251150836" // ID jednostki reklamowej
-                            />
+                            {/* <AdSense
+                              adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+                              adSlot="8251150836" // ID jednostki reklamowej
+                              /> */}
                             <h2 style={{ textAlign: 'center', margin: '3rem 0 0 0' }}>Szczegóły wynagrodzenia</h2>
                             <div className={stylesList.list}>
                                 <table>
@@ -222,10 +222,10 @@ class WyliczenieZGodzin extends React.Component {
                                 <br /><p className={stylesList.small}><i>* prezentowane kwoty składek na ubezpieczenie społeczne i zdrowotne wynikają jedynie z potrąceń wynagrodzenia brutto pracownika - pracodawca dodatkowo finansuje  składki pracownika zgodnie z obowiązującymi przepisami</i></p>
                             </div></article></section>
                     <Desc />
-                    <AdSense
-                        adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
-                        adSlot="4009249960" // ID jednostki reklamowej
-                    />
+                    {/* <AdSense
+                      adClient="ca-pub-8789064360135564" // Twój identyfikator AdSense
+                      adSlot="4009249960" // ID jednostki reklamowej
+                      /> */}
                 </main>
             </>
         )

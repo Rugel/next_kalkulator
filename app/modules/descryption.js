@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import AdSenseInArticle from "./AdSenseInArticle";
+// import AdSenseInArticle from "./AdSenseInArticle";
 
 const Desc = () => {
   return (<section className='desc'><div>
@@ -11,7 +11,7 @@ const Desc = () => {
     </p><p>
       Aby Kalkulator prawidłowo obliczył kwotę wynagrodzenia, musi otrzymać prawidłowe dane, które użytkownik wpisze do pól edycyjnych.
     </p>
-    <AdSenseInArticle adSlot={2380441709} />
+    {/* <AdSenseInArticle adSlot={2380441709} /> */}
     <h3>Jak poprawnie wprowadzić dane?</h3>
     <p>
       — w poz.1 należy wpisać łączną liczbę przepracowanych godzin w danym miesiącu,<br />

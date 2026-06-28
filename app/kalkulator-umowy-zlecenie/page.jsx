@@ -4,7 +4,7 @@ import { useLocalStorage } from '../lib/useLocalStorage';
 import Input from '../modules/input';
 import CheckBox from '../modules/CheckBox';
 import Menu from '../modules/Menu';
-import AdSense from '../modules/AdSense';
+// import AdSense from '../modules/AdSense';
 import { calculateZlecenie } from '../utils/zlecenie_logic';
 import DescZlecenie from '../modules/DescZlecenie';
 import stylesFieldset from "../components/Fieldset.module.css";
@@ -116,10 +116,10 @@ const ZleceniePage = () => {
                     </form>
 
                     <article>
-                        <AdSense
-                            adClient="ca-pub-8789064360135564"
-                            adSlot="8251150836"
-                        />
+                        {/* <AdSense
+                          adClient="ca-pub-8789064360135564"
+                          adSlot="8251150836"
+                          /> */}
                         <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły Wynagrodzenia</h2>
                         <div className={stylesList.list}>
                             <table>
@@ -148,10 +148,10 @@ const ZleceniePage = () => {
                 </section>
 
                 <DescZlecenie />
-                <AdSense
-                    adClient="ca-pub-8789064360135564"
-                    adSlot="4009249960"
-                />
+                {/* <AdSense
+                  adClient="ca-pub-8789064360135564"
+                  adSlot="4009249960"
+                  /> */}
             </main>
         </>
     );

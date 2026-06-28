@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import AdSenseInArticle from "./AdSenseInArticle";
+// import AdSenseInArticle from "./AdSenseInArticle";
 
 const DescZlecenie = () => {
     return (
@@ -21,7 +21,7 @@ const DescZlecenie = () => {
                     Nasz kalkulator pozwala sprawdzić, jakie składki ZUS (emerytalne, rentowe, zdrowotne) zostaną potrącone z Twojego wynagrodzenia brutto oraz jak wysoką zaliczkę na podatek dochodowy (PIT) odprowadzi zleceniodawca.
                 </p>
 
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
 
                 <h3>Jak działa kalkulator umowy zlecenie?</h3>
                 <p>
@@ -53,7 +53,7 @@ const DescZlecenie = () => {
                 <p>
                     <strong>Ważna zmiana od 2026 roku:</strong> Okresy pracy na umowie zlecenie są teraz wliczane do pracowniczego stażu pracy. Oznacza to, że czas przepracowany na zleceniu (po 31 grudnia 2025 r.) będzie miał wpływ na wymiar urlopu wypoczynkowego, nagrody jubileuszowe oraz dodatek stażowy w przyszłym zatrudnieniu na etacie. Warunkiem jest opłacanie składek na ubezpieczenia emerytalne i rentowe.
                 </p>
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
                 <p>
                     Pamiętaj, że ostateczna kwota wypłaty może się różnić w zależności od indywidualnej sytuacji podatkowej.
                     Nasz kalkulator dostarcza szacunkowych wyliczeń zgodnych z powszechnie obowiązującymi zasadami.

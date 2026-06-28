@@ -4,8 +4,8 @@ import React from 'react';
 import LocalStorageHelper from './lib/localStorageClass';
 import Input from './modules/input';
 import Swal from 'sweetalert2';
-import AdSense from './modules/AdSense';
-import AdSenseInArticle from './modules/AdSenseInArticle';
+// import AdSense from './modules/AdSense';
+// import AdSenseInArticle from './modules/AdSenseInArticle';
 import Menu from './modules/Menu';
 import { calculateWorkingDays } from './utils/workdays';
 import stylesList from "./components/ResultsList.module.css";
@@ -139,10 +139,10 @@ class StaGodz extends React.Component {
                             </div>
                         </form>
                         <section>
-                            <AdSense
-                                adClient="ca-pub-8789064360135564"
-                                adSlot="4100717483"
-                            />
+                            {/* <AdSense
+                              adClient="ca-pub-8789064360135564"
+                              adSlot="4100717483"
+                              /> */}
                             <h2 style={{ textAlign: 'center', margin: '3rem 0 0' }}>Szczegóły wynagrodzenia</h2>
                             <div className={stylesList.list}>
                                 <table>
@@ -188,7 +188,7 @@ class StaGodz extends React.Component {
                                     Wystarczy użyć <strong>kalkulatora stawki godzinowej</strong> lub przeprowadzić obliczenia ręcznie: podziel miesięczne wynagrodzenie brutto przez ilość dni roboczych w miesiącu, a następnie podzielić wynik przez 8.
                                     Przykładowo, jeśli miesięczne wynagrodzenie brutto wynosi 8000 zł, a w danym miesiącu jest 20 dni roboczych, to stawka godzinowa brutto wynosi 8000 zł / 20 / 8 h = 50 zł/h. Jeśli interesuje Cię konkretnie wynagrodzenie &quot;na rękę&quot;, wybierz <Link href="/brutto-netto">przelicznik brutto-netto</Link>.
                                 </p>
-                                <AdSenseInArticle adSlot={8969900782} />
+                                {/* <AdSenseInArticle adSlot={8969900782} /> */}
                                 <p>
                                     Warto zauważyć, że powyższy schemat uwzględnia tylko podstawowe składniki wynagrodzenia.
                                     Warto skorzystać z <strong>kalkulatora wynagrodzeń</strong>, aby uwzględnić dodatki, premie czy diety, które należy dodać do miesięcznego wynagrodzenia brutto przed przeliczeniem na stawkę godzinową.
@@ -311,10 +311,10 @@ class StaGodz extends React.Component {
                     </section>
                     <Wynik />
                 </main>
-                <AdSense
-                    adClient="ca-pub-8789064360135564"
-                    adSlot="6368891825"
-                />
+                {/* <AdSense
+                  adClient="ca-pub-8789064360135564"
+                  adSlot="6368891825"
+                  /> */}
             </>
         )
     }

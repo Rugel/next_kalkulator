@@ -3,8 +3,8 @@ import React from 'react';
 import LocalStorageHelper from '../lib/localStorageClass';
 import Image from 'next/image';
 import Print from '../modules/print';
-import AdSense from '../modules/AdSense';
-import AdSenseInArticle from '../modules/AdSenseInArticle';
+// import AdSense from '../modules/AdSense';
+// import AdSenseInArticle from '../modules/AdSenseInArticle';
 import Menu from '../modules/Menu';
 import stylesList from "../components/ResultsList.module.css";
 import stylesInput from "../modules/Input.module.css";
@@ -262,10 +262,10 @@ class KartaGodz extends React.Component {
           </div>
           <Wynik />
         </header>
-        {/*<AdSense
+        {/* <AdSense
           adClient="ca-pub-8789064360135564"
           adSlot="3856131321"
-        />*/}
+        /> */}
         <main>
           <div id="printable-content" className={styles.printableWrapper}>
             <RenderImage />
@@ -283,7 +283,7 @@ class KartaGodz extends React.Component {
             <p>
               Szukasz gotowego rozwiązania do rejestrowania czasu pracy swoich pracowników? Ten darmowy generator pozwala w kilka sekund przygotować kompletną <b>kartę ewidencji czasu pracy</b>. Narzędzie zostało stworzone z myślą o pracodawcach, działach HR oraz osobach samozatrudnionych, które potrzebują rzetelnego i czytelnego dokumentu zgodnego z aktualnymi wymogami.</p>
 
-            <AdSenseInArticle adSlot={5751543216} />
+            {/* <AdSenseInArticle adSlot={5751543216} /> */}
 
             <h3>Dlaczego warto wybrać tę kartę godzin pracy?</h3>
             <p>Prowadzenie ewidencji to obowiązek każdego pracodawcy, niezależnie od liczby zatrudnionych osób. Ten generator ułatwia to zadanie, oferując:</p>
@@ -318,10 +318,10 @@ class KartaGodz extends React.Component {
             <p>Korzystanie z tego narzędzia jest całkowicie bezpłatne. Możesz generować dowolną liczbę kart dla wszystkich swoich pracowników, mając pewność, że każda z nich będzie wyglądać profesjonalnie i estetycznie. Rzetelna dokumentacja kadrowa to podstawa bezpieczeństwa prawnego Twojej firmy.</p>
           </article>
         </main>
-        <AdSense
+        // <AdSense
           adClient="ca-pub-8789064360135564"
-          adSlot="7166660680"
-                    />
+//          adSlot="7166660680"
+//                    />
       </>
     );
   }

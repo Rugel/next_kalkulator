@@ -1,5 +1,5 @@
 import React from 'react';
-import AdSenseInArticle from "./AdSenseInArticle";
+// import AdSenseInArticle from "./AdSenseInArticle";
 
 const DescInflacja = () => {
     return (
@@ -17,7 +17,7 @@ const DescInflacja = () => {
                     &#x15B;wiadomego planowania finansów osobistych oraz inwestycji.
                 </p>
 
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
 
                 <h3>Jak dzia&#x142;a kalkulator inflacji?</h3>
                 <p>
@@ -36,7 +36,7 @@ const DescInflacja = () => {
                     </li>
                 </ul>
 
-                <AdSenseInArticle adSlot={2380441709} />
+                {/* <AdSenseInArticle adSlot={2380441709} /> */}
 
                 <h3>Dlaczego warto monitorowa&#x107; inflacj&#x119;?</h3>
                 <p>
