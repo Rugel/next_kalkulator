@@ -11,6 +11,10 @@ export const metadata: Metadata = {
         `kalkulator stawki godzinowej, kalkulator wynagrodzeń, przelicznik brutto netto, kalkulator B2B, kalkulator umowy zlecenie, kalkulator inflacji, stawka godzinowa ${CURRENT_YEAR}`,
     alternates: {
         canonical: "https://stawka-godzinowa.pl",
+        languages: {
+            'pl': 'https://stawka-godzinowa.pl',
+            'x-default': 'https://stawka-godzinowa.pl',
+        },
     },
     openGraph: {
         title: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
