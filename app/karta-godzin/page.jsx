@@ -318,10 +318,10 @@ class KartaGodz extends React.Component {
             <p>Korzystanie z tego narzędzia jest całkowicie bezpłatne. Możesz generować dowolną liczbę kart dla wszystkich swoich pracowników, mając pewność, że każda z nich będzie wyglądać profesjonalnie i estetycznie. Rzetelna dokumentacja kadrowa to podstawa bezpieczeństwa prawnego Twojej firmy.</p>
           </article>
         </main>
-        // <AdSense
+        {/* <AdSense
           adClient="ca-pub-8789064360135564"
-//          adSlot="7166660680"
-//                    />
+          adSlot="7166660680"
+        /> */}
       </>
     );
   }
