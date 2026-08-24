@@ -18,6 +18,7 @@ class StaGodz extends React.Component {
     state = {
         brutto: LocalStorageHelper.get('stawka_brutto', 0),
         workdays: LocalStorageHelper.get('stawka_workdays', 0),
+        selectedMonth: LocalStorageHelper.get('stawka_selectedMonth', new Date().toISOString().slice(0, 7)),
         isConfirmed: LocalStorageHelper.get('stawka_isConfirmed', false),
         isConfirmedPpk: LocalStorageHelper.get('stawka_isConfirmedPpk', false),
         isConfirmedU26: LocalStorageHelper.get('stawka_isConfirmedU26', false),
@@ -27,6 +28,8 @@ class StaGodz extends React.Component {
 
     componentDidUpdate() {
         LocalStorageHelper.set('stawka_brutto', this.state.brutto);
+        LocalStorageHelper.set('stawka_workdays', this.state.workdays);
+        LocalStorageHelper.set('stawka_selectedMonth', this.state.selectedMonth);
         LocalStorageHelper.set('stawka_isConfirmed', this.state.isConfirmed);
         LocalStorageHelper.set('stawka_isConfirmedPpk', this.state.isConfirmedPpk);
         LocalStorageHelper.set('stawka_isConfirmedU26', this.state.isConfirmedU26);
@@ -35,14 +38,9 @@ class StaGodz extends React.Component {
     }
 
     async componentDidMount() {
-        // Calculate working days for current month on initial load
-        const now = new Date();
-        const currentYear = now.getFullYear();
-        const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
-        const workingDays = calculateWorkingDays(currentYear, currentMonth);
+        const [year, month] = this.state.selectedMonth.split('-');
+        const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
         this.setState({ workdays: workingDays });
-        // Save workdays to localStorage when calculated
-        LocalStorageHelper.set('stawka_workdays', workingDays);
     }
 
     handleChangeBrutto = (e: { target: { value: number; }; }) => { if (e.target.value >= 0) { this.setState({ brutto: e.target.value }) } else { this.setState({ brutto: 0 }) } if (e.target.value < 0) { Swal.fire({ text: "Liczba nie może być ujemna", icon: 'warning' }) } }
@@ -58,7 +56,7 @@ class StaGodz extends React.Component {
         const [year, month] = e.target.value.split('-');
         if (year && month) {
             const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
-            this.setState({ workdays: workingDays });
+            this.setState({ selectedMonth: e.target.value, workdays: workingDays });
         }
     }
 
@@ -135,7 +133,7 @@ class StaGodz extends React.Component {
                                 <Input name='hours' content='Podaj miesięczne wynagrodzenie brutto' method={this.handleChangeBrutto} plhld={this.state.brutto} number={1} />
                             </div>
                             <div className={stylesInput.formGroup}>
-                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={this.state.workdays} method={this.handleChangeWorkdays} number={2} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} />
+                                <Input name='rate' content='Podaj liczbę dni roboczych w danym miesiącu' plhld={this.state.workdays} method={this.handleChangeWorkdays} number={2} monthSelector={true} onMonthSelect={this.handleMonthSelect} monthValue={this.state.selectedMonth} />
                             </div>
                         </form>
                         <section>

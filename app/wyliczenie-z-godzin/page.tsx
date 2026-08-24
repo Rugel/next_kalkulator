@@ -18,6 +18,7 @@ class WyliczenieZGodzin extends React.Component {
         hours: LocalStorageHelper.get('wzh_hours', 0),
         rate: LocalStorageHelper.get('wzh_rate', 0),
         workdays: LocalStorageHelper.get('wzh_workdays', 0),
+        selectedMonth: LocalStorageHelper.get('wzh_selectedMonth', new Date().toISOString().slice(0, 7)),
         satsun: LocalStorageHelper.get('wzh_satsun', 0),
         hollydays: LocalStorageHelper.get('wzh_hollydays', 0),
         illnessworkdays: LocalStorageHelper.get('wzh_illnessworkdays', 0),
@@ -37,6 +38,7 @@ class WyliczenieZGodzin extends React.Component {
         LocalStorageHelper.set('wzh_hours', this.state.hours);
         LocalStorageHelper.set('wzh_rate', this.state.rate);
         LocalStorageHelper.set('wzh_workdays', this.state.workdays);
+        LocalStorageHelper.set('wzh_selectedMonth', this.state.selectedMonth);
         LocalStorageHelper.set('wzh_satsun', this.state.satsun);
         LocalStorageHelper.set('wzh_hollydays', this.state.hollydays);
         LocalStorageHelper.set('wzh_illnessworkdays', this.state.illnessworkdays);
@@ -53,11 +55,8 @@ class WyliczenieZGodzin extends React.Component {
     }
 
     componentDidMount() {
-        // Calculate working days for current month on initial load
-        const now = new Date();
-        const currentYear = now.getFullYear();
-        const currentMonth = now.getMonth() + 1; // getMonth() returns 0-11
-        const workingDays = calculateWorkingDays(currentYear, currentMonth);
+        const [year, month] = this.state.selectedMonth.split('-');
+        const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
         this.setState({ workdays: workingDays });
     }
 
@@ -97,7 +96,7 @@ class WyliczenieZGodzin extends React.Component {
         const [year, month] = e.target.value.split('-');
         if (year && month) {
             const workingDays = calculateWorkingDays(parseInt(year), parseInt(month));
-            this.setState({ workdays: workingDays });
+            this.setState({ selectedMonth: e.target.value, workdays: workingDays });
         }
     }
 
@@ -185,7 +184,7 @@ class WyliczenieZGodzin extends React.Component {
                         <form id="calculator-form" className={stylesInput.calculatorForm} onSubmit={(e) => e.preventDefault()}>
                             <div className={stylesInput.formGroup}><Input name='hours' content='Łączna liczba przepracowanych godzin w danym miesiącu' method={this.handleChangeGodziny} plhld={this.state.hours} number={1} /></div>
                             <div className={stylesInput.formGroup}><Input name='rate' content='Stawka godzinowa brutto' method={this.handleChangeStawka} plhld={this.state.rate} number={2} /></div>
-                            <div className={stylesInput.formGroup}><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} defaultMonthValue={new Date().toISOString().slice(0, 7)} /></div>
+                            <div className={stylesInput.formGroup}><Input name='workdays' content='Liczba dni roboczych danego miesiąca' method={this.handleChangeWorkdays} plhld={this.state.workdays} number={3} monthSelector={true} onMonthSelect={this.handleMonthSelect} monthValue={this.state.selectedMonth} /></div>
                             <div className={stylesInput.formGroup}><Input name='sunsat' content='Liczba godzin przepracowanych w dni wolne od pracy' method={this.handleChangeSatsun} plhld={this.state.satsun} number={4} /></div>
                             <div className={stylesInput.formGroup}><Input name='hollydays' content='Liczba dni spędzonych na urlopie' method={this.handleChangeUrlop} plhld={this.state.hollydays} number={5} /></div>
                             <div className={stylesInput.formGroup}><Input name='illworkdays' content='Liczba dni roboczych spędzonych na zwolnieniu lekarskim' method={this.handleChangeCh1} plhld={this.state.illnessworkdays} number={6} /></div>
