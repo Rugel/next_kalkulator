@@ -24,6 +24,18 @@ const Input: React.FC<InputProps> = ({
     defaultMonthValue,
     monthValue,
 }) => {
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        // When the field starts with the default value 0, the browser can
+        // produce values such as "05" after entering the first digit.
+        // Remove only an unnecessary leading zero before passing the event
+        // to the parent handler. Values such as "0.5" remain unchanged.
+        if (/^0\d/.test(e.target.value)) {
+            e.target.value = e.target.value.replace(/^0+/, '');
+        }
+
+        method(e);
+    };
+
     return (
         <div className={styles.inputWrapper}>
             <label htmlFor={name} className={styles.inputLabel}>
@@ -34,7 +46,7 @@ const Input: React.FC<InputProps> = ({
                 id={name}
                 className={styles.input}
                 type="number"
-                onChange={method}
+                onChange={handleInputChange}
                 value={monthSelector ? plhld : (plhld !== undefined ? plhld : undefined)}
                 placeholder={monthSelector ? undefined : (plhld === undefined ? undefined : undefined)}
                 name={name}
