@@ -109,12 +109,14 @@ const Menu: React.FC<MenuProps> = ({ currentPage }) => {
               className={`${styles.hamburgerButton} ${isMenuOpen ? styles.hamburgerActive : ''}`}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label="Toggle menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-navigation"
             >
               <span className={styles.bar}></span>
               <span className={styles.bar}></span>
               <span className={styles.bar}></span>
             </button>
-            <NavContent isMobileStyle={true} />
+            <div id="mobile-navigation"><NavContent isMobileStyle={true} /></div>
           </nav>
         </div>
       )}

@@ -8,6 +8,7 @@ import Swal from 'sweetalert2';
 // import AdSenseInArticle from './modules/AdSenseInArticle';
 import Menu from './modules/Menu';
 import { calculateWorkingDays } from './utils/workdays';
+import { CURRENT_YEAR } from './lib/current-year';
 import stylesList from "./components/ResultsList.module.css";
 import stylesInput from "./modules/Input.module.css";
 import CheckBox from './modules/CheckBox';
@@ -119,7 +120,7 @@ class StaGodz extends React.Component {
                 <Menu currentPage="stawka" />
                 <header>
                     <div id="tytul">
-                        <h1>Kalkulator Stawki Godzinowej 2026 - oblicz wynagrodzenie Netto i Brutto</h1>
+                        <h1>Kalkulator Stawki Godzinowej {CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto</h1>
                         <p className="seo-intro">
                             Kalkulator stawki godzinowej pozwala błyskawicznie przeliczyć miesięczne wynagrodzenie brutto na stawkę za godzinę pracy. Uwzględniamy składki ZUS, podatek dochodowy i PPK – zarówno dla umowy o pracę, jak i zlecenia.
                         </p>

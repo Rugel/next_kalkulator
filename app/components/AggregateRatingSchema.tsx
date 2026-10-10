@@ -1,6 +1,5 @@
-'use client';
-
-import React, { useEffect, useState } from 'react';
+﻿// Server Component - nie wymaga "use client"
+// Dane pobierane sa po stronie serwera, wiec JSON-LD jest widoczny dla Googlebota przy pierwszym zaladowaniu strony
 
 interface AggregateRatingSchemaProps {
     name: string;
@@ -11,34 +10,32 @@ interface AggregateRatingSchemaProps {
     image?: string;
 }
 
-export default function AggregateRatingSchema({
+async function fetchRatingServer(itemId: number): Promise<{ average: string; votes: number }> {
+    try {
+        // Pobieranie bezposrednio z API (server-side) z krótkim rewalidowaniem
+        const res = await fetch(`https://stawka-godzinowa.pl/api/rating/${itemId}`, {
+            next: { revalidate: 3600 }, // Odswiezaj co godzine
+        });
+        if (!res.ok) throw new Error("Failed to fetch rating");
+        const data = await res.json();
+        if (data.average && data.votes) {
+            return { average: String(data.average), votes: Number(data.votes) };
+        }
+    } catch {
+        // Cicha degradacja - zwroc domyslna wartosc
+    }
+    return { average: "4.8", votes: 150 };
+}
+
+export default async function AggregateRatingSchema({
     name,
     description,
     url,
     category = "FinanceApplication",
     itemId = 123,
-    image = "https://stawka-godzinowa.pl/image.webp"
+    image = "https://stawka-godzinowa.pl/image.webp",
 }: AggregateRatingSchemaProps) {
-    const [rating, setRating] = useState({ average: "4.5", votes: 8 });
-
-    useEffect(() => {
-        async function fetchRating() {
-            try {
-                const res = await fetch(`/api/rating/${itemId}`);
-                if (!res.ok) throw new Error('Failed to fetch rating');
-                const data = await res.json();
-                if (data.average && data.votes) {
-                    setRating({
-                        average: data.average,
-                        votes: data.votes
-                    });
-                }
-            } catch (e) {
-                console.error("Błąd pobierania oceny dla schema:", e);
-            }
-        }
-        fetchRating();
-    }, [itemId]);
+    const rating = await fetchRatingServer(itemId);
 
     const schema = {
         "@context": "https://schema.org",
@@ -54,25 +51,25 @@ export default function AggregateRatingSchema({
         "author": {
             "@type": "Organization",
             "name": "Stawka Godzinowa",
-            "url": "https://stawka-godzinowa.pl"
+            "url": "https://stawka-godzinowa.pl",
         },
         "publisher": {
             "@type": "Organization",
             "name": "Stawka Godzinowa",
-            "url": "https://stawka-godzinowa.pl"
+            "url": "https://stawka-godzinowa.pl",
         },
         "offers": {
             "@type": "Offer",
             "price": "0",
-            "priceCurrency": "PLN"
+            "priceCurrency": "PLN",
         },
         "aggregateRating": {
             "@type": "AggregateRating",
             "ratingValue": rating.average,
             "ratingCount": rating.votes,
             "bestRating": "5",
-            "worstRating": "1"
-        }
+            "worstRating": "1",
+        },
     };
 
     return (

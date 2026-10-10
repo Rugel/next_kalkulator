@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
             index: true,
             follow: true,
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
     },
     title: `Kalkulator B2B ${CURRENT_YEAR} - Ryczałt, Liniowy, Skala - Oblicz Netto`,
     description: `Kompleksowy kalkulator B2B na ${CURRENT_YEAR} rok. Porównaj Ryczałt, Podatek Liniowy i Skalę Podatkową. Oblicz ZUS, składkę zdrowotną i realny zysk netto swojej firmy.`,
-    keywords: `kalkulator b2b, kalkulator wynagrodzeń ${CURRENT_YEAR}, samozatrudnienie, ryczałt vs liniowy, składki zus ${CURRENT_YEAR}, podatek b2b, faktura netto`,
     openGraph: {
         title: `Kalkulator B2B ${CURRENT_YEAR} - Sprawdź ile zarobisz na rękę`,
         description: `Oblicz swój zysk netto na B2B. Aktualne stawki ZUS i podatki na rok ${CURRENT_YEAR}. Porównaj formy opodatkowania.`,

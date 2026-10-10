@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
             index: true,
             follow: true,
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
     },
     title: `Kalkulator Umowy Zlecenie ${CURRENT_YEAR} - Oblicz Netto i Składki ZUS`,
     description: `Oblicz wynagrodzenie netto z umowy zlecenie w ${CURRENT_YEAR} roku. Sprawdź stawkę godzinową, składki ZUS i podatek. Uwzględnia status studenta i zerowy PIT.`,
-    keywords: `kalkulator umowy zlecenie, umowa zlecenie ${CURRENT_YEAR}, wynagrodzenie netto, kalkulator płac, pit-2, zwolnienie z podatku, student zlecenia, składki zus zlecenie`,
     openGraph: {
         title: `Kalkulator Umowy Zlecenie ${CURRENT_YEAR} - Sprawdź ile dostaniesz na rękę`,
         description: `Oblicz swoje wynagrodzenie netto z umowy zlecenie. Najnowsze wskaźniki na rok ${CURRENT_YEAR}. Uwzględnia ulgę dla młodych i koszty autorskie.`,

@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
             index: true,
             follow: true,
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
     },
     title: `Kalkulator Inflacji w latach 1982-${CURRENT_YEAR + 24} | Oblicz wartość pieniądza`,
     description: `Sprawdź inflację skumulowaną w Polsce od 1982 roku. Oblicz wartość swoich oszczędności po uwzględnieniu inflacji i denominacji. Prognozy do ${CURRENT_YEAR + 24} roku.`,
-    keywords: "kalkulator inflacji, inflacja w Polsce, siła nabywcza pieniądza, GUS inflacja, denominacja 1995, kalkulator wartości pieniądza, prognoza inflacji",
     openGraph: {
         title: `Kalkulator Inflacji w latach 1982-${CURRENT_YEAR + 24} | Oblicz wartość pieniądza`,
         description: `Przelicz wartość pieniądza z uwzględnieniem historycznej inflacji GUS oraz prognoz na przyszłość. Obsługuje denominację z 1995 roku.`,

@@ -7,8 +7,6 @@ export const metadata: Metadata = {
     title: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
     description:
         `Stawka Godzinowa to narzędzia do obliczania wynagrodzeń: kalkulator stawki godzinowej, przelicznik brutto-netto, kalkulator umowy zlecenie, B2B i inflacji.`,
-    keywords:
-        `kalkulator stawki godzinowej, kalkulator wynagrodzeń, przelicznik brutto netto, kalkulator B2B, kalkulator umowy zlecenie, kalkulator inflacji, stawka godzinowa ${CURRENT_YEAR}`,
     alternates: {
         canonical: "https://stawka-godzinowa.pl",
         languages: {

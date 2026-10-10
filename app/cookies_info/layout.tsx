@@ -7,7 +7,6 @@ export const metadata: Metadata = {
     metadataBase: new URL('https://stawka-godzinowa.pl'),
     title: "Informacja o cookies",
     description: "Strona przedstawia informacje na temat plików cookies używanych na stronie internetowej",
-    keywords: "cookies, ciasteczka, polityka, prywatność",
     robots: {
         index: false,
         follow: true,

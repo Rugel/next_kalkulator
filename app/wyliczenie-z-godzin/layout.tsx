@@ -13,7 +13,6 @@ export const metadata: Metadata = {
     robots: {
         index: true,
         follow: true,
-        nocache: true,
         googleBot: {
             index: true,
             follow: true,
@@ -25,7 +24,6 @@ export const metadata: Metadata = {
     },
     title: `Kalkulator Wynagrodzeń z Godzin Pracy ${CURRENT_YEAR} - Oblicz Płace UoP`,
     description: "Oblicz wynagrodzenie netto z godzin pracy. Kalkulator uwzględnia stawkę godzinową, nadgodziny, dni wolne, urlop oraz zwolnienie chorobowe (UoP).",
-    keywords: "wyliczenie pensji z godzin, kalkulator godzin pracy, obliczanie wynagrodzenia z przepracowanych godzin, kalkulator płac uop",
     openGraph: {
         title: "Kalkulator Wynagrodzeń - Oblicz Pensję z Godzin Pracy",
         description: `Najlepszy kalkulator wynagrodzeń ${CURRENT_YEAR}. Oblicz pensję na podstawie przepracowanych godzin, uwzględniając wszystkie dodatki i potrącenia.`,

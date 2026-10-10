@@ -36,11 +36,9 @@ export const metadata = {
     default: `Kalkulator Stawki Godzinowej ${CURRENT_YEAR} - oblicz wynagrodzenie Netto i Brutto`,
   },
   description: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – oblicz wynagrodzenie netto i brutto dla umowy o pracę i zlecenia. Uwzględnia ZUS, podatek i PPK.`,
-  keywords: `kalkulator stawki godzinowej, stawka godzinowa, stawka godzinowa ${CURRENT_YEAR}, przelicznik wynagrodzenia, ile zarabiam na godzinę, kalkulator płac ${CURRENT_YEAR}`,
   robots: {
     index: true,
     follow: true,
-    nocache: true,
     googleBot: {
       index: true,
       follow: true,

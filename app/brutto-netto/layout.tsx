@@ -26,7 +26,6 @@ export const metadata: Metadata = {
     },
     title: `Kalkulator wynagrodzeń Brutto Netto ${CURRENT_YEAR} - Oblicz Płace UoP`,
     description: `Profesjonalny kalkulator wynagrodzeń brutto netto ${CURRENT_YEAR}. Szybko oblicz swoją płacę na rękę (UoP) uwzględniając PPK, progi podatkowe i ulgi podatkowe.`,
-    keywords: `kalkulator wynagrodzeń brutto netto, przelicznik wynagrodzenia, brutto netto, wynagrodzenie netto, kalkulator płac ${CURRENT_YEAR}, umowa o pracę`,
     openGraph: {
         title: "Kalkulator wynagrodzeń Brutto Netto",
         description: "Oblicz swoje wynagrodzenie netto z brutto za pomocą szybkiego kalkulatora online. Dokładne wyniki dla umowy o pracę.",
