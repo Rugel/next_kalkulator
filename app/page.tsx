@@ -4,9 +4,25 @@ import type { Metadata } from "next";
 import { CURRENT_YEAR } from "./lib/current-year";
 
 export const metadata: Metadata = {
-    title: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
+    // `absolute` pomija template z layoutu ('%s | stawka-godzinowa.pl'),
+    // aby zachować pełną kontrolę nad długością tytułu w SERP (limit ~60 znaków).
+    title: {
+        absolute: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – netto i brutto online`,
+    },
     description:
-        `Stawka Godzinowa to narzędzia do obliczania wynagrodzeń: kalkulator stawki godzinowej, przelicznik brutto-netto, kalkulator umowy zlecenie, B2B i inflacji.`,
+        `Darmowy kalkulator stawki godzinowej ${CURRENT_YEAR}: oblicz wynagrodzenie netto i brutto z uwzględnieniem ZUS, podatku i PPK. Sprawdź, ile zarabiasz na godzinę!`,
+    keywords: [
+        'kalkulator stawki godzinowej',
+        `stawka godzinowa ${CURRENT_YEAR}`,
+        'przelicznik wynagrodzenia',
+        'kalkulator wynagrodzeń',
+        'wynagrodzenie netto i brutto',
+        'kalkulator brutto netto',
+        'kalkulator umowy zlecenia',
+        'kalkulator B2B',
+        'składki ZUS',
+        'PPK',
+    ].join(', '),
     alternates: {
         canonical: "https://stawka-godzinowa.pl",
         languages: {
@@ -15,9 +31,9 @@ export const metadata: Metadata = {
         },
     },
     openGraph: {
-        title: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
+        title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – netto i brutto`,
         description:
-            "Kompletny zestaw narzędzi do obliczania wynagrodzeń: kalkulator stawki godzinowej, przelicznik brutto-netto, kalkulator umowy zlecenie, B2B i inflacji.",
+            "Oblicz stawkę godzinową brutto i netto online. ZUS, podatek i PPK uwzględnione. Sprawdź, ile zarabiasz na godzinę!",
         url: "https://stawka-godzinowa.pl",
         siteName: "Stawka Godzinowa",
         images: [
@@ -25,7 +41,7 @@ export const metadata: Metadata = {
                 url: "https://stawka-godzinowa.pl/image.webp",
                 width: 1200,
                 height: 630,
-                alt: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
+                alt: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – wynagrodzenie netto i brutto`,
             },
         ],
         locale: "pl_PL",
@@ -33,9 +49,9 @@ export const metadata: Metadata = {
     },
     twitter: {
         card: "summary_large_image",
-        title: `Stawka Godzinowa - Kalkulatory wynagrodzeń ${CURRENT_YEAR}`,
+        title: `Kalkulator stawki godzinowej ${CURRENT_YEAR} – netto i brutto`,
         description:
-            "Kompletny zestaw narzędzi do obliczania wynagrodzeń: kalkulator stawki godzinowej, przelicznik brutto-netto, kalkulator umowy zlecenie, B2B i inflacji.",
+            "Oblicz stawkę godzinową brutto i netto online. ZUS, podatek i PPK uwzględnione. Sprawdź, ile zarabiasz na godzinę!",
         images: ["https://stawka-godzinowa.pl/image.webp"],
     },
 };
