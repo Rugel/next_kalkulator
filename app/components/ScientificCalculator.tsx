@@ -1,11 +1,7 @@
 'use client';
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
-import { Share_Tech_Mono, Orbitron } from 'next/font/google';
 import styles from './ScientificCalculator.module.css';
-
-const shareTechMono = Share_Tech_Mono({ weight: '400', subsets: ['latin'] });
-const orbitron = Orbitron({ weight: ['400', '700'], subsets: ['latin'] });
 
 type ActionType = string | null;
 
@@ -265,10 +261,10 @@ export default function ScientificCalculator() {
   }, [act]);
 
   return (
-    <div className={`${styles.calcWrapper} ${shareTechMono.className}`}>
+    <div className={`${styles.calcWrapper} ${styles.fontShareTechMono}`}>
       <div className={styles.calc}>
         <div className={styles.brand}>
-          <div className={`${styles.brandTitle} ${orbitron.className}`}>
+          <div className={`${styles.brandTitle} ${styles.fontOrbitron}`}>
             <span className={styles.brandDomain}>stawka-godzinowa</span>
             <span className={styles.brandTld}>.pl</span>
           </div>

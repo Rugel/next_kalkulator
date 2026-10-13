@@ -1,3 +1,12 @@
+/* Czcionki self-hosted zdefiniowane w public/fonts/fonts.css */
+.fontShareTechMono {
+  font-family: 'Share Tech Mono', 'Courier New', monospace;
+}
+
+.fontOrbitron {
+  font-family: 'Orbitron', 'Share Tech Mono', 'Courier New', monospace;
+}
+
 .calcWrapper {
   display: flex;
   align-items: center;

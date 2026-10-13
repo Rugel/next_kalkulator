@@ -1,13 +1,6 @@
 import "./globals.css";
-import { Roboto } from 'next/font/google';
+import "./fonts/fonts.css";
 import { CURRENT_YEAR } from './lib/current-year';
-
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700'],
-  subsets: ['latin-ext'],
-  display: 'swap',
-  variable: '--font-roboto',
-});
 
 import Script from 'next/script';
 import AnalyticsListener from './modules/analytics-listener';
@@ -64,6 +57,9 @@ export default function RootLayout({
     <html lang="pl">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        {/* Preload najczęściej używanych wariantów Roboto (pliki w public/fonts) */}
+        <link rel="preload" href="/fonts/roboto-400-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/fonts/roboto-700-latin.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://pagead2.googlesyndication.com" />
         <AggregateRatingSchema
@@ -232,7 +228,7 @@ export default function RootLayout({
         />
         <ConditionalAdSense />
       </head>
-      <body className={roboto.className}>
+      <body>
         <CookieBanner />
         <GlobalSpinner>
           <WynikVisibilityHandler />
